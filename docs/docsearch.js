@@ -1,18 +1,18 @@
-$(\() {
+$(function() {
 
   // register a handler to move the focus to the search bar
   // upon pressing shift + "/" (i.e. "?")
-  $(document).on('keydown', \(e) {
+  $(document).on('keydown', function(e) {
     if (e.shiftKey && e.keyCode == 191) {
       e.preventDefault();
       $("#search-input").focus();
     }
   });
 
-  $(document).ready(\() {
+  $(document).ready(function() {
     // do keyword highlighting
     /* modified from https://jsfiddle.net/julmot/bL6bb5oo/ */
-    var mark = \() {
+    var mark = function() {
 
       var referrer = document.URL ;
       var paramKey = "q" ;
@@ -37,7 +37,7 @@ $(\() {
 
         if (keyword !== "") {
           $(".contents").unmark({
-            done: \() {
+            done: function() {
               $(".contents").mark(keyword);
             }
           });

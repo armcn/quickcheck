@@ -2,26 +2,26 @@
  * Bootstrap Table of Contents v0.4.1 (http://afeld.github.io/bootstrap-toc/)
  * Copyright 2015 Aidan Feldman
  * Licensed under MIT (https://github.com/afeld/bootstrap-toc/blob/gh-pages/LICENSE.md) */
-(\() {
+(function() {
   'use strict';
 
   window.Toc = {
     helpers: {
       // return all matching elements in the set, or their descendants
-      findOrFilter: \($el, selector) {
+      findOrFilter: function($el, selector) {
         // http://danielnouri.org/notes/2011/03/14/a-jquery-find-that-also-finds-the-root-element/
         // http://stackoverflow.com/a/12731439/358804
         var $descendants = $el.find(selector);
         return $el.filter(selector).add($descendants).filter(':not([data-toc-skip])');
       },
 
-      generateUniqueIdBase: \(el) {
+      generateUniqueIdBase: function(el) {
         var text = $(el).text();
         var anchor = text.trim().toLowerCase().replace(/[^A-Za-z0-9]+/g, '-');
         return anchor || el.tagName.toLowerCase();
       },
 
-      generateUniqueId: \(el) {
+      generateUniqueId: function(el) {
         var anchorBase = this.generateUniqueIdBase(el);
         for (var i = 0; ; i++) {
           var anchor = anchorBase;
@@ -36,7 +36,7 @@
         }
       },
 
-      generateAnchor: \(el) {
+      generateAnchor: function(el) {
         if (el.id) {
           return el.id;
         } else {
@@ -46,17 +46,17 @@
         }
       },
 
-      createNavList: \() {
+      createNavList: function() {
         return $('<ul class="nav"></ul>');
       },
 
-      createChildNavList: \($parent) {
+      createChildNavList: function($parent) {
         var $childList = this.createNavList();
         $parent.append($childList);
         return $childList;
       },
 
-      generateNavEl: \(anchor, text) {
+      generateNavEl: function(anchor, text) {
         var $a = $('<a></a>');
         $a.attr('href', '#' + anchor);
         $a.text(text);
@@ -65,7 +65,7 @@
         return $li;
       },
 
-      generateNavItem: \(headingEl) {
+      generateNavItem: function(headingEl) {
         var anchor = this.generateAnchor(headingEl);
         var $heading = $(headingEl);
         var text = $heading.data('toc-text') || $heading.text();
@@ -73,7 +73,7 @@
       },
 
       // Find the first heading level (`<h1>`, then `<h2>`, etc.) that has more than one element. Defaults to 1 (for `<h1>`).
-      getTopLevel: \($scope) {
+      getTopLevel: function($scope) {
         for (var i = 1; i <= 6; i++) {
           var $headings = this.findOrFilter($scope, 'h' + i);
           if ($headings.length > 1) {
@@ -85,7 +85,7 @@
       },
 
       // returns the elements for the top level, and the next below it
-      getHeadings: \($scope, topLevel) {
+      getHeadings: function($scope, topLevel) {
         var topSelector = 'h' + topLevel;
 
         var secondaryLevel = topLevel + 1;
@@ -94,16 +94,16 @@
         return this.findOrFilter($scope, topSelector + ',' + secondarySelector);
       },
 
-      getNavLevel: \(el) {
+      getNavLevel: function(el) {
         return parseInt(el.tagName.charAt(1), 10);
       },
 
-      populateNav: \($topContext, topLevel, $headings) {
+      populateNav: function($topContext, topLevel, $headings) {
         var $context = $topContext;
         var $prevNav;
 
         var helpers = this;
-        $headings.each(\(i, el) {
+        $headings.each(function(i, el) {
           var $newNav = helpers.generateNavItem(el);
           var navLevel = helpers.getNavLevel(el);
 
@@ -122,7 +122,7 @@
         });
       },
 
-      parseOps: \(arg) {
+      parseOps: function(arg) {
         var opts;
         if (arg.jquery) {
           opts = {
@@ -137,7 +137,7 @@
     },
 
     // accepts a jQuery object, or an options object
-    init: \(opts) {
+    init: function(opts) {
       opts = this.helpers.parseOps(opts);
 
       // ensure that the data attribute is in place for styling
@@ -150,8 +150,8 @@
     }
   };
 
-  $(\() {
-    $('nav[data-toggle="toc"]').each(\(i, el) {
+  $(function() {
+    $('nav[data-toggle="toc"]').each(function(i, el) {
       var $nav = $(el);
       Toc.init($nav);
     });
