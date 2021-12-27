@@ -33,4 +33,4 @@ is an introduction to the concept of property based testing, and an
 explanation of the mathematical properties of addition can be found
 [here](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/properties-of-numbers/a/properties-of-addition).
 
-![Quickcheck example](./man/figures/example.png)
+![Quickcheck example](man/figures/example.png)
