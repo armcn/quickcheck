@@ -1,3 +1,4 @@
+#' @export
 for_all <- \(...,
              property,
              tests = get_tests(),

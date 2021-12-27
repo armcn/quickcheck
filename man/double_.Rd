@@ -2,9 +2,30 @@
 % Please edit documentation in R/double.R
 \name{double_}
 \alias{double_}
+\alias{double_bounded}
+\alias{double_left_bounded}
+\alias{double_right_bounded}
+\alias{double_positive}
+\alias{double_negative}
+\alias{double_fractional}
+\alias{double_whole}
 \title{Double generators}
 \usage{
 double_(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_bounded(left, right, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_left_bounded(left, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_right_bounded(right, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_positive(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_negative(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_fractional(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+
+double_whole(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -15,9 +36,19 @@ inclusive. For example \code{len = c(1L, 10L)} would produce
 integer vectors with lengths between 1 and 10.}
 
 \item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the
-default, will include no \code{NA} values. A fraction of 0.5
-would include around 50\% \code{NA} values.}
+be included in the vector. A fraction of 0, the default,
+will include no \code{NA} values. A fraction of 0.5 would
+include around 50\% \code{NA} values.}
+
+\item{frac_nan}{The approximate fraction of \code{NaN} values
+to be included in the vector. A fraction of 0, the
+default, will include no \code{NaN} values. A fraction of 0.5
+would include around 50\% \code{NaN} values.}
+
+\item{frac_inf}{The approximate fraction of \code{Inf} and
+\code{-Inf} values to be included in the vector. A fraction of
+0, the default, will include no \code{NA} values. A fraction
+of 0.5 would include around 50\% \code{NA} values.}
 
 \item{left}{The minimum possible value for generated
 numbers, inclusive.}

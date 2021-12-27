@@ -3,7 +3,7 @@ tibble_ <- \(..., rows = c(1L, 10L)) {
     hedgehog::gen.with(dplyr::as_tibble)
 }
 
-
+#' @export
 tibble_of <- \(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   repeat_rows <-
     purrr::partial(repeat_rows, rows = rows)
@@ -36,7 +36,7 @@ repeat_cols <- \(..., size) {
       sample(1:length(generators), a, TRUE)
     ]
 
-  gen.element(sample_size) |>
+  hedgehog::gen.element(sample_size) |>
     hedgehog::gen.and_then(expand_tibble_cols) |>
     hedgehog::gen.with(as_tibble)
 }
