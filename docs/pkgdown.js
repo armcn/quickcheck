@@ -1,11 +1,11 @@
 /* http://gregfranko.com/blog/jquery-best-practices/ */
-(function($) {
-  $(function() {
+(\($) {
+  $(\() {
 
     $('.navbar-fixed-top').headroom();
 
     $('body').css('padding-top', $('.navbar').height() + 10);
-    $(window).resize(function(){
+    $(window).resize(\(){
       $('body').css('padding-top', $('.navbar').height() + 10);
     });
 
@@ -77,10 +77,10 @@
   }
 
   if(ClipboardJS.isSupported()) {
-    $(document).ready(function() {
+    $(document).ready(\() {
       var copyButton = "<button type='button' class='btn btn-primary btn-copy-ex' type = 'submit' title='Copy to clipboard' aria-label='Copy to clipboard' data-toggle='tooltip' data-placement='left auto' data-trigger='hover' data-clipboard-copy><i class='fa fa-copy'></i></button>";
 
-      $(".examples, div.sourceCode").addClass("hasCopyButton");
+      $("div.sourceCode").addClass("hasCopyButton");
 
       // Insert copy buttons:
       $(copyButton).prependTo(".hasCopyButton");
@@ -90,17 +90,17 @@
 
       // Initialize clipboard:
       var clipboardBtnCopies = new ClipboardJS('[data-clipboard-copy]', {
-        text: function(trigger) {
-          return trigger.parentNode.textContent;
+        text: \(trigger) {
+          return trigger.parentNode.textContent.replace(/\n#>[^\n]*/g, "");
         }
       });
 
-      clipboardBtnCopies.on('success', function(e) {
+      clipboardBtnCopies.on('success', \(e) {
         changeTooltipMessage(e.trigger, 'Copied!');
         e.clearSelection();
       });
 
-      clipboardBtnCopies.on('error', function() {
+      clipboardBtnCopies.on('error', \() {
         changeTooltipMessage(e.trigger,'Press Ctrl+C or Command+C to copy');
       });
     });

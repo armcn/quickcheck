@@ -1,35 +1,13 @@
-with_length <- function(generator,
-                        from = NULL,
-                        to = NULL,
-                        of = 1) {
-  \()
-    if (!is.null(from))
-      with_length_bounded(generator, from = from, to = to)
+equal_length <- \(..., len = 1L) {
+  vector_lengths <-
+    if (length(len) == 1L)
+      len
 
     else
-      with_length_of(generator, of = of)
-}
+      seq(len[1L], len[2L])
 
-
-with_length_bounded <- function(generator, from, to) {
-  if (from <= 0)
-    stop("`from` must be a positive number")
-
-  else if (to <= 0)
-    stop("`to` must be a positive number")
-
-  else if (from > to)
-    stop("`from` must be less than `to`")
-
-  else
-    hedgehog::gen.c(generator(), from = from, to = to)
-}
-
-
-with_length_of <- function(generator, of) {
-  if (of <= 0)
-    stop("`of` must be a positive number")
-
-  else
-    hedgehog::gen.c(generator(), of = of)
+  hedgehog::gen.bind(
+    \(a) purrr::map(list(...), vectorize, len = a),
+    hedgehog::gen.element(vector_lengths)
+  )
 }

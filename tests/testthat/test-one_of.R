@@ -1,19 +1,3 @@
-test_that("fails with no generators provided", {
-  expect_error(
-    one_of(),
-    regexp = "Argument can't be empty."
-  )
-})
-
-
-test_that("fails with hedgehog generator", {
-  expect_error(
-    one_of(hedgehog::gen.element(1L)),
-    regexp = "Argument must be a quickcheck generator."
-  )
-})
-
-
 test_that("ignores first generator when prob = 0", {
   for_all(
     a = one_of(

@@ -16,8 +16,12 @@ RoxygenNote: 7.1.1
 Depends: R (>= 4.0.0)
 Imports: 
     hedgehog,
-    purrr
+    purrr,
+    dplyr
 Suggests: 
     testthat (>= 3.0.0),
-    pure
+    pure,
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
+VignetteBuilder: knitr

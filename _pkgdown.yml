@@ -9,6 +9,8 @@ reference:
     - integer_bounded
     - integer_left_bounded
     - integer_right_bounded
+    - integer_positive
+    - integer_negative
 - title: Double generators
   desc: A set of generators to produce doubles.
   contents:
@@ -16,6 +18,8 @@ reference:
     - double_bounded
     - double_left_bounded
     - double_right_bounded
+    - double_positive
+    - double_negative
     - double_fractional
     - double_whole
 - title: Numeric generators
@@ -27,40 +31,32 @@ reference:
     - numeric_bounded
     - numeric_left_bounded
     - numeric_right_bounded
+    - numeric_positive
+    - numeric_negative
 - title: Character generators
   desc: A set of generators to produce characters.
   contents:
     - character_
-    - character_not_empty
-    - character_letters
 - title: Logical generators
   desc: A generator to produce logicals.
   contents:
     - logical_
+- title: List generators
+  desc: A set of modifiers to create lists
+  contents:
+    - list_
+    - list_of
 - title: Data Frame generators
   desc: A set of generators to produce data frames.
   contents:
     - tibble_
-    - tibble_random
     - tibble_of
     - data_frame_
-    - data_frame_random
     - data_frame_of
-- title: List generators
-  desc: A set of modifiers to create lists
-  contents:
-    - list
-    - list_of
 - title: Generator modifiers
   desc: A set of functions to modify generators
   contents:
-    - with_nrow
-    - with_ncol
-    - with_length
     - equal_length
-    - with_na
-    - with_inf
-    - with_nan
     - empty
 - title: Other
   desc: Other generators and combinators
@@ -68,4 +64,3 @@ reference:
     - one_of
     - constant
     - null_
-    - from_hedgehog
