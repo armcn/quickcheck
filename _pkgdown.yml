@@ -1,6 +1,22 @@
 template:
-  params:
-    bootswatch: flatly
+  theme: github-dark
+  bootstrap: 5
+  bslib:
+    bg: "#0d0d0d"
+    fg: "#e6e6e6"
+    primary: "#b392f0"
+    base_font: {google: "Roboto"}
+    heading_font: {google: "Lato"}
+    code_font: {google: "Fira Code"}
+    font_size_root: "10px"
+navbar:
+  structure:
+    right: [search, github, twitter]
+  components:
+    twitter:
+      icon: fa-twitter
+      href: http://twitter.com/ShinyD3js
+      aria-label: Twitter
 reference:
 - title: Integer generators
   desc: A set of generators to produce integers.

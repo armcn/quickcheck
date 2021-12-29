@@ -4,6 +4,12 @@
     <loc>/404.html</loc>
   </url>
   <url>
+    <loc>/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>/LICENSE.html</loc>
+  </url>
+  <url>
     <loc>/articles/examples.html</loc>
   </url>
   <url>
@@ -16,10 +22,37 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/any_atomic.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_flat_list.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_list.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_vector.html</loc>
+  </url>
+  <url>
     <loc>/reference/character_.html</loc>
   </url>
   <url>
+    <loc>/reference/constant.html</loc>
+  </url>
+  <url>
+    <loc>/reference/date_.html</loc>
+  </url>
+  <url>
     <loc>/reference/double_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/factor_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/for_all.html</loc>
+  </url>
+  <url>
+    <loc>/reference/hms_.html</loc>
   </url>
   <url>
     <loc>/reference/index.html</loc>
@@ -28,9 +61,27 @@
     <loc>/reference/integer_.html</loc>
   </url>
   <url>
+    <loc>/reference/list_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/list_of.html</loc>
+  </url>
+  <url>
     <loc>/reference/logical_.html</loc>
   </url>
   <url>
     <loc>/reference/numeric_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/one_of.html</loc>
+  </url>
+  <url>
+    <loc>/reference/posixct_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tibble_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/tibble_of.html</loc>
   </url>
 </urlset>

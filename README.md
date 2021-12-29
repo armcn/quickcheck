@@ -68,7 +68,9 @@ test_that("+ is associative", {
 })
 ```
 
-Here we test the properties of the `distinct` function from the `dplyr`
+Here we test the properties of the
+[`distinct`](https://dplyr.tidyverse.org/reference/distinct.html)
+function from the [`dplyr`](https://dplyr.tidyverse.org/index.html)
 package.
 
 ``` r

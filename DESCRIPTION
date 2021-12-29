@@ -12,6 +12,8 @@ Description: Property based testing in R, inspired by
     `hedgehog` and is designed to seamlessly integrate with 
     `testthat`.
 License: MIT + file LICENSE
+URL: https://github.com/armcn/quickcheck
+BugReports: https://github.com/armcn/quickcheck/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
