@@ -27,7 +27,8 @@ Suggests:
     testthat (>= 3.0.0),
     pure,
     knitr,
-    rmarkdown
+    rmarkdown,
+    covr
 Remotes:
     github::armcn/pure
 Config/testthat/edition: 3
