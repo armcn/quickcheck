@@ -17,7 +17,8 @@ Depends: R (>= 4.0.0)
 Imports: 
     hedgehog,
     purrr,
-    dplyr
+    dplyr,
+    hms
 Suggests: 
     testthat (>= 3.0.0),
     pure,

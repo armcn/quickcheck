@@ -8,7 +8,7 @@
 #'
 #' @template generator
 #' @export
-character_ <- \(len = 1L, frac_empty = 0, frac_na = 0) {
+character_ <- \(len = 1L, frac_na = 0, frac_empty = 0) {
   bytes_to_character(32L:126L) |>
     hedgehog::gen.element() |>
     with_empty(frac_empty) |>

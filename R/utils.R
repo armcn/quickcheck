@@ -31,26 +31,25 @@ with_empty <- \(generator, frac_empty) {
 }
 
 with_na <- \(generator, frac_na) {
-  prob <-
-    c(1 - frac_na, frac_na)
-
-  hedgehog::gen.choice(generator, NA, prob = prob)
+  hedgehog::gen.map(
+    \(a) if (runif(1L) <= frac_na) NA else a,
+    generator
+  )
 }
 
 with_nan <- \(generator, frac_nan) {
-  prob <-
-    c(1 - frac_nan, frac_nan)
-
-  hedgehog::gen.choice(generator, NaN, prob = prob)
+  hedgehog::gen.map(
+    \(a) if (runif(1L) <= frac_nan) NaN else a,
+    generator
+  )
 }
 
 with_inf <- \(generator, frac_inf) {
-  prob <-
-    c(1 - frac_inf, frac_inf)
+  random_inf <-
+    \() if (runif(1L) <= 0.5) -Inf else Inf
 
-  hedgehog::gen.choice(
-    generator,
-    hedgehog::gen.choice(-Inf, Inf),
-    prob = prob
+  hedgehog::gen.map(
+    \(a) if (runif(1L) <= frac_inf) random_inf() else a,
+    generator
   )
 }

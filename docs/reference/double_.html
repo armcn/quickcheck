@@ -54,7 +54,21 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_positive</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_negative</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_fractional</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">double_whole</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -68,9 +82,19 @@ inclusive. For example <code>len = c(1L, 10L)</code> would produce
 integer vectors with lengths between 1 and 10.</p></dd>
 <dt>frac_na</dt>
 <dd><p>The approximate fraction of <code>NA</code> values to
-be included in the vector. A fraction of 0, the
-default, will include no <code>NA</code> values. A fraction of 0.5
-would include around 50% <code>NA</code> values.</p></dd>
+be included in the vector. A fraction of 0, the default,
+will include no <code>NA</code> values. A fraction of 0.5 would
+include around 50% <code>NA</code> values.</p></dd>
+<dt>frac_nan</dt>
+<dd><p>The approximate fraction of <code>NaN</code> values
+to be included in the vector. A fraction of 0, the
+default, will include no <code>NaN</code> values. A fraction of 0.5
+would include around 50% <code>NaN</code> values.</p></dd>
+<dt>frac_inf</dt>
+<dd><p>The approximate fraction of <code>Inf</code> and
+<code>-Inf</code> values to be included in the vector. A fraction of
+0, the default, will include no <code>NA</code> values. A fraction
+of 0.5 would include around 50% <code>NA</code> values.</p></dd>
 <dt>left</dt>
 <dd><p>The minimum possible value for generated
 numbers, inclusive.</p></dd>

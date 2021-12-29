@@ -41,6 +41,27 @@ reference:
   desc: A generator to produce logicals.
   contents:
     - logical_
+- title: Date generators
+  desc: A set of generators to produce dates.
+  contents:
+    - data_
+    - date_bounded
+    - date_left_bounded
+    - date_right_bounded
+- title: POSIXct generators
+  desc: A set of generators to produce POSIXct date-times
+  contents:
+    - posixct_
+    - posixct_bounded
+    - posixct_left_bounded
+    - posixct_right_bounded
+- title: hms generators
+  desc: A set of generators to produce hms times
+  contents:
+    - hms_
+    - hms_bounded
+    - hms_left_bounded
+    - hms_right_bounded
 - title: List generators
   desc: A set of modifiers to create lists
   contents:
@@ -53,6 +74,14 @@ reference:
     - tibble_of
     - data_frame_
     - data_frame_of
+- title: Multi-class generators
+  desc: A set of generators to produce random values.
+  contents:
+    - any_atomic
+    - any_list
+    - any_vector
+    - any_tibble
+    - any_dataframe
 - title: Generator modifiers
   desc: A set of functions to modify generators
   contents:
@@ -63,4 +92,3 @@ reference:
   contents:
     - one_of
     - constant
-    - null_

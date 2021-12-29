@@ -1,4 +1,19 @@
-test_that("ignores first generator when prob = 0", {
+test_that(
+  "one_of with single generator doesn't change generator", {
+  for_all(
+    a = integer_(),
+    property = \(a) {
+      for_all(
+        b = one_of(a),
+        property = \(b) expect_equal(b, a),
+        tests = 10L
+      )
+    },
+    tests = 10L
+  )
+})
+
+test_that("one_of ignores first generator when prob = 0", {
   for_all(
     a = one_of(
       integer_positive(),
@@ -9,8 +24,7 @@ test_that("ignores first generator when prob = 0", {
   )
 })
 
-
-test_that("ignores second generator when prob = 0", {
+test_that("one_of ignores second generator when prob = 0", {
   for_all(
     a = one_of(
       integer_positive(),

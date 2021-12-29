@@ -1,25 +1,25 @@
-test_that("character_ generates pure characters", {
+test_that("any_atomic generates pure atomic vectors", {
   for_all(
-    a = character_(),
-    property = \(a) expect_true(pure::is_pure_character(a))
+    a = any_atomic(),
+    property = \(a) expect_true(pure::is_pure_atomic(a))
   )
 })
 
 test_that(
-  "character_ generates vectors of length 1 by default", {
+  "any_atomic generates vectors of length 1 by default", {
   for_all(
-    a = character_(),
+    a = any_atomic(),
     property = \(a) expect_equal(length(a), 1L)
   )
 })
 
 test_that(
-  "character_ generates vectors of specific length", {
+  "any_atomic generates vectors of specific length", {
   for_all(
     len = integer_bounded(1L, 10L),
     property = \(len) {
       for_all(
-        a = character_(len = len),
+        a = any_atomic(len = len),
         property = \(a) expect_equal(length(a), len),
         tests = 10L
       )
@@ -29,13 +29,13 @@ test_that(
 })
 
 test_that(
-  "character_ generates vectors within a range of lengths", {
+  "any_atomic generates vectors within a range of lengths", {
   for_all(
     min_len = integer_bounded(1L, 5L),
     max_len = integer_bounded(5L, 10L),
     property = \(min_len, max_len) {
       for_all(
-        a = character_(len = c(min_len, max_len)),
+        a = any_atomic(len = c(min_len, max_len)),
         property = \(a) {
           expect_true(
             length(a) >= min_len && length(a) <= max_len
@@ -48,9 +48,9 @@ test_that(
   )
 })
 
-test_that("character_ generates vectors with NAs", {
+test_that("any_atomic generates vectors with NAs", {
   for_all(
-    a = character_(len = 10L, frac_na = 1),
+    a = any_atomic(len = 10L, frac_na = 1),
     property = \(a) expect_true(all(is.na(a)))
   )
 })

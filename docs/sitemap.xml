@@ -16,6 +16,9 @@
     <loc>/index.html</loc>
   </url>
   <url>
+    <loc>/reference/character_.html</loc>
+  </url>
+  <url>
     <loc>/reference/double_.html</loc>
   </url>
   <url>
@@ -23,5 +26,11 @@
   </url>
   <url>
     <loc>/reference/integer_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/logical_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/numeric_.html</loc>
   </url>
 </urlset>
