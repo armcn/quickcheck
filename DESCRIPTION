@@ -1,13 +1,16 @@
 Package: quickcheck
-Title: What the Package Does (One Line, Title Case)
+Title: Property Based Testing
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Andrew",
            family = "McNeil",
            role = c("aut", "cre"),
-           email = "andrew.richard.mcneil@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+           email = "andrew.richard.mcneil@gmail.com")
+Description: Property based testing in R, inspired by 
+    the original Haskell QuickCheck. This package builds on 
+    the property based testing framework provided by 
+    `hedgehog` and is designed to seamlessly integrate with 
+    `testthat`.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

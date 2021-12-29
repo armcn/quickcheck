@@ -1,3 +1,12 @@
+#' For all
+#'
+#' @param ... Dots
+#' @param property Property
+#' @param tests Tests
+#' @param size Size
+#' @param shrinks Shrinks
+#' @param discards Discards
+#'
 #' @export
 for_all <- \(...,
              property,

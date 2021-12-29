@@ -1,8 +1,20 @@
+#' Tibble
+#'
+#' @param ... Dots
+#' @param rows Rows
+#'
+#' @export
 tibble_ <- \(..., rows = c(1L, 10L)) {
   equal_length(..., len = rows) |>
     hedgehog::gen.with(dplyr::as_tibble)
 }
 
+#' Tibble of
+#'
+#' @param ... Dots
+#' @param rows Rows
+#' @param cols Cols
+#'
 #' @export
 tibble_of <- \(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   repeat_rows <-
@@ -13,7 +25,6 @@ tibble_of <- \(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
     repeat_rows
   )
 }
-
 
 repeat_cols <- \(..., size) {
   as_tibble <-
@@ -40,7 +51,6 @@ repeat_cols <- \(..., size) {
     hedgehog::gen.and_then(expand_tibble_cols) |>
     hedgehog::gen.with(as_tibble)
 }
-
 
 repeat_rows <- \(df, rows) {
   repeats <-

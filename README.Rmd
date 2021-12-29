@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 # quickcheck
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/armcn/quickcheck/workflows/R-CMD-check/badge.svg)](https://github.com/armcn/quickcheck/actions)
 <!-- badges: end -->
 
 # Overview

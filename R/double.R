@@ -119,7 +119,7 @@ double_fractional <- \(len = 1L,
                        frac_na = 0,
                        frac_nan = 0,
                        frac_inf = 0) {
-  runif(
+  stats::runif(
     1e6,
     max_negative_double(),
     max_positive_double()

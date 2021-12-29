@@ -1,2 +1,11 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+TODO.txt
+^LICENSE\.md$
+^codecov\.yml$
+^README\.Rmd$
+^README-.*\.png$
+^_pkgdown\.yml$
+^docs$
+^\.github$
+^man-roxygen$
