@@ -25,10 +25,16 @@
     <loc>/reference/any_atomic.html</loc>
   </url>
   <url>
+    <loc>/reference/any_data_frame.html</loc>
+  </url>
+  <url>
     <loc>/reference/any_flat_list.html</loc>
   </url>
   <url>
     <loc>/reference/any_list.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_tibble.html</loc>
   </url>
   <url>
     <loc>/reference/any_vector.html</loc>
@@ -40,10 +46,19 @@
     <loc>/reference/constant.html</loc>
   </url>
   <url>
+    <loc>/reference/data_frame_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_frame_of.html</loc>
+  </url>
+  <url>
     <loc>/reference/date_.html</loc>
   </url>
   <url>
     <loc>/reference/double_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/equal_length.html</loc>
   </url>
   <url>
     <loc>/reference/factor_.html</loc>
@@ -77,6 +92,9 @@
   </url>
   <url>
     <loc>/reference/posixct_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/show_example.html</loc>
   </url>
   <url>
     <loc>/reference/tibble_.html</loc>

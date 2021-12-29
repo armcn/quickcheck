@@ -19,3 +19,14 @@ one_of <- \(..., prob = NULL) {
 constant <- \(a) {
   hedgehog::gen.choice(a)
 }
+
+#' Show an example output of a generator
+#'
+#' @param generator Generator
+#'
+#' @export
+show_example <- \(generator) {
+  generator |>
+    hedgehog::gen.example() |>
+    purrr::pluck("root")
+}

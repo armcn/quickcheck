@@ -136,7 +136,7 @@
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct does nothing with a single row"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
-    a <span class="op">=</span> <span class="fu">any_tibble</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,
+    a <span class="op">=</span> <span class="fu"><a href="reference/any_tibble.html">any_tibble</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="op">{</span>
       <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>
     <span class="op">}</span>
@@ -145,7 +145,7 @@
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct returns original if rows are repeated"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
-    a <span class="op">=</span> <span class="fu">any_tibble</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,
+    a <span class="op">=</span> <span class="fu"><a href="reference/any_tibble.html">any_tibble</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="op">{</span>
       <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>
     <span class="op">}</span>

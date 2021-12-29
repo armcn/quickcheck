@@ -55,7 +55,7 @@
     <div class="section level2">
       <h2 id="integer-generators">Integer generators<a class="anchor" aria-label="anchor" href="#integer-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce integers.</p>
+      <p class="section-desc"></p><p>A set of generators to produce integer vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -71,7 +71,7 @@
       </dl></div><div class="section level2">
       <h2 id="double-generators">Double generators<a class="anchor" aria-label="anchor" href="#double-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce doubles.</p>
+      <p class="section-desc"></p><p>A set of generators to produce double vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -87,7 +87,7 @@
       </dl></div><div class="section level2">
       <h2 id="numeric-generators">Numeric generators<a class="anchor" aria-label="anchor" href="#numeric-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce numeric values. A numeric value may be an integer or a double.</p>
+      <p class="section-desc"></p><p>A set of generators to produce numeric vectors. A numeric vector will be an integer or a double vector.</p>
 
       
     </div><div id="" class="section level2">
@@ -101,9 +101,9 @@
         </dt>
         <dd>Numeric generators</dd>
       </dl></div><div class="section level2">
-      <h2 id="character-generators">Character generators<a class="anchor" aria-label="anchor" href="#character-generators"></a></h2>
+      <h2 id="character-generator">Character generator<a class="anchor" aria-label="anchor" href="#character-generator"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce characters.</p>
+      <p class="section-desc"></p><p>A generator to produce character vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -117,9 +117,9 @@
         </dt>
         <dd>Character generators</dd>
       </dl></div><div class="section level2">
-      <h2 id="logical-generators">Logical generators<a class="anchor" aria-label="anchor" href="#logical-generators"></a></h2>
+      <h2 id="logical-generator">Logical generator<a class="anchor" aria-label="anchor" href="#logical-generator"></a></h2>
       
-      <p class="section-desc"></p><p>A generator to produce logicals.</p>
+      <p class="section-desc"></p><p>A generator to produce logical vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -135,7 +135,7 @@
       </dl></div><div class="section level2">
       <h2 id="date-generators">Date generators<a class="anchor" aria-label="anchor" href="#date-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce dates.</p>
+      <p class="section-desc"></p><p>A set of generators to produce date vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -151,7 +151,7 @@
       </dl></div><div class="section level2">
       <h2 id="posixct-generators">POSIXct generators<a class="anchor" aria-label="anchor" href="#posixct-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce POSIXct date-times</p>
+      <p class="section-desc"></p><p>A set of generators to produce POSIXct vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -167,7 +167,7 @@
       </dl></div><div class="section level2">
       <h2 id="hms-generators">hms generators<a class="anchor" aria-label="anchor" href="#hms-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce hms times</p>
+      <p class="section-desc"></p><p>A set of generators to produce hms vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -183,7 +183,7 @@
       </dl></div><div class="section level2">
       <h2 id="factor-generators">Factor generators<a class="anchor" aria-label="anchor" href="#factor-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of generators to produce factors</p>
+      <p class="section-desc"></p><p>A generator to produce factor vectors.</p>
 
       
     </div><div id="" class="section level2">
@@ -199,7 +199,7 @@
       </dl></div><div class="section level2">
       <h2 id="list-generators">List generators<a class="anchor" aria-label="anchor" href="#list-generators"></a></h2>
       
-      <p class="section-desc"></p><p>A set of modifiers to create lists</p>
+      <p class="section-desc"></p><p>A set of generators to produce lists.</p>
 
       
     </div><div id="" class="section level2">
@@ -230,16 +230,26 @@
 
       <dl><dt>
           
+          <code><a href="data_frame_.html">data_frame_()</a></code> 
+        </dt>
+        <dd>Data frame generator</dd>
+      </dl><dl><dt>
+          
+          <code><a href="data_frame_of.html">data_frame_of()</a></code> 
+        </dt>
+        <dd>Random data frame generator</dd>
+      </dl><dl><dt>
+          
           <code><a href="tibble_.html">tibble_()</a></code> 
         </dt>
-        <dd>Tibble</dd>
+        <dd>Tibble generator</dd>
       </dl><dl><dt>
           
           <code><a href="tibble_of.html">tibble_of()</a></code> 
         </dt>
-        <dd>Tibble of</dd>
+        <dd>Random tibble generator</dd>
       </dl></div><div class="section level2">
-      <h2 id="multi-class-generators">Multi-class generators<a class="anchor" aria-label="anchor" href="#multi-class-generators"></a></h2>
+      <h2 id="random-choice-generators">Random choice generators<a class="anchor" aria-label="anchor" href="#random-choice-generators"></a></h2>
       
       <p class="section-desc"></p><p>A set of generators to produce random values.</p>
 
@@ -269,10 +279,20 @@
           <code><a href="any_vector.html">any_vector()</a></code> 
         </dt>
         <dd>Any vector generator</dd>
+      </dl><dl><dt>
+          
+          <code><a href="any_data_frame.html">any_data_frame()</a></code> 
+        </dt>
+        <dd>Any data frame generator</dd>
+      </dl><dl><dt>
+          
+          <code><a href="any_tibble.html">any_tibble()</a></code> 
+        </dt>
+        <dd>Any tibble generator</dd>
       </dl></div><div class="section level2">
       <h2 id="generator-modifiers">Generator modifiers<a class="anchor" aria-label="anchor" href="#generator-modifiers"></a></h2>
       
-      <p class="section-desc"></p><p>A set of functions to modify generators</p>
+      <p class="section-desc"></p><p>A function to modify generators.</p>
 
       
     </div><div id="" class="section level2">
@@ -280,11 +300,15 @@
       
       
 
-      
-    </div><div class="section level2">
+      <dl><dt>
+          
+          <code><a href="equal_length.html">equal_length()</a></code> 
+        </dt>
+        <dd>Modify length of multiple generators</dd>
+      </dl></div><div class="section level2">
       <h2 id="other">Other<a class="anchor" aria-label="anchor" href="#other"></a></h2>
       
-      <p class="section-desc"></p><p>Other generators and combinators</p>
+      <p class="section-desc"></p><p>Other generators and combinators.</p>
 
       
     </div><div id="" class="section level2">
@@ -302,6 +326,22 @@
           <code><a href="constant.html">constant()</a></code> 
         </dt>
         <dd>Generate the same value every time</dd>
+      </dl></div><div class="section level2">
+      <h2 id="tester">Tester<a class="anchor" aria-label="anchor" href="#tester"></a></h2>
+      
+      <p class="section-desc"></p><p>A function to run property based tests.</p>
+
+      
+    </div><div id="" class="section level2">
+      
+      
+      
+
+      <dl><dt>
+          
+          <code><a href="for_all.html">for_all()</a></code> 
+        </dt>
+        <dd>For all</dd>
       </dl></div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>

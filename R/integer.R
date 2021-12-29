@@ -7,6 +7,11 @@
 #' @template left
 #' @template right
 #'
+#' @examples
+#' integer_() |> show_example()
+#' integer_(len = 10L, frac_na = 0.5) |> show_example()
+#' integer_bounded(left = -5L, right = 5L) |> show_example()
+#'
 #' @template generator
 #' @export
 integer_ <- \(len = 1L, frac_na = 0) {

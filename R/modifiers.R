@@ -1,3 +1,13 @@
+#' Modify length of multiple generators
+#'
+#' This will set the length of multiple generators to be the
+#' same.
+#'
+#' @param ... Generators
+#' @template len
+#'
+#' @template generator
+#' @export
 equal_length <- \(..., len = 1L) {
   vector_lengths <-
     if (length(len) == 1L)

@@ -66,3 +66,43 @@ any_list <- \(len = 1L, frac_na = 0) {
 any_vector <- \(len = 1L, frac_na = 0) {
   one_of(any_atomic(len, frac_na), any_list(len, frac_na))
 }
+
+#' Any data frame generator
+#'
+#' Generate random data frames.
+#'
+#' @template rows
+#' @template cols
+#' @template frac_na
+#'
+#' @template generator
+#' @export
+any_data_frame <- \(rows = c(1L, 10L),
+                    cols = c(1L, 10L),
+                    frac_na = 0) {
+  data_frame_of(
+    any_vector(frac_na = frac_na),
+    rows = rows,
+    cols = cols
+  )
+}
+
+#' Any tibble generator
+#'
+#' Generate random tibbles.
+#'
+#' @template rows
+#' @template cols
+#' @template frac_na
+#'
+#' @template generator
+#' @export
+any_tibble <- \(rows = c(1L, 10L),
+                cols = c(1L, 10L),
+                frac_na = 0) {
+  tibble_of(
+    any_vector(frac_na = frac_na),
+    rows = rows,
+    cols = cols
+  )
+}

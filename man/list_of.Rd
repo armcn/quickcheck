@@ -14,7 +14,7 @@ single number all vectors will have this length. If
 \code{len} is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example \code{len = c(1L, 10L)} would produce
-integer vectors with lengths between 1 and 10.}
+vectors with lengths between 1 and 10.}
 }
 \value{
 A \code{hedgehog.internal.gen} generator

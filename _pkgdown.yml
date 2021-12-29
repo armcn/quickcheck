@@ -8,7 +8,6 @@ template:
     base_font: {google: "Roboto"}
     heading_font: {google: "Lato"}
     code_font: {google: "Fira Code"}
-    font_size_root: "10px"
 navbar:
   structure:
     right: [search, github, twitter]
@@ -19,7 +18,7 @@ navbar:
       aria-label: Twitter
 reference:
 - title: Integer generators
-  desc: A set of generators to produce integers.
+  desc: A set of generators to produce integer vectors.
   contents:
     - integer_
     - integer_bounded
@@ -28,7 +27,7 @@ reference:
     - integer_positive
     - integer_negative
 - title: Double generators
-  desc: A set of generators to produce doubles.
+  desc: A set of generators to produce double vectors.
   contents:
     - double_
     - double_bounded
@@ -40,8 +39,8 @@ reference:
     - double_whole
 - title: Numeric generators
   desc: >
-    A set of generators to produce numeric values.
-    A numeric value may be an integer or a double.
+    A set of generators to produce numeric vectors.
+    A numeric vector will be an integer or a double vector.
   contents:
     - numeric_
     - numeric_bounded
@@ -49,67 +48,70 @@ reference:
     - numeric_right_bounded
     - numeric_positive
     - numeric_negative
-- title: Character generators
-  desc: A set of generators to produce characters.
+- title: Character generator
+  desc: A generator to produce character vectors.
   contents:
     - character_
-- title: Logical generators
-  desc: A generator to produce logicals.
+- title: Logical generator
+  desc: A generator to produce logical vectors.
   contents:
     - logical_
 - title: Date generators
-  desc: A set of generators to produce dates.
+  desc: A set of generators to produce date vectors.
   contents:
     - data_
     - date_bounded
     - date_left_bounded
     - date_right_bounded
 - title: POSIXct generators
-  desc: A set of generators to produce POSIXct date-times
+  desc: A set of generators to produce POSIXct vectors.
   contents:
     - posixct_
     - posixct_bounded
     - posixct_left_bounded
     - posixct_right_bounded
 - title: hms generators
-  desc: A set of generators to produce hms times
+  desc: A set of generators to produce hms vectors.
   contents:
     - hms_
     - hms_bounded
     - hms_left_bounded
     - hms_right_bounded
 - title: Factor generators
-  desc: A set of generators to produce factors
+  desc: A generator to produce factor vectors.
   contents:
     - factor_
 - title: List generators
-  desc: A set of modifiers to create lists
+  desc: A set of generators to produce lists.
   contents:
     - list_
     - list_of
 - title: Data Frame generators
   desc: A set of generators to produce data frames.
   contents:
-    - tibble_
-    - tibble_of
     - data_frame_
     - data_frame_of
-- title: Multi-class generators
+    - tibble_
+    - tibble_of
+- title: Random choice generators
   desc: A set of generators to produce random values.
   contents:
     - any_atomic
     - any_list
     - any_flat_list
     - any_vector
+    - any_data_frame
     - any_tibble
-    - any_dataframe
 - title: Generator modifiers
-  desc: A set of functions to modify generators
+  desc: A function to modify generators.
   contents:
     - equal_length
-    - empty
 - title: Other
-  desc: Other generators and combinators
+  desc: Other generators and combinators.
   contents:
     - one_of
     - constant
+- title: Tester
+  desc: A function to run property based tests.
+  contents:
+    - for_all

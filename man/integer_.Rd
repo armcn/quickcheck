@@ -27,7 +27,7 @@ single number all vectors will have this length. If
 \code{len} is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example \code{len = c(1L, 10L)} would produce
-integer vectors with lengths between 1 and 10.}
+vectors with lengths between 1 and 10.}
 
 \item{frac_na}{The approximate fraction of \code{NA} values to
 be included in the vector. A fraction of 0, the default,
@@ -45,4 +45,10 @@ A \code{hedgehog.internal.gen} generator
 }
 \description{
 A set of generators for integer vectors.
+}
+\examples{
+integer_() |> show_example()
+integer_(len = 10L, frac_na = 0.5) |> show_example()
+integer_bounded(left = -5L, right = 5L) |> show_example()
+
 }
