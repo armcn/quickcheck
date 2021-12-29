@@ -40,9 +40,7 @@ library(quickcheck)
 test_that("0 is the additive identity of +", {
   for_all(
     a = numeric_(),
-    property = \(a) {
-      expect_equal(a, a + 0)
-    }
+    property = \(a) expect_equal(a, a + 0)
   )          
 })
 
@@ -50,9 +48,7 @@ test_that("+ is commutative", {
   for_all(
     a = numeric_(),
     b = numeric_(),
-    property = \(a, b) {
-      expect_equal(a + b, b + a)
-    }
+    property = \(a, b) expect_equal(a + b, b + a)
   )          
 })
 
@@ -61,9 +57,7 @@ test_that("+ is associative", {
     a = numeric_(),
     b = numeric_(),
     c = numeric_(),
-    property = \(a, b, c) {
-      expect_equal(a + (b + c), (a + b) + c)
-    }
+    property = \(a, b, c) expect_equal(a + (b + c), (a + b) + c)
   )          
 })
 ```
@@ -78,7 +72,7 @@ test_that("distinct does nothing with a single row", {
   for_all(
     a = any_tibble(rows = 1L),
     property = \(a) {
-      expect_equal(distinct(a), a)
+      distinct(a) |> expect_equal(a)
     }
   )
 })
@@ -87,28 +81,18 @@ test_that("distinct returns original if rows are repeated", {
   for_all(
     a = any_tibble(rows = 1L),
     property = \(a) {
-      expect_equal(distinct(bind_rows(a, a)), a)
+      bind_rows(a, a) |> distinct() |> expect_equal(a)
     }
   )
 })
 
 test_that("distinct does nothing if rows are unique", {
   for_all(
-    a = tibble_of(
-      integer_positive(), 
-      any_vector(),
-      rows = 1L, 
-      cols = 2L
-    ),
-    b = tibble_of(
-      integer_negative(), 
-      any_vector(),
-      rows = 1L, 
-      cols = 2L
-    ),
+    a = tibble_of(integer_positive(), rows = 1L, cols = 1L),
+    b = tibble_of(integer_negative(), rows = 1L, cols = 1L),
     property = \(a, b) {
       unique_rows <- bind_rows(a, b)
-      expect_equal(distinct(unique_rows), unique_rows)
+      distinct(unique_rows) |> expect_equal(unique_rows)
     }
   )
 })
