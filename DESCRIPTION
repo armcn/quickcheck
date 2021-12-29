@@ -18,7 +18,8 @@ Imports:
     hedgehog,
     purrr,
     dplyr,
-    hms
+    hms,
+    stats
 Suggests: 
     testthat (>= 3.0.0),
     pure,

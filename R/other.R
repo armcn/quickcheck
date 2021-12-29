@@ -17,9 +17,5 @@ one_of <- \(..., prob = NULL) {
 #' @template generator
 #' @export
 constant <- \(a) {
-  if (is.null(a))
-    hedgehog::gen.choice(NULL)
-
-  else
-    hedgehog::gen.element(a)
+  hedgehog::gen.choice(a)
 }

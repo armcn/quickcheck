@@ -1,10 +1,10 @@
 test_that("generated values all equal argument", {
   for_all(
-    a = integer_(),
+    a = any_vector(),
     property = \(a) {
       for_all(
         b = constant(a),
-        property = \(b) expect_equal(a, b),
+        property = \(b) expect_equal(b, a),
         tests = 10L
       )
     },

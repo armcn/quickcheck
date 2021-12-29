@@ -1,7 +1,7 @@
 test_that(
   "one_of with single generator doesn't change generator", {
   for_all(
-    a = integer_(),
+    a = any_vector(),
     property = \(a) {
       for_all(
         b = one_of(a),

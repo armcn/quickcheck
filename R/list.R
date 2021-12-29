@@ -16,7 +16,7 @@ list_ <- \(...) {
 #' This will generate lists with all values coming from the
 #' single input generator.
 #'
-#' @template generator
+#' @param generator Generator
 #' @template len
 #'
 #' @template generator
