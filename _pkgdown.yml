@@ -3,11 +3,11 @@ template:
   bootstrap: 5
   bslib:
     bg: "#0d0d0d"
-    fg: "#e6e6e6"
+    fg: "#d9d9d9"
     primary: "#b392f0"
-    base_font: {google: "Roboto"}
-    heading_font: {google: "Lato"}
-    code_font: {google: "Fira Code"}
+    base_font: "Roboto"
+    heading_font: "Lato"
+    code_font: "Fira Code"
 navbar:
   structure:
     right: [search, github, twitter]
