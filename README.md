@@ -3,7 +3,7 @@
 
 # quickcheck
 
-<img src="man/figures/hex.png" style="float: right; width: 200px; height: 200px;"/>
+<img src="man/figures/hex.png" align="right" style="width: 200px; height: 200px;"/>
 
 <!-- badges: start -->
 
