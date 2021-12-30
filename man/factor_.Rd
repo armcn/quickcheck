@@ -27,5 +27,5 @@ A generator for factor vectors.
 }
 \examples{
 factor_() |> show_example()
-factor_(len = 10L, frac_na = 0.5)
+factor_(len = 10L, frac_na = 0.5) |> show_example()
 }

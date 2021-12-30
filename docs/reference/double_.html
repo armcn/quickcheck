@@ -60,21 +60,59 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span>, big_dbl <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
 <span class="fu">double_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
-<span class="fu">double_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">double_left_bounded</span><span class="op">(</span>
+  <span class="va">left</span>,
+  len <span class="op">=</span> <span class="fl">1L</span>,
+  frac_na <span class="op">=</span> <span class="fl">0</span>,
+  frac_nan <span class="op">=</span> <span class="fl">0</span>,
+  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span>
 
-<span class="fu">double_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">double_right_bounded</span><span class="op">(</span>
+  <span class="va">right</span>,
+  len <span class="op">=</span> <span class="fl">1L</span>,
+  frac_na <span class="op">=</span> <span class="fl">0</span>,
+  frac_nan <span class="op">=</span> <span class="fl">0</span>,
+  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span>
 
-<span class="fu">double_positive</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">double_positive</span><span class="op">(</span>
+  len <span class="op">=</span> <span class="fl">1L</span>,
+  frac_na <span class="op">=</span> <span class="fl">0</span>,
+  frac_nan <span class="op">=</span> <span class="fl">0</span>,
+  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span>
 
-<span class="fu">double_negative</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">double_negative</span><span class="op">(</span>
+  len <span class="op">=</span> <span class="fl">1L</span>,
+  frac_na <span class="op">=</span> <span class="fl">0</span>,
+  frac_nan <span class="op">=</span> <span class="fl">0</span>,
+  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span>
 
-<span class="fu">double_fractional</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">double_fractional</span><span class="op">(</span>
+  len <span class="op">=</span> <span class="fl">1L</span>,
+  frac_na <span class="op">=</span> <span class="fl">0</span>,
+  frac_nan <span class="op">=</span> <span class="fl">0</span>,
+  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span>
 
-<span class="fu">double_whole</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, frac_nan <span class="op">=</span> <span class="fl">0</span>, frac_inf <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+<span class="fu">double_whole</span><span class="op">(</span>
+  len <span class="op">=</span> <span class="fl">1L</span>,
+  frac_na <span class="op">=</span> <span class="fl">0</span>,
+  frac_nan <span class="op">=</span> <span class="fl">0</span>,
+  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -101,6 +139,11 @@ would include around 50% <code>NaN</code> values.</p></dd>
 <code>-Inf</code> values to be included in the vector. A fraction of
 0, the default, will include no <code>NA</code> values. A fraction
 of 0.5 would include around 50% <code>NA</code> values.</p></dd>
+<dt>big_dbl</dt>
+<dd><p>Should doubles near the maximum size be
+included? This may cause problems because if the result
+of a computation results in a double larger than the
+maximum it will return <code>Inf</code>.</p></dd>
 <dt>left</dt>
 <dd><p>The minimum possible value for generated
 numbers, inclusive.</p></dd>
@@ -113,6 +156,22 @@ numbers, inclusive.</p></dd>
     <p>A <code>hedgehog.internal.gen</code> generator</p>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">double_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 459453235</span>
+<span class="r-in"><span class="fu">double_</span><span class="op">(</span>big_dbl <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] Inf</span>
+<span class="r-in"><span class="fu">double_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>, right <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4.421603</span>
+<span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -227767162  539613264         NA         NA         NA         NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]         NA -990537690 -613323778         NA</span>
+<span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_nan <span class="op">=</span> <span class="fl">0.2</span>, frac_inf <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  398207857 -610270711  -10934320          0  111275802        Inf</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  889050773  589837934       -Inf  315013872</span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 

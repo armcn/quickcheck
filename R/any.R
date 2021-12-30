@@ -49,7 +49,7 @@ any_flat_list <- function(len = 1L, frac_na = 0) {
 #'
 #' @examples
 #' any_list() |> show_example()
-#' any_list(len = 10L, frac_na = 0.5)
+#' any_list(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
 any_list <- function(len = 1L, frac_na = 0) {
