@@ -5,9 +5,11 @@
 #' @template len
 #' @template frac_na
 #'
+#' @examples
+#' factor_() |> show_example()
+#' factor_(len = 10L, frac_na = 0.5)
 #' @template generator
 #' @export
-factor_ <- \(len = 1L, frac_na = 0) {
-  character_(len, frac_na) |>
-    hedgehog::gen.with(as.factor)
+factor_ <- function(len = 1L, frac_na = 0) {
+  hedgehog::gen.with(character_(len, frac_na), as.factor)
 }

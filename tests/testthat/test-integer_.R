@@ -6,12 +6,14 @@ test_that("integer_ generates pure integers", {
 })
 
 test_that(
-  "integer_ generates vectors of length 1 by default", {
-  for_all(
-    a = integer_(),
-    property = \(a) expect_equal(length(a), 1L)
-  )
-})
+  "integer_ generates vectors of length 1 by default",
+  {
+    for_all(
+      a = integer_(),
+      property = \(a) expect_equal(length(a), 1L)
+    )
+  }
+)
 
 test_that("integer_ generates vectors of specific length", {
   for_all(
@@ -28,24 +30,26 @@ test_that("integer_ generates vectors of specific length", {
 })
 
 test_that(
-  "integer_ generates vectors within a range of lengths", {
-  for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
-      for_all(
-        a = integer_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
+  "integer_ generates vectors within a range of lengths",
+  {
+    for_all(
+      min_len = integer_bounded(1L, 5L),
+      max_len = integer_bounded(5L, 10L),
+      property = \(min_len, max_len) {
+        for_all(
+          a = integer_(len = c(min_len, max_len)),
+          property = \(a) {
+            expect_true(
+              length(a) >= min_len && length(a) <= max_len
+            )
+          },
+          tests = 10L
+        )
+      },
+      tests = 10L
+    )
+  }
+)
 
 test_that("integer_ generates vectors with NAs", {
   for_all(
@@ -65,24 +69,28 @@ test_that("integer_bounded generates bounded integers", {
 })
 
 test_that(
-  "integer_left_bounded generates left bounded integers", {
-  left <- 100L
+  "integer_left_bounded generates left bounded integers",
+  {
+    left <- 100L
 
-  for_all(
-    a = integer_left_bounded(left = left),
-    property = \(a) expect_true(a >= left)
-  )
-})
+    for_all(
+      a = integer_left_bounded(left = left),
+      property = \(a) expect_true(a >= left)
+    )
+  }
+)
 
 test_that(
-  "integer_right_bounded generates right bounded integers", {
-  right <- 100L
+  "integer_right_bounded generates right bounded integers",
+  {
+    right <- 100L
 
-  for_all(
-    a = integer_right_bounded(right = right),
-    property = \(a) expect_true(a <= right)
-  )
-})
+    for_all(
+      a = integer_right_bounded(right = right),
+      property = \(a) expect_true(a <= right)
+    )
+  }
+)
 
 test_that("integer_positive generates positive integers", {
   for_all(

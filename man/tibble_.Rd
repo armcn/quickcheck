@@ -25,3 +25,7 @@ A \code{hedgehog.internal.gen} generator
 Construct tibble generators in a similar way to
 \code{dplyr::tibble}.
 }
+\examples{
+tibble_(a = integer_()) |> show_example()
+tibble_(a = integer_(), b = character_(), rows = 5L) |> show_example()
+}

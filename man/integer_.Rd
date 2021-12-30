@@ -9,17 +9,17 @@
 \alias{integer_negative}
 \title{Integer generators}
 \usage{
-integer_(len = 1L, frac_na = 0)
+integer_(len = 1L, frac_na = 0, big_int = FALSE)
 
 integer_bounded(left, right, len = 1L, frac_na = 0)
 
-integer_left_bounded(left, len = 1L, frac_na = 0)
+integer_left_bounded(left, len = 1L, frac_na = 0, big_int = FALSE)
 
-integer_right_bounded(right, len = 1L, frac_na = 0)
+integer_right_bounded(right, len = 1L, frac_na = 0, big_int = FALSE)
 
-integer_positive(len = 1L, frac_na = 0)
+integer_positive(len = 1L, frac_na = 0, big_int = FALSE)
 
-integer_negative(len = 1L, frac_na = 0)
+integer_negative(len = 1L, frac_na = 0, big_int = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -33,6 +33,11 @@ vectors with lengths between 1 and 10.}
 be included in the vector. A fraction of 0, the default,
 will include no \code{NA} values. A fraction of 0.5 would
 include around 50\% \code{NA} values.}
+
+\item{big_int}{Should integers near the maximum size be
+included? This may cause problems because if the result
+of a computation results in an integer larger than the
+maximum it will be silently coerced it to a double.}
 
 \item{left}{The minimum possible value for generated
 numbers, inclusive.}
@@ -48,7 +53,7 @@ A set of generators for integer vectors.
 }
 \examples{
 integer_() |> show_example()
-integer_(len = 10L, frac_na = 0.5) |> show_example()
+integer_(big_int = TRUE) |> show_example()
 integer_bounded(left = -5L, right = 5L) |> show_example()
-
+integer_(len = 10L, frac_na = 0.5) |> show_example()
 }

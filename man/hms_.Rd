@@ -40,3 +40,11 @@ A \code{hedgehog.internal.gen} generator
 \description{
 A set of generators for hms vectors.
 }
+\examples{
+hms_() |> show_example()
+hms_bounded(
+  left = hms::as_hms("00:00:00"),
+  right = hms::as_hms("12:00:00")
+) |> show_example()
+hms_(len = 10L, frac_na = 0.5) |> show_example()
+}

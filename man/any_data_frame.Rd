@@ -34,3 +34,8 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Generate random data frames.
 }
+\examples{
+any_data_frame() |> show_example()
+any_data_frame(rows = 10L) |> show_example()
+any_data_frame(cols = 5L, frac_na = 0.5) |> show_example()
+}

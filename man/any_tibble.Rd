@@ -34,3 +34,8 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Generate random tibbles.
 }
+\examples{
+any_tibble() |> show_example()
+any_tibble(rows = 10L) |> show_example()
+any_tibble(cols = 5L, frac_na = 0.5) |> show_example()
+}

@@ -6,12 +6,14 @@ test_that("numeric_ generates pure numerics", {
 })
 
 test_that(
-  "numeric_ generates vectors of length 1 by default", {
-  for_all(
-    a = numeric_(),
-    property = \(a) expect_equal(length(a), 1L)
-  )
-})
+  "numeric_ generates vectors of length 1 by default",
+  {
+    for_all(
+      a = numeric_(),
+      property = \(a) expect_equal(length(a), 1L)
+    )
+  }
+)
 
 test_that("numeric_ generates vectors of specific length", {
   for_all(
@@ -28,24 +30,26 @@ test_that("numeric_ generates vectors of specific length", {
 })
 
 test_that(
-  "numeric_ generates vectors within a range of lengths", {
-  for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
-      for_all(
-        a = numeric_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
+  "numeric_ generates vectors within a range of lengths",
+  {
+    for_all(
+      min_len = integer_bounded(1L, 5L),
+      max_len = integer_bounded(5L, 10L),
+      property = \(min_len, max_len) {
+        for_all(
+          a = numeric_(len = c(min_len, max_len)),
+          property = \(a) {
+            expect_true(
+              length(a) >= min_len && length(a) <= max_len
+            )
+          },
+          tests = 10L
+        )
+      },
+      tests = 10L
+    )
+  }
+)
 
 test_that("numeric_ generates vectors with NAs", {
   for_all(
@@ -65,24 +69,28 @@ test_that("numeric_bounded generates bounded numerics", {
 })
 
 test_that(
-  "numeric_left_bounded generates left bounded numerics", {
-  left <- 100L
+  "numeric_left_bounded generates left bounded numerics",
+  {
+    left <- 100L
 
-  for_all(
-    a = numeric_left_bounded(left = left),
-    property = \(a) expect_true(a >= left)
-  )
-})
+    for_all(
+      a = numeric_left_bounded(left = left),
+      property = \(a) expect_true(a >= left)
+    )
+  }
+)
 
 test_that(
-  "numeric_right_bounded generates right bounded numerics", {
-  right <- 100L
+  "numeric_right_bounded generates right bounded numerics",
+  {
+    right <- 100L
 
-  for_all(
-    a = numeric_right_bounded(right = right),
-    property = \(a) expect_true(a <= right)
-  )
-})
+    for_all(
+      a = numeric_right_bounded(right = right),
+      property = \(a) expect_true(a <= right)
+    )
+  }
+)
 
 test_that("numeric_positive generates positive numerics", {
   for_all(

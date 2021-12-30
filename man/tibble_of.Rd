@@ -33,3 +33,7 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Random tibble generator
 }
+\examples{
+tibble_of(logical_(), date_()) |> show_example()
+tibble_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
+}

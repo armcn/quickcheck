@@ -26,3 +26,7 @@ A \code{hedgehog.internal.gen} generator
 Generate vectors of integer, double, character, or
 logical.
 }
+\examples{
+any_atomic() |> show_example()
+any_atomic(len = 10L, frac_na = 0.5) |> show_example()
+}

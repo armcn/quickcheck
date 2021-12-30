@@ -7,9 +7,12 @@
 #' being vector generators.
 #' @template rows
 #'
+#' @examples
+#' data_frame_(a = integer_()) |> show_example()
+#' data_frame_(a = integer_(), b = character_(), rows = 5L) |> show_example()
 #' @template generator
 #' @export
-data_frame_ <- \(..., rows = c(1L, 10L)) {
+data_frame_ <- function(..., rows = c(1L, 10L)) {
   tibble_(..., rows = rows) |>
     hedgehog::gen.with(as.data.frame)
 }
@@ -22,9 +25,12 @@ data_frame_ <- \(..., rows = c(1L, 10L)) {
 #' @template rows
 #' @template cols
 #'
+#' @examples
+#' data_frame_of(logical_(), date_()) |> show_example()
+#' data_frame_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
 #' @template generator
 #' @export
-data_frame_of <- \(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
+data_frame_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   tibble_of(..., rows = rows, cols = cols) |>
     hedgehog::gen.with(as.data.frame)
 }
@@ -38,9 +44,12 @@ data_frame_of <- \(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
 #' being vector generators.
 #' @template rows
 #'
+#' @examples
+#' tibble_(a = integer_()) |> show_example()
+#' tibble_(a = integer_(), b = character_(), rows = 5L) |> show_example()
 #' @template generator
 #' @export
-tibble_ <- \(..., rows = c(1L, 10L)) {
+tibble_ <- function(..., rows = c(1L, 10L)) {
   equal_length(..., len = rows) |>
     hedgehog::gen.with(dplyr::as_tibble)
 }
@@ -53,16 +62,19 @@ tibble_ <- \(..., rows = c(1L, 10L)) {
 #' @template rows
 #' @template cols
 #'
+#' @examples
+#' tibble_of(logical_(), date_()) |> show_example()
+#' tibble_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
 #' @template generator
 #' @export
-tibble_of <- \(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
+tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   hedgehog::gen.with(
     repeat_cols(..., size = cols),
     purrr::partial(repeat_rows, rows = rows)
   )
 }
 
-repeat_cols <- \(..., size) {
+repeat_cols <- function(..., size) {
   as_tibble <-
     \(a) suppressMessages(
       dplyr::as_tibble(a, .name_repair = "unique")
@@ -88,7 +100,7 @@ repeat_cols <- \(..., size) {
     hedgehog::gen.with(as_tibble)
 }
 
-repeat_rows <- \(df, rows) {
+repeat_rows <- function(df, rows) {
   repeats <-
     if (length(rows) == 1L)
       rows

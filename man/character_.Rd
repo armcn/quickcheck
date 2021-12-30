@@ -30,3 +30,8 @@ A \code{hedgehog.internal.gen} generator
 \description{
 A set of generators for character vectors.
 }
+\examples{
+character_() |> show_example()
+character_(len = 10L, frac_na = 0.5) |> show_example()
+character_(len = 10L, frac_empty = 0.5) |> show_example()
+}

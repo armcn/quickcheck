@@ -5,9 +5,12 @@
 #'
 #' @param ... Generators
 #'
+#' @examples
+#' list_(integer_(), logical_()) |> show_example()
+#' list_(a = any_vector(), b = any_vector()) |> show_example()
 #' @template generator
 #' @export
-list_ <- \(...) {
+list_ <- function(...) {
   hedgehog::gen.with(list(...), as.list)
 }
 
@@ -19,8 +22,10 @@ list_ <- \(...) {
 #' @param generator Generator
 #' @template len
 #'
+#' @examples
+#' list_of(integer_(), len = 10L) |> show_example()
 #' @template generator
 #' @export
-list_of <- \(generator, len = 1L) {
+list_of <- function(generator, len = 1L) {
   vectorize(list(generator), len)
 }

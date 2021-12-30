@@ -15,3 +15,6 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Generate the same value every time
 }
+\examples{
+constant(NULL) |> show_example()
+}

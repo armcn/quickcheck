@@ -6,9 +6,13 @@
 #' @template frac_na
 #' @template frac_empty
 #'
+#' @examples
+#' character_() |> show_example()
+#' character_(len = 10L, frac_na = 0.5) |> show_example()
+#' character_(len = 10L, frac_empty = 0.5) |> show_example()
 #' @template generator
 #' @export
-character_ <- \(len = 1L, frac_na = 0, frac_empty = 0) {
+character_ <- function(len = 1L, frac_na = 0, frac_empty = 0) {
   bytes_to_character(32L:126L) |>
     hedgehog::gen.element() |>
     with_empty(frac_empty) |>
@@ -16,7 +20,7 @@ character_ <- \(len = 1L, frac_na = 0, frac_empty = 0) {
     vectorize(len)
 }
 
-bytes_to_character <- \(bytes) {
+bytes_to_character <- function(bytes) {
   as.raw(bytes) |>
     rawToChar() |>
     strsplit("") |>

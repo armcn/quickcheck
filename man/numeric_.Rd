@@ -9,17 +9,17 @@
 \alias{numeric_negative}
 \title{Numeric generators}
 \usage{
-numeric_(len = 1L, frac_na = 0)
+numeric_(len = 1L, frac_na = 0, big_num = FALSE)
 
 numeric_bounded(left, right, len = 1L, frac_na = 0)
 
-numeric_left_bounded(left, len = 1L, frac_na = 0)
+numeric_left_bounded(left, len = 1L, frac_na = 0, big_num = FALSE)
 
-numeric_right_bounded(right, len = 1L, frac_na = 0)
+numeric_right_bounded(right, len = 1L, frac_na = 0, big_num = FALSE)
 
-numeric_positive(len = 1L, frac_na = 0)
+numeric_positive(len = 1L, frac_na = 0, big_num = FALSE)
 
-numeric_negative(len = 1L, frac_na = 0)
+numeric_negative(len = 1L, frac_na = 0, big_num = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -34,6 +34,12 @@ be included in the vector. A fraction of 0, the default,
 will include no \code{NA} values. A fraction of 0.5 would
 include around 50\% \code{NA} values.}
 
+\item{big_num}{Should integers or doubles near the
+maximum size be included? This may cause problems because
+if the result of a computation results in a number
+larger than the maximum an integer will be silently
+coerced to a double and a double will return \code{Inf}.}
+
 \item{left}{The minimum possible value for generated
 numbers, inclusive.}
 
@@ -46,4 +52,10 @@ A \code{hedgehog.internal.gen} generator
 \description{
 A set of generators for numeric vectors. Numeric vectors
 can be either integer or double vectors.
+}
+\examples{
+numeric_() |> show_example()
+numeric_(big_num = TRUE) |> show_example()
+numeric_bounded(left = -5L, right = 5L) |> show_example()
+numeric_(len = 10L, frac_na = 0.5) |> show_example()
 }

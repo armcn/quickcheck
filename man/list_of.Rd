@@ -23,3 +23,6 @@ A \code{hedgehog.internal.gen} generator
 This will generate lists with all values coming from the
 single input generator.
 }
+\examples{
+list_of(integer_(), len = 10L) |> show_example()
+}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/for_all.R
 \name{for_all}
 \alias{for_all}
-\title{For all}
+\title{Test properties of a function}
 \usage{
 for_all(
   ...,
@@ -16,16 +16,34 @@ for_all(
 \arguments{
 \item{...}{Dots}
 
-\item{property}{Property}
+\item{property}{A function which takes a value from from
+the generator and calls an expectation on it.}
 
-\item{tests}{Tests}
+\item{tests}{The number of tests to run.}
 
-\item{size}{Size}
+\item{size}{The maximum length of the generators.}
 
-\item{shrinks}{Shrinks}
+\item{shrinks}{The maximum number of shrinks to run when
+shrinking a value to find the smallest counterexample.}
 
-\item{discards}{Discards}
+\item{discards}{The maximum number of discards to permit
+when running the property.}
+}
+\value{
+TRUE if tests pass
 }
 \description{
-For all
+Test properties of a function
+}
+\examples{
+library(testthat)
+for_all(
+  a = numeric_(),
+  b = numeric_(),
+  property = \(a, b) expect_equal(a + b, b + a)
+)
+for_all(
+  x = any_vector(),
+  property = \(x) rev(x) |> rev() |> expect_equal(x)
+)
 }

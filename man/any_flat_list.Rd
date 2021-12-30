@@ -25,3 +25,7 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Generate lists where each item has a length of 1.
 }
+\examples{
+any_flat_list() |> show_example()
+any_flat_list(len = 10L, frac_na = 0.5) |> show_example()
+}

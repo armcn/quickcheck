@@ -26,3 +26,7 @@ A \code{hedgehog.internal.gen} generator
 Generate random lists containing other lists or atomic
 vectors of variable lengths.
 }
+\examples{
+any_list() |> show_example()
+any_list(len = 10L, frac_na = 0.5)
+}

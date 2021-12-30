@@ -25,3 +25,7 @@ A \code{hedgehog.internal.gen} generator
 \description{
 A generator for logical vectors.
 }
+\examples{
+logical_() |> show_example()
+logical_(len = 10L, frac_na = 0.5) |> show_example()
+}

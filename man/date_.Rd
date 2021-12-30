@@ -40,3 +40,11 @@ A \code{hedgehog.internal.gen} generator
 \description{
 A set of generators for date vectors.
 }
+\examples{
+date_() |> show_example()
+date_bounded(
+  left = as.Date("2020-01-01"),
+  right = as.Date("2020-01-10")
+) |> show_example()
+date_(len = 10L, frac_na = 0.5) |> show_example()
+}

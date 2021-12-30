@@ -25,3 +25,7 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Generate random atomic vectors or lists.
 }
+\examples{
+any_vector() |> show_example()
+any_vector(len = 10L, frac_na = 0.5) |> show_example()
+}

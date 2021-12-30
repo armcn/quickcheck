@@ -11,21 +11,59 @@
 \alias{double_whole}
 \title{Double generators}
 \usage{
-double_(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0, big_dbl = FALSE)
 
 double_bounded(left, right, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
 
-double_left_bounded(left, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_left_bounded(
+  left,
+  len = 1L,
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 
-double_right_bounded(right, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_right_bounded(
+  right,
+  len = 1L,
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 
-double_positive(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_positive(
+  len = 1L,
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 
-double_negative(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_negative(
+  len = 1L,
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 
-double_fractional(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_fractional(
+  len = 1L,
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 
-double_whole(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_whole(
+  len = 1L,
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -50,6 +88,11 @@ would include around 50\% \code{NaN} values.}
 0, the default, will include no \code{NA} values. A fraction
 of 0.5 would include around 50\% \code{NA} values.}
 
+\item{big_dbl}{Should doubles near the maximum size be
+included? This may cause problems because if the result
+of a computation results in a double larger than the
+maximum it will return \code{Inf}.}
+
 \item{left}{The minimum possible value for generated
 numbers, inclusive.}
 
@@ -61,4 +104,11 @@ A \code{hedgehog.internal.gen} generator
 }
 \description{
 A set of generators for double vectors.
+}
+\examples{
+double_() |> show_example()
+double_(big_dbl = TRUE) |> show_example()
+double_bounded(left = -5, right = 5) |> show_example()
+double_(len = 10L, frac_na = 0.5) |> show_example()
+double_(len = 10L, frac_nan = 0.2, frac_inf = 0.2) |> show_example()
 }

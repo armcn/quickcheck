@@ -23,3 +23,6 @@ A \code{hedgehog.internal.gen} generator
 This will set the length of multiple generators to be the
 same.
 }
+\examples{
+equal_length(a = integer_(), b = character_(), len = 10L) |> show_example()
+}

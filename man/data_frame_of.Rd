@@ -33,3 +33,7 @@ A \code{hedgehog.internal.gen} generator
 \description{
 Random data frame generator
 }
+\examples{
+data_frame_of(logical_(), date_()) |> show_example()
+data_frame_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
+}

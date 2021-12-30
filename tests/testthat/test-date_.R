@@ -6,47 +6,53 @@ test_that("date_ generates pure dates", {
 })
 
 test_that(
-  "date_ generates vectors of length 1 by default", {
-  for_all(
-    a = date_(),
-    property = \(a) expect_equal(length(a), 1L)
-  )
-})
+  "date_ generates vectors of length 1 by default",
+  {
+    for_all(
+      a = date_(),
+      property = \(a) expect_equal(length(a), 1L)
+    )
+  }
+)
 
 test_that(
-  "date_ generates vectors of specific length", {
-  for_all(
-    len = integer_bounded(1L, 10L),
-    property = \(len) {
-      for_all(
-        a = date_(len = len),
-        property = \(a) expect_equal(length(a), len),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
+  "date_ generates vectors of specific length",
+  {
+    for_all(
+      len = integer_bounded(1L, 10L),
+      property = \(len) {
+        for_all(
+          a = date_(len = len),
+          property = \(a) expect_equal(length(a), len),
+          tests = 10L
+        )
+      },
+      tests = 10L
+    )
+  }
+)
 
 test_that(
-  "date_ generates vectors within a range of lengths", {
-  for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
-      for_all(
-        a = date_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
+  "date_ generates vectors within a range of lengths",
+  {
+    for_all(
+      min_len = integer_bounded(1L, 5L),
+      max_len = integer_bounded(5L, 10L),
+      property = \(min_len, max_len) {
+        for_all(
+          a = date_(len = c(min_len, max_len)),
+          property = \(a) {
+            expect_true(
+              length(a) >= min_len && length(a) <= max_len
+            )
+          },
+          tests = 10L
+        )
+      },
+      tests = 10L
+    )
+  }
+)
 
 test_that("date_ generates vectors with NAs", {
   for_all(
@@ -66,21 +72,25 @@ test_that("date_bounded generates bounded dates", {
 })
 
 test_that(
-  "date_left_bounded generates left bounded dates", {
-  left <- as.Date("2000-01-01")
+  "date_left_bounded generates left bounded dates",
+  {
+    left <- as.Date("2000-01-01")
 
-  for_all(
-    a = date_left_bounded(left = left),
-    property = \(a) expect_true(a >= left)
-  )
-})
+    for_all(
+      a = date_left_bounded(left = left),
+      property = \(a) expect_true(a >= left)
+    )
+  }
+)
 
 test_that(
-  "date_right_bounded generates right bounded dates", {
-  right <- as.Date("2010-01-01")
+  "date_right_bounded generates right bounded dates",
+  {
+    right <- as.Date("2010-01-01")
 
-  for_all(
-    a = date_right_bounded(right = right),
-    property = \(a) expect_true(a <= right)
-  )
-})
+    for_all(
+      a = date_right_bounded(right = right),
+      property = \(a) expect_true(a <= right)
+    )
+  }
+)
