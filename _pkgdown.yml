@@ -17,7 +17,7 @@ navbar:
       href: http://twitter.com/ShinyD3js
       aria-label: Twitter
 reference:
-- title: Integer generators
+- title: Integer
   desc: A set of generators to produce integer vectors.
   contents:
     - integer_
@@ -26,7 +26,7 @@ reference:
     - integer_right_bounded
     - integer_positive
     - integer_negative
-- title: Double generators
+- title: Double
   desc: A set of generators to produce double vectors.
   contents:
     - double_
@@ -37,7 +37,7 @@ reference:
     - double_negative
     - double_fractional
     - double_whole
-- title: Numeric generators
+- title: Numeric
   desc: >
     A set of generators to produce numeric vectors.
     A numeric vector will be an integer or a double vector.
@@ -48,52 +48,52 @@ reference:
     - numeric_right_bounded
     - numeric_positive
     - numeric_negative
-- title: Character generator
+- title: Character
   desc: A generator to produce character vectors.
   contents:
     - character_
-- title: Logical generator
+- title: Logical
   desc: A generator to produce logical vectors.
   contents:
     - logical_
-- title: Date generators
+- title: Date
   desc: A set of generators to produce date vectors.
   contents:
     - data_
     - date_bounded
     - date_left_bounded
     - date_right_bounded
-- title: POSIXct generators
+- title: POSIXct
   desc: A set of generators to produce POSIXct vectors.
   contents:
     - posixct_
     - posixct_bounded
     - posixct_left_bounded
     - posixct_right_bounded
-- title: hms generators
+- title: hms
   desc: A set of generators to produce hms vectors.
   contents:
     - hms_
     - hms_bounded
     - hms_left_bounded
     - hms_right_bounded
-- title: Factor generators
+- title: Factor
   desc: A generator to produce factor vectors.
   contents:
     - factor_
-- title: List generators
+- title: List
   desc: A set of generators to produce lists.
   contents:
     - list_
     - list_of
-- title: Data Frame generators
+- title: Data Frame
   desc: A set of generators to produce data frames.
   contents:
     - data_frame_
     - data_frame_of
     - tibble_
     - tibble_of
-- title: Random choice generators
+- title: Any
   desc: A set of generators to produce random values.
   contents:
     - any_atomic
@@ -102,16 +102,12 @@ reference:
     - any_vector
     - any_data_frame
     - any_tibble
-- title: Generator modifiers
-  desc: A function to modify generators.
-  contents:
-    - equal_length
 - title: Other
   desc: Other generators and combinators.
   contents:
     - one_of
     - constant
-- title: Tester
+- title: Test runner
   desc: A function to run property based tests.
   contents:
     - for_all

@@ -13,11 +13,16 @@
 #' @template generator
 #' @export
 character_ <- function(len = 1L, frac_na = 0, frac_empty = 0) {
-  bytes_to_character(32L:126L) |>
-    hedgehog::gen.element() |>
-    with_empty(frac_empty) |>
-    with_na(frac_na) |>
-    vectorize(len)
+  character_set <-
+    bytes_to_character(32L:126L)
+
+  qc_gen(\(len2 = len)
+    replicate(1000L, random_string(character_set)) |>
+      hedgehog::gen.element() |>
+      replace_frac_with("", frac_empty) |>
+      replace_frac_with(NA_character_, frac_na) |>
+      vectorize(len2)
+  )
 }
 
 bytes_to_character <- function(bytes) {
@@ -25,4 +30,10 @@ bytes_to_character <- function(bytes) {
     rawToChar() |>
     strsplit("") |>
     unlist()
+}
+
+random_string <- function(character_set) {
+  character_set |>
+    sample(stats::runif(1L, 1L, 10L)) |>
+    paste0(collapse = "")
 }

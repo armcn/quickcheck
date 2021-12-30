@@ -17,28 +17,36 @@
 #' @template generator
 #' @export
 hms_ <- function(len = 1L, frac_na = 0) {
-  hms_bounded(min_hms(), max_hms(), len, frac_na)
+  qc_gen(\(len2 = len)
+    hms_bounded(min_hms(), max_hms(), len2, frac_na)()
+  )
 }
 
 #' @rdname hms_
 #' @export
 hms_bounded <- function(left, right, len = 1L, frac_na = 0) {
-  hedgehog::gen.unif(as.double(left), as.double(right)) |>
-    hedgehog::gen.with(hms::as_hms) |>
-    with_na(frac_na) |>
-    vectorize(len)
+  qc_gen(\(len2 = len)
+    hedgehog::gen.unif(as.double(left), as.double(right)) |>
+      hedgehog::gen.with(hms::as_hms) |>
+      replace_frac_with(NA, frac_na) |>
+      vectorize(len2)
+  )
 }
 
 #' @rdname hms_
 #' @export
 hms_left_bounded <- function(left, len = 1L, frac_na = 0) {
-  hms_bounded(left, max_hms(), len, frac_na)
+  qc_gen(\(len2 = len)
+    hms_bounded(left, max_hms(), len2, frac_na)()
+  )
 }
 
 #' @rdname hms_
 #' @export
 hms_right_bounded <- function(right, len = 1L, frac_na = 0) {
-  hms_bounded(min_hms(), right, len, frac_na)
+  qc_gen(\(len2 = len)
+    hms_bounded(min_hms(), right, len2, frac_na)()
+  )
 }
 
 min_hms <- function() {

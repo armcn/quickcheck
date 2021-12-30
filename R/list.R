@@ -11,7 +11,11 @@
 #' @template generator
 #' @export
 list_ <- function(...) {
-  hedgehog::gen.with(list(...), as.list)
+  qc_gen(\()
+    list(...) |>
+      purrr::map(\(a) a()) |>
+      hedgehog::gen.with(as.list)
+  )
 }
 
 #' Variable length list generator
@@ -27,5 +31,7 @@ list_ <- function(...) {
 #' @template generator
 #' @export
 list_of <- function(generator, len = 1L) {
-  vectorize(list(generator), len)
+  qc_gen(\(len2 = len)
+    vectorize(list(generator()), len2)
+  )
 }

@@ -11,5 +11,9 @@
 #' @template generator
 #' @export
 factor_ <- function(len = 1L, frac_na = 0) {
-  hedgehog::gen.with(character_(len, frac_na), as.factor)
+  qc_gen(\(len2 = len)
+    character_(len2)() |>
+      hedgehog::gen.with(as.factor) |>
+      replace_frac_with(NA, frac_na)
+  )
 }

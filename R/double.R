@@ -23,13 +23,15 @@ double_ <- function(len = 1L,
                     frac_nan = 0,
                     frac_inf = 0,
                     big_dbl = FALSE) {
-  double_bounded(
-    max_negative_double(big_dbl),
-    max_positive_double(big_dbl),
-    len,
-    frac_na,
-    frac_nan,
-    frac_inf
+  qc_gen(\(len2 = len)
+    double_bounded(
+      max_negative_double(big_dbl),
+      max_positive_double(big_dbl),
+      len2,
+      frac_na,
+      frac_nan,
+      frac_inf
+    )()
   )
 }
 
@@ -49,12 +51,14 @@ double_bounded <- function(left,
       else
         a
 
-  hedgehog::gen.unif(left, right) |>
-    ensure_some_zeros() |>
-    with_na(frac_na) |>
-    with_nan(frac_nan) |>
-    with_inf(frac_inf) |>
-    vectorize(len)
+  qc_gen(\(len2 = len)
+    hedgehog::gen.unif(left, right) |>
+      ensure_some_zeros() |>
+      replace_frac_with(NA_real_, frac_na) |>
+      replace_frac_with(NaN, frac_nan) |>
+      replace_frac_inf(frac_inf) |>
+      vectorize(len2)
+  )
 }
 
 #' @rdname double_
@@ -65,13 +69,15 @@ double_left_bounded <- function(left,
                                 frac_nan = 0,
                                 frac_inf = 0,
                                 big_dbl = FALSE) {
-  double_bounded(
-    left,
-    max_positive_double(big_dbl),
-    len,
-    frac_na,
-    frac_nan,
-    frac_inf
+  qc_gen(\(len2 = len)
+    double_bounded(
+      left,
+      max_positive_double(big_dbl),
+      len2,
+      frac_na,
+      frac_nan,
+      frac_inf
+    )()
   )
 }
 
@@ -83,13 +89,15 @@ double_right_bounded <- function(right,
                                  frac_nan = 0,
                                  frac_inf = 0,
                                  big_dbl = FALSE) {
-  double_bounded(
-    max_negative_double(big_dbl),
-    right,
-    len,
-    frac_na,
-    frac_nan,
-    frac_inf
+  qc_gen(\(len2 = len)
+    double_bounded(
+      max_negative_double(big_dbl),
+      right,
+      len2,
+      frac_na,
+      frac_nan,
+      frac_inf
+    )()
   )
 }
 
@@ -100,13 +108,15 @@ double_positive <- function(len = 1L,
                             frac_nan = 0,
                             frac_inf = 0,
                             big_dbl = FALSE) {
-  double_left_bounded(
-    min_positive_double(),
-    len,
-    frac_na,
-    frac_nan,
-    frac_inf,
-    big_dbl
+  qc_gen(\(len2 = len)
+    double_left_bounded(
+      min_positive_double(),
+      len2,
+      frac_na,
+      frac_nan,
+      frac_inf,
+      big_dbl
+    )()
   )
 }
 
@@ -117,13 +127,15 @@ double_negative <- function(len = 1L,
                             frac_nan = 0,
                             frac_inf = 0,
                             big_dbl = FALSE) {
-  double_right_bounded(
-    min_negative_double(),
-    len,
-    frac_na,
-    frac_nan,
-    frac_inf,
-    big_dbl
+  qc_gen(\(len2 = len)
+    double_right_bounded(
+      min_negative_double(),
+      len2,
+      frac_na,
+      frac_nan,
+      frac_inf,
+      big_dbl
+    )()
   )
 }
 
@@ -137,17 +149,19 @@ double_fractional <- function(len = 1L,
   keep_fractional <-
     \(a) a[a %% 1L > 0.0001]
 
-  stats::runif(
-    1e6,
-    max_negative_double(big_dbl),
-    max_positive_double(big_dbl)
-  ) |>
-    keep_fractional() |>
-    hedgehog::gen.element() |>
-    with_na(frac_na) |>
-    with_nan(frac_nan) |>
-    with_inf(frac_inf) |>
-    vectorize(len)
+  qc_gen(\(len2 = len)
+    stats::runif(
+      1e6,
+      max_negative_double(big_dbl),
+      max_positive_double(big_dbl)
+    ) |>
+      keep_fractional() |>
+      hedgehog::gen.element() |>
+      replace_frac_with(NA_real_, frac_na) |>
+      replace_frac_with(NaN, frac_nan) |>
+      replace_frac_inf(frac_inf) |>
+      vectorize(len2)
+  )
 }
 
 #' @rdname double_
@@ -157,21 +171,35 @@ double_whole <- function(len = 1L,
                          frac_nan = 0,
                          frac_inf = 0,
                          big_dbl = FALSE) {
-  hedgehog::gen.with(
-    double_(
-      len,
-      frac_na,
-      frac_nan,
-      frac_inf,
-      big_dbl
-    ),
-    round
+  qc_gen(\(len2 = len)
+    hedgehog::gen.with(
+      double_(
+        len2,
+        frac_na,
+        frac_nan,
+        frac_inf,
+        big_dbl
+      )(),
+      round
+    )
   )
+}
+
+replace_frac_inf <- function(generator, frac_inf) {
+  random_inf <-
+    \()
+      if (stats::runif(1L) >= 0.5)
+        Inf
+
+      else
+        -Inf
+
+  replace_frac_with(generator, random_inf(), frac_inf)
 }
 
 max_positive_double <- function(big_dbl = FALSE) {
   if (big_dbl)
-    .Machine$double.xmax
+    .Machine$double.xmax / 2
 
   else
     1e9

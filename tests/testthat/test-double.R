@@ -5,15 +5,12 @@ test_that("double_ generates pure doubles", {
   )
 })
 
-test_that(
-  "double_ generates vectors of length 1 by default",
-  {
-    for_all(
-      a = double_(),
-      property = \(a) expect_equal(length(a), 1L)
-    )
-  }
-)
+test_that("double_ generates vectors of length 1 by default", {
+  for_all(
+    a = double_(),
+    property = \(a) expect_equal(length(a), 1L)
+  )
+})
 
 test_that("double_ generates vectors of specific length", {
   for_all(
@@ -29,32 +26,31 @@ test_that("double_ generates vectors of specific length", {
   )
 })
 
-test_that(
-  "double_ generates vectors within a range of lengths",
-  {
-    for_all(
-      min_len = integer_bounded(1L, 5L),
-      max_len = integer_bounded(5L, 10L),
-      property = \(min_len, max_len) {
-        for_all(
-          a = double_(len = c(min_len, max_len)),
-          property = \(a) {
-            expect_true(
-              length(a) >= min_len && length(a) <= max_len
-            )
-          },
-          tests = 10L
-        )
-      },
-      tests = 10L
-    )
-  }
-)
+test_that("double_ generates vectors within a range of lengths", {
+  for_all(
+    min_len = integer_bounded(1L, 5L),
+    max_len = integer_bounded(5L, 10L),
+    property = \(min_len, max_len) {
+      for_all(
+        a = double_(len = c(min_len, max_len)),
+        property = \(a) {
+          expect_true(
+            length(a) >= min_len && length(a) <= max_len
+          )
+        },
+        tests = 10L
+      )
+    },
+    tests = 10L
+  )
+})
 
-test_that("double_ generates vectors with NAs", {
+test_that("double_ generates vectors with NA_real_", {
+  is_na_real <- \(a) is.na(a) & is.double(a)
+
   for_all(
     a = double_(len = 10L, frac_na = 1),
-    property = \(a) expect_true(all(is.na(a)))
+    property = \(a) expect_true(all(is_na_real(a)))
   )
 })
 
@@ -72,6 +68,13 @@ test_that("double_ generates vectors with Infs", {
   )
 })
 
+test_that("double_ generates doubles small enough to be squared", {
+  for_all(
+    a = double_(),
+    property = \(a) expect_false(is.infinite(a * a))
+  )
+})
+
 test_that("double_bounded generates bounded doubles", {
   left <- -100L
   right <- 100L
@@ -82,29 +85,23 @@ test_that("double_bounded generates bounded doubles", {
   )
 })
 
-test_that(
-  "double_left_bounded generates left bounded doubles",
-  {
-    left <- 100L
+test_that("double_left_bounded generates left bounded doubles", {
+  left <- 100L
 
-    for_all(
-      a = double_left_bounded(left = left),
-      property = \(a) expect_true(a >= left)
-    )
-  }
-)
+  for_all(
+    a = double_left_bounded(left = left),
+    property = \(a) expect_true(a >= left)
+  )
+})
 
-test_that(
-  "double_right_bounded generates right bounded doubles",
-  {
-    right <- 100L
+test_that("double_right_bounded generates right bounded doubles", {
+  right <- 100L
 
-    for_all(
-      a = double_right_bounded(right = right),
-      property = \(a) expect_true(a <= right)
-    )
-  }
-)
+  for_all(
+    a = double_right_bounded(right = right),
+    property = \(a) expect_true(a <= right)
+  )
+})
 
 test_that("double_positive generates positive doubles", {
   for_all(
@@ -120,15 +117,12 @@ test_that("double_negative generates negative doubles", {
   )
 })
 
-test_that(
-  "double_fractional generates fractional doubles",
-  {
-    for_all(
-      a = double_fractional(),
-      property = \(a) expect_true(a %% 1L != 0L)
-    )
-  }
-)
+test_that("double_fractional generates fractional doubles", {
+  for_all(
+    a = double_fractional(),
+    property = \(a) expect_true(a %% 1L != 0L)
+  )
+})
 
 test_that("double_whole generates whole doubles", {
   for_all(

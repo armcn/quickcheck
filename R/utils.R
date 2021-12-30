@@ -6,4 +6,6 @@ fail <- function(...) {
   stop(..., call. = FALSE)
 }
 
-
+qc_gen <- function(a) {
+  structure(a, class = "quickcheck_generator")
+}

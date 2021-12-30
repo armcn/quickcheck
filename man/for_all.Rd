@@ -29,9 +29,6 @@ shrinking a value to find the smallest counterexample.}
 \item{discards}{The maximum number of discards to permit
 when running the property.}
 }
-\value{
-TRUE if tests pass
-}
 \description{
 Test properties of a function
 }

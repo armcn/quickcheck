@@ -21,7 +21,6 @@
 #'   x = any_vector(),
 #'   property = \(x) rev(x) |> rev() |> expect_equal(x)
 #' )
-#' @return TRUE if tests pass
 #' @export
 for_all <- function(...,
                     property,
@@ -30,7 +29,7 @@ for_all <- function(...,
                     shrinks = get_shrinks(),
                     discards = get_discards()) {
   list(...) |>
-    assert_generators_named() |>
+    purrr::map(\(a) a()) |>
     hedgehog::forall(
       property = property,
       tests = tests,

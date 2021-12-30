@@ -16,11 +16,13 @@
 #' @template generator
 #' @export
 integer_ <- function(len = 1L, frac_na = 0, big_int = FALSE) {
-  integer_bounded(
-    max_negative_integer(big_int),
-    max_positive_integer(big_int),
-    len,
-    frac_na
+  qc_gen(\(len2 = len)
+    integer_bounded(
+      max_negative_integer(big_int),
+      max_positive_integer(big_int),
+      len2,
+      frac_na
+    )()
   )
 }
 
@@ -35,44 +37,54 @@ integer_bounded <- function(left, right, len = 1L, frac_na = 0) {
       else
         a
 
-  hedgehog::gen.element(left:right) |>
-    ensure_some_zeros() |>
-    with_na(frac_na) |>
-    vectorize(len)
+  qc_gen(\(len2 = len)
+    hedgehog::gen.element(left:right) |>
+      ensure_some_zeros() |>
+      replace_frac_with(NA_integer_, frac_na) |>
+      vectorize(len2)
+  )
 }
 
 #' @rdname integer_
 #' @export
 integer_left_bounded <- function(left, len = 1L, frac_na = 0, big_int = FALSE) {
-  integer_bounded(
-    left,
-    max_positive_integer(big_int),
-    len,
-    frac_na
+  qc_gen(\(len2 = len)
+    integer_bounded(
+      left,
+      max_positive_integer(big_int),
+      len2,
+      frac_na
+    )()
   )
 }
 
 #' @rdname integer_
 #' @export
 integer_right_bounded <- function(right, len = 1L, frac_na = 0, big_int = FALSE) {
-  integer_bounded(
-    max_negative_integer(big_int),
-    right,
-    len,
-    frac_na
+  qc_gen(\(len2 = len)
+    integer_bounded(
+      max_negative_integer(big_int),
+      right,
+      len2,
+      frac_na
+    )()
   )
 }
 
 #' @rdname integer_
 #' @export
 integer_positive <- function(len = 1L, frac_na = 0, big_int = FALSE) {
-  integer_left_bounded(1L, len, frac_na)
+  qc_gen(\(len2 = len)
+    integer_left_bounded(1L, len2, frac_na)()
+  )
 }
 
 #' @rdname integer_
 #' @export
 integer_negative <- function(len = 1L, frac_na = 0, big_int = FALSE) {
-  integer_right_bounded(-1L, len, frac_na)
+  qc_gen(\(len2 = len)
+    integer_right_bounded(-1L, len2, frac_na)()
+  )
 }
 
 max_positive_integer <- function(big_int = FALSE) {
@@ -80,7 +92,7 @@ max_positive_integer <- function(big_int = FALSE) {
     .Machine$integer.max
 
   else
-    1e7L
+    10000L
 }
 
 max_negative_integer <- function(big_int = FALSE) {

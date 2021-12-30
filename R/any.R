@@ -12,14 +12,17 @@
 #' @template generator
 #' @export
 any_atomic <- function(len = 1L, frac_na = 0) {
-  one_of(
-    integer_(len, frac_na),
-    double_(len, frac_na),
-    character_(len, frac_na),
-    logical_(len, frac_na),
-    date_(len, frac_na),
-    posixct_(len, frac_na),
-    factor_(len, frac_na)
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_(len2, frac_na),
+      double_(len2, frac_na),
+      character_(len2, frac_na),
+      logical_(len2, frac_na),
+      date_(len2, frac_na),
+      posixct_(len2, frac_na),
+      hms_(len2, frac_na),
+      factor_(len2, frac_na)
+    )()
   )
 }
 
@@ -36,7 +39,9 @@ any_atomic <- function(len = 1L, frac_na = 0) {
 #' @template generator
 #' @export
 any_flat_list <- function(len = 1L, frac_na = 0) {
-  list_of(any_atomic(1L, frac_na), len)
+  qc_gen(\(len2 = len)
+    list_of(any_atomic(1L, frac_na), len2)()
+  )
 }
 
 #' Random list generator
@@ -56,10 +61,12 @@ any_list <- function(len = 1L, frac_na = 0) {
   atomic <-
     any_atomic(c(1L, 10L), frac_na)
 
-  one_of(
-    any_flat_list(len, frac_na),
-    list_of(atomic, len),
-    list_of(list_(a = atomic, b = atomic), len)
+  qc_gen(\(len2 = len)
+    one_of(
+      any_flat_list(len2, frac_na),
+      list_of(atomic, len2),
+      list_of(list_(a = atomic, b = atomic), len2)
+    )()
   )
 }
 
@@ -76,9 +83,11 @@ any_list <- function(len = 1L, frac_na = 0) {
 #' @template generator
 #' @export
 any_vector <- function(len = 1L, frac_na = 0) {
-  one_of(
-    any_atomic(len, frac_na),
-    any_list(len, frac_na)
+  qc_gen(\(len2 = len)
+    one_of(
+      any_atomic(len2, frac_na),
+      any_list(len2, frac_na)
+    )()
   )
 }
 
@@ -97,10 +106,12 @@ any_vector <- function(len = 1L, frac_na = 0) {
 #' @template generator
 #' @export
 any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
-  data_frame_of(
-    any_vector(frac_na = frac_na),
-    rows = rows,
-    cols = cols
+  qc_gen(\()
+    data_frame_of(
+      any_vector(frac_na = frac_na),
+      rows = rows,
+      cols = cols
+    )()
   )
 }
 
@@ -119,9 +130,11 @@ any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
 #' @template generator
 #' @export
 any_tibble <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
-  tibble_of(
-    any_vector(frac_na = frac_na),
-    rows = rows,
-    cols = cols
+  qc_gen(\()
+    tibble_of(
+      any_vector(frac_na = frac_na),
+      rows = rows,
+      cols = cols
+    )()
   )
 }

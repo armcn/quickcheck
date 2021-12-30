@@ -13,8 +13,10 @@
 #' @template generator
 #' @export
 data_frame_ <- function(..., rows = c(1L, 10L)) {
-  tibble_(..., rows = rows) |>
-    hedgehog::gen.with(as.data.frame)
+  qc_gen(\()
+    tibble_(..., rows = rows)() |>
+      hedgehog::gen.with(as.data.frame)
+  )
 }
 
 #' Random data frame generator
@@ -31,8 +33,10 @@ data_frame_ <- function(..., rows = c(1L, 10L)) {
 #' @template generator
 #' @export
 data_frame_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
-  tibble_of(..., rows = rows, cols = cols) |>
-    hedgehog::gen.with(as.data.frame)
+  qc_gen(\()
+    tibble_of(..., rows = rows, cols = cols)() |>
+      hedgehog::gen.with(as.data.frame)
+  )
 }
 
 #' Tibble generator
@@ -50,8 +54,10 @@ data_frame_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
 #' @template generator
 #' @export
 tibble_ <- function(..., rows = c(1L, 10L)) {
-  equal_length(..., len = rows) |>
-    hedgehog::gen.with(dplyr::as_tibble)
+  qc_gen(\()
+    purrr::map(list(...), \(a) a(len2 = rows)) |>
+      hedgehog::gen.with(dplyr::as_tibble)
+  )
 }
 
 #' Random tibble generator
@@ -68,13 +74,15 @@ tibble_ <- function(..., rows = c(1L, 10L)) {
 #' @template generator
 #' @export
 tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
-  hedgehog::gen.with(
-    repeat_cols(..., size = cols),
-    purrr::partial(repeat_rows, rows = rows)
+  qc_gen(\()
+    list(...) |>
+      purrr::map(\(a) a()) |>
+      repeat_cols(size = cols) |>
+      hedgehog::gen.with(purrr::partial(repeat_rows, rows = rows))
   )
 }
 
-repeat_cols <- function(..., size) {
+repeat_cols <- function(generators, size) {
   as_tibble <-
     \(a) suppressMessages(
       dplyr::as_tibble(a, .name_repair = "unique")
@@ -86,9 +94,6 @@ repeat_cols <- function(..., size) {
 
     else
       seq(size[1L], size[2L])
-
-  generators <-
-    list(...)
 
   expand_tibble_cols <-
     \(a) generators[

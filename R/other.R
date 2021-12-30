@@ -10,7 +10,15 @@
 #' @template generator
 #' @export
 one_of <- function(..., prob = NULL) {
-  hedgehog::gen.choice(..., prob = prob)
+  generators <-
+    purrr::map(list(...), \(a) a())
+
+  qc_gen(\()
+    purrr::exec(
+      purrr::partial(hedgehog::gen.choice, prob = prob),
+      !!!generators
+    )
+  )
 }
 
 #' Generate the same value every time
@@ -22,7 +30,9 @@ one_of <- function(..., prob = NULL) {
 #' @template generator
 #' @export
 constant <- function(a) {
-  hedgehog::gen.choice(a)
+  qc_gen(\(...)
+    hedgehog::gen.choice(a)
+  )
 }
 
 #' Show an example output of a generator
@@ -31,7 +41,23 @@ constant <- function(a) {
 #'
 #' @export
 show_example <- function(generator) {
-  generator |>
+  generator() |>
     hedgehog::gen.example() |>
     purrr::pluck("root")
 }
+
+#' @export
+print.quickcheck_generator <- function (x, ...) {
+  print.hedgehog.internal.gen(x())
+}
+
+#' @export
+print.hedgehog.internal.gen <- function (x, ...) {
+  example <- hedgehog::gen.example(x)
+  cat("Hedgehog generator:\n")
+  cat("Example:\n")
+  print(example$root)
+  cat("Initial shrinks:\n")
+  lapply(example$children(), function(c) print(c$root))
+}
+

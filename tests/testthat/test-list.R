@@ -3,7 +3,7 @@ test_that("list_ wraps a single generator in a list", {
     a = any_vector(),
     property = \(a) {
       for_all(
-        b = list_(a),
+        b = list_(constant(a)),
         property = \(b) expect_equal(b, list(a)),
         tests = 10L
       )

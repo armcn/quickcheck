@@ -3,6 +3,8 @@
 
 # quickcheck
 
+<img src="man/figures/hex.png" style="float: right; width: 200px; height: 200px;"/>
+
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/armcn/quickcheck/workflows/R-CMD-check/badge.svg)](https://github.com/armcn/quickcheck/actions)

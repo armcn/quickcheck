@@ -17,73 +17,85 @@
 #' @template generator
 #' @export
 numeric_ <- function(len = 1L, frac_na = 0, big_num = FALSE) {
-  one_of(
-    integer_(len, frac_na, big_int = big_num),
-    double_(len, frac_na, big_dbl = big_num)
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_(len2, frac_na, big_int = big_num),
+      double_(len2, frac_na, big_dbl = big_num)
+    )()
   )
 }
 
 #' @rdname numeric_
 #' @export
 numeric_bounded <- function(left, right, len = 1L, frac_na = 0) {
-  one_of(
-    integer_bounded(left, right, len, frac_na),
-    double_bounded(left, right, len, frac_na)
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_bounded(left, right, len2, frac_na),
+      double_bounded(left, right, len2, frac_na)
+    )()
   )
 }
 
 #' @rdname numeric_
 #' @export
 numeric_left_bounded <- function(left, len = 1L, frac_na = 0, big_num = FALSE) {
-  one_of(
-    integer_left_bounded(
-      left,
-      len,
-      frac_na,
-      big_int = big_num
-    ),
-    double_left_bounded(
-      left,
-      len,
-      frac_na,
-      big_dbl = big_num
-    )
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_left_bounded(
+        left,
+        len2,
+        frac_na,
+        big_int = big_num
+      ),
+      double_left_bounded(
+        left,
+        len2,
+        frac_na,
+        big_dbl = big_num
+      )
+    )()
   )
 }
 
 #' @rdname numeric_
 #' @export
 numeric_right_bounded <- function(right, len = 1L, frac_na = 0, big_num = FALSE) {
-  one_of(
-    integer_right_bounded(
-      right,
-      len,
-      frac_na,
-      big_int = big_num
-    ),
-    double_right_bounded(
-      right,
-      len,
-      frac_na,
-      big_dbl = big_num
-    )
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_right_bounded(
+        right,
+        len2,
+        frac_na,
+        big_int = big_num
+      ),
+      double_right_bounded(
+        right,
+        len2,
+        frac_na,
+        big_dbl = big_num
+      )
+    )()
   )
 }
 
 #' @rdname numeric_
 #' @export
 numeric_positive <- function(len = 1L, frac_na = 0, big_num = FALSE) {
-  one_of(
-    integer_positive(len, frac_na, big_int = big_num),
-    double_positive(len, frac_na, big_dbl = big_num)
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_positive(len2, frac_na, big_int = big_num),
+      double_positive(len2, frac_na, big_dbl = big_num)
+    )()
   )
 }
 
 #' @rdname numeric_
 #' @export
 numeric_negative <- function(len = 1L, frac_na = 0, big_num = FALSE) {
-  one_of(
-    integer_negative(len, frac_na, big_int = big_num),
-    double_negative(len, frac_na, big_dbl = big_num)
+  qc_gen(\(len2 = len)
+    one_of(
+      integer_negative(len2, frac_na, big_int = big_num),
+      double_negative(len2, frac_na, big_dbl = big_num)
+    )()
   )
 }
