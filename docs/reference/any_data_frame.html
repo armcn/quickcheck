@@ -89,38 +89,33 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                    ...1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7 Z|c@,/95, q(nyTN&lt;S, vCaI9{, DR!, }&amp;WY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1 ...2   ...3       ...4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 FALSE    J ,LGlQO -911665761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 FALSE    J ,LGlQO -911665761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 FALSE    J ,LGlQO -911665761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 FALSE    J ,LGlQO -911665761</span>
 <span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       ...1      ...2                              ...3       ...4       ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 /vy:K}li 878839571 70417345, 970838851, 454112243, 0 -218878991 -173655891</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                                                    ...6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -46425267316, -10791440059, -57825894284, -26670141570, 29268918522, 24498361026, -17047686794, 12498264525, -7211604990, -31577618254, 4, 5, 1, 2, 3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...7 ...8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  -12   Z3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                 ...9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 766847373, -754209612, -218188011, 374379285, -407905671, 0, -37206952, -245219502</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -7509</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1                                                             ...2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9    Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10   Ft TRUE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE</span>
 <span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">5L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1                ...2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   NA 2000-03-12 23:22:32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   NA 2000-03-12 23:22:32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                   ...3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 d2uB!, 8`ihsF?, NA, #zxTp!^, ^SV)#7J, Cn;uW3d}[, kLaFz, NA, NA, -61561233978.3891, -1175773557.31023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 d2uB!, 8`ihsF?, NA, #zxTp!^, ^SV)#7J, Cn;uW3d}[, kLaFz, NA, NA, -61561233978.3891, -1175773557.31023</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       ...4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 36918.06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 36918.06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                        ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -166935, NA, -214772, 279974, 283469, -92268, NA, NA, -113229, NA, NA, NA, -182349, NA, 170816, NA, 47341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -166935, NA, -214772, 279974, 283469, -92268, NA, NA, -113229, NA, NA, NA, -182349, NA, 170816, NA, 47341</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                           ...1 ...2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -53686401733, 0, NA, NA, 0, 1, NA, NA, NA, 1   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -53686401733, 0, NA, NA, 0, 1, NA, NA, NA, 1   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                       ...3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 4, 5, 3, 1, 6, 2, NA, NA, NA, -49778518791, NA, -45092944183, 1868088245</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 4, 5, 3, 1, 6, 2, NA, NA, NA, -49778518791, NA, -45092944183, 1868088245</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ...4 ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 NA, NA TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 NA, NA TRUE</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
