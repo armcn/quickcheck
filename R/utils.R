@@ -9,3 +9,11 @@ fail <- function(...) {
 qc_gen <- function(a) {
   structure(a, class = "quickcheck_generator")
 }
+
+sample_vec <- function(a, n = 1L) {
+  if (dplyr::n_distinct(a) == 1L)
+    a[[1L]]
+
+  else
+    sample(a, size = n, replace = TRUE)
+}

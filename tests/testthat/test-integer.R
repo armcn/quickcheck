@@ -103,3 +103,20 @@ test_that("integer_negative generates negative integers", {
     property = \(a) expect_true(a < 0L)
   )
 })
+
+test_that("max_positive_integer can't be squared with big_int = TRUE", {
+  max_int <-
+    max_positive_integer(big_int = TRUE)
+
+  expect_warning(
+    max_int * max_int,
+    regexp = "NAs produced by integer overflow"
+  )
+})
+
+test_that("max_positive_integer can be squared with big_int = FALSE", {
+  max_int <-
+    max_positive_integer(big_int = FALSE)
+
+  expect_true(is.integer(max_int * max_int))
+})

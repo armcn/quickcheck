@@ -130,3 +130,17 @@ test_that("double_whole generates whole doubles", {
     property = \(a) expect_true(a %% 1L == 0L)
   )
 })
+
+test_that("max_positive_double can't be squared with big_dbl = TRUE", {
+  max_dbl <-
+    max_positive_double(big_dbl = TRUE)
+
+  expect_true(is.infinite(max_dbl ^ 2))
+})
+
+test_that("max_positive_double can be squared with big_dbl = FALSE", {
+  max_dbl <-
+    max_positive_double(big_dbl = FALSE)
+
+  expect_false(is.infinite(max_dbl ^ 2))
+})

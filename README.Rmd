@@ -85,7 +85,7 @@ test_that("distinct does nothing with a single row", {
   )
 })
 
-test_that("distinct returns original if rows are repeated", {
+test_that("distinct returns single row if rows are repeated", {
   for_all(
     a = any_tibble(rows = 1L),
     property = \(a) {

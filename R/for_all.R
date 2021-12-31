@@ -54,14 +54,3 @@ get_shrinks <- function() {
 get_discards <- function() {
   getOption("quickcheck.discards", 100L)
 }
-
-assert_generators_named <- function(a) {
-  list_names <-
-    names(a)
-
-  if (is.null(list_names) || any(list_names == ""))
-    fail("All generators must be named")
-
-  else
-    a
-}

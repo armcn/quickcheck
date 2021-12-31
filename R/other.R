@@ -47,13 +47,8 @@ show_example <- function(generator) {
 }
 
 #' @export
-print.quickcheck_generator <- function (x, ...) {
-  print.hedgehog.internal.gen(x())
-}
-
-#' @export
-print.hedgehog.internal.gen <- function (x, ...) {
-  example <- hedgehog::gen.example(x)
+print.quickcheck_generator <- function (generator, ...) {
+  example <- hedgehog::gen.example(generator())
   cat("Hedgehog generator:\n")
   cat("Example:\n")
   print(example$root)

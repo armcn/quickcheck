@@ -111,10 +111,10 @@ repeat_rows <- function(df, rows) {
       rows
 
     else
-      seq(rows[1L], rows[2L])
+      seq(rows[1L], rows[2L]) |> sample_vec(1L)
 
   purrr::reduce(
-    rep(list(df), sample(repeats, 1L)),
+    rep(list(df), repeats),
     \(acc, a) dplyr::bind_rows(acc, a)
   )
 }
