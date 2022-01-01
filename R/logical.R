@@ -1,4 +1,4 @@
-#' Logical generators
+#' Logical generator
 #'
 #' A generator for logical vectors.
 #'

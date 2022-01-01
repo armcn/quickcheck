@@ -12,8 +12,9 @@
 #' @export
 factor_ <- function(len = 1L, frac_na = 0) {
   qc_gen(\(len2 = len)
-    character_(len2)() |>
+    character_()() |>
       hedgehog::gen.with(as.factor) |>
-      replace_frac_with(NA, frac_na)
+      replace_frac_with(NA_integer_, frac_na) |>
+      vectorize(len2)
   )
 }

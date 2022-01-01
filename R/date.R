@@ -17,9 +17,7 @@
 #' @template generator
 #' @export
 date_ <- function(len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    date_bounded(min_date(), max_date(), len2, frac_na)()
-  )
+  date_bounded(min_date(), max_date(), len, frac_na)
 }
 
 #' @rdname date_
@@ -36,17 +34,13 @@ date_bounded <- function(left, right, len = 1L, frac_na = 0) {
 #' @rdname date_
 #' @export
 date_left_bounded <- function(left, len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    date_bounded(left, max_date(), len2, frac_na)()
-  )
+  date_bounded(left, max_date(), len, frac_na)
 }
 
 #' @rdname date_
 #' @export
 date_right_bounded <- function(right, len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    date_bounded(min_date(), right, len2, frac_na)()
-  )
+  date_bounded(min_date(), right, len, frac_na)
 }
 
 min_date <- function() {

@@ -50,8 +50,8 @@ numbers, inclusive.}
 A \code{hedgehog.internal.gen} generator
 }
 \description{
-A set of generators for numeric vectors. Numeric vectors
-can be either integer or double vectors.
+A set of generators for numeric vectors. Numeric vectors can be either
+integer or double vectors.
 }
 \examples{
 numeric_() |> show_example()

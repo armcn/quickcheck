@@ -17,14 +17,7 @@
 #' @template generator
 #' @export
 posixct_ <- function(len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    posixct_bounded(
-      min_posixct(),
-      max_posixct(),
-      len2,
-      frac_na
-    )()
-  )
+  posixct_bounded(min_posixct(), max_posixct(), len, frac_na)
 }
 
 #' @rdname posixct_
@@ -44,17 +37,13 @@ posixct_bounded <- function(left, right, len = 1L, frac_na = 0) {
 #' @rdname posixct_
 #' @export
 posixct_left_bounded <- function(left, len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    posixct_bounded(left, max_posixct(), len2, frac_na)()
-  )
+  posixct_bounded(left, max_posixct(), len, frac_na)
 }
 
 #' @rdname posixct_
 #' @export
 posixct_right_bounded <- function(right, len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    posixct_bounded(min_posixct(), right, len2, frac_na)()
-  )
+  posixct_bounded(min_posixct(), right, len, frac_na)
 }
 
 min_posixct <- function() {

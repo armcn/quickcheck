@@ -7,10 +7,10 @@
 for_all(
   ...,
   property,
-  tests = get_tests(),
-  size = get_size(),
-  shrinks = get_shrinks(),
-  discards = get_discards()
+  tests = getOption("quickcheck.tests", 100L),
+  size = getOption("quickcheck.size", 50L),
+  shrinks = getOption("quickcheck.shrinks", 100L),
+  discards = getOption("quickcheck.discards", 100L)
 )
 }
 \arguments{

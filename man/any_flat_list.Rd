@@ -23,7 +23,7 @@ include around 50\% \code{NA} values.}
 A \code{hedgehog.internal.gen} generator
 }
 \description{
-Generate lists where each item has a length of 1.
+Generate lists where each element is an atomic vector with a length of 1.
 }
 \examples{
 any_flat_list() |> show_example()

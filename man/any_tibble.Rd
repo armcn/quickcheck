@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_tibble}
 \alias{any_tibble}
-\title{Any tibble generator}
+\title{Random tibble generator}
 \usage{
 any_tibble(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0)
 }

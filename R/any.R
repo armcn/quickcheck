@@ -1,7 +1,7 @@
 #' Atomic vector generator
 #'
-#' Generate vectors of integer, double, character, or
-#' logical.
+#' Generate vectors of integer, double, character, logical, date, POSIXct, hms,
+#' or factors.
 #'
 #' @template len
 #' @template frac_na
@@ -28,7 +28,7 @@ any_atomic <- function(len = 1L, frac_na = 0) {
 
 #' Flat list generator
 #'
-#' Generate lists where each item has a length of 1.
+#' Generate lists where each element is an atomic vector with a length of 1.
 #'
 #' @template len
 #' @template frac_na
@@ -39,9 +39,7 @@ any_atomic <- function(len = 1L, frac_na = 0) {
 #' @template generator
 #' @export
 any_flat_list <- function(len = 1L, frac_na = 0) {
-  qc_gen(\(len2 = len)
-    list_of(any_atomic(1L, frac_na), len2)()
-  )
+  list_of(any_atomic(1L, frac_na), len)
 }
 
 #' Random list generator
@@ -70,7 +68,7 @@ any_list <- function(len = 1L, frac_na = 0) {
   )
 }
 
-#' Any vector generator
+#' Random vector generator
 #'
 #' Generate random atomic vectors or lists.
 #'
@@ -91,31 +89,7 @@ any_vector <- function(len = 1L, frac_na = 0) {
   )
 }
 
-#' Any data frame generator
-#'
-#' Generate random data frames.
-#'
-#' @template rows
-#' @template cols
-#' @template frac_na
-#'
-#' @examples
-#' any_data_frame() |> show_example()
-#' any_data_frame(rows = 10L) |> show_example()
-#' any_data_frame(cols = 5L, frac_na = 0.5) |> show_example()
-#' @template generator
-#' @export
-any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
-  qc_gen(\()
-    data_frame_of(
-      any_vector(frac_na = frac_na),
-      rows = rows,
-      cols = cols
-    )()
-  )
-}
-
-#' Any tibble generator
+#' Random tibble generator
 #'
 #' Generate random tibbles.
 #'
@@ -130,11 +104,9 @@ any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
 #' @template generator
 #' @export
 any_tibble <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
-  qc_gen(\()
-    tibble_of(
-      any_vector(frac_na = frac_na),
-      rows = rows,
-      cols = cols
-    )()
+  tibble_of(
+    any_vector(frac_na = frac_na),
+    rows = rows,
+    cols = cols
   )
 }

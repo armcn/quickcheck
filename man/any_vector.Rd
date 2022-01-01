@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_vector}
 \alias{any_vector}
-\title{Any vector generator}
+\title{Random vector generator}
 \usage{
 any_vector(len = 1L, frac_na = 0)
 }

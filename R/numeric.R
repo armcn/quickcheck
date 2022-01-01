@@ -1,7 +1,7 @@
 #' Numeric generators
 #'
-#' A set of generators for numeric vectors. Numeric vectors
-#' can be either integer or double vectors.
+#' A set of generators for numeric vectors. Numeric vectors can be either
+#' integer or double vectors.
 #'
 #' @template len
 #' @template frac_na

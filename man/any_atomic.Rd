@@ -23,8 +23,8 @@ include around 50\% \code{NA} values.}
 A \code{hedgehog.internal.gen} generator
 }
 \description{
-Generate vectors of integer, double, character, or
-logical.
+Generate vectors of integer, double, character, logical, date, POSIXct, hms,
+or factors.
 }
 \examples{
 any_atomic() |> show_example()

@@ -2,7 +2,7 @@
 % Please edit documentation in R/logical.R
 \name{logical_}
 \alias{logical_}
-\title{Logical generators}
+\title{Logical generator}
 \usage{
 logical_(len = 1L, frac_na = 0)
 }

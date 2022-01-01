@@ -3,7 +3,7 @@
 
 # quickcheck
 
-<img src="man/figures/hex.png" align="right" style="width: 200px; height: 200px;"/>
+<img src="man/figures/hex.png" align="right" style="width: 150px; height: 150px;"/>
 
 <!-- badges: start -->
 
@@ -17,7 +17,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 # Overview
 
 Property based testing in R, inspired by
-[Quickcheck](https://en.wikipedia.org/wiki/QuickCheck). This package
+[QuickCheck](https://en.wikipedia.org/wiki/QuickCheck). This package
 builds on the property based testing framework provided by
 [`hedgehog`](https://github.com/hedgehogqa/r-hedgehog) and is designed
 to seamlessly integrate with a [`testthat`](https://testthat.r-lib.org).

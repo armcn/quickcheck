@@ -34,6 +34,6 @@ bytes_to_character <- function(bytes) {
 
 random_string <- function(character_set) {
   character_set |>
-    sample(stats::runif(1L, 1L, 10L)) |>
+    sample_vec(stats::runif(1L, 1L, 10L)) |>
     paste0(collapse = "")
 }

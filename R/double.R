@@ -23,15 +23,13 @@ double_ <- function(len = 1L,
                     frac_nan = 0,
                     frac_inf = 0,
                     big_dbl = FALSE) {
-  qc_gen(\(len2 = len)
-    double_bounded(
-      max_negative_double(big_dbl),
-      max_positive_double(big_dbl),
-      len2,
-      frac_na,
-      frac_nan,
-      frac_inf
-    )()
+  double_bounded(
+    max_negative_double(big_dbl),
+    max_positive_double(big_dbl),
+    len,
+    frac_na,
+    frac_nan,
+    frac_inf
   )
 }
 
@@ -69,15 +67,13 @@ double_left_bounded <- function(left,
                                 frac_nan = 0,
                                 frac_inf = 0,
                                 big_dbl = FALSE) {
-  qc_gen(\(len2 = len)
-    double_bounded(
-      left,
-      max_positive_double(big_dbl),
-      len2,
-      frac_na,
-      frac_nan,
-      frac_inf
-    )()
+  double_bounded(
+    left,
+    max_positive_double(big_dbl),
+    len,
+    frac_na,
+    frac_nan,
+    frac_inf
   )
 }
 
@@ -89,15 +85,13 @@ double_right_bounded <- function(right,
                                  frac_nan = 0,
                                  frac_inf = 0,
                                  big_dbl = FALSE) {
-  qc_gen(\(len2 = len)
-    double_bounded(
-      max_negative_double(big_dbl),
-      right,
-      len2,
-      frac_na,
-      frac_nan,
-      frac_inf
-    )()
+  double_bounded(
+    max_negative_double(big_dbl),
+    right,
+    len,
+    frac_na,
+    frac_nan,
+    frac_inf
   )
 }
 
@@ -108,15 +102,13 @@ double_positive <- function(len = 1L,
                             frac_nan = 0,
                             frac_inf = 0,
                             big_dbl = FALSE) {
-  qc_gen(\(len2 = len)
-    double_left_bounded(
-      min_positive_double(),
-      len2,
-      frac_na,
-      frac_nan,
-      frac_inf,
-      big_dbl
-    )()
+  double_left_bounded(
+    min_positive_double(),
+    len,
+    frac_na,
+    frac_nan,
+    frac_inf,
+    big_dbl
   )
 }
 
@@ -127,15 +119,13 @@ double_negative <- function(len = 1L,
                             frac_nan = 0,
                             frac_inf = 0,
                             big_dbl = FALSE) {
-  qc_gen(\(len2 = len)
-    double_right_bounded(
-      min_negative_double(),
-      len2,
-      frac_na,
-      frac_nan,
-      frac_inf,
-      big_dbl
-    )()
+  double_right_bounded(
+    min_negative_double(),
+    len,
+    frac_na,
+    frac_nan,
+    frac_inf,
+    big_dbl
   )
 }
 
@@ -172,16 +162,8 @@ double_whole <- function(len = 1L,
                          frac_inf = 0,
                          big_dbl = FALSE) {
   qc_gen(\(len2 = len)
-    hedgehog::gen.with(
-      double_(
-        len2,
-        frac_na,
-        frac_nan,
-        frac_inf,
-        big_dbl
-      )(),
-      round
-    )
+    double_(len2, frac_na, frac_nan, frac_inf, big_dbl)() |>
+    hedgehog::gen.with(round)
   )
 }
 

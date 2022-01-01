@@ -16,13 +16,11 @@
 #' @template generator
 #' @export
 integer_ <- function(len = 1L, frac_na = 0, big_int = FALSE) {
-  qc_gen(\(len2 = len)
-    integer_bounded(
-      max_negative_integer(big_int),
-      max_positive_integer(big_int),
-      len2,
-      frac_na
-    )()
+  integer_bounded(
+    max_negative_integer(big_int),
+    max_positive_integer(big_int),
+    len,
+    frac_na
   )
 }
 
@@ -48,43 +46,35 @@ integer_bounded <- function(left, right, len = 1L, frac_na = 0) {
 #' @rdname integer_
 #' @export
 integer_left_bounded <- function(left, len = 1L, frac_na = 0, big_int = FALSE) {
-  qc_gen(\(len2 = len)
-    integer_bounded(
-      left,
-      max_positive_integer(big_int),
-      len2,
-      frac_na
-    )()
+  integer_bounded(
+    left,
+    max_positive_integer(big_int),
+    len,
+    frac_na
   )
 }
 
 #' @rdname integer_
 #' @export
 integer_right_bounded <- function(right, len = 1L, frac_na = 0, big_int = FALSE) {
-  qc_gen(\(len2 = len)
-    integer_bounded(
-      max_negative_integer(big_int),
-      right,
-      len2,
-      frac_na
-    )()
+  integer_bounded(
+    max_negative_integer(big_int),
+    right,
+    len,
+    frac_na
   )
 }
 
 #' @rdname integer_
 #' @export
 integer_positive <- function(len = 1L, frac_na = 0, big_int = FALSE) {
-  qc_gen(\(len2 = len)
-    integer_left_bounded(1L, len2, frac_na)()
-  )
+  integer_left_bounded(1L, len, frac_na)
 }
 
 #' @rdname integer_
 #' @export
 integer_negative <- function(len = 1L, frac_na = 0, big_int = FALSE) {
-  qc_gen(\(len2 = len)
-    integer_right_bounded(-1L, len2, frac_na)()
-  )
+  integer_right_bounded(-1L, len, frac_na)
 }
 
 max_positive_integer <- function(big_int = FALSE) {

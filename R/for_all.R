@@ -24,33 +24,16 @@
 #' @export
 for_all <- function(...,
                     property,
-                    tests = get_tests(),
-                    size = get_size(),
-                    shrinks = get_shrinks(),
-                    discards = get_discards()) {
-  list(...) |>
-    purrr::map(\(a) a()) |>
+                    tests = getOption("quickcheck.tests", 100L),
+                    size = getOption("quickcheck.size", 50L),
+                    shrinks = getOption("quickcheck.shrinks", 100L),
+                    discards = getOption("quickcheck.discards", 100L)) {
     hedgehog::forall(
+      generator = eval_functions(...),
       property = property,
       tests = tests,
       size.limit = size,
       shrink.limit = shrinks,
       discard.limit = discards
     )
-}
-
-get_tests <- function() {
-  getOption("quickcheck.tests", 100L)
-}
-
-get_size <- function() {
-  getOption("quickcheck.size", 50L)
-}
-
-get_shrinks <- function() {
-  getOption("quickcheck.shrinks", 100L)
-}
-
-get_discards <- function() {
-  getOption("quickcheck.discards", 100L)
 }

@@ -7,7 +7,7 @@
 list_of(generator, len = 1L)
 }
 \arguments{
-\item{generator}{Generator}
+\item{generator}{Quickcheck generator}
 
 \item{len}{Length of the generated vectors. If \code{len} is a
 single number all vectors will have this length. If
@@ -20,8 +20,7 @@ vectors with lengths between 1 and 10.}
 A \code{hedgehog.internal.gen} generator
 }
 \description{
-This will generate lists with all values coming from the
-single input generator.
+This will generate lists with all values coming from a single input generator.
 }
 \examples{
 list_of(integer_(), len = 10L) |> show_example()
