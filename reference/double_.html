@@ -153,17 +153,17 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">double_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -463881558</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>big_dbl <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 7.018025e+307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
 <span class="r-in"><span class="fu">double_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>, right <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.102984</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1.512917</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -487945107          0         NA         NA         NA         NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]         NA          0  529397143 -760444596</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]         NA         NA  665020621         NA -604604209         NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]         NA  733022735         NA -631729423</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_nan <span class="op">=</span> <span class="fl">0.2</span>, frac_inf <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]        Inf -738316173        NaN        NaN        NaN          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]        NaN -440124852  169307379 -778105106</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  -87489352  738492136  104466081  166792940  655634359  558504185</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  765569889  258504428 -689141979        NaN</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -3,3 +3,7 @@
 a {
   text-decoration: none; !important
 }
+
+.page-header {
+  border-bottom: none;
+}
