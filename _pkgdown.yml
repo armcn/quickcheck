@@ -108,3 +108,7 @@ reference:
   desc: A function to run property based tests.
   contents:
     - for_all
+- title: Show example
+  desc: Show an example output value from a generator
+  contents:
+    - show_example
