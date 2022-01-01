@@ -1,9 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# quickcheck
-
-<img src="man/figures/hex.png" align="right" style="width: 180px; height: 180px;"/>
+# quickcheck <img src="man/figures/hex.png" align="right" style="width: 20%;"/>
 
 <!-- badges: start -->
 

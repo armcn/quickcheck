@@ -80,52 +80,24 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_vector</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1902-03-07"</span>
-<span class="r-in"><span class="fu">any_vector</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 08:55:56.818284</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:24:59.057127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 07:51:40.620365</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 02:53:58.354491</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 07:19:53.787942</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11:44:59.041880</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 01:35:45.090273</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:08:21.650857</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 04:50:54.504510</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 01:39:44.289647</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:53:03.290892</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA NA  1 NA  1  1 NA NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5633</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1198-07-07 10:25:39 LMT" "2437-03-17 01:07:51 PDT"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] NA                        NA                       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] NA                        "2711-01-10 04:34:55 PST"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:38:19.490164</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:02:03.808809</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 00:07:00.669071</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:19:23.027980</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:47:29.575983</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]           NA           NA -34725325697</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]    NA    NA    NA     0 -2513 -7388  6427  -948</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 01:45:50.285739</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 08:49:27.562338</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:27:33.753662</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 06:27:37.757121</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 06:44:54.165153</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:05:30.261940</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:57:38.099936</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span class="fu">any_vector</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "1328-12-12 16:20:19 LMT" NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "1140-06-07 10:40:10 LMT" NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2607-07-20 19:54:21 PDT" NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "0930-03-05 15:41:10 LMT" "2811-07-26 02:00:30 PDT"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "1824-11-16 09:14:22 LMT" "0440-04-04 09:11:34 LMT"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
