@@ -98,7 +98,6 @@ reference:
     - any_list
     - any_flat_list
     - any_vector
-    - any_data_frame
     - any_tibble
 - title: Other
   desc: Other generators and combinators.
