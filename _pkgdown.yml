@@ -59,7 +59,7 @@ reference:
 - title: Date
   desc: A set of generators to produce date vectors.
   contents:
-    - data_
+    - date_
     - date_bounded
     - date_left_bounded
     - date_right_bounded
