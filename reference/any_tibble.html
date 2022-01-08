@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,6 +20,9 @@
     <div id="navbar" class="collapse navbar-collapse ms-2">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
@@ -89,38 +92,33 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_tibble</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1                 ...2 ...3     ...4       ...5            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 67-02-03 <span style="color: #949494;">23:47:25</span>   -<span style="color: #BB0000; text-decoration: underline;">4</span><span style="color: #BB0000;">799</span> $        <span style="color: #949494;">&lt;int [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 760-06-04 <span style="color: #949494;">08:18:37</span>  -<span style="color: #BB0000; text-decoration: underline;">6</span><span style="color: #BB0000;">373</span> ~c       <span style="color: #949494;">&lt;dttm [1]&gt;</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1608-07-07 <span style="color: #949494;">14:48:35</span> -<span style="color: #BB0000; text-decoration: underline;">6</span><span style="color: #BB0000;">524</span> #        <span style="color: #949494;">&lt;fct [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 2111-07-08 <span style="color: #949494;">01:05:06</span> -<span style="color: #BB0000; text-decoration: underline;">9</span><span style="color: #BB0000;">902</span> oqmD     <span style="color: #949494;">&lt;fct [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2619-09-19 <span style="color: #949494;">01:59:49</span> -<span style="color: #BB0000; text-decoration: underline;">9</span><span style="color: #BB0000;">122</span> n&gt;       <span style="color: #949494;">&lt;dttm [1]&gt;</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1064-02-09 <span style="color: #949494;">10:33:07</span> -<span style="color: #BB0000; text-decoration: underline;">5</span><span style="color: #BB0000;">912</span> 8nx7BO_o <span style="color: #949494;">&lt;chr [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 151-02-22 <span style="color: #949494;">20:10:59</span>      0 Vy&amp;J47   <span style="color: #949494;">&lt;int [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 395-01-17 <span style="color: #949494;">08:49:44</span>  -<span style="color: #BB0000; text-decoration: underline;">6</span><span style="color: #BB0000;">345</span> q~$.     <span style="color: #949494;">&lt;int [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2601-03-25 <span style="color: #949494;">22:27:07</span>     0 ?]jznX5= <span style="color: #949494;">&lt;dbl [1]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1241-03-09 <span style="color: #949494;">00:00:07</span>     0 *jo0^UV  <span style="color: #949494;">&lt;dttm [1]&gt;</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1 ...2       ...3       ...4  ...5             ...6  ...7      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>     0 <span style="color: #949494;">&lt;date [1]&gt;</span> <span style="color: #949494;">&lt;dttm [1]&gt;</span> 3Z1u  <span style="color: #949494;">&lt;named list [2]&gt;</span> 3m8j  <span style="color: #949494;">&lt;time [3]&gt;</span></span>
 <span class="r-in"><span class="fu">any_tibble</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           ...1 ...2            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  806<span style="text-decoration: underline;">753</span>208. <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> -<span style="color: #BB0000;">347</span><span style="color: #BB0000; text-decoration: underline;">243</span><span style="color: #BB0000;">715.</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  352<span style="text-decoration: underline;">208</span>750. <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">244</span><span style="color: #BB0000; text-decoration: underline;">266</span><span style="color: #BB0000;">761.</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  225<span style="text-decoration: underline;">387</span>374. <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>          0  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  265<span style="text-decoration: underline;">415</span>240. <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>   15<span style="text-decoration: underline;">715</span>604. <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>          0  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  823<span style="text-decoration: underline;">891</span>934. <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
 <span class="r-in"><span class="fu">any_tibble</span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">5L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1              ...2 ...3      ...4   ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;named list [2]&gt;</span>    <span style="color: #BB0000;">NA</span> <span style="color: #949494;">&lt;lgl [4]&gt;</span> <span style="color: #BB0000;">NA</span>       <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1       ...2             ...3 ...4        ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;time&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;dttm [1]&gt;</span>       <span style="color: #BB0000;">NA</span>         <span style="text-decoration: underline;">3</span>319 <span style="color: #949494;">&lt;dbl [4]&gt;</span>     <span style="color: #BB0000;">NA</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;dttm [1]&gt;</span> 03<span style="color: #949494;">:</span>25<span style="color: #949494;">:</span>32.520382  <span style="text-decoration: underline;">6</span>243 <span style="color: #949494;">&lt;lgl [1]&gt;</span> <span style="text-decoration: underline;">209</span>598</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;lgl [1]&gt;</span>  10<span style="color: #949494;">:</span>55<span style="color: #949494;">:</span>54.867263  <span style="text-decoration: underline;">1</span>523 <span style="color: #949494;">&lt;chr [5]&gt;</span> -<span style="color: #BB0000; text-decoration: underline;">85</span><span style="color: #BB0000;">401</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;int [1]&gt;</span>        <span style="color: #BB0000;">NA</span>           <span style="color: #BB0000;">NA</span> <span style="color: #949494;">&lt;dbl [6]&gt;</span>  <span style="text-decoration: underline;">96</span>608</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> <span style="color: #949494;">&lt;dbl [1]&gt;</span>        <span style="color: #BB0000;">NA</span>           <span style="color: #BB0000;">NA</span> <span style="color: #949494;">&lt;dbl [7]&gt;</span>     <span style="color: #BB0000;">NA</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
