@@ -1,18 +1,18 @@
 Package: quickcheck
 Title: Property Based Testing
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Andrew",
            family = "McNeil",
            role = c("aut", "cre"),
            email = "andrew.richard.mcneil@gmail.com")
 Description: Property based testing, inspired by 
-    the original Haskell 'QuickCheck'. This package builds on 
+    the original 'QuickCheck'. This package builds on 
     the property based testing framework provided by 
     'hedgehog' and is designed to seamlessly integrate with 
     'testthat'.
 License: MIT + file LICENSE
-URL: https://armcn.github.io/quickcheck
+URL: https://github.com/armcn/quickcheck, https://armcn.github.io/quickcheck/
 BugReports: https://github.com/armcn/quickcheck/issues
 Encoding: UTF-8
 LazyData: true
@@ -31,4 +31,3 @@ Suggests:
     rmarkdown,
     covr
 Config/testthat/edition: 3
-VignetteBuilder: knitr

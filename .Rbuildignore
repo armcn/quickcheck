@@ -1,6 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-TODO.txt
 ^LICENSE\.md$
 ^codecov\.yml$
 ^README\.Rmd$
@@ -10,3 +9,4 @@ TODO.txt
 ^docs$
 ^\.github$
 ^man-roxygen$
+^cran-comments.md$
