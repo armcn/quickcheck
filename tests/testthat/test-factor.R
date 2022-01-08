@@ -1,14 +1,21 @@
-test_that("factor_ generates pure factors", {
+test_that("factor_ generates factors", {
   for_all(
     a = factor_(),
-    property = \(a) expect_true(pure::is_pure_factor(a))
+    property = \(a) is.factor(a) |> expect_true()
+  )
+})
+
+test_that("factor_ doesn't generate NAs by default", {
+  for_all(
+    a = factor_(),
+    property = \(a) a |> is.na() |> any() |> expect_false()
   )
 })
 
 test_that("factor_ generates vectors of length 1 by default", {
   for_all(
     a = factor_(),
-    property = \(a) expect_equal(length(a), 1L)
+    property = \(a) length(a) |> expect_equal(1L)
   )
 })
 
@@ -18,7 +25,7 @@ test_that("factor_ generates vectors of specific length", {
     property = \(len) {
       for_all(
         a = factor_(len = len),
-        property = \(a) expect_equal(length(a), len),
+        property = \(a) length(a) |> expect_equal(len),
         tests = 10L
       )
     },
@@ -28,19 +35,22 @@ test_that("factor_ generates vectors of specific length", {
 
 test_that("factor_ generates vectors within a range of lengths", {
   for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
+    min = integer_bounded(1L, 5L),
+    max = integer_bounded(5L, 10L),
+    property = \(min, max) {
       for_all(
-        a = factor_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
+        a = factor_(len = c(min, max)),
+        property = \(a) expect_true(length(a) >= min && length(a) <= max),
         tests = 10L
       )
     },
     tests = 10L
+  )
+})
+
+test_that("factor_ can generate vectors with NAs", {
+  for_all(
+    a = factor_(len = 10L, frac_na = 1),
+    property = \(a) is_na_integer(a) |> all() |> expect_true()
   )
 })

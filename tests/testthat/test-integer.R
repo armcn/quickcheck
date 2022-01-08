@@ -1,14 +1,21 @@
-test_that("integer_ generates pure integers", {
+test_that("integer_ generates integers", {
   for_all(
     a = integer_(),
-    property = \(a) expect_true(pure::is_pure_integer(a))
+    property = \(a) is.integer(a) |> expect_true()
+  )
+})
+
+test_that("integer_ doesn't generate NAs by default", {
+  for_all(
+    a = integer_(),
+    property = \(a) a |> is.na() |> any() |> expect_false()
   )
 })
 
 test_that("integer_ generates vectors of length 1 by default", {
   for_all(
     a = integer_(),
-    property = \(a) expect_equal(length(a), 1L)
+    property = \(a) length(a) |> expect_equal(1L)
   )
 })
 
@@ -18,7 +25,7 @@ test_that("integer_ generates vectors of specific length", {
     property = \(len) {
       for_all(
         a = integer_(len = len),
-        property = \(a) expect_equal(length(a), len),
+        property = \(a) length(a) |> expect_equal(len),
         tests = 10L
       )
     },
@@ -28,16 +35,12 @@ test_that("integer_ generates vectors of specific length", {
 
 test_that("integer_ generates vectors within a range of lengths", {
   for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
+    min = integer_bounded(1L, 5L),
+    max = integer_bounded(5L, 10L),
+    property = \(min, max) {
       for_all(
-        a = integer_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
+        a = integer_(len = c(min, max)),
+        property = \(a) expect_true(length(a) >= min && length(a) <= max),
         tests = 10L
       )
     },
@@ -45,19 +48,17 @@ test_that("integer_ generates vectors within a range of lengths", {
   )
 })
 
-test_that("integer_ generates vectors with NA_integer", {
-  is_na_integer <- \(a) is.na(a) & is.integer(a)
-
+test_that("integer_ can generate vectors with NAs", {
   for_all(
     a = integer_(len = 10L, frac_na = 1),
-    property = \(a) expect_true(all(is_na_integer(a)))
+    property = \(a) is_na_integer(a) |> all() |> expect_true()
   )
 })
 
 test_that("integer_ generates integers small enough to be squared", {
   for_all(
     a = integer_(),
-    property = \(a) expect_true(is.integer(a * a))
+    property = \(a) is.integer(a * a) |> expect_true()
   )
 })
 
@@ -72,14 +73,13 @@ test_that("integer_bounded generates bounded integers", {
 })
 
 test_that("integer_left_bounded generates left bounded integers", {
-    left <- 100L
+  left <- 100L
 
-    for_all(
-      a = integer_left_bounded(left = left),
-      property = \(a) expect_true(a >= left)
-    )
-  }
-)
+  for_all(
+    a = integer_left_bounded(left = left),
+    property = \(a) expect_true(a >= left)
+  )
+})
 
 test_that("integer_right_bounded generates right bounded integers", {
   right <- 100L
@@ -104,7 +104,7 @@ test_that("integer_negative generates negative integers", {
   )
 })
 
-test_that("max_positive_integer can't be squared with big_int = TRUE", {
+test_that("max_positive_integer can't be squared when big_int = TRUE", {
   max_int <-
     max_positive_integer(big_int = TRUE)
 
@@ -114,9 +114,9 @@ test_that("max_positive_integer can't be squared with big_int = TRUE", {
   )
 })
 
-test_that("max_positive_integer can be squared with big_int = FALSE", {
+test_that("max_positive_integer can be squared when big_int = FALSE", {
   max_int <-
     max_positive_integer(big_int = FALSE)
 
-  expect_true(is.integer(max_int * max_int))
+  is.integer(max_int * max_int) |> expect_true()
 })

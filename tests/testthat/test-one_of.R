@@ -4,7 +4,7 @@ test_that("one_of with single generator doesn't change generator", {
     property = \(a) {
       for_all(
         b = one_of(constant(a)),
-        property = \(b) expect_equal(b, a),
+        property = \(b) expect_equal(a, b),
         tests = 10L
       )
     },
@@ -12,7 +12,7 @@ test_that("one_of with single generator doesn't change generator", {
   )
 })
 
-test_that("one_of ignores first generator when prob = 0", {
+test_that("one_of can ignore the first generator", {
   for_all(
     a = one_of(
       integer_positive(),
@@ -23,7 +23,7 @@ test_that("one_of ignores first generator when prob = 0", {
   )
 })
 
-test_that("one_of ignores second generator when prob = 0", {
+test_that("one_of can ignore the second generator", {
   for_all(
     a = one_of(
       integer_positive(),

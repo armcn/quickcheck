@@ -1,12 +1,12 @@
 test_that("any_tibble generates tibbles", {
   for_all(
     a = any_tibble(),
-    property = \(a) expect_true(inherits(a, "tbl_df"))
+    property = \(a) is_tibble(a) |> expect_true()
   )
 })
 
-test_that("any_tibble generates tibbles with rows and columns between
-          1 and 10 by default", {
+test_that("any_tibble generates tibbles with rows and columns between 1 and 10
+          by default", {
   for_all(
     a = any_tibble(),
     property = \(a) {
@@ -18,8 +18,8 @@ test_that("any_tibble generates tibbles with rows and columns between
   )
 })
 
-test_that("any_tibble generates tibbles with specific number of rows
-          and columns", {
+test_that("any_tibble generates tibbles with specific number of rows and
+          columns", {
   for_all(
     rows = integer_bounded(1L, 10L),
     cols = integer_bounded(1L, 10L),
@@ -49,14 +49,24 @@ test_that("any_tibble generates tibbles within a range of rows", {
   )
 })
 
-test_that("any_tibble generates tibbles with NAs", {
+test_that("any_tibble generates tibbles within a range of cols", {
+  for_all(
+    min = integer_bounded(1L, 5L),
+    max = integer_bounded(5L, 10L),
+    property = \(min, max) {
+      for_all(
+        a = any_tibble(cols = c(min, max)),
+        property = \(a) expect_true(ncol(a) >= min && ncol(a) <= max),
+        tests = 10L
+      )
+    },
+    tests = 10L
+  )
+})
+
+test_that("any_tibble can generates tibbles with NAs", {
   for_all(
     a = any_tibble(rows = 10L, cols = 10L, frac_na = 1),
-    property = \(a) {
-      unlist(a) |>
-        is.na() |>
-        all() |>
-        expect_true()
-    }
+    property = \(a) unlist(a) |> is.na() |> all() |> expect_true()
   )
 })

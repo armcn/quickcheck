@@ -1,14 +1,21 @@
-test_that("hms_ generates pure hms", {
+test_that("hms_ generates hms vectors", {
   for_all(
     a = hms_(),
-    property = \(a) expect_true(pure::is_pure_hms(a))
+    property = \(a) hms::is_hms(a) |> expect_true()
+  )
+})
+
+test_that("hms_ doesn't generate NAs by default", {
+  for_all(
+    a = hms_(),
+    property = \(a) a |> is.na() |> any() |> expect_false()
   )
 })
 
 test_that("hms_ generates vectors of length 1 by default", {
   for_all(
     a = hms_(),
-    property = \(a) expect_equal(length(a), 1L)
+    property = \(a) length(a) |> expect_equal(1L)
   )
 })
 
@@ -18,7 +25,7 @@ test_that("hms_ generates vectors of specific length", {
     property = \(len) {
       for_all(
         a = hms_(len = len),
-        property = \(a) expect_equal(length(a), len),
+        property = \(a) length(a) |> expect_equal(len),
         tests = 10L
       )
     },
@@ -28,16 +35,12 @@ test_that("hms_ generates vectors of specific length", {
 
 test_that("hms_ generates vectors within a range of lengths", {
   for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
+    min = integer_bounded(1L, 5L),
+    max = integer_bounded(5L, 10L),
+    property = \(min, max) {
       for_all(
-        a = hms_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
+        a = hms_(len = c(min, max)),
+        property = \(a) expect_true(length(a) >= min && length(a) <= max),
         tests = 10L
       )
     },
@@ -45,7 +48,14 @@ test_that("hms_ generates vectors within a range of lengths", {
   )
 })
 
-test_that("hms_bounded generates bounded hms", {
+test_that("hms_ can generate vectors with NAs", {
+  for_all(
+    a = hms_(len = 10L, frac_na = 1),
+    property = \(a) is_na_real(a) |> all() |> expect_true()
+  )
+})
+
+test_that("hms_bounded generates bounded hms vectors", {
   left <- hms::as_hms("00:00:00")
   right <- hms::as_hms("12:00:00")
 
@@ -55,7 +65,7 @@ test_that("hms_bounded generates bounded hms", {
   )
 })
 
-test_that("hms_left_bounded generates left bounded hms", {
+test_that("hms_left_bounded generates left bounded hms vectors", {
   left <- hms::as_hms("00:00:00")
 
   for_all(
@@ -64,7 +74,7 @@ test_that("hms_left_bounded generates left bounded hms", {
   )
 })
 
-test_that("hms_right_bounded generates right bounded hms", {
+test_that("hms_right_bounded generates right bounded hms vectors", {
   right <- hms::as_hms("12:00:00")
 
   for_all(

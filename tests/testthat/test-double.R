@@ -1,14 +1,35 @@
-test_that("double_ generates pure doubles", {
+test_that("double_ generates doubles", {
   for_all(
     a = double_(),
-    property = \(a) expect_true(pure::is_pure_double(a))
+    property = \(a) is.double(a) |> expect_true()
+  )
+})
+
+test_that("double_ doesn't generate NAs by default", {
+  for_all(
+    a = double_(),
+    property = \(a) a |> is.na() |> any() |> expect_false()
+  )
+})
+
+test_that("double_ doesn't generate NaNs by default", {
+  for_all(
+    a = double_(),
+    property = \(a) a |> is.nan() |> any() |> expect_false()
+  )
+})
+
+test_that("double_ doesn't generate Infs by default", {
+  for_all(
+    a = double_(),
+    property = \(a) a |> is.infinite() |> any() |> expect_false()
   )
 })
 
 test_that("double_ generates vectors of length 1 by default", {
   for_all(
     a = double_(),
-    property = \(a) expect_equal(length(a), 1L)
+    property = \(a) length(a) |> expect_equal(1L)
   )
 })
 
@@ -18,7 +39,7 @@ test_that("double_ generates vectors of specific length", {
     property = \(len) {
       for_all(
         a = double_(len = len),
-        property = \(a) expect_equal(length(a), len),
+        property = \(a) length(a) |> expect_equal(len),
         tests = 10L
       )
     },
@@ -28,16 +49,12 @@ test_that("double_ generates vectors of specific length", {
 
 test_that("double_ generates vectors within a range of lengths", {
   for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
+    min = integer_bounded(1L, 5L),
+    max = integer_bounded(5L, 10L),
+    property = \(min, max) {
       for_all(
-        a = double_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
+        a = double_(len = c(min, max)),
+        property = \(a) expect_true(length(a) >= min && length(a) <= max),
         tests = 10L
       )
     },
@@ -45,42 +62,40 @@ test_that("double_ generates vectors within a range of lengths", {
   )
 })
 
-test_that("double_ generates vectors with NA_real_", {
-  is_na_real <- \(a) is.na(a) & is.double(a)
-
+test_that("double_ can generate vectors with NAs", {
   for_all(
     a = double_(len = 10L, frac_na = 1),
-    property = \(a) expect_true(all(is_na_real(a)))
+    property = \(a) is_na_real(a) |> all() |> expect_true()
   )
 })
 
-test_that("double_ generates vectors with NaNs", {
+test_that("double_ can generate vectors with NaNs", {
   for_all(
     a = double_(len = 10L, frac_nan = 1),
-    property = \(a) expect_true(all(is.nan(a)))
+    property = \(a) is.nan(a) |> all() |> expect_true()
   )
 })
 
-test_that("double_ generates vectors with Infs", {
+test_that("double_ can generate vectors with Infs", {
   for_all(
     a = double_(len = 10L, frac_inf = 1),
-    property = \(a) expect_true(all(is.infinite(a)))
+    property = \(a) is.infinite(a) |> all() |> expect_true()
   )
 })
 
 test_that("double_ generates doubles small enough to be squared", {
   for_all(
     a = double_(),
-    property = \(a) expect_false(is.infinite(a * a))
+    property = \(a) is.infinite(a * a) |> expect_false()
   )
 })
 
-test_that("double_bounded generates bounded doubles", {
+test_that("integer_bounded generates bounded doubles", {
   left <- -100L
   right <- 100L
 
   for_all(
-    a = double_bounded(left = left, right = right),
+    a = integer_bounded(left = left, right = right),
     property = \(a) expect_true(a >= left && a <= right)
   )
 })
@@ -131,16 +146,16 @@ test_that("double_whole generates whole doubles", {
   )
 })
 
-test_that("max_positive_double can't be squared with big_dbl = TRUE", {
+test_that("max_positive_double can't be squared when big_dbl = TRUE", {
   max_dbl <-
     max_positive_double(big_dbl = TRUE)
 
-  expect_true(is.infinite(max_dbl ^ 2))
+  is.infinite(max_dbl ^ 2) |> expect_true()
 })
 
-test_that("max_positive_double can be squared with big_dbl = FALSE", {
+test_that("max_positive_double can be squared when big_dbl = FALSE", {
   max_dbl <-
     max_positive_double(big_dbl = FALSE)
 
-  expect_false(is.infinite(max_dbl ^ 2))
+  is.infinite(max_dbl ^ 2) |> expect_false()
 })

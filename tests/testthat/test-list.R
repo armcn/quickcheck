@@ -4,7 +4,7 @@ test_that("list_ wraps a single generator in a list", {
     property = \(a) {
       for_all(
         b = list_(constant(a)),
-        property = \(b) expect_equal(b, list(a)),
+        property = \(b) list(a) |> expect_equal(b),
         tests = 10L
       )
     },
@@ -26,6 +26,6 @@ test_that("list_ wraps multiple generators in a list", {
 test_that("list_ maintains names", {
   for_all(
     a = list_(x = any_vector(), y = any_vector()),
-    property = \(a) expect_equal(names(a), c("x", "y"))
+    property = \(a) names(a) |> expect_equal(c("x", "y"))
   )
 })

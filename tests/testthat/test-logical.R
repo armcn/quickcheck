@@ -1,14 +1,21 @@
-test_that("logical_ generates pure logicals", {
+test_that("logical_ generates logicals", {
   for_all(
     a = logical_(),
-    property = \(a) expect_true(pure::is_pure_logical(a))
+    property = \(a) is.logical(a) |> expect_true()
+  )
+})
+
+test_that("logical_ doesn't generate NAs by default", {
+  for_all(
+    a = logical_(),
+    property = \(a) a |> is.na() |> any() |> expect_false()
   )
 })
 
 test_that("logical_ generates vectors of length 1 by default", {
   for_all(
     a = logical_(),
-    property = \(a) expect_equal(length(a), 1L)
+    property = \(a) length(a) |> expect_equal(1L)
   )
 })
 
@@ -18,7 +25,7 @@ test_that("logical_ generates vectors of specific length", {
     property = \(len) {
       for_all(
         a = logical_(len = len),
-        property = \(a) expect_equal(length(a), len),
+        property = \(a) length(a) |> expect_equal(len),
         tests = 10L
       )
     },
@@ -28,16 +35,12 @@ test_that("logical_ generates vectors of specific length", {
 
 test_that("logical_ generates vectors within a range of lengths", {
   for_all(
-    min_len = integer_bounded(1L, 5L),
-    max_len = integer_bounded(5L, 10L),
-    property = \(min_len, max_len) {
+    min = integer_bounded(1L, 5L),
+    max = integer_bounded(5L, 10L),
+    property = \(min, max) {
       for_all(
-        a = logical_(len = c(min_len, max_len)),
-        property = \(a) {
-          expect_true(
-            length(a) >= min_len && length(a) <= max_len
-          )
-        },
+        a = logical_(len = c(min, max)),
+        property = \(a) expect_true(length(a) >= min && length(a) <= max),
         tests = 10L
       )
     },
@@ -45,11 +48,9 @@ test_that("logical_ generates vectors within a range of lengths", {
   )
 })
 
-test_that("logical_ generates vectors with NA", {
-  is_na_logical <- \(a) is.na(a) & is.logical(a)
-
+test_that("logical_ can generate vectors with NAs", {
   for_all(
     a = logical_(len = 10L, frac_na = 1),
-    property = \(a) expect_true(all(is_na_logical(a)))
+    property = \(a) is_na_logical(a) |> all() |> expect_true()
   )
 })

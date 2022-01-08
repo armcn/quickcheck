@@ -1,28 +1,13 @@
 test_that("quickcheck generators print correctly", {
-  expect_output(
-    print(integer_()),
-    regexp = "Hedgehog generator:"
-  )
+  print(integer_()) |> expect_output("Hedgehog generator:")
 
-  expect_output(
-    print(integer_()),
-    regexp = "Example:"
-  )
+  print(integer_()) |> expect_output("Example:")
 
-  expect_output(
-    print(integer_()),
-    regexp = "Initial shrinks:"
-  )
+  print(integer_()) |> expect_output("Initial shrinks:")
 
-  expect_output(
-    print(constant(TRUE)),
-    regexp = "TRUE"
-  )
+  print(constant(TRUE)) |> expect_output("TRUE")
 })
 
 test_that("show_example returns an example", {
-  expect_equal(
-    constant("hello") |> show_example(),
-    "hello"
-  )
+  constant("hello") |> show_example() |> expect_equal("hello")
 })

@@ -12,7 +12,7 @@ Description: Property based testing, inspired by
     'hedgehog' and is designed to seamlessly integrate with 
     'testthat'.
 License: MIT + file LICENSE
-URL: https://github.com/armcn/quickcheck
+URL: https://armcn.github.io/quickcheck
 BugReports: https://github.com/armcn/quickcheck/issues
 Encoding: UTF-8
 LazyData: true
@@ -27,11 +27,8 @@ Imports:
     stats
 Suggests: 
     testthat (>= 3.0.0),
-    pure,
     knitr,
     rmarkdown,
     covr
-Remotes:
-    github::armcn/pure
 Config/testthat/edition: 3
 VignetteBuilder: knitr
