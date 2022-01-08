@@ -1,3 +1,3 @@
-## quickcheck 0.0.1
+# quickcheck 0.0.1
 
 Initial version
