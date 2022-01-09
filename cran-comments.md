@@ -1,4 +1,9 @@
-This is my first submission of this package.
+This is a re-submission.
+
+Fixed NOTE:  
+  Found the following (possibly) invalid URLs:
+     URL: https://codecov.io/gh/armcn/quickcheck?branch=main (moved to
+     https://app.codecov.io/gh/armcn/quickcheck?branch=main)
 
 ## Test Environments
 
@@ -9,3 +14,4 @@ This is my first submission of this package.
 ## R CMD check results
 
 0 errors | 0 warnings | 0 notes
+
