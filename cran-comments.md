@@ -1,7 +1,6 @@
 This is a re-submission.
 
-I have added documentation for return values of `for_all` and `show_example`.
-I have removed an example for `for_all` because the examples took over 5 seconds.
+I have reduced the time testing takes because it was taking >10 min.
 
 ## Test Environments
 

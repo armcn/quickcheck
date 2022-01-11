@@ -26,10 +26,10 @@ test_that("any_list generates lists of specific length", {
       for_all(
         a = any_list(len = len),
         property = \(a) length(a) |> expect_equal(len),
-        tests = 10L
+        tests = 5L
       )
     },
-    tests = 10L
+    tests = 5L
   )
 })
 
@@ -41,16 +41,17 @@ test_that("any_list generates lists within a range of lengths", {
       for_all(
         a = any_list(len = c(min, max)),
         property = \(a) expect_true(length(a) >= min && length(a) <= max),
-        tests = 10L
+        tests = 5L
       )
     },
-    tests = 10L
+    tests = 5L
   )
 })
 
 test_that("any_list can generate lists with NAs", {
   for_all(
     a = any_list(len = 10L, frac_na = 1),
-    property = \(a) unlist(a) |> is.na() |> all() |> expect_true()
+    property = \(a) unlist(a) |> is.na() |> all() |> expect_true(),
+    tests = 5L
   )
 })

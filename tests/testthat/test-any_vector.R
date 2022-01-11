@@ -19,10 +19,10 @@ test_that("any_vector generates vectors of specific length", {
       for_all(
         a = any_vector(len = len),
         property = \(a) length(a) |> expect_equal(len),
-        tests = 10L
+        tests = 5L
       )
     },
-    tests = 10L
+    tests = 5L
   )
 })
 
@@ -34,16 +34,17 @@ test_that("any_vector generates vectors within a range of lengths", {
       for_all(
         a = any_vector(len = c(min, max)),
         property = \(a) expect_true(length(a) >= min && length(a) <= max),
-        tests = 10L
+        tests = 5L
       )
     },
-    tests = 10L
+    tests = 5L
   )
 })
 
 test_that("any_vector can generate vectors with NAs", {
   for_all(
     a = any_vector(len = 10L, frac_na = 1),
-    property = \(a) unlist(a) |> is.na() |> all() |> expect_true()
+    property = \(a) unlist(a) |> is.na() |> all() |> expect_true(),
+    tests = 5L
   )
 })
