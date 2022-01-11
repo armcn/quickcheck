@@ -11,15 +11,10 @@
 #'   when running the property.
 #'
 #' @examples
-#' library(testthat)
 #' for_all(
 #'   a = numeric_(),
 #'   b = numeric_(),
-#'   property = \(a, b) expect_equal(a + b, b + a)
-#' )
-#' for_all(
-#'   x = any_vector(),
-#'   property = \(x) rev(x) |> rev() |> expect_equal(x)
+#'   property = \(a, b) testthat::expect_equal(a + b, b + a)
 #' )
 #' @return A `testthat` expectation object.
 #' @export
