@@ -83,52 +83,98 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_vector</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  TRUE  TRUE FALSE FALSE  TRUE FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2098</span>
 <span class="r-in"><span class="fu">any_vector</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]      NA    7396 -209640</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2091-09-21" "1277-02-16" NA           "1299-10-05" "2449-04-23"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA  1 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]           NA -24914160277           NA   -504561616 -10935969151</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6]  25613243661</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]    NA  1081   119 -9427 -9777  5895</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE TRUE   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:23:16.735599</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 07:21:09.567704</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 07:43:48.771697</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:23:51.226167</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:53:09.821093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA      "Pd*I." NA     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]   NA 8830</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1286-01-18 23:45:29 UTC" "2416-09-17 16:21:56 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2163-04-03 12:39:35 UTC" "2496-03-20 07:14:53 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "224-09-15 22:45:01 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2701-05-26" NA           NA           NA           NA          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] NA           NA           "1555-07-13"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA    "g3|"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]    NA    NA 62896</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  1  1 NA NA NA NA  1 NA  1  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:41:04.331175</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA NA  1 NA NA  1 NA  1 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "(b"     NA       NA       "mG&lt;?3B" "Mw"     "@!7E_"  "c9$ _" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "TPOft`u"  "ag!UjOdj" "&lt;~+}+%w"  ")R"       NA         NA         "Y"       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "65-07-08 10:19:05 UTC"   "769-11-13 06:08:06 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] NA                        "341-11-02 09:35:44 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2285-12-02 11:43:48 UTC" NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2688-08-14 03:12:46 UTC" "2223-12-06 08:48:46 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [9] "718-02-02 06:17:32 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]           NA           NA           NA -36890755938           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6]           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "716-02-12 13:31:13 UTC"  "1615-03-23 00:30:14 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] NA                        "1505-07-30 06:25:28 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:17:41.551116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16:26:28.732153</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 00:05:17.482372</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]         NA         NA -390792071</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]        NA 202042493        NA        NA         0        NA        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]         0        NA        NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2865-01-14" "2192-12-26" "1727-10-09" "1726-09-23" "1836-07-01"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "2663-08-30" NA           NA           "1033-02-21"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4213 6602 2704</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA NA  1 NA  1 NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]   NA TRUE TRUE TRUE   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
