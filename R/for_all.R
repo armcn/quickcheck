@@ -1,6 +1,6 @@
 #' Test properties of a function
 #'
-#' @param ... Dots
+#' @param ... Named generators
 #' @param property A function which takes a value from from
 #'   the generator and calls an expectation on it.
 #' @param tests The number of tests to run.
@@ -21,6 +21,7 @@
 #'   x = any_vector(),
 #'   property = \(x) rev(x) |> rev() |> expect_equal(x)
 #' )
+#' @return A `testthat` expectation object.
 #' @export
 for_all <- function(...,
                     property,

@@ -14,7 +14,7 @@ for_all(
 )
 }
 \arguments{
-\item{...}{Dots}
+\item{...}{Named generators}
 
 \item{property}{A function which takes a value from from
 the generator and calls an expectation on it.}
@@ -28,6 +28,9 @@ shrinking a value to find the smallest counterexample.}
 
 \item{discards}{The maximum number of discards to permit
 when running the property.}
+}
+\value{
+A \code{testthat} expectation object.
 }
 \description{
 Test properties of a function

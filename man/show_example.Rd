@@ -7,8 +7,14 @@
 show_example(generator)
 }
 \arguments{
-\item{generator}{Generator}
+\item{generator}{A generator}
+}
+\value{
+An example output produced by the generator.
 }
 \description{
 Show an example output of a generator
+}
+\examples{
+logical_() |> show_example()
 }

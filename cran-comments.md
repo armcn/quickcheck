@@ -1,9 +1,6 @@
 This is a re-submission.
 
-Fixed NOTE:  
-  Found the following (possibly) invalid URLs:
-     URL: https://codecov.io/gh/armcn/quickcheck?branch=main (moved to
-     https://app.codecov.io/gh/armcn/quickcheck?branch=main)
+I have added documentation for return values of `for_all` and `show_example`.
 
 ## Test Environments
 

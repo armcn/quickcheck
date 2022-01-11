@@ -1,7 +1,10 @@
 #' Show an example output of a generator
 #'
-#' @param generator Generator
+#' @param generator A generator
 #'
+#' @examples
+#' logical_() |> show_example()
+#' @return An example output produced by the generator.
 #' @export
 show_example <- function(generator) {
   generator() |>
