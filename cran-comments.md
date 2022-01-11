@@ -1,6 +1,7 @@
 This is a re-submission.
 
 I have added documentation for return values of `for_all` and `show_example`.
+I have removed an example for `for_all` because the examples took over 5 seconds.
 
 ## Test Environments
 
