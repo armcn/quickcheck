@@ -5,11 +5,11 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/quickcheck)](https://CRAN.R-project.org/package=quickcheck)
 [![R-CMD-check](https://github.com/armcn/quickcheck/workflows/R-CMD-check/badge.svg)](https://github.com/armcn/quickcheck/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/armcn/quickcheck/branch/main/graph/badge.svg)](https://app.codecov.io/gh/armcn/quickcheck?branch=main)
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 # Overview
@@ -21,6 +21,10 @@ builds on the property based testing framework provided by
 to seamlessly integrate with a [`testthat`](https://testthat.r-lib.org).
 
 ## Installation
+
+``` r
+install.packages("quickcheck")
+```
 
 You can install the development version of quickcheck from
 [GitHub](https://github.com/) with:
