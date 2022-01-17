@@ -10,6 +10,8 @@ status](https://www.r-pkg.org/badges/version/quickcheck)](https://CRAN.R-project
 [![R-CMD-check](https://github.com/armcn/quickcheck/workflows/R-CMD-check/badge.svg)](https://github.com/armcn/quickcheck/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/armcn/quickcheck/branch/main/graph/badge.svg)](https://app.codecov.io/gh/armcn/quickcheck?branch=main)
+[![metacran
+downloads](https://cranlogs.r-pkg.org/badges/quickcheck)](https://cran.r-project.org/package=quickcheck)
 <!-- badges: end -->
 
 # Overview
@@ -22,12 +24,14 @@ to seamlessly integrate with a [`testthat`](https://testthat.r-lib.org).
 
 ## Installation
 
+Install the CRAN version with:
+
 ``` r
 install.packages("quickcheck")
 ```
 
-You can install the development version of quickcheck from
-[GitHub](https://github.com/) with:
+or install the development version from [GitHub](https://github.com/)
+with:
 
 ``` r
 # install.packages("remotes")
