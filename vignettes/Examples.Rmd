@@ -1,0 +1,135 @@
+---
+title: "Examples"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Examples}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  results = "hide",
+  message = FALSE
+)
+```
+
+```{r setup}
+library(quickcheck)
+library(testthat)
+library(tidyverse)
+```
+
+## Testing `+`
+
+```{r}
+test_that("0 is the additive identity of +", {
+  for_all(
+    a = numeric_(),
+    property = \(a) expect_equal(a, a + 0)
+  )          
+})
+
+test_that("+ is commutative", {
+  for_all(
+    a = numeric_(),
+    b = numeric_(),
+    property = \(a, b) expect_equal(a + b, b + a)
+  )          
+})
+
+test_that("+ is associative", {
+  for_all(
+    a = numeric_(),
+    b = numeric_(),
+    c = numeric_(),
+    property = \(a, b, c) expect_equal(a + (b + c), (a + b) + c)
+  )          
+})
+```
+
+## Testing `base::rev`
+
+```{r}
+test_that("reverse of reverse is identity", {
+  for_all(
+    a = any_vector(len = c(1L, 10L)),
+    property = \(a) a |> rev() |> rev() |> expect_equal(a)
+  )
+})
+
+test_that("reverse of concatenation is flipped concatenation of reversed", {
+  for_all(
+    a = integer_(len = c(1L, 10L)),
+    b = integer_(len = c(1L, 10L)),
+    property = \(a, b) rev(c(a, b)) |> expect_equal(c(rev(b), rev(a)))
+  )
+})
+```
+
+## Testing `stringr::str_c`
+
+```{r}
+test_that("str_c does nothing with a single input string", {
+  for_all(
+    a = character_(),
+    property = \(a) str_c(a) |> expect_equal(a)
+  )
+})
+
+test_that("str_c returns a single string with multiple input strings", {
+  for_all(
+    a = character_(),
+    b = character_(),
+    c = character_(),
+    property = \(a, b, c) str_c(a, b, c) |> length() |> expect_equal(1L)
+  )
+})
+
+test_that("concatenation of strings always contains the original strings", {
+  for_all(
+    a = character_(),
+    b = character_(),
+    property = \(a, b) {
+      str_c(a, b) |> str_detect(fixed(a)) |> expect_true()
+      str_c(a, b) |> str_detect(fixed(b)) |> expect_true()
+    }
+  )
+})
+```
+
+## Testing `dplyr::distinct`
+
+```{r}
+test_that("distinct does nothing with a single row", {
+  for_all(
+    a = any_tibble(rows = 1L),
+    property = \(a) {
+      distinct(a) |> expect_equal(a)
+    }
+  )
+})
+
+test_that("distinct returns single row if rows are repeated", {
+  for_all(
+    a = any_tibble(rows = 1L),
+    property = \(a) {
+      bind_rows(a, a) |> distinct() |> expect_equal(a)
+    }
+  )
+})
+
+test_that("distinct does nothing if rows are unique", {
+  for_all(
+    a = tibble_of(integer_positive(), rows = 1L, cols = 1L),
+    b = tibble_of(integer_negative(), rows = 1L, cols = 1L),
+    property = \(a, b) {
+      unique_rows <- bind_rows(a, b)
+      distinct(unique_rows) |> expect_equal(unique_rows)
+    }
+  )
+})
+```
+
