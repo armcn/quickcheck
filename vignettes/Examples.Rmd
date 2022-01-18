@@ -19,7 +19,8 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(quickcheck)
 library(testthat)
-library(tidyverse)
+library(dplyr)
+library(stringr)
 ```
 
 ## Testing `+`
