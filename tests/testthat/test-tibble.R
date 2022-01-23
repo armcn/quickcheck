@@ -60,7 +60,7 @@ test_that("tibble_ generates tibbles with specific number of rows", {
 
 test_that("tibble_ generates tibbles within a range of rows", {
   for_all(
-    min = integer_bounded(1L, 5L, len = 1L),
+    min = integer_bounded(0L, 5L, len = 1L),
     max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
