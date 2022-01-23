@@ -33,3 +33,21 @@ list_of <- function(generator, len = c(1L, 10L)) {
     vectorize(list(generator()), len2)
   )
 }
+
+#' Variable length flat list generator
+#'
+#' This will generate flat lists with all values coming from a single input
+#' generator. In a flat list all items will be scalars.
+#'
+#' @param generator Quickcheck generator
+#' @template len
+#'
+#' @examples
+#' flat_list_of(integer_(), len = 10L) |> show_example()
+#' @template generator
+#' @export
+flat_list_of <- function(generator, len = c(1L, 10L)) {
+  qc_gen(\(len2 = len)
+    vectorize(list(generator(len = 1L)), len2)
+  )
+}

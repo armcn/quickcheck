@@ -57,7 +57,7 @@ any_atomic <- function(len = c(1L, 10L), frac_na = 0) {
 #' @template generator
 #' @export
 any_flat_list <- function(len = c(1L, 10L), frac_na = 0) {
-  list_of(any_atomic(1L, frac_na), len)
+  flat_list_of(any_atomic(frac_na = frac_na), len)
 }
 
 #' Random list generator

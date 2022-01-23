@@ -57,11 +57,11 @@ is_na_numeric <- function(a) {
 }
 
 is_infinite <- function(a) {
-  isTRUE(is.atomic(a) && is.infinite(a))
+  is.atomic(a) && isTRUE(is.infinite(a))
 }
 
 is_nan <- function(a) {
-  isTRUE(is.atomic(a) && is.nan(a))
+  is.atomic(a) && isTRUE(is.nan(a))
 }
 
 is_na <- function(a) {
