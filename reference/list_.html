@@ -76,28 +76,31 @@ by the input generators.</p>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hedgehog.internal.gen</code> generator</p>
+    <p>A <code>quickcheck_generator</code> generator</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_</span><span class="op">(</span><span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  7222 -1842  1184</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -3536  1982  3865 -1201  6999 -9931  5357  -742  3812</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  TRUE  TRUE FALSE  TRUE FALSE FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  TRUE  TRUE FALSE FALSE  TRUE FALSE  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span class="fu">list_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 44J       2jc]e8              |         05_W-aA-  j-*Z~-1u0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: 44J 2jc]e8   | 05_W-aA- j-*Z~-1u0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2102-09-09" "2732-01-31" "2079-09-22"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] #         Fe?AY#    G=0+LL@   YAt|b*    pw2x{xc   =r^2      *pmi#b   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [8] F`qbo7{*h</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: # Fe?AY# G=0+LL@ YAt|b* pw2x{xc =r^2 *pmi#b F`qbo7{*h</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 7092</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>

@@ -186,20 +186,20 @@
   <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-element.html" class="external-link">gen.element</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span>\<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">a</span><span class="op">)</span>
 
 <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
-  a <span class="op">=</span> <span class="fu">from_hedgehog</span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
+  a <span class="op">=</span> <span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
   property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 <p>Any hedgehog generator can be used with quickcheck but they can’t be composed together to build another generator. For example this will work:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
-  a <span class="op">=</span> <span class="fu">from_hedgehog</span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
+  a <span class="op">=</span> <span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
   b <span class="op">=</span> <span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>,
   property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 <p>But this will cause an error:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
-  a <span class="op">=</span> <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu">from_hedgehog</span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span><span class="op">)</span>,
+  a <span class="op">=</span> <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span><span class="op">)</span>,
   property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_tibble</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 </div>

@@ -104,19 +104,19 @@ numbers, inclusive.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>hedgehog.internal.gen</code> generator</p>
+    <p>A <code>quickcheck_generator</code> generator</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">integer_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 7799</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6854 4048</span>
 <span class="r-in"><span class="fu">integer_</span><span class="op">(</span>big_int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  361089903 1632913440  803118590</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1381648928  2066575104  -260148225 -1361804409  -260703703</span>
 <span class="r-in"><span class="fu">integer_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5L</span>, right <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0  2  1  0  4  2  5 -2  0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 1 3</span>
 <span class="r-in"><span class="fu">integer_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   NA   NA    0   NA -613 4086   NA   NA 5823   NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]    NA    NA    NA -3575 -5165  2164  4572    NA    NA    NA</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
