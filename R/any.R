@@ -1,3 +1,21 @@
+#' Any R object generator
+#'
+#' Generate any R object. This doesn't actually generate any possible object,
+#' just the most common ones, namely atomic vectors, lists, tibbles, and
+#' undefined values like `NA`, `NULL`, `Inf`, and `NaN`.
+#'
+#' @examples
+#' anything() |> show_example()
+#' @template generator
+#' @export
+anything <- function() {
+  one_of(
+    any_vector(len = c(0L, 10L), frac_na = 0.1),
+    any_tibble(rows = c(0L, 10L), cols = c(0L, 10L), frac_na = 0.1),
+    any_undefined()
+  )
+}
+
 #' Atomic vector generator
 #'
 #' Generate vectors of integer, double, character, logical, date, POSIXct, hms,
@@ -44,8 +62,8 @@ any_flat_list <- function(len = c(1L, 10L), frac_na = 0) {
 
 #' Random list generator
 #'
-#' Generate random lists containing other lists or atomic
-#' vectors of variable lengths.
+#' Generate random lists containing other lists or atomic vectors of variable
+#' lengths.
 #'
 #' @template len
 #' @template frac_na
@@ -108,5 +126,29 @@ any_tibble <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
     any_vector(frac_na = frac_na),
     rows = rows,
     cols = cols
+  )
+}
+
+#' Undefined value generator
+#'
+#' Generate undefined values. In this case undefined values include `NA`,
+#' `NA_integer_`, `NA_real_`, `NA_character_`, `NA_complex_`, `NULL`, `-Inf`,
+#' `Inf`, and `NaN`. Values generated are always scalars.
+#'
+#' @examples
+#' any_undefined() |> show_example()
+#' @template generator
+#' @export
+any_undefined <- function() {
+  one_of(
+    constant(NULL),
+    constant(-Inf),
+    constant(Inf),
+    constant(NaN),
+    constant(NA),
+    constant(NA_integer_),
+    constant(NA_real_),
+    constant(NA_character_),
+    constant(NA_complex_)
   )
 }

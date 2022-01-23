@@ -56,6 +56,18 @@ is_na_numeric <- function(a) {
   or(is_na_integer, is_na_real)(a)
 }
 
+is_infinite <- function(a) {
+  isTRUE(is.atomic(a) && is.infinite(a))
+}
+
+is_nan <- function(a) {
+  isTRUE(is.atomic(a) && is.nan(a))
+}
+
+is_na <- function(a) {
+  isTRUE(is.na(a))
+}
+
 is_posixct <- function(a) {
   inherits(a, "POSIXct")
 }
@@ -84,4 +96,12 @@ is_flat_list <- function(a) {
 
 is_zero <- function(a) {
   identical(a, 0) || identical(a, 0L)
+}
+
+is_undefined <- function(a) {
+  or(is.null, is_infinite, is_nan, is_na)(a)
+}
+
+is_vector <- function(a) {
+  is.atomic(a) || is.list(a)
 }

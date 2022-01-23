@@ -23,8 +23,8 @@ include around 50\% \code{NA} values.}
 A \code{quickcheck_generator} generator
 }
 \description{
-Generate random lists containing other lists or atomic
-vectors of variable lengths.
+Generate random lists containing other lists or atomic vectors of variable
+lengths.
 }
 \examples{
 any_list() |> show_example()
