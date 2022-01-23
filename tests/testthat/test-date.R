@@ -12,6 +12,25 @@ test_that("date_ doesn't generate NAs by default", {
   )
 })
 
+test_that("date_ can generate empty vectors", {
+  for_all(
+    a = date_(len = 0L),
+    property = \(a) is_date(a) |> expect_true()
+  )
+
+  for_all(
+    a = date_(len = 0L),
+    property = \(a) length(a) |> expect_equal(0L)
+  )
+})
+
+test_that("date_ generates vectors with lengths from 1 and 10 by default", {
+  for_all(
+    a = date_(),
+    property = \(a) expect_true(length(a) >= 1L && length(a) <= 10L)
+  )
+})
+
 test_that("date_ generates vectors of specific length", {
   for_all(
     len = integer_bounded(1L, 10L, len = 1L),

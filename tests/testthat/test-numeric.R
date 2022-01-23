@@ -26,6 +26,25 @@ test_that("numeric_ doesn't generate Infs", {
   )
 })
 
+test_that("numeric_ can generate empty vectors", {
+  for_all(
+    a = numeric_(len = 0L),
+    property = \(a) is.numeric(a) |> expect_true()
+  )
+
+  for_all(
+    a = numeric_(len = 0L),
+    property = \(a) length(a) |> expect_equal(0L)
+  )
+})
+
+test_that("numeric_ generates vectors with lengths from 1 and 10 by default", {
+  for_all(
+    a = numeric_(),
+    property = \(a) expect_true(length(a) >= 1L && length(a) <= 10L)
+  )
+})
+
 test_that("numeric_ generates vectors of specific length", {
   for_all(
     len = integer_bounded(1L, 10L, len = 1L),
