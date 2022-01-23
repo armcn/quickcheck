@@ -19,7 +19,7 @@ integer or double vectors."><!-- mathjax --><script src="https://cdnjs.cloudflar
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
@@ -66,17 +66,17 @@ integer or double vectors.</p>
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">numeric_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">numeric_</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">numeric_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">numeric_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
-<span class="fu">numeric_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">numeric_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">numeric_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">numeric_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">numeric_positive</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">numeric_positive</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">numeric_negative</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<span class="fu">numeric_negative</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_num <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -114,14 +114,14 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">numeric_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 683617596</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]   -48     0 -7592 -5188 -7312</span>
 <span class="r-in"><span class="fu">numeric_</span><span class="op">(</span>big_num <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4.778729e+307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -8.416135e+307  6.964464e+307   0.000000e+00  3.253637e+307  3.323059e+307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6]  2.200439e+307  2.979820e+307</span>
 <span class="r-in"><span class="fu">numeric_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5L</span>, right <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  2 -4 -1  1  5  5  2  0</span>
 <span class="r-in"><span class="fu">numeric_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  877443286 -409586712  505164217  864502296  491518936 -632381012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]         NA          0  420770436         NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  4774  8466    NA  7824 -9394    NA    NA    NA -8336  2891</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -133,7 +133,7 @@ numbers, inclusive.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer></div>

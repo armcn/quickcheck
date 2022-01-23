@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
@@ -63,7 +63,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">list_of</span><span class="op">(</span><span class="va">generator</span>, len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">list_of</span><span class="op">(</span><span class="va">generator</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -87,34 +87,34 @@ vectors with lengths between 1 and 10.</p></dd>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_of</span><span class="op">(</span><span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, len <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -3501</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -9583 -9493     0  8166  1804  5882     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -2150</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1607 -6787 -3567  6914 -9004 -5976 -2933 -5373</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -3463</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1040</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  2913 -8304</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -9573</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3999</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5339</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  9143  4821 -1111     0  9114  2378  -563 -4969</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -7847</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -6019 -8781 -5582 -7369  7630  7853</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 8257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -6407 -3338  7654  -319  4514  -507</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 911</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  8925  9556    40 -2759 -5780  4091  8687  4293  2913</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 8493</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -3999 -3540  6766     0  3235  5521  -637  7216  5474 -6601</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
@@ -127,7 +127,7 @@ vectors with lengths between 1 and 10.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer></div>

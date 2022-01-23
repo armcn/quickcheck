@@ -19,7 +19,7 @@ by the input generators."><!-- mathjax --><script src="https://cdnjs.cloudflare.
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
@@ -83,17 +83,54 @@ by the input generators.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_</span><span class="op">(</span><span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 54</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]     0  3064  1376 -6647</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span class="fu">list_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Ochu"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -8464</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2863-10-05"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[1]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2325-03-22" "1797-02-06" "2847-06-03" "1731-07-20" "2352-12-08"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "1534-10-16"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[1]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "275-02-23 10:51:23 UTC"  "1047-01-24 00:09:31 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "1749-09-19 13:15:41 UTC" "114-04-20 15:55:14 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "394-04-14 21:13:47 UTC"  "1666-08-04 15:37:18 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "296-08-02 22:02:41 UTC"  "1266-03-02 17:32:02 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[2]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -2152  9138 -2610 -1155  6019 -8290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[2]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  1284     0  9289  8538 -7846  4728</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[3]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "9        7HEa]     Z         0Xt`qmxK~ sl       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: "9 7HEa] Z 0Xt`qmxK~ sl</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[3]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] fM&gt;, v/   [3EuvlE,  DVAP]0 v  s=        ~+{&gt;AGGy) |         ^        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: fM&gt;, v/ [3EuvlE, DVAP]0 v s= ~+{&gt;AGGy) | ^ </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[4]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5936   616</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[4]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "570-03-02 06:30:09 UTC"  "1605-09-04 17:20:38 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
@@ -106,7 +143,7 @@ by the input generators.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer></div>

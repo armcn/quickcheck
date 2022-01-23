@@ -17,7 +17,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div id="navbar" class="collapse navbar-collapse ms-2">
+    <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
@@ -63,13 +63,13 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">date_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">date_</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
-<span class="fu">date_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">date_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
-<span class="fu">date_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">date_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
 
-<span class="fu">date_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fl">1L</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+<span class="fu">date_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -101,15 +101,16 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">date_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2897-06-07"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1234-11-07" "2834-08-25" "1481-09-02" "1127-08-21" "2560-12-04"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "1876-05-16"</span>
 <span class="r-in"><span class="fu">date_bounded</span><span class="op">(</span></span>
 <span class="r-in">  left <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2020-01-01"</span><span class="op">)</span>,</span>
 <span class="r-in">  right <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2020-01-10"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-01-03"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-01-02" "2020-01-09" "2020-01-06" "2020-01-03"</span>
 <span class="r-in"><span class="fu">date_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]      NA      NA -219479  282429   99757      NA  224535      NA -107894</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [10]  353252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2623-03-13" "2895-11-18" "2223-01-13" "2797-04-11" NA          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "1161-12-23" "1202-05-15" "2568-09-06" "2167-05-20" NA          </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
@@ -121,7 +122,7 @@ numbers, inclusive.</p></dd>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
     </footer></div>
