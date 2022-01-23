@@ -28,24 +28,24 @@ library(stringr)
 ```{r}
 test_that("0 is the additive identity of +", {
   for_all(
-    a = numeric_(),
+    a = numeric_(len = 1L),
     property = \(a) expect_equal(a, a + 0)
   )          
 })
 
 test_that("+ is commutative", {
   for_all(
-    a = numeric_(),
-    b = numeric_(),
+    a = numeric_(len = 1L),
+    b = numeric_(len = 1L),
     property = \(a, b) expect_equal(a + b, b + a)
   )          
 })
 
 test_that("+ is associative", {
   for_all(
-    a = numeric_(),
-    b = numeric_(),
-    c = numeric_(),
+    a = numeric_(len = 1L),
+    b = numeric_(len = 1L),
+    c = numeric_(len = 1L),
     property = \(a, b, c) expect_equal(a + (b + c), (a + b) + c)
   )          
 })
@@ -75,24 +75,24 @@ test_that("reverse of concatenation is flipped concatenation of reversed", {
 ```{r}
 test_that("str_c does nothing with a single input string", {
   for_all(
-    a = character_(),
+    a = character_(len = 1L),
     property = \(a) str_c(a) |> expect_equal(a)
   )
 })
 
 test_that("str_c returns a single string with multiple input strings", {
   for_all(
-    a = character_(),
-    b = character_(),
-    c = character_(),
+    a = character_(len = 1L),
+    b = character_(len = 1L),
+    c = character_(len = 1L),
     property = \(a, b, c) str_c(a, b, c) |> length() |> expect_equal(1L)
   )
 })
 
 test_that("concatenation of strings always contains the original strings", {
   for_all(
-    a = character_(),
-    b = character_(),
+    a = character_(len = 1L),
+    b = character_(len = 1L),
     property = \(a, b) {
       str_c(a, b) |> str_detect(fixed(a)) |> expect_true()
       str_c(a, b) |> str_detect(fixed(b)) |> expect_true()

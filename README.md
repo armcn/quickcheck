@@ -24,14 +24,14 @@ to seamlessly integrate with a [`testthat`](https://testthat.r-lib.org).
 
 ## Installation
 
-Install the CRAN version with:
+You can install the released version of quickcheck from
+[CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("quickcheck")
 ```
 
-or install the development version from [GitHub](https://github.com/)
-with:
+And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
@@ -53,24 +53,24 @@ library(quickcheck)
 
 test_that("0 is the additive identity of +", {
   for_all(
-    a = numeric_(),
+    a = numeric_(len = 1),
     property = \(a) expect_equal(a, a + 0)
   )          
 })
 
 test_that("+ is commutative", {
   for_all(
-    a = numeric_(),
-    b = numeric_(),
+    a = numeric_(len = 1),
+    b = numeric_(len = 1),
     property = \(a, b) expect_equal(a + b, b + a)
   )          
 })
 
 test_that("+ is associative", {
   for_all(
-    a = numeric_(),
-    b = numeric_(),
-    c = numeric_(),
+    a = numeric_(len = 1),
+    b = numeric_(len = 1),
+    c = numeric_(len = 1),
     property = \(a, b, c) expect_equal(a + (b + c), (a + b) + c)
   )          
 })
