@@ -37,7 +37,13 @@
     <loc>/reference/any_tibble.html</loc>
   </url>
   <url>
+    <loc>/reference/any_undefined.html</loc>
+  </url>
+  <url>
     <loc>/reference/any_vector.html</loc>
+  </url>
+  <url>
+    <loc>/reference/anything.html</loc>
   </url>
   <url>
     <loc>/reference/character_.html</loc>
@@ -53,6 +59,9 @@
   </url>
   <url>
     <loc>/reference/factor_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/flat_list_of.html</loc>
   </url>
   <url>
     <loc>/reference/for_all.html</loc>
