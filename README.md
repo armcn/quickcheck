@@ -113,3 +113,46 @@ test_that("distinct does nothing if rows are unique", {
   )
 })
 ```
+
+## Hedgehog generators
+
+quickcheck is meant to work with hedgehog, not replace it. hedgehog
+generators can be used simply by wrapping them in `from_hedgehog`. Under
+the hood all this function does is wrap the hedgehog generator in an
+anonymous function and add the `quickcheck_generator` class to it.
+
+``` r
+library(hedgehog)
+
+is_even <- 
+  \(a) a %% 2 == 0
+
+gen_powers_of_two <- 
+  gen.element(1:10) |> gen.with(\(a) 2 ^ a)
+
+for_all(
+  a = from_hedgehog(gen_powers_of_two),
+  property = \(a) is_even(a) |> expect_true()
+)
+```
+
+Any hedgehog generator can be used with quickcheck but they can’t be
+composed together to build another generator. For example this will
+work:
+
+``` r
+for_all(
+  a = from_hedgehog(gen_powers_of_two),
+  b = integer_(),
+  property = \(a, b) c(a, b) |> is.numeric() |> expect_true()
+)
+```
+
+But this will cause an error:
+
+``` r
+for_all(
+  a = tibble_of(from_hedgehog(gen_powers_of_two)),
+  property = \(a) is_tibble(a) |> expect_true()
+)
+```

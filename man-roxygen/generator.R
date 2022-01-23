@@ -1,1 +1,1 @@
-#' @return A `hedgehog.internal.gen` generator
+#' @return A `quickcheck_generator` generator

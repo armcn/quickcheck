@@ -1,3 +1,24 @@
+#' Convert a hedgehog generator to a quickcheck generator
+#'
+#' @param generator A `hedgehog.internal.gen` generator
+#'
+#' @examples
+#' library(quickcheck)
+#' library(testthat)
+#'
+#' gen_powers_of_two <-
+#'   hedgehog::gen.element(1:10) |> hedgehog::gen.with(\(a) 2 ^ a)
+#'
+#' for_all(
+#'   a = from_hedgehog(gen_powers_of_two),
+#'   property = \(a) is_even(a) |> expect_true()
+#' )
+#' @template generator
+#' @export
+from_hedgehog <- function(generator) {
+  qc_gen(\() generator)
+}
+
 #' Show an example output of a generator
 #'
 #' @param generator A generator
@@ -17,7 +38,7 @@ print.quickcheck_generator <- function (x, ...) {
   example <-
     hedgehog::gen.example(x())
 
-  cat("Hedgehog generator:\n")
+  cat("Quickcheck generator:\n")
   cat("Example:\n")
   print(example$root)
   cat("Initial shrinks:\n")

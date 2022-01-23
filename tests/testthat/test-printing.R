@@ -1,5 +1,5 @@
 test_that("quickcheck generators print correctly", {
-  print(integer_()) |> expect_output("Hedgehog generator:")
+  print(integer_()) |> expect_output("Quickcheck generator:")
 
   print(integer_()) |> expect_output("Example:")
 
