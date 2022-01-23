@@ -81,3 +81,15 @@ is_flat_list <- function(a) {
 
   lengths_equal && is.atomic(flattened)
 }
+
+is_zero <- function(a) {
+  identical(a, 0) || identical(a, 0L)
+}
+
+empty_date <- function() {
+  as.Date(integer(length = 0L), origin = "1970-01-01")
+}
+
+empty_posixct <- function() {
+  as.POSIXct(double(length = 0L))
+}

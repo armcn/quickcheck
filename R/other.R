@@ -7,9 +7,7 @@
 #' @return An example output produced by the generator.
 #' @export
 show_example <- function(generator) {
-  generator() |>
-    hedgehog::gen.example() |>
-    purrr::pluck("root")
+  hedgehog::gen.example(generator())$root
 }
 
 #' @export

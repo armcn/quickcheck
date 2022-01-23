@@ -12,6 +12,55 @@ test_that("tibble_of wraps a single generator in a tibble", {
   )
 })
 
+test_that("tibble_of can generate tibbles with 0 rows", {
+  for_all(
+    a = tibble_of(any_vector(), rows = 0L),
+    property = \(a) is_tibble(a) |> expect_true()
+  )
+
+  for_all(
+    a = tibble_of(any_vector(), rows = 0L),
+    property = \(a) nrow(a) |> expect_equal(0L)
+  )
+})
+
+test_that("tibble_of can generate tibbles with 0 columns", {
+  for_all(
+    a = tibble_of(any_vector(), cols = 0L),
+    property = \(a) is_tibble(a) |> expect_true()
+  )
+
+  for_all(
+    a = tibble_of(any_vector(), cols = 0L),
+    property = \(a) ncol(a) |> expect_equal(0L)
+  )
+})
+
+test_that("tibble_of can generate tibbles with 0 rows and 0 columns", {
+  for_all(
+    a = tibble_of(any_vector(), rows = 0L, cols = 0L),
+    property = \(a) is_tibble(a) |> expect_true()
+  )
+
+  for_all(
+    a = tibble_of(any_vector(), rows = 0L, cols = 0L),
+    property = \(a) expect_true(nrow(a) == 0L && ncol(a) == 0L)
+  )
+})
+
+test_that("tibble_of generates tibbles with dimensions from 1 and 10 by default", {
+  for_all(
+    a = tibble_of(any_vector()),
+    property = \(a) {
+      expect_true(
+        nrow(a) >= 1L && nrow(a) <= 10L &&
+        ncol(a) >= 1L && ncol(a) <= 10L
+      )
+    },
+    tests = 25L
+  )
+})
+
 test_that("tibble_of generates tibbles with specific number of rows and cols", {
   for_all(
     rows = integer_bounded(1L, 5L, len = 1L),
