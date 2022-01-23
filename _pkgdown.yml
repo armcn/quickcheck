@@ -104,6 +104,10 @@ reference:
   contents:
     - one_of
     - constant
+- title: Hedgehog
+  desc: Convert a hedgehog generator to a quickcheck generator
+  contents:
+    - from_hedgehog
 - title: Test runner
   desc: A function to run property based tests.
   contents:
