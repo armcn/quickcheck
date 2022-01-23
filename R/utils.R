@@ -81,3 +81,7 @@ is_flat_list <- function(a) {
 
   lengths_equal && is.atomic(flattened)
 }
+
+is_zero <- function(a) {
+  identical(a, 0) || identical(a, 0L)
+}

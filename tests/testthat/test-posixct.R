@@ -12,6 +12,25 @@ test_that("posixct_ doesn't generate NAs by default", {
   )
 })
 
+test_that("posixct_ can generate empty vectors", {
+  for_all(
+    a = posixct_(len = 0L),
+    property = \(a) is_posixct(a) |> expect_true()
+  )
+
+  for_all(
+    a = posixct_(len = 0L),
+    property = \(a) length(a) |> expect_equal(0L)
+  )
+})
+
+test_that("posixct_ generates vectors with lengths from 1 and 10 by default", {
+  for_all(
+    a = posixct_(),
+    property = \(a) expect_true(length(a) >= 1L && length(a) <= 10L)
+  )
+})
+
 test_that("posixct_ generates vectors of specific length", {
   for_all(
     len = integer_bounded(1L, 10L, len = 1L),
@@ -28,7 +47,7 @@ test_that("posixct_ generates vectors of specific length", {
 
 test_that("posixct_ generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L, len = 1L),
+    min = integer_bounded(0L, 5L, len = 1L),
     max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
