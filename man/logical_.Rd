@@ -20,7 +20,7 @@ will include no \code{NA} values. A fraction of 0.5 would
 include around 50\% \code{NA} values.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 A generator for logical vectors.

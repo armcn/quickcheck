@@ -6,6 +6,9 @@
 #' library(quickcheck)
 #' library(testthat)
 #'
+#' is_even <-
+#'   \(a) a %% 2L == 0L
+#'
 #' gen_powers_of_two <-
 #'   hedgehog::gen.element(1:10) |> hedgehog::gen.with(\(a) 2 ^ a)
 #'

@@ -20,7 +20,7 @@ will include no \code{NA} values. A fraction of 0.5 would
 include around 50\% \code{NA} values.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 Generate lists where each element is an atomic vector with a length of 1.

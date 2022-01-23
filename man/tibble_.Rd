@@ -18,7 +18,7 @@ a minimum and maximum, inclusive. For example
 between 1 and 10.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 Construct tibble generators in a similar way to \code{dplyr::tibble}.

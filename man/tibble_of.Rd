@@ -27,7 +27,7 @@ between a minimum and maximum, inclusive. For example
 columns between 1 and 10.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 Random tibble generator

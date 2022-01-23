@@ -13,7 +13,7 @@ one_of(..., prob = NULL)
 vector being sampled.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 Randomly choose between generators

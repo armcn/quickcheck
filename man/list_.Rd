@@ -10,7 +10,7 @@ list_(...)
 \item{...}{Quickcheck generators}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 This will generate lists with contents corresponding to the values generated

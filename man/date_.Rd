@@ -35,7 +35,7 @@ numbers, inclusive.}
 numbers, inclusive.}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 A set of generators for date vectors.

@@ -10,7 +10,7 @@ constant(a)
 \item{a}{Any R object}
 }
 \value{
-A \code{hedgehog.internal.gen} generator
+A \code{quickcheck_generator} generator
 }
 \description{
 Generate the same value every time
