@@ -23,8 +23,8 @@ test_that("any_tibble generates tibbles with rows and columns between 1 and 10
 test_that("any_tibble generates tibbles with specific number of rows and
           columns", {
   for_all(
-    rows = integer_bounded(1L, 5L),
-    cols = integer_bounded(1L, 5L),
+    rows = integer_bounded(1L, 5L, len = 1L),
+    cols = integer_bounded(1L, 5L, len = 1L),
     property = \(rows, cols) {
       for_all(
         a = any_tibble(rows = rows, cols = cols),
@@ -38,8 +38,8 @@ test_that("any_tibble generates tibbles with specific number of rows and
 
 test_that("any_tibble generates tibbles within a range of rows", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = any_tibble(rows = c(min, max)),
@@ -53,8 +53,8 @@ test_that("any_tibble generates tibbles within a range of rows", {
 
 test_that("any_tibble generates tibbles within a range of cols", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = any_tibble(cols = c(min, max)),

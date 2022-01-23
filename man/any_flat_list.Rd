@@ -4,7 +4,7 @@
 \alias{any_flat_list}
 \title{Flat list generator}
 \usage{
-any_flat_list(len = 1L, frac_na = 0)
+any_flat_list(len = c(1L, 10L), frac_na = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

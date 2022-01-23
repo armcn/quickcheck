@@ -16,13 +16,13 @@
 #' date_(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-date_ <- function(len = 1L, frac_na = 0) {
+date_ <- function(len = c(1L, 10L), frac_na = 0) {
   date_bounded(min_date(), max_date(), len, frac_na)
 }
 
 #' @rdname date_
 #' @export
-date_bounded <- function(left, right, len = 1L, frac_na = 0) {
+date_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
   qc_gen(\(len2 = len)
     seq(left, right, by = "day") |>
       hedgehog::gen.element() |>
@@ -33,13 +33,13 @@ date_bounded <- function(left, right, len = 1L, frac_na = 0) {
 
 #' @rdname date_
 #' @export
-date_left_bounded <- function(left, len = 1L, frac_na = 0) {
+date_left_bounded <- function(left, len = c(1L, 10L), frac_na = 0) {
   date_bounded(left, max_date(), len, frac_na)
 }
 
 #' @rdname date_
 #' @export
-date_right_bounded <- function(right, len = 1L, frac_na = 0) {
+date_right_bounded <- function(right, len = c(1L, 10L), frac_na = 0) {
   date_bounded(min_date(), right, len, frac_na)
 }
 

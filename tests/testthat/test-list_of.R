@@ -3,7 +3,7 @@ test_that("list_of wraps a single generator in a list", {
     a = any_vector(),
     property = \(a) {
       for_all(
-        b = list_of(constant(a)),
+        b = list_of(constant(a), len = 1L),
         property = \(b) list(a) |> expect_equal(b),
         tests = 10L
       )
@@ -12,16 +12,9 @@ test_that("list_of wraps a single generator in a list", {
   )
 })
 
-test_that("list_of generates lists of length 1 by default", {
-  for_all(
-    a = list_of(any_vector()),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
 test_that("list_of generates lists of specific length", {
   for_all(
-    len = integer_bounded(1L, 10L),
+    len = integer_bounded(1L, 10L, len = 1L),
     property = \(len) {
       for_all(
         a = list_of(any_vector(), len = len),
@@ -35,8 +28,8 @@ test_that("list_of generates lists of specific length", {
 
 test_that("list_of generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = list_of(any_vector(), len = c(min, max)),

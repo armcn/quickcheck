@@ -12,16 +12,9 @@ test_that("factor_ doesn't generate NAs by default", {
   )
 })
 
-test_that("factor_ generates vectors of length 1 by default", {
-  for_all(
-    a = factor_(),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
 test_that("factor_ generates vectors of specific length", {
   for_all(
-    len = integer_bounded(1L, 10L),
+    len = integer_bounded(1L, 10L, len = 1L),
     property = \(len) {
       for_all(
         a = factor_(len = len),
@@ -35,8 +28,8 @@ test_that("factor_ generates vectors of specific length", {
 
 test_that("factor_ generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = factor_(len = c(min, max)),

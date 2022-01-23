@@ -12,16 +12,9 @@ test_that("posixct_ doesn't generate NAs by default", {
   )
 })
 
-test_that("posixct_ generates vectors of length 1 by default", {
-  for_all(
-    a = posixct_(),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
 test_that("posixct_ generates vectors of specific length", {
   for_all(
-    len = integer_bounded(1L, 10L),
+    len = integer_bounded(1L, 10L, len = 1L),
     property = \(len) {
       for_all(
         a = posixct_(len = len),
@@ -35,8 +28,8 @@ test_that("posixct_ generates vectors of specific length", {
 
 test_that("posixct_ generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = posixct_(len = c(min, max)),
@@ -61,7 +54,7 @@ test_that("posixct_bounded generates bounded POSIXct vectors", {
 
   for_all(
     a = posixct_bounded(left = left, right = right),
-    property = \(a) expect_true(a >= left && a <= right)
+    property = \(a) all(a >= left & a <= right) |> expect_true()
   )
 })
 
@@ -70,7 +63,7 @@ test_that("posixct_left_bounded generates left bounded POSIXct vectors", {
 
   for_all(
     a = posixct_left_bounded(left = left),
-    property = \(a) expect_true(a >= left)
+    property = \(a) all(a >= left) |> expect_true()
   )
 })
 
@@ -79,6 +72,6 @@ test_that("posixct_right_bounded generates right bounded POSIXct vectors", {
 
   for_all(
     a = posixct_right_bounded(right = right),
-    property = \(a) expect_true(a <= right)
+    property = \(a) all(a <= right) |> expect_true()
   )
 })

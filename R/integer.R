@@ -15,7 +15,7 @@
 #' integer_(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-integer_ <- function(len = 1L, frac_na = 0, big_int = FALSE) {
+integer_ <- function(len = c(1L, 10L), frac_na = 0, big_int = FALSE) {
   integer_bounded(
     max_negative_integer(big_int),
     max_positive_integer(big_int),
@@ -26,7 +26,7 @@ integer_ <- function(len = 1L, frac_na = 0, big_int = FALSE) {
 
 #' @rdname integer_
 #' @export
-integer_bounded <- function(left, right, len = 1L, frac_na = 0) {
+integer_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
   ensure_some_zeros <-
     \(a)
       if (overlaps_zero(left, right))
@@ -45,7 +45,7 @@ integer_bounded <- function(left, right, len = 1L, frac_na = 0) {
 
 #' @rdname integer_
 #' @export
-integer_left_bounded <- function(left, len = 1L, frac_na = 0, big_int = FALSE) {
+integer_left_bounded <- function(left, len = c(1L, 10L), frac_na = 0, big_int = FALSE) {
   integer_bounded(
     left,
     max_positive_integer(big_int),
@@ -56,7 +56,7 @@ integer_left_bounded <- function(left, len = 1L, frac_na = 0, big_int = FALSE) {
 
 #' @rdname integer_
 #' @export
-integer_right_bounded <- function(right, len = 1L, frac_na = 0, big_int = FALSE) {
+integer_right_bounded <- function(right, len = c(1L, 10L), frac_na = 0, big_int = FALSE) {
   integer_bounded(
     max_negative_integer(big_int),
     right,
@@ -67,13 +67,13 @@ integer_right_bounded <- function(right, len = 1L, frac_na = 0, big_int = FALSE)
 
 #' @rdname integer_
 #' @export
-integer_positive <- function(len = 1L, frac_na = 0, big_int = FALSE) {
+integer_positive <- function(len = c(1L, 10L), frac_na = 0, big_int = FALSE) {
   integer_left_bounded(1L, len, frac_na)
 }
 
 #' @rdname integer_
 #' @export
-integer_negative <- function(len = 1L, frac_na = 0, big_int = FALSE) {
+integer_negative <- function(len = c(1L, 10L), frac_na = 0, big_int = FALSE) {
   integer_right_bounded(-1L, len, frac_na)
 }
 

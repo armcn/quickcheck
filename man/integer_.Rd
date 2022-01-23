@@ -9,17 +9,17 @@
 \alias{integer_negative}
 \title{Integer generators}
 \usage{
-integer_(len = 1L, frac_na = 0, big_int = FALSE)
+integer_(len = c(1L, 10L), frac_na = 0, big_int = FALSE)
 
-integer_bounded(left, right, len = 1L, frac_na = 0)
+integer_bounded(left, right, len = c(1L, 10L), frac_na = 0)
 
-integer_left_bounded(left, len = 1L, frac_na = 0, big_int = FALSE)
+integer_left_bounded(left, len = c(1L, 10L), frac_na = 0, big_int = FALSE)
 
-integer_right_bounded(right, len = 1L, frac_na = 0, big_int = FALSE)
+integer_right_bounded(right, len = c(1L, 10L), frac_na = 0, big_int = FALSE)
 
-integer_positive(len = 1L, frac_na = 0, big_int = FALSE)
+integer_positive(len = c(1L, 10L), frac_na = 0, big_int = FALSE)
 
-integer_negative(len = 1L, frac_na = 0, big_int = FALSE)
+integer_negative(len = c(1L, 10L), frac_na = 0, big_int = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

@@ -16,7 +16,7 @@
 #' numeric_(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-numeric_ <- function(len = 1L, frac_na = 0, big_num = FALSE) {
+numeric_ <- function(len = c(1L, 10L), frac_na = 0, big_num = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
       integer_(len2, frac_na, big_int = big_num),
@@ -27,7 +27,7 @@ numeric_ <- function(len = 1L, frac_na = 0, big_num = FALSE) {
 
 #' @rdname numeric_
 #' @export
-numeric_bounded <- function(left, right, len = 1L, frac_na = 0) {
+numeric_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
   qc_gen(\(len2 = len)
     one_of(
       integer_bounded(left, right, len2, frac_na),
@@ -38,7 +38,7 @@ numeric_bounded <- function(left, right, len = 1L, frac_na = 0) {
 
 #' @rdname numeric_
 #' @export
-numeric_left_bounded <- function(left, len = 1L, frac_na = 0, big_num = FALSE) {
+numeric_left_bounded <- function(left, len = c(1L, 10L), frac_na = 0, big_num = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
       integer_left_bounded(
@@ -59,7 +59,7 @@ numeric_left_bounded <- function(left, len = 1L, frac_na = 0, big_num = FALSE) {
 
 #' @rdname numeric_
 #' @export
-numeric_right_bounded <- function(right, len = 1L, frac_na = 0, big_num = FALSE) {
+numeric_right_bounded <- function(right, len = c(1L, 10L), frac_na = 0, big_num = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
       integer_right_bounded(
@@ -80,7 +80,7 @@ numeric_right_bounded <- function(right, len = 1L, frac_na = 0, big_num = FALSE)
 
 #' @rdname numeric_
 #' @export
-numeric_positive <- function(len = 1L, frac_na = 0, big_num = FALSE) {
+numeric_positive <- function(len = c(1L, 10L), frac_na = 0, big_num = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
       integer_positive(len2, frac_na, big_int = big_num),
@@ -91,7 +91,7 @@ numeric_positive <- function(len = 1L, frac_na = 0, big_num = FALSE) {
 
 #' @rdname numeric_
 #' @export
-numeric_negative <- function(len = 1L, frac_na = 0, big_num = FALSE) {
+numeric_negative <- function(len = c(1L, 10L), frac_na = 0, big_num = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
       integer_negative(len2, frac_na, big_int = big_num),

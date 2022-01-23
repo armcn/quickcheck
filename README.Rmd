@@ -29,13 +29,13 @@ Property based testing in R, inspired by [QuickCheck](https://en.wikipedia.org/w
 
 ## Installation
 
-Install the CRAN version with:
+You can install the released version of quickcheck from [CRAN](https://CRAN.R-project.org) with:
 
 ```{r}
 install.packages("quickcheck")
 ```
 
-or install the development version from [GitHub](https://github.com/) with:
+And the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")

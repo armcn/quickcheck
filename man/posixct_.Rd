@@ -7,13 +7,13 @@
 \alias{posixct_right_bounded}
 \title{POSIXct generators}
 \usage{
-posixct_(len = 1L, frac_na = 0)
+posixct_(len = c(1L, 10L), frac_na = 0)
 
-posixct_bounded(left, right, len = 1L, frac_na = 0)
+posixct_bounded(left, right, len = c(1L, 10L), frac_na = 0)
 
-posixct_left_bounded(left, len = 1L, frac_na = 0)
+posixct_left_bounded(left, len = c(1L, 10L), frac_na = 0)
 
-posixct_right_bounded(right, len = 1L, frac_na = 0)
+posixct_right_bounded(right, len = c(1L, 10L), frac_na = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

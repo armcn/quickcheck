@@ -18,7 +18,7 @@
 #' double_(len = 10L, frac_nan = 0.2, frac_inf = 0.2) |> show_example()
 #' @template generator
 #' @export
-double_ <- function(len = 1L,
+double_ <- function(len = c(1L, 10L),
                     frac_na = 0,
                     frac_nan = 0,
                     frac_inf = 0,
@@ -37,7 +37,7 @@ double_ <- function(len = 1L,
 #' @export
 double_bounded <- function(left,
                            right,
-                           len = 1L,
+                           len = c(1L, 10L),
                            frac_na = 0,
                            frac_nan = 0,
                            frac_inf = 0) {
@@ -62,7 +62,7 @@ double_bounded <- function(left,
 #' @rdname double_
 #' @export
 double_left_bounded <- function(left,
-                                len = 1L,
+                                len = c(1L, 10L),
                                 frac_na = 0,
                                 frac_nan = 0,
                                 frac_inf = 0,
@@ -80,7 +80,7 @@ double_left_bounded <- function(left,
 #' @rdname double_
 #' @export
 double_right_bounded <- function(right,
-                                 len = 1L,
+                                 len = c(1L, 10L),
                                  frac_na = 0,
                                  frac_nan = 0,
                                  frac_inf = 0,
@@ -97,7 +97,7 @@ double_right_bounded <- function(right,
 
 #' @rdname double_
 #' @export
-double_positive <- function(len = 1L,
+double_positive <- function(len = c(1L, 10L),
                             frac_na = 0,
                             frac_nan = 0,
                             frac_inf = 0,
@@ -114,7 +114,7 @@ double_positive <- function(len = 1L,
 
 #' @rdname double_
 #' @export
-double_negative <- function(len = 1L,
+double_negative <- function(len = c(1L, 10L),
                             frac_na = 0,
                             frac_nan = 0,
                             frac_inf = 0,
@@ -131,7 +131,7 @@ double_negative <- function(len = 1L,
 
 #' @rdname double_
 #' @export
-double_fractional <- function(len = 1L,
+double_fractional <- function(len = c(1L, 10L),
                               frac_na = 0,
                               frac_nan = 0,
                               frac_inf = 0,
@@ -156,7 +156,7 @@ double_fractional <- function(len = 1L,
 
 #' @rdname double_
 #' @export
-double_whole <- function(len = 1L,
+double_whole <- function(len = c(1L, 10L),
                          frac_na = 0,
                          frac_nan = 0,
                          frac_inf = 0,

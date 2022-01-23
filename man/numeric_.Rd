@@ -9,17 +9,17 @@
 \alias{numeric_negative}
 \title{Numeric generators}
 \usage{
-numeric_(len = 1L, frac_na = 0, big_num = FALSE)
+numeric_(len = c(1L, 10L), frac_na = 0, big_num = FALSE)
 
-numeric_bounded(left, right, len = 1L, frac_na = 0)
+numeric_bounded(left, right, len = c(1L, 10L), frac_na = 0)
 
-numeric_left_bounded(left, len = 1L, frac_na = 0, big_num = FALSE)
+numeric_left_bounded(left, len = c(1L, 10L), frac_na = 0, big_num = FALSE)
 
-numeric_right_bounded(right, len = 1L, frac_na = 0, big_num = FALSE)
+numeric_right_bounded(right, len = c(1L, 10L), frac_na = 0, big_num = FALSE)
 
-numeric_positive(len = 1L, frac_na = 0, big_num = FALSE)
+numeric_positive(len = c(1L, 10L), frac_na = 0, big_num = FALSE)
 
-numeric_negative(len = 1L, frac_na = 0, big_num = FALSE)
+numeric_negative(len = c(1L, 10L), frac_na = 0, big_num = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

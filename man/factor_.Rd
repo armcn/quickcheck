@@ -4,7 +4,7 @@
 \alias{factor_}
 \title{Factor generator}
 \usage{
-factor_(len = 1L, frac_na = 0)
+factor_(len = c(1L, 10L), frac_na = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

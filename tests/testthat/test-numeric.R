@@ -26,16 +26,9 @@ test_that("numeric_ doesn't generate Infs", {
   )
 })
 
-test_that("numeric_ generates vectors of length 1 by default", {
-  for_all(
-    a = numeric_(),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
 test_that("numeric_ generates vectors of specific length", {
   for_all(
-    len = integer_bounded(1L, 10L),
+    len = integer_bounded(1L, 10L, len = 1L),
     property = \(len) {
       for_all(
         a = numeric_(len = len),
@@ -49,8 +42,8 @@ test_that("numeric_ generates vectors of specific length", {
 
 test_that("numeric_ generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = numeric_(len = c(min, max)),
@@ -75,7 +68,7 @@ test_that("numeric_bounded generates bounded numerics", {
 
   for_all(
     a = numeric_bounded(left = left, right = right),
-    property = \(a) expect_true(a >= left && a <= right)
+    property = \(a) all(a >= left & a <= right) |> expect_true()
   )
 })
 
@@ -84,7 +77,7 @@ test_that("numeric_left_bounded generates left bounded numerics", {
 
   for_all(
     a = numeric_left_bounded(left = left),
-    property = \(a) expect_true(a >= left)
+    property = \(a) all(a >= left) |> expect_true()
   )
 })
 
@@ -93,20 +86,20 @@ test_that("numeric_right_bounded generates right bounded numerics", {
 
   for_all(
     a = numeric_right_bounded(right = right),
-    property = \(a) expect_true(a <= right)
+    property = \(a) all(a <= right) |> expect_true()
   )
 })
 
 test_that("numeric_positive generates positive numerics", {
   for_all(
     a = numeric_positive(),
-    property = \(a) expect_true(a > 0L)
+    property = \(a) all(a > 0L) |> expect_true()
   )
 })
 
 test_that("numeric_negative generates negative numerics", {
   for_all(
     a = numeric_negative(),
-    property = \(a) expect_true(a < 0L)
+    property = \(a) all(a < 0L) |> expect_true()
   )
 })

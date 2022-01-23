@@ -12,7 +12,7 @@
 #' character_(len = 10L, frac_empty = 0.5) |> show_example()
 #' @template generator
 #' @export
-character_ <- function(len = 1L, frac_na = 0, frac_empty = 0) {
+character_ <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
   character_set <-
     bytes_to_character(32L:126L)
 

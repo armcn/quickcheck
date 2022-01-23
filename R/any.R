@@ -11,7 +11,7 @@
 #' any_atomic(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-any_atomic <- function(len = 1L, frac_na = 0) {
+any_atomic <- function(len = c(1L, 10L), frac_na = 0) {
   qc_gen(\(len2 = len)
     one_of(
       integer_(len2, frac_na),
@@ -38,7 +38,7 @@ any_atomic <- function(len = 1L, frac_na = 0) {
 #' any_flat_list(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-any_flat_list <- function(len = 1L, frac_na = 0) {
+any_flat_list <- function(len = c(1L, 10L), frac_na = 0) {
   list_of(any_atomic(1L, frac_na), len)
 }
 
@@ -55,7 +55,7 @@ any_flat_list <- function(len = 1L, frac_na = 0) {
 #' any_list(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-any_list <- function(len = 1L, frac_na = 0) {
+any_list <- function(len = c(1L, 10L), frac_na = 0) {
   atomic <-
     any_atomic(c(1L, 10L), frac_na)
 
@@ -80,7 +80,7 @@ any_list <- function(len = 1L, frac_na = 0) {
 #' any_vector(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-any_vector <- function(len = 1L, frac_na = 0) {
+any_vector <- function(len = c(1L, 10L), frac_na = 0) {
   qc_gen(\(len2 = len)
     one_of(
       any_atomic(len2, frac_na),

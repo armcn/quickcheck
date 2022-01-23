@@ -26,16 +26,9 @@ test_that("double_ doesn't generate Infs by default", {
   )
 })
 
-test_that("double_ generates vectors of length 1 by default", {
-  for_all(
-    a = double_(),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
 test_that("double_ generates vectors of specific length", {
   for_all(
-    len = integer_bounded(1L, 10L),
+    len = integer_bounded(1L, 10L, len = 1L),
     property = \(len) {
       for_all(
         a = double_(len = len),
@@ -49,8 +42,8 @@ test_that("double_ generates vectors of specific length", {
 
 test_that("double_ generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = double_(len = c(min, max)),
@@ -85,7 +78,7 @@ test_that("double_ can generate vectors with Infs", {
 
 test_that("double_ generates doubles small enough to be squared", {
   for_all(
-    a = double_(),
+    a = double_(len = 1L),
     property = \(a) is.infinite(a * a) |> expect_false()
   )
 })
@@ -96,7 +89,7 @@ test_that("integer_bounded generates bounded doubles", {
 
   for_all(
     a = integer_bounded(left = left, right = right),
-    property = \(a) expect_true(a >= left && a <= right)
+    property = \(a) all(a >= left & a <= right) |> expect_true()
   )
 })
 
@@ -105,7 +98,7 @@ test_that("double_left_bounded generates left bounded doubles", {
 
   for_all(
     a = double_left_bounded(left = left),
-    property = \(a) expect_true(a >= left)
+    property = \(a) all(a >= left) |> expect_true()
   )
 })
 
@@ -114,35 +107,35 @@ test_that("double_right_bounded generates right bounded doubles", {
 
   for_all(
     a = double_right_bounded(right = right),
-    property = \(a) expect_true(a <= right)
+    property = \(a) all(a <= right) |> expect_true()
   )
 })
 
 test_that("double_positive generates positive doubles", {
   for_all(
     a = double_positive(),
-    property = \(a) expect_true(a > 0L)
+    property = \(a) all(a > 0L) |> expect_true()
   )
 })
 
 test_that("double_negative generates negative doubles", {
   for_all(
     a = double_negative(),
-    property = \(a) expect_true(a < 0L)
+    property = \(a) all(a < 0L) |> expect_true()
   )
 })
 
 test_that("double_fractional generates fractional doubles", {
   for_all(
     a = double_fractional(),
-    property = \(a) expect_true(a %% 1L != 0L)
+    property = \(a) all(a %% 1L != 0L) |> expect_true()
   )
 })
 
 test_that("double_whole generates whole doubles", {
   for_all(
     a = double_whole(),
-    property = \(a) expect_true(a %% 1L == 0L)
+    property = \(a) all(a %% 1L == 0L) |> expect_true()
   )
 })
 

@@ -7,13 +7,13 @@
 \alias{hms_right_bounded}
 \title{hms generators}
 \usage{
-hms_(len = 1L, frac_na = 0)
+hms_(len = c(1L, 10L), frac_na = 0)
 
-hms_bounded(left, right, len = 1L, frac_na = 0)
+hms_bounded(left, right, len = c(1L, 10L), frac_na = 0)
 
-hms_left_bounded(left, len = 1L, frac_na = 0)
+hms_left_bounded(left, len = c(1L, 10L), frac_na = 0)
 
-hms_right_bounded(right, len = 1L, frac_na = 0)
+hms_right_bounded(right, len = c(1L, 10L), frac_na = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

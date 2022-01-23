@@ -16,13 +16,13 @@
 #' posixct_(len = 10L, frac_na = 0.5) |> show_example()
 #' @template generator
 #' @export
-posixct_ <- function(len = 1L, frac_na = 0) {
+posixct_ <- function(len = c(1L, 10L), frac_na = 0) {
   posixct_bounded(min_posixct(), max_posixct(), len, frac_na)
 }
 
 #' @rdname posixct_
 #' @export
-posixct_bounded <- function(left, right, len = 1L, frac_na = 0) {
+posixct_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
   as_posixct <-
     purrr::partial(as.POSIXct, origin = "1970-01-01")
 
@@ -36,13 +36,13 @@ posixct_bounded <- function(left, right, len = 1L, frac_na = 0) {
 
 #' @rdname posixct_
 #' @export
-posixct_left_bounded <- function(left, len = 1L, frac_na = 0) {
+posixct_left_bounded <- function(left, len = c(1L, 10L), frac_na = 0) {
   posixct_bounded(left, max_posixct(), len, frac_na)
 }
 
 #' @rdname posixct_
 #' @export
-posixct_right_bounded <- function(right, len = 1L, frac_na = 0) {
+posixct_right_bounded <- function(right, len = c(1L, 10L), frac_na = 0) {
   posixct_bounded(min_posixct(), right, len, frac_na)
 }
 

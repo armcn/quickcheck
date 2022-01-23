@@ -4,7 +4,7 @@
 \alias{character_}
 \title{Character generators}
 \usage{
-character_(len = 1L, frac_na = 0, frac_empty = 0)
+character_(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

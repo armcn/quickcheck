@@ -11,13 +11,26 @@
 \alias{double_whole}
 \title{Double generators}
 \usage{
-double_(len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0, big_dbl = FALSE)
+double_(
+  len = c(1L, 10L),
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0,
+  big_dbl = FALSE
+)
 
-double_bounded(left, right, len = 1L, frac_na = 0, frac_nan = 0, frac_inf = 0)
+double_bounded(
+  left,
+  right,
+  len = c(1L, 10L),
+  frac_na = 0,
+  frac_nan = 0,
+  frac_inf = 0
+)
 
 double_left_bounded(
   left,
-  len = 1L,
+  len = c(1L, 10L),
   frac_na = 0,
   frac_nan = 0,
   frac_inf = 0,
@@ -26,7 +39,7 @@ double_left_bounded(
 
 double_right_bounded(
   right,
-  len = 1L,
+  len = c(1L, 10L),
   frac_na = 0,
   frac_nan = 0,
   frac_inf = 0,
@@ -34,7 +47,7 @@ double_right_bounded(
 )
 
 double_positive(
-  len = 1L,
+  len = c(1L, 10L),
   frac_na = 0,
   frac_nan = 0,
   frac_inf = 0,
@@ -42,7 +55,7 @@ double_positive(
 )
 
 double_negative(
-  len = 1L,
+  len = c(1L, 10L),
   frac_na = 0,
   frac_nan = 0,
   frac_inf = 0,
@@ -50,7 +63,7 @@ double_negative(
 )
 
 double_fractional(
-  len = 1L,
+  len = c(1L, 10L),
   frac_na = 0,
   frac_nan = 0,
   frac_inf = 0,
@@ -58,7 +71,7 @@ double_fractional(
 )
 
 double_whole(
-  len = 1L,
+  len = c(1L, 10L),
   frac_na = 0,
   frac_nan = 0,
   frac_inf = 0,

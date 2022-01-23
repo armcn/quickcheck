@@ -19,16 +19,9 @@ test_that("character_ doesn't generate empty characters by default", {
   )
 })
 
-test_that("character_ generates vectors of length 1 by default", {
-  for_all(
-    a = character_(),
-    property = \(a) length(a) |> expect_equal(1L)
-  )
-})
-
 test_that("character_ generates vectors of specific length", {
   for_all(
-    len = integer_bounded(1L, 10L),
+    len = integer_bounded(1L, 10L, len = 1L),
     property = \(len) {
       for_all(
         a = character_(len = len),
@@ -42,8 +35,8 @@ test_that("character_ generates vectors of specific length", {
 
 test_that("character_ generates vectors within a range of lengths", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = character_(len = c(min, max)),

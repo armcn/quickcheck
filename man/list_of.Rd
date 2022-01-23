@@ -4,7 +4,7 @@
 \alias{list_of}
 \title{Variable length list generator}
 \usage{
-list_of(generator, len = 1L)
+list_of(generator, len = c(1L, 10L))
 }
 \arguments{
 \item{generator}{Quickcheck generator}

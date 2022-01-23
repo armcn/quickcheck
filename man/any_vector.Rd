@@ -4,7 +4,7 @@
 \alias{any_vector}
 \title{Random vector generator}
 \usage{
-any_vector(len = 1L, frac_na = 0)
+any_vector(len = c(1L, 10L), frac_na = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

@@ -28,7 +28,7 @@ list_ <- function(...) {
 #' list_of(integer_(), len = 10L) |> show_example()
 #' @template generator
 #' @export
-list_of <- function(generator, len = 1L) {
+list_of <- function(generator, len = c(1L, 10L)) {
   qc_gen(\(len2 = len)
     vectorize(list(generator()), len2)
   )

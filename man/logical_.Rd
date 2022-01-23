@@ -4,7 +4,7 @@
 \alias{logical_}
 \title{Logical generator}
 \usage{
-logical_(len = 1L, frac_na = 0)
+logical_(len = c(1L, 10L), frac_na = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a

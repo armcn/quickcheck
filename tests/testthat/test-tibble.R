@@ -14,7 +14,7 @@ test_that("tibble_ wraps a single generator in a tibble", {
 
 test_that("tibble_ generates tibbles with specific number of rows", {
   for_all(
-    rows = integer_bounded(1L, 5L),
+    rows = integer_bounded(1L, 5L, len = 1L),
     property = \(rows) {
       for_all(
         a = tibble_(col_a = any_vector(), rows = rows),
@@ -28,8 +28,8 @@ test_that("tibble_ generates tibbles with specific number of rows", {
 
 test_that("tibble_ generates tibbles within a range of rows", {
   for_all(
-    min = integer_bounded(1L, 5L),
-    max = integer_bounded(5L, 10L),
+    min = integer_bounded(1L, 5L, len = 1L),
+    max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
         a = tibble_(col_a = any_vector(), rows = c(min, max)),
