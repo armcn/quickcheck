@@ -18,54 +18,28 @@ overlaps_zero <- function(left, right) {
   isTRUE(left <= 0L && right >= 0L)
 }
 
-and <- function(...) {
-  \(b)
-    purrr::reduce(
-      list(...),
-      \(acc, a) acc & a(b),
-      .init = TRUE
-    )
-}
-
-or <- function(...) {
-  \(b)
-    purrr::reduce(
-      list(...),
-      \(acc, a) acc | a(b),
-      .init = FALSE
-    )
+not_true <- function(a) {
+  Negate(isTRUE)(a)
 }
 
 is_na_integer <- function(a) {
-  and(is.na, is.integer)(a)
+  is.integer(a) & is.na(a)
 }
 
 is_na_real <- function(a) {
-  and(is.na, is.double)(a)
+  is.double(a) & is.na(a)
 }
 
 is_na_character <- function(a) {
-  and(is.na, is.character)(a)
+  is.character(a) & is.na(a)
 }
 
 is_na_logical <- function(a) {
-  and(is.na, is.logical)(a)
+  is.logical(a) & is.na(a)
 }
 
 is_na_numeric <- function(a) {
-  or(is_na_integer, is_na_real)(a)
-}
-
-is_infinite <- function(a) {
-  is.atomic(a) && isTRUE(is.infinite(a))
-}
-
-is_nan <- function(a) {
-  is.atomic(a) && isTRUE(is.nan(a))
-}
-
-is_na <- function(a) {
-  isTRUE(is.na(a))
+  is_na_integer(a) | is_na_real(a)
 }
 
 is_posixct <- function(a) {
@@ -80,6 +54,30 @@ is_tibble <- function(a) {
   inherits(a, "tbl_df")
 }
 
+is_zero <- function(a) {
+  identical(a, 0) || identical(a, 0L)
+}
+
+is_infinite <- function(a) {
+  is.atomic(a) && isTRUE(is.infinite(a))
+}
+
+is_nan <- function(a) {
+  is.atomic(a) && isTRUE(is.nan(a))
+}
+
+is_na <- function(a) {
+  isTRUE(is.na(a))
+}
+
+is_undefined <- function(a) {
+  is.null(a) || is_infinite(a) || is_nan(a) || is_na(a)
+}
+
+is_vector <- function(a) {
+  is.atomic(a) || is.list(a)
+}
+
 is_empty_character <- function(a) {
   a == ""
 }
@@ -92,16 +90,4 @@ is_flat_list <- function(a) {
     length(a) == length(flattened)
 
   lengths_equal && is.atomic(flattened)
-}
-
-is_zero <- function(a) {
-  identical(a, 0) || identical(a, 0L)
-}
-
-is_undefined <- function(a) {
-  or(is.null, is_infinite, is_nan, is_na)(a)
-}
-
-is_vector <- function(a) {
-  is.atomic(a) || is.list(a)
 }
