@@ -74,7 +74,8 @@ single number all vectors will have this length. If
 <code>len</code> is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
-vectors with lengths between 1 and 10.</p></dd>
+vectors with lengths between 1 and 10. To produce empty vectors
+set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
 <dt>frac_na</dt>
 <dd><p>The approximate fraction of <code>NA</code> values to
 be included in the vector. A fraction of 0, the default,
@@ -89,9 +90,15 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_vector</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 297131247 386070304 263964188 739692197</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "916-12-31 07:27:57 UTC"  "785-03-30 23:25:16 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "923-07-05 00:44:44 UTC"  "1353-12-24 14:46:45 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2070-07-09 12:22:43 UTC"</span>
 <span class="r-in"><span class="fu">any_vector</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]    NA    NA  1289     0  1426  6420 -7509    NA  7724    NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "214-04-22 20:04:24 UTC"  NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] NA                        "822-07-01 14:46:41 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] NA                        NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] NA                        NA                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] NA                        "1347-04-11 14:04:02 UTC"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

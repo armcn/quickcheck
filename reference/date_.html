@@ -80,7 +80,8 @@ single number all vectors will have this length. If
 <code>len</code> is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
-vectors with lengths between 1 and 10.</p></dd>
+vectors with lengths between 1 and 10. To produce empty vectors
+set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
 <dt>frac_na</dt>
 <dd><p>The approximate fraction of <code>NA</code> values to
 be included in the vector. A fraction of 0, the default,
@@ -101,16 +102,16 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">date_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1429-02-20" "1067-02-23" "1933-12-12" "1187-12-22" "1010-10-10"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "2404-10-08"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1862-04-01" "1321-08-31" "1444-07-08"</span>
 <span class="r-in"><span class="fu">date_bounded</span><span class="op">(</span></span>
 <span class="r-in">  left <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2020-01-01"</span><span class="op">)</span>,</span>
 <span class="r-in">  right <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">"2020-01-10"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-01-08" "2020-01-10" "2020-01-01" "2020-01-02"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2020-01-08" "2020-01-05" "2020-01-03" "2020-01-08" "2020-01-09"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "2020-01-01" "2020-01-06" "2020-01-02" "2020-01-04" "2020-01-05"</span>
 <span class="r-in"><span class="fu">date_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2706-11-21" "1913-10-25" "1279-03-10" NA           NA          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "2835-04-04" NA           NA           "2858-03-22" "2374-06-25"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2781-02-21" NA           NA           NA           "1458-09-22"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] NA           NA           "1536-07-06" "1999-12-04" "2930-02-10"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

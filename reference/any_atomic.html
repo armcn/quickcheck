@@ -77,7 +77,8 @@ single number all vectors will have this length. If
 <code>len</code> is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
-vectors with lengths between 1 and 10.</p></dd>
+vectors with lengths between 1 and 10. To produce empty vectors
+set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
 <dt>frac_na</dt>
 <dd><p>The approximate fraction of <code>NA</code> values to
 be included in the vector. A fraction of 0, the default,
@@ -92,10 +93,10 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_atomic</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -337807362 -330600777  894421732  398135027 -959678581</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  547233835 -787810167 -342425128   37400190   99662264 -446780002 -821066836</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [8]  -27990145   29691684</span>
 <span class="r-in"><span class="fu">any_atomic</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "=H"        ",v?3kY dH" "D39a"      NA          "8x]O"      NA         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] " {[+"      NA          "^@nd;S"    "KymC;J"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]     NA     NA -95003     NA     NA 255914 239450     NA     NA     NA</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

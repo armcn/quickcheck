@@ -78,7 +78,8 @@ this number of rows. If <code>rows</code> is a numeric vector of
 length 2 it will produce data frames with rows between
 a minimum and maximum, inclusive. For example
 <code>rows = c(1L, 10L)</code> would produce data frames with rows
-between 1 and 10.</p></dd>
+between 1 and 10. To produce empty tibbles set <code>rows = 0L</code>
+or a range like <code>rows = c(0L, 10L)</code>.</p></dd>
 <dt>cols</dt>
 <dd><p>Number of columns of the generated data frame.
 If <code>cols</code> is a single number all data frames will have
@@ -86,7 +87,8 @@ this number of columns. If <code>cols</code> is a numeric vector
 of length 2 it will produce data frames with columns
 between a minimum and maximum, inclusive. For example
 <code>cols = c(1L, 10L)</code> would produce data frames with
-columns between 1 and 10.</p></dd>
+columns between 1 and 10. To produce empty tibbles
+set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -96,30 +98,28 @@ columns between 1 and 10.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tibble_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1  ...2 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> TRUE  TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> TRUE  TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> FALSE TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> FALSE TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> TRUE  FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> TRUE  TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1  ...2  ...3       ...4       ...5       ...6  ...7      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> FALSE FALSE 2618-08-07 2348-07-13 1911-03-17 TRUE  1482-07-26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> TRUE  FALSE 2953-03-12 2648-08-16 2001-01-01 FALSE 2960-02-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> FALSE FALSE 2097-03-20 2427-07-24 2516-09-28 FALSE 1178-05-13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> TRUE  TRUE  2771-02-01 2255-01-03 2133-08-10 FALSE 2240-07-31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> TRUE  TRUE  2240-11-07 1542-01-27 1625-08-05 TRUE  1589-10-14</span>
 <span class="r-in"><span class="fu">tibble_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1       ...2           ...3  ...4 ...5 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 1700-07-03 &gt;TQrY   -<span style="color: #BB0000;">496</span><span style="color: #BB0000; text-decoration: underline;">090</span><span style="color: #BB0000;">848.</span> -<span style="color: #BB0000; text-decoration: underline;">7</span><span style="color: #BB0000;">925</span> TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2902-02-01 4B~`ru!  444<span style="text-decoration: underline;">400</span>196.     0 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 1277-09-27 E9       255<span style="text-decoration: underline;">011</span>493.     0 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1654-10-30 !`      -<span style="color: #BB0000;">278</span><span style="color: #BB0000; text-decoration: underline;">484</span><span style="color: #BB0000;">434.</span>  <span style="text-decoration: underline;">8</span>281 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 2039-04-06 s8(As   -<span style="color: #BB0000;">800</span><span style="color: #BB0000; text-decoration: underline;">085</span><span style="color: #BB0000;">790.</span> -<span style="color: #BB0000; text-decoration: underline;">6</span><span style="color: #BB0000;">952</span> TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 1731-11-04 6        912<span style="text-decoration: underline;">384</span>939.     0 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 1136-10-28 z;s;|-   602<span style="text-decoration: underline;">583</span>736.  <span style="text-decoration: underline;">2</span>470 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2844-08-06 #sWT(A  -<span style="color: #BB0000;">822</span><span style="color: #BB0000; text-decoration: underline;">949</span><span style="color: #BB0000;">871.</span>  <span style="text-decoration: underline;">6</span>382 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 2153-07-06 ~&amp;@i    -<span style="color: #BB0000;">823</span><span style="color: #BB0000; text-decoration: underline;">988</span><span style="color: #BB0000;">159.</span>  <span style="text-decoration: underline;">2</span>243 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 1634-01-12 @T~C(s&amp; -<span style="color: #BB0000;">288</span><span style="color: #BB0000; text-decoration: underline;">610</span><span style="color: #BB0000;">659.</span>  <span style="text-decoration: underline;">4</span>369 TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1                ...2              ...3 ...4              ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 903-04-29 <span style="color: #949494;">11:24:13</span>  1009-04-14          0  2870-06-08 -<span style="color: #BB0000;">360</span><span style="color: #BB0000; text-decoration: underline;">414</span><span style="color: #BB0000;">416.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 2888-07-21 <span style="color: #949494;">06:06:42</span> 2343-08-29  618<span style="text-decoration: underline;">780</span>365. 2700-10-24    5<span style="text-decoration: underline;">151</span>833.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 75-11-13 <span style="color: #949494;">22:31:42</span>   1020-05-28 -<span style="color: #BB0000;">957</span><span style="color: #BB0000; text-decoration: underline;">997</span><span style="color: #BB0000;">578.</span> 1623-05-18 -<span style="color: #BB0000;">901</span><span style="color: #BB0000; text-decoration: underline;">799</span><span style="color: #BB0000;">280.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 1252-06-22 <span style="color: #949494;">22:15:51</span> 2120-01-31 -<span style="color: #BB0000;">852</span><span style="color: #BB0000; text-decoration: underline;">201</span><span style="color: #BB0000;">249.</span> 1999-10-24          0 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 1669-09-04 <span style="color: #949494;">09:46:42</span> 2794-09-21 -<span style="color: #BB0000;">999</span><span style="color: #BB0000; text-decoration: underline;">843</span><span style="color: #BB0000;">942.</span> 1335-05-17  337<span style="text-decoration: underline;">325</span>064.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 432-04-08 <span style="color: #949494;">13:55:34</span>  1416-06-13  311<span style="text-decoration: underline;">476</span>966. 2358-03-05  647<span style="text-decoration: underline;">588</span>427.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 751-03-11 <span style="color: #949494;">22:07:29</span>  1960-09-03 -<span style="color: #BB0000;">216</span><span style="color: #BB0000; text-decoration: underline;">410</span><span style="color: #BB0000;">729.</span> 2892-12-30 -<span style="color: #BB0000;">556</span><span style="color: #BB0000; text-decoration: underline;">772</span><span style="color: #BB0000;">198.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 2551-12-23 <span style="color: #949494;">01:24:06</span> 1951-02-23          0  1147-03-20          0 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 795-07-09 <span style="color: #949494;">19:11:07</span>  2041-06-07  498<span style="text-decoration: underline;">426</span>781. 1585-02-21  302<span style="text-decoration: underline;">159</span>975.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 784-03-09 <span style="color: #949494;">06:18:52</span>  1781-02-24  -<span style="color: #BB0000;">44</span><span style="color: #BB0000; text-decoration: underline;">647</span><span style="color: #BB0000;">934.</span> 1688-11-14 -<span style="color: #BB0000;">507</span><span style="color: #BB0000; text-decoration: underline;">301</span><span style="color: #BB0000;">049.</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

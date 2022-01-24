@@ -76,7 +76,8 @@ single number all vectors will have this length. If
 <code>len</code> is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
-vectors with lengths between 1 and 10.</p></dd>
+vectors with lengths between 1 and 10. To produce empty vectors
+set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -87,34 +88,34 @@ vectors with lengths between 1 and 10.</p></dd>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_of</span><span class="op">(</span><span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, len <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -9591 -1842  1660 -1703  8770 -7130 -1439 -7020 -5056</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -827</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  7679 -4414  9552  4783     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  2807 -9559 -3034 -1893 -3367 -1967  7187</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  7105  9603  3276     0 -1717 -3271     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  3618 -9197  6617     0     0  2561  8214     0  -566  1427</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -9921  7344   688  6906  7697  3418  7206 -5491</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  7930 -7411  9114  4699  6692</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  3294 -7065  8643  7802  3799</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  3538  5605  2161 -7111 -6722  5242</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5202</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]     0  6022 -9772</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1852 -4766 -6450  4411 -4326   942</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -3125</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  2825  6726 -8675 -2031     0 -9492</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5929 -9747  3573</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4273 -2200  1811   944 -6699  5851</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5567  7858 -9030  5433     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5812  4939  5240     0 -6908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1641  8106</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
