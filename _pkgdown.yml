@@ -49,9 +49,12 @@ reference:
     - numeric_positive
     - numeric_negative
 - title: Character
-  desc: A generator to produce character vectors.
+  desc: A set of generators to produce character vectors.
   contents:
     - character_
+    - character_letter
+    - character_word
+    - character_alphanumeric
 - title: Logical
   desc: A generator to produce logical vectors.
   contents:

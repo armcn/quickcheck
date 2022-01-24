@@ -13,12 +13,39 @@
 #' @template generator
 #' @export
 character_ <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
-  character_set <-
-    bytes_to_character(32L:126L)
+  bytes_to_character(32L:126L) |>
+    character_string(len, frac_na, frac_empty)
+}
 
+#' @rdname character_
+#' @export
+character_letter <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
+  c(letters, LETTERS) |>
+    character_generator(len, frac_na, frac_empty)
+}
+
+#' @rdname character_
+#' @export
+character_word <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
+  c(letters, LETTERS) |>
+    character_string(len, frac_na, frac_empty)
+}
+
+#' @rdname character_
+#' @export
+character_alphanumeric <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
+  c(letters, LETTERS, 0:9) |>
+    character_string(len, frac_na, frac_empty)
+}
+
+character_string <- function(characters, len, frac_na, frac_empty) {
+  replicate(1000L, random_string(characters)) |>
+    character_generator(len, frac_na, frac_empty)
+}
+
+character_generator <- function(characters, len, frac_na, frac_empty) {
   qc_gen(\(len2 = len)
-    replicate(1000L, random_string(character_set)) |>
-      hedgehog::gen.element() |>
+    hedgehog::gen.element(characters) |>
       replace_frac_with("", frac_empty) |>
       replace_frac_with(NA_character_, frac_na) |>
       vectorize(len2)

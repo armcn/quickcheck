@@ -2,9 +2,18 @@
 % Please edit documentation in R/character.R
 \name{character_}
 \alias{character_}
+\alias{character_letter}
+\alias{character_word}
+\alias{character_alphanumeric}
 \title{Character generators}
 \usage{
 character_(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+
+character_letter(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+
+character_word(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+
+character_alphanumeric(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
