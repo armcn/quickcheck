@@ -99,6 +99,7 @@ reference:
     - any_atomic
     - any_list
     - any_flat_list
+    - any_flat_homogeneous_list
     - any_vector
     - any_tibble
     - any_undefined

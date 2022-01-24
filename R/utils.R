@@ -14,6 +14,10 @@ eval_functions <- function(...) {
   purrr::map(list(...), \(f) f())
 }
 
+equals <- function(a, b) {
+  a == b
+}
+
 overlaps_zero <- function(left, right) {
   isTRUE(left <= 0L && right >= 0L)
 }
@@ -90,4 +94,13 @@ is_flat_list <- function(a) {
     length(a) == length(flattened)
 
   lengths_equal && is.atomic(flattened)
+}
+
+is_homogeneous_list <- function(a) {
+  is_homogeneous <-
+    purrr::map(a, class) |>
+      dplyr::n_distinct() |>
+      equals(1)
+
+  is.list(a) && is_homogeneous
 }

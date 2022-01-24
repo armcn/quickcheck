@@ -60,6 +60,33 @@ any_flat_list <- function(len = c(1L, 10L), frac_na = 0) {
   flat_list_of(any_atomic(frac_na = frac_na), len)
 }
 
+#' Flat homogeneous list generator
+#'
+#' Generate lists where each element is an atomic scalar of the same type.
+#'
+#' @template len
+#' @template frac_na
+#'
+#' @examples
+#' any_flat_homogeneous_list() |> show_example()
+#' any_flat_homogeneous_list(len = 10L, frac_na = 0.5) |> show_example()
+#' @template generator
+#' @export
+any_flat_homogeneous_list <- function(len = c(1L, 10L), frac_na = 0) {
+  qc_gen(\(len2 = len)
+    one_of(
+      flat_list_of(integer_(frac_na = frac_na), len2),
+      flat_list_of(double_(frac_na = frac_na), len2),
+      flat_list_of(character_(frac_na = frac_na), len2),
+      flat_list_of(logical_(frac_na = frac_na), len2),
+      flat_list_of(date_(frac_na = frac_na), len2),
+      flat_list_of(posixct_(frac_na = frac_na), len2),
+      flat_list_of(hms_(frac_na = frac_na), len2),
+      flat_list_of(factor_(frac_na = frac_na), len2)
+    )()
+  )
+}
+
 #' Random list generator
 #'
 #' Generate random lists containing other lists or atomic vectors of variable
@@ -80,6 +107,7 @@ any_list <- function(len = c(1L, 10L), frac_na = 0) {
   qc_gen(\(len2 = len)
     one_of(
       any_flat_list(len2, frac_na),
+      any_flat_homogeneous_list(len2, frac_na),
       list_of(atomic, len2),
       list_of(list_(a = atomic, b = atomic), len2)
     )()

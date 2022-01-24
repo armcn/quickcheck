@@ -2,6 +2,7 @@
 
 S3method(print,quickcheck_generator)
 export(any_atomic)
+export(any_flat_homogeneous_list)
 export(any_flat_list)
 export(any_list)
 export(any_tibble)

@@ -14,7 +14,8 @@ single number all vectors will have this length. If
 \code{len} is a numeric vector of length 2 it will produce
 vectors with lengths between a minimum and maximum,
 inclusive. For example \code{len = c(1L, 10L)} would produce
-vectors with lengths between 1 and 10.}
+vectors with lengths between 1 and 10. To produce empty vectors
+set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 }
 \value{
 A \code{quickcheck_generator} generator
