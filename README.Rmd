@@ -6,7 +6,6 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
-  eval = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
@@ -31,13 +30,13 @@ Property based testing in R, inspired by [QuickCheck](https://en.wikipedia.org/w
 
 You can install the released version of quickcheck from [CRAN](https://CRAN.R-project.org) with:
 
-```{r}
+```{r, eval=FALSE}
 install.packages("quickcheck")
 ```
 
 And the development version from [GitHub](https://github.com/) with:
 
-``` r
+```{r, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("armcn/quickcheck")
 ```
@@ -79,7 +78,7 @@ Here we test the properties of the [`distinct`](https://dplyr.tidyverse.org/refe
 function from the [`dplyr`](https://dplyr.tidyverse.org/index.html) package.
 
 ```{r}
-library(dplyr)
+library(dplyr) |> suppressMessages()
 
 test_that("distinct does nothing with a single row", {
   for_all(
@@ -109,6 +108,31 @@ test_that("distinct does nothing if rows are unique", {
     }
   )
 })
+```
+
+## Quickcheck generators
+
+Many generators are provided with quickcheck. Here are a few examples.
+
+### Atomic vectors
+
+```{r}
+integer_(len = 10) |> show_example()
+character_alphanumeric(len = 10, frac_na = 0.5) |> show_example()
+```
+
+### Lists
+
+```{r}
+list_(a = constant(NULL), b = logical_(len = 1)) |> show_example()
+flat_list_of(hms_(), len = 3) |> show_example()
+```
+
+### Tibbles
+
+```{r}
+tibble_(a = date_(), b = posixct_(), rows = 5) |> show_example()
+tibble_of(any_vector(), cols = 3, rows = 3) |> show_example()
 ```
 
 ## Hedgehog generators
@@ -146,10 +170,26 @@ for_all(
 
 But this will cause an error:
 
-```{r}
+```{r, eval=FALSE}
 for_all(
   a = tibble_of(from_hedgehog(gen_powers_of_two)),
   property = \(a) is_tibble(a) |> expect_true()
 )
+#> Error
 ```
+
+## Fuzz testing
+
+Fuzz testing is a special case of property based testing in which the only 
+property being testing is that the code doesn't fail with a range of inputs.
+Here is an example of how to do fuzz testing with quickcheck. Let's say we want
+to test that the `purrr::map` function won't fail with any vector as input.
+
+```{r}
+for_all(
+  a = any_vector(),
+  property = \(a) purrr::map(a, identity) |> expect_silent()
+)
+```
+
 

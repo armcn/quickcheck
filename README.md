@@ -57,6 +57,7 @@ test_that("0 is the additive identity of +", {
     property = \(a) expect_equal(a, a + 0)
   )          
 })
+#> Test passed 🌈
 
 test_that("+ is commutative", {
   for_all(
@@ -65,6 +66,7 @@ test_that("+ is commutative", {
     property = \(a, b) expect_equal(a + b, b + a)
   )          
 })
+#> Test passed 🎊
 
 test_that("+ is associative", {
   for_all(
@@ -74,6 +76,7 @@ test_that("+ is associative", {
     property = \(a, b, c) expect_equal(a + (b + c), (a + b) + c)
   )          
 })
+#> Test passed 🌈
 ```
 
 Here we test the properties of the
@@ -82,7 +85,7 @@ function from the [`dplyr`](https://dplyr.tidyverse.org/index.html)
 package.
 
 ``` r
-library(dplyr)
+library(dplyr) |> suppressMessages()
 
 test_that("distinct does nothing with a single row", {
   for_all(
@@ -92,6 +95,7 @@ test_that("distinct does nothing with a single row", {
     }
   )
 })
+#> Test passed 🥳
 
 test_that("distinct returns single row if rows are repeated", {
   for_all(
@@ -101,6 +105,7 @@ test_that("distinct returns single row if rows are repeated", {
     }
   )
 })
+#> Test passed 😀
 
 test_that("distinct does nothing if rows are unique", {
   for_all(
@@ -112,6 +117,62 @@ test_that("distinct does nothing if rows are unique", {
     }
   )
 })
+#> Test passed 🥇
+```
+
+## Quickcheck generators
+
+Many generators are provided with quickcheck. Here are a few examples.
+
+### Atomic vectors
+
+``` r
+integer_(len = 10) |> show_example()
+#>  [1]  -814     0 -3226  4292 -9604 -4857 -6333     0   143  1791
+character_alphanumeric(len = 10, frac_na = 0.5) |> show_example()
+#>  [1] "0O3JDnxgK" NA          "GB"        "ilHPKEIez" "N88"       NA         
+#>  [7] "IU"        NA          NA          "vgmzoe9Z"
+```
+
+### Lists
+
+``` r
+list_(a = constant(NULL), b = logical_(len = 1)) |> show_example()
+#> $a
+#> NULL
+#> 
+#> $b
+#> [1] FALSE
+flat_list_of(hms_(), len = 3) |> show_example()
+#> [[1]]
+#> 08:23:44.87806
+#> 
+#> [[2]]
+#> 20:43:37.839286
+#> 
+#> [[3]]
+#> 20:54:18.834063
+```
+
+### Tibbles
+
+``` r
+tibble_(a = date_(), b = posixct_(), rows = 5) |> show_example()
+#> # A tibble: 5 x 2
+#>   a          b                  
+#>   <date>     <dttm>             
+#> 1 1092-06-04 1786-08-16 19:37:01
+#> 2 2780-10-06 2731-07-01 13:51:04
+#> 3 1586-07-16 0377-07-03 09:38:30
+#> 4 2212-03-17 0404-12-21 08:54:40
+#> 5 2515-04-24 2979-02-04 05:40:53
+tibble_of(any_vector(), cols = 3, rows = 3) |> show_example()
+#> # A tibble: 3 x 3
+#>   ...1       ...2             ...3 
+#>   <list>     <list>           <lgl>
+#> 1 <chr [1]>  <named list [2]> FALSE
+#> 2 <fct [1]>  <named list [2]> FALSE
+#> 3 <time [1]> <named list [2]> FALSE
 ```
 
 ## Hedgehog generators
@@ -154,5 +215,21 @@ But this will cause an error:
 for_all(
   a = tibble_of(from_hedgehog(gen_powers_of_two)),
   property = \(a) is_tibble(a) |> expect_true()
+)
+#> Error
+```
+
+## Fuzz testing
+
+Fuzz testing is a special case of property based testing in which the
+only property being testing is that the code doesn’t fail with a range
+of inputs. Here is an example of how to do fuzz testing with quickcheck.
+Let’s say we want to test that the `purrr::map` function won’t fail with
+any vector as input.
+
+``` r
+for_all(
+  a = any_vector(),
+  property = \(a) purrr::map(a, identity) |> expect_silent()
 )
 ```
