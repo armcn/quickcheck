@@ -12,8 +12,7 @@
 #' @export
 tibble_ <- function(..., rows = c(1L, 10L)) {
   qc_gen(\()
-    list(...) |>
-      purrr::map(\(f) f(len2 = rows)) |>
+    equal_length(..., len = rows)() |>
       hedgehog::gen.with(dplyr::as_tibble)
   )
 }
@@ -49,18 +48,10 @@ tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
         hedgehog::gen.with(as_tibble)
 
   row_generator <-
-    if (length(rows) == 1L)
-      constant(rows)
-
-    else
-      integer_bounded(rows[1], rows[2])
+    as_length_generator(rows)
 
   col_generator <-
-    if (length(cols) == 1L)
-      constant(cols)
-
-    else
-      integer_bounded(cols[1], cols[2])
+    as_length_generator(cols)
 
   qc_gen(\()
     list_(rows = row_generator, cols = col_generator)() |>

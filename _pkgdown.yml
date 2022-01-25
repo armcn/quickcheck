@@ -107,9 +107,10 @@ reference:
     - any_tibble
     - any_undefined
 - title: Other
-  desc: Other generators and combinators.
+  desc: Other generators.
   contents:
     - one_of
+    - equal_length
     - constant
 - title: Hedgehog
   desc: Convert a hedgehog generator to a quickcheck generator

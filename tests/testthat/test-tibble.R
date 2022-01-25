@@ -64,7 +64,11 @@ test_that("tibble_ generates tibbles within a range of rows", {
     max = integer_bounded(5L, 10L, len = 1L),
     property = \(min, max) {
       for_all(
-        a = tibble_(col_a = any_vector(), rows = c(min, max)),
+        a = tibble_(
+          col_a = any_vector(),
+          col_b = any_vector(),
+          rows = c(min, max)
+        ),
         property = \(a) expect_true(nrow(a) >= min && nrow(a) <= max),
         tests = 5L
       )

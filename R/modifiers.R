@@ -1,3 +1,28 @@
+#' Equal length vector generator
+#'
+#' Generates equal length vectors contained in a list.
+#'
+#' @param ... A set of vector generators.
+#' @template len
+#'
+#' @examples
+#' equal_length(integer_(), double_()) |> show_example()
+#' equal_length(a = logical_(), b = character_(), len = 5L) |> show_example()
+#' @template generator
+#' @export
+equal_length <- function(..., len = c(1L, 10L)) {
+  len_generator <-
+    as_length_generator(len)
+
+  generate_list <-
+    \(a) purrr::map(list(...), \(f) f(len2 = a))
+
+  qc_gen(\()
+    len_generator() |>
+      hedgehog::gen.and_then(generate_list)
+  )
+}
+
 vectorize <- function(generator, len = 1L) {
   if (is_zero(len))
     empty_vectors(generator)

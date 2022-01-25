@@ -10,6 +10,14 @@ sample_vec <- function(a, n = 1L) {
     sample(a, size = n, replace = TRUE)
 }
 
+as_length_generator <- function(a) {
+  if (length(a) == 1L)
+    constant(a)
+
+  else
+    integer_bounded(a[1], a[2], len = 1L)
+}
+
 eval_functions <- function(...) {
   purrr::map(list(...), \(f) f())
 }
