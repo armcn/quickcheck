@@ -1,85 +1,23 @@
-test_that("double_ generates doubles", {
-  for_all(
-    a = double_(),
-    property = \(a) is.double(a) |> expect_true()
-  )
-})
+test_suite_vector_generator(double_, is.double)
 
-test_that("double_ doesn't generate NAs by default", {
-  for_all(
-    a = double_(),
-    property = \(a) a |> is.na() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(double_positive, is.double)
 
-test_that("double_ doesn't generate NaNs by default", {
-  for_all(
-    a = double_(),
-    property = \(a) a |> is.nan() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(double_negative, is.double)
 
-test_that("double_ doesn't generate Infs by default", {
-  for_all(
-    a = double_(),
-    property = \(a) a |> is.infinite() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(
+  purrr::partial(double_bounded, left = -10L, right = 10L),
+  is.double
+)
 
-test_that("double_ can generate empty vectors", {
-  for_all(
-    a = double_(len = 0L),
-    property = \(a) is.double(a) |> expect_true()
-  )
+test_suite_vector_generator(
+  purrr::partial(double_left_bounded, left = -10L),
+  is.double
+)
 
-  for_all(
-    a = double_(len = 0L),
-    property = \(a) length(a) |> expect_equal(0L)
-  )
-})
-
-test_that("date_ generates vectors with lengths from 1 and 10 by default", {
-  for_all(
-    a = date_(),
-    property = \(a) expect_true(length(a) >= 1L && length(a) <= 10L)
-  )
-})
-
-test_that("double_ generates vectors of specific length", {
-  for_all(
-    len = integer_bounded(1L, 10L, len = 1L),
-    property = \(len) {
-      for_all(
-        a = double_(len = len),
-        property = \(a) length(a) |> expect_equal(len),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("double_ generates vectors within a range of lengths", {
-  for_all(
-    min = integer_bounded(0L, 5L, len = 1L),
-    max = integer_bounded(5L, 10L, len = 1L),
-    property = \(min, max) {
-      for_all(
-        a = double_(len = c(min, max)),
-        property = \(a) expect_true(length(a) >= min && length(a) <= max),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("double_ can generate vectors with NAs", {
-  for_all(
-    a = double_(len = 10L, frac_na = 1),
-    property = \(a) is_na_real(a) |> all() |> expect_true()
-  )
-})
+test_suite_vector_generator(
+  purrr::partial(double_right_bounded, right = 10L),
+  is.double
+)
 
 test_that("double_ can generate vectors with NaNs", {
   for_all(

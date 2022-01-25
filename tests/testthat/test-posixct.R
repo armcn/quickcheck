@@ -1,71 +1,29 @@
-test_that("posixct_ generates POSIXct vectors", {
-  for_all(
-    a = posixct_(),
-    property = \(a) is_posixct(a) |> expect_true()
-  )
-})
+test_suite_vector_generator(posixct_, is_posixct)
 
-test_that("posixct_ doesn't generate NAs by default", {
-  for_all(
-    a = posixct_(),
-    property = \(a) a |> is.na() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(
+  purrr::partial(
+    posixct_bounded,
+    left = as.POSIXct("2000-01-01 00:00:00"),
+    right = as.POSIXct("2020-01-01 00:00:00")
+  ),
+  is_posixct
+)
 
-test_that("posixct_ can generate empty vectors", {
-  for_all(
-    a = posixct_(len = 0L),
-    property = \(a) is_posixct(a) |> expect_true()
-  )
+test_suite_vector_generator(
+  purrr::partial(
+    posixct_left_bounded,
+    left = as.POSIXct("2000-01-01 00:00:00")
+  ),
+  is_posixct
+)
 
-  for_all(
-    a = posixct_(len = 0L),
-    property = \(a) length(a) |> expect_equal(0L)
-  )
-})
-
-test_that("posixct_ generates vectors with lengths from 1 and 10 by default", {
-  for_all(
-    a = posixct_(),
-    property = \(a) expect_true(length(a) >= 1L && length(a) <= 10L)
-  )
-})
-
-test_that("posixct_ generates vectors of specific length", {
-  for_all(
-    len = integer_bounded(1L, 10L, len = 1L),
-    property = \(len) {
-      for_all(
-        a = posixct_(len = len),
-        property = \(a) length(a) |> expect_equal(len),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("posixct_ generates vectors within a range of lengths", {
-  for_all(
-    min = integer_bounded(0L, 5L, len = 1L),
-    max = integer_bounded(5L, 10L, len = 1L),
-    property = \(min, max) {
-      for_all(
-        a = posixct_(len = c(min, max)),
-        property = \(a) expect_true(length(a) >= min && length(a) <= max),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("posixct_ can generate vectors with NAs", {
-  for_all(
-    a = posixct_(len = 10L, frac_na = 1),
-    property = \(a) is_na_real(a) |> all() |> expect_true()
-  )
-})
+test_suite_vector_generator(
+  purrr::partial(
+    posixct_right_bounded,
+    right = as.POSIXct("2020-01-01 00:00:00")
+  ),
+  is_posixct
+)
 
 test_that("posixct_bounded generates bounded POSIXct vectors", {
   left <- as.POSIXct("2000-01-01 00:00:00")

@@ -20,13 +20,13 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends: R (>= 4.1.0)
 Imports: 
+    testthat (>= 3.0.0),
     hedgehog,
     purrr,
     dplyr,
     hms,
     stats
-Suggests: 
-    testthat (>= 3.0.0),
+Suggests:
     knitr,
     rmarkdown,
     covr,

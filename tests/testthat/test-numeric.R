@@ -1,16 +1,23 @@
-test_that("numeric_ generates numerics", {
-  for_all(
-    a = numeric_(),
-    property = \(a) is.numeric(a) |> expect_true()
-  )
-})
+test_suite_vector_generator(numeric_, is.numeric)
 
-test_that("numeric_ doesn't generate NAs by default", {
-  for_all(
-    a = numeric_(),
-    property = \(a) a |> is.na() |> any() |> expect_false()
-  )
-})
+test_suite_vector_generator(numeric_positive, is.numeric)
+
+test_suite_vector_generator(numeric_negative, is.numeric)
+
+test_suite_vector_generator(
+  purrr::partial(numeric_bounded, left = -10L, right = 10L),
+  is.numeric
+)
+
+test_suite_vector_generator(
+  purrr::partial(numeric_left_bounded, left = -10L),
+  is.numeric
+)
+
+test_suite_vector_generator(
+  purrr::partial(numeric_right_bounded, right = 10L),
+  is.numeric
+)
 
 test_that("numeric_ doesn't generate NaNs", {
   for_all(
@@ -23,61 +30,6 @@ test_that("numeric_ doesn't generate Infs", {
   for_all(
     a = numeric_(),
     property = \(a) a |> is.infinite() |> any() |> expect_false()
-  )
-})
-
-test_that("numeric_ can generate empty vectors", {
-  for_all(
-    a = numeric_(len = 0L),
-    property = \(a) is.numeric(a) |> expect_true()
-  )
-
-  for_all(
-    a = numeric_(len = 0L),
-    property = \(a) length(a) |> expect_equal(0L)
-  )
-})
-
-test_that("numeric_ generates vectors with lengths from 1 and 10 by default", {
-  for_all(
-    a = numeric_(),
-    property = \(a) expect_true(length(a) >= 1L && length(a) <= 10L)
-  )
-})
-
-test_that("numeric_ generates vectors of specific length", {
-  for_all(
-    len = integer_bounded(1L, 10L, len = 1L),
-    property = \(len) {
-      for_all(
-        a = numeric_(len = len),
-        property = \(a) length(a) |> expect_equal(len),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("numeric_ generates vectors within a range of lengths", {
-  for_all(
-    min = integer_bounded(0L, 5L, len = 1L),
-    max = integer_bounded(5L, 10L, len = 1L),
-    property = \(min, max) {
-      for_all(
-        a = numeric_(len = c(min, max)),
-        property = \(a) expect_true(length(a) >= min && length(a) <= max),
-        tests = 10L
-      )
-    },
-    tests = 10L
-  )
-})
-
-test_that("numeric_ can generate vectors with NAs", {
-  for_all(
-    a = numeric_(len = 10L, frac_na = 1),
-    property = \(a) is_na_numeric(a) |> all() |> expect_true()
   )
 })
 

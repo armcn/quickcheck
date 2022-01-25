@@ -95,20 +95,50 @@ is_empty_character <- function(a) {
 }
 
 is_flat_list <- function(a) {
-  flattened <-
-    unlist(a, recursive = FALSE)
+  if (is_empty_list(a))
+    TRUE
 
-  lengths_equal <-
-    length(a) == length(flattened)
+  else {
+    flattened <-
+      unlist(a, recursive = FALSE)
 
-  lengths_equal && is.atomic(flattened)
+    lengths_equal <-
+      length(a) == length(flattened)
+
+    lengths_equal && is.atomic(flattened)
+  }
 }
 
 is_homogeneous_list <- function(a) {
-  is_homogeneous <-
-    purrr::map(a, class) |>
-      dplyr::n_distinct() |>
-      equals(1)
+  if (is_empty_list(a))
+    TRUE
 
-  is.list(a) && is_homogeneous
+  else {
+    is_homogeneous <-
+      purrr::map(a, class) |>
+        dplyr::n_distinct() |>
+        equals(1)
+
+    is.list(a) && is_homogeneous
+  }
+}
+
+is_flat_homogeneous_list <- function(a) {
+  is_flat_list(a) && is_homogeneous_list(a)
+}
+
+is_empty <- function(a) {
+  UseMethod("is_empty", a)
+}
+
+is_empty.default <- function(a) {
+  isTRUE(length(a) == 0L)
+}
+
+is_empty.data.frame <- function(a) {
+  isTRUE(nrow(a) == 0L)
+}
+
+is_empty_list <- function(a) {
+  is_empty(a) && is.list(a)
 }
