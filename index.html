@@ -123,6 +123,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span> <span class="op">+</span> <span class="fl">0</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
+<span class="co">#&gt; Test passed 🌈</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is commutative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -131,6 +132,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
+<span class="co">#&gt; Test passed 🎊</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is associative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -139,10 +141,11 @@
     c <span class="op">=</span> <span class="fu"><a href="reference/numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, <span class="va">c</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="op">(</span><span class="va">b</span> <span class="op">+</span> <span class="va">c</span><span class="op">)</span>, <span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span><span class="op">)</span> <span class="op">+</span> <span class="va">c</span><span class="op">)</span>
   <span class="op">)</span>          
-<span class="op">}</span><span class="op">)</span></code></pre></div>
+<span class="op">}</span><span class="op">)</span>
+<span class="co">#&gt; Test passed 🌈</span></code></pre></div>
 <p>Here we test the properties of the <a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link"><code>distinct</code></a> function from the <a href="https://dplyr.tidyverse.org/index.html" class="external-link"><code>dplyr</code></a> package.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/base/message.html" class="external-link">suppressMessages</a></span><span class="op">(</span><span class="op">)</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct does nothing with a single row"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -152,6 +155,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
+<span class="co">#&gt; Test passed 🥳</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct returns single row if rows are repeated"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -161,6 +165,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
+<span class="co">#&gt; Test passed 😀</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct does nothing if rows are unique"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -171,12 +176,69 @@
       <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">unique_rows</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">unique_rows</span><span class="op">)</span>
     <span class="op">}</span>
   <span class="op">)</span>
-<span class="op">}</span><span class="op">)</span></code></pre></div>
+<span class="op">}</span><span class="op">)</span>
+<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
+<div class="section level2">
+<h2 id="quickcheck-generators">Quickcheck generators<a class="anchor" aria-label="anchor" href="#quickcheck-generators"></a>
+</h2>
+<p>Many generators are provided with quickcheck. Here are a few examples.</p>
+<div class="section level3">
+<h3 id="atomic-vectors">Atomic vectors<a class="anchor" aria-label="anchor" href="#atomic-vectors"></a>
+</h3>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;  [1]  -814     0 -3226  4292 -9604 -4857 -6333     0   143  1791</span>
+<span class="fu"><a href="reference/character_.html">character_alphanumeric</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "0O3JDnxgK" NA          "GB"        "ilHPKEIez" "N88"       NA         </span>
+<span class="co">#&gt;  [7] "IU"        NA          NA          "vgmzoe9Z"</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a>
+</h3>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/list_.html">list_</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="reference/constant.html">constant</a></span><span class="op">(</span><span class="cn">NULL</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="reference/logical_.html">logical_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; $a</span>
+<span class="co">#&gt; NULL</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; $b</span>
+<span class="co">#&gt; [1] FALSE</span>
+<span class="fu"><a href="reference/flat_list_of.html">flat_list_of</a></span><span class="op">(</span><span class="fu"><a href="reference/hms_.html">hms_</a></span><span class="op">(</span><span class="op">)</span>, len <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; [[1]]</span>
+<span class="co">#&gt; 08:23:44.87806</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[2]]</span>
+<span class="co">#&gt; 20:43:37.839286</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; [[3]]</span>
+<span class="co">#&gt; 20:54:18.834063</span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="tibbles">Tibbles<a class="anchor" aria-label="anchor" href="#tibbles"></a>
+</h3>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/tibble_.html">tibble_</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="reference/date_.html">date_</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="reference/posixct_.html">posixct_</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 5 x 2</span>
+<span class="co">#&gt;   a          b                  </span>
+<span class="co">#&gt;   &lt;date&gt;     &lt;dttm&gt;             </span>
+<span class="co">#&gt; 1 1092-06-04 1786-08-16 19:37:01</span>
+<span class="co">#&gt; 2 2780-10-06 2731-07-01 13:51:04</span>
+<span class="co">#&gt; 3 1586-07-16 0377-07-03 09:38:30</span>
+<span class="co">#&gt; 4 2212-03-17 0404-12-21 08:54:40</span>
+<span class="co">#&gt; 5 2515-04-24 2979-02-04 05:40:53</span>
+<span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>, cols <span class="op">=</span> <span class="fl">3</span>, rows <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt; # A tibble: 3 x 3</span>
+<span class="co">#&gt;   ...1       ...2             ...3 </span>
+<span class="co">#&gt;   &lt;list&gt;     &lt;list&gt;           &lt;lgl&gt;</span>
+<span class="co">#&gt; 1 &lt;chr [1]&gt;  &lt;named list [2]&gt; FALSE</span>
+<span class="co">#&gt; 2 &lt;fct [1]&gt;  &lt;named list [2]&gt; FALSE</span>
+<span class="co">#&gt; 3 &lt;time [1]&gt; &lt;named list [2]&gt; FALSE</span></code></pre></div>
+</div>
+</div>
 <div class="section level2">
 <h2 id="hedgehog-generators">Hedgehog generators<a class="anchor" aria-label="anchor" href="#hedgehog-generators"></a>
 </h2>
 <p>quickcheck is meant to work with hedgehog, not replace it. hedgehog generators can be used simply by wrapping them in <code>from_hedgehog</code>. Under the hood all this function does is wrap the hedgehog generator in an anonymous function and add the <code>quickcheck_generator</code> class to it.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://hedgehog.qa" class="external-link">hedgehog</a></span><span class="op">)</span>
 
 <span class="va">is_even</span> <span class="op">&lt;-</span> 
@@ -190,17 +252,28 @@
   property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 <p>Any hedgehog generator can be used with quickcheck but they can’t be composed together to build another generator. For example this will work:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
   a <span class="op">=</span> <span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
   b <span class="op">=</span> <span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>,
   property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 <p>But this will cause an error:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
   a <span class="op">=</span> <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span><span class="op">)</span>,
   property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_tibble</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
+<span class="op">)</span>
+<span class="co">#&gt; Error</span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="fuzz-testing">Fuzz testing<a class="anchor" aria-label="anchor" href="#fuzz-testing"></a>
+</h2>
+<p>Fuzz testing is a special case of property based testing in which the only property being testing is that the code doesn’t fail with a range of inputs. Here is an example of how to do fuzz testing with quickcheck. Let’s say we want to test that the <code><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">purrr::map</a></code> function won’t fail with any vector as input.</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
+  a <span class="op">=</span> <span class="fu"><a href="reference/any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>,
+  property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">identity</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_silent.html" class="external-link">expect_silent</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">)</span></code></pre></div>
 </div>
 </div>
