@@ -176,20 +176,17 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">double_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -284698494  417918017 -378214146 -155206839 -595556389  698955336  651190287</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [8]   83905972</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -286746164 -101238930 -731296510  283933859  -54260362          0 -519393804</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>big_dbl <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]   0.000000e+00 -3.545127e+307 -5.812395e+307  5.143087e+307  3.966813e+307</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6]  4.706686e+307  5.680811e+307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1.121067e+307 -6.679403e+307  2.958129e+307</span>
 <span class="r-in"><span class="fu">double_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>, right <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4.75868879  0.03361139  0.28723194 -0.91747288  4.04093538 -3.86172861</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [7]  0.41023028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  4.7968478  0.0000000  1.5418687 -4.5906000 -0.9023971  4.4742022  1.0306149</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -282076180 -978104259         NA  870636845 -855156376         NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]         NA         NA         NA         NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]         NA  768805881 -611745558 -364883334  410891496         NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  477661031         NA  818044741  882202562</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_nan <span class="op">=</span> <span class="fl">0.2</span>, frac_inf <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]        NaN  106365957        NaN  710361500        Inf        NaN</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]        Inf        Inf -268938356  680190701</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  742960105        NaN -241410857 -692425386       -Inf   72876324</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  403070113        NaN -710796029          0</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
