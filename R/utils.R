@@ -30,30 +30,6 @@ overlaps_zero <- function(left, right) {
   isTRUE(left <= 0L && right >= 0L)
 }
 
-not_true <- function(a) {
-  Negate(isTRUE)(a)
-}
-
-is_na_integer <- function(a) {
-  is.integer(a) & is.na(a)
-}
-
-is_na_real <- function(a) {
-  is.double(a) & is.na(a)
-}
-
-is_na_character <- function(a) {
-  is.character(a) & is.na(a)
-}
-
-is_na_logical <- function(a) {
-  is.logical(a) & is.na(a)
-}
-
-is_na_numeric <- function(a) {
-  is_na_integer(a) | is_na_real(a)
-}
-
 is_posixct <- function(a) {
   inherits(a, "POSIXct")
 }
@@ -131,12 +107,8 @@ is_empty <- function(a) {
   UseMethod("is_empty", a)
 }
 
-is_empty.default <- function(a) {
+is_empty <- function(a) {
   isTRUE(length(a) == 0L)
-}
-
-is_empty.data.frame <- function(a) {
-  isTRUE(nrow(a) == 0L)
 }
 
 is_empty_list <- function(a) {
