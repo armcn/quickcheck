@@ -102,17 +102,22 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">posixct_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1222-05-29 22:35:17 UTC" "968-09-15 09:56:11 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "358-03-14 14:30:08 UTC"  "2768-07-28 14:33:41 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2755-04-23 06:32:11 UTC" "2466-04-12 15:38:15 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2497-06-17 07:07:03 UTC" "2854-08-23 22:08:47 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2720-01-16 21:42:42 UTC" "1864-03-07 01:44:37 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [9] "2613-11-20 19:32:51 UTC"</span>
 <span class="r-in"><span class="fu">posixct_bounded</span><span class="op">(</span></span>
 <span class="r-in">  left <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2020-01-01 00:00:00"</span><span class="op">)</span>,</span>
 <span class="r-in">  right <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2021-01-01 00:00:00"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-10-10 17:49:27 UTC" "2020-09-04 03:21:15 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2020-11-21 04:39:59 UTC" "2020-05-07 21:48:15 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2020-12-28 23:58:24 UTC" "2020-02-11 03:07:14 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-01-24 23:15:36 UTC" "2020-07-30 01:42:48 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2020-09-14 06:20:42 UTC" "2020-03-28 00:10:11 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2020-09-20 17:11:47 UTC" "2020-10-08 20:11:39 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2020-10-03 17:04:10 UTC" "2020-01-24 02:52:07 UTC"</span>
 <span class="r-in"><span class="fu">posixct_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]           NA           NA           NA           NA -48232958064</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6]  15531072216 -19243508403  15806205953  21573257915           NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]           NA -12345098487 -46729621208 -45878196016  -9327954932</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] -42253018525           NA           NA           NA -34941350610</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
