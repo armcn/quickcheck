@@ -18,12 +18,12 @@ Convert a quickcheck generator to a hedgehog generator
 \examples{
 is_even <-
   \(a) a \%\% 2L == 0L
-
 gen_powers_of_two <-
-  as_hedgehog(integer_()) |> hedgehog::gen.with(\(a) 2 ^ a)
-
+  integer_bounded(1L, 10L, len = 1L) |>
+    as_hedgehog() |>
+    hedgehog::gen.with(\(a) 2 ^ a)
 for_all(
-  a = gen_powers_of_two,
+  a = from_hedgehog(gen_powers_of_two),
   property = \(a) is_even(a) |> testthat::expect_true()
 )
 }
