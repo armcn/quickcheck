@@ -113,13 +113,15 @@ reference:
     - equal_length
     - constant
 - title: Hedgehog
-  desc: Convert a hedgehog generator to a quickcheck generator
+  desc: Convert between quickcheck and hedgehog generators.
   contents:
     - from_hedgehog
+    - as_hedgehog
 - title: Test runner
-  desc: A function to run property based tests.
+  desc: Functions to run property based tests.
   contents:
     - for_all
+    - repeat_check
 - title: Show example
   desc: Show an example output value from a generator
   contents:

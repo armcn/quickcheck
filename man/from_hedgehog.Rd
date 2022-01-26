@@ -16,9 +16,6 @@ A \code{quickcheck_generator} generator
 Convert a hedgehog generator to a quickcheck generator
 }
 \examples{
-library(quickcheck)
-library(testthat)
-
 is_even <-
   \(a) a \%\% 2L == 0L
 
@@ -27,6 +24,6 @@ gen_powers_of_two <-
 
 for_all(
   a = from_hedgehog(gen_powers_of_two),
-  property = \(a) is_even(a) |> expect_true()
+  property = \(a) is_even(a) |> testthat::expect_true()
 )
 }

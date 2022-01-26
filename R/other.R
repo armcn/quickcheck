@@ -3,9 +3,6 @@
 #' @param generator A `hedgehog.internal.gen` generator
 #'
 #' @examples
-#' library(quickcheck)
-#' library(testthat)
-#'
 #' is_even <-
 #'   \(a) a %% 2L == 0L
 #'
@@ -14,12 +11,33 @@
 #'
 #' for_all(
 #'   a = from_hedgehog(gen_powers_of_two),
-#'   property = \(a) is_even(a) |> expect_true()
+#'   property = \(a) is_even(a) |> testthat::expect_true()
 #' )
 #' @template generator
 #' @export
 from_hedgehog <- function(generator) {
   qc_gen(\() generator)
+}
+
+#' Convert a quickcheck generator to a hedgehog generator
+#'
+#' @param generator A `quickcheck_generator` generator
+#'
+#' @examples
+#' is_even <-
+#'   \(a) a %% 2L == 0L
+#'
+#' gen_powers_of_two <-
+#'   as_hedgehog(integer_()) |> hedgehog::gen.with(\(a) 2 ^ a)
+#'
+#' for_all(
+#'   a = gen_powers_of_two,
+#'   property = \(a) is_even(a) |> testthat::expect_true()
+#' )
+#' @template generator
+#' @export
+as_hedgehog <- function(generator) {
+  generator()
 }
 
 #' Show an example output of a generator
