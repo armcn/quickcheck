@@ -54,9 +54,9 @@ test_that("equal_length generates lists of vectors within a range of lengths", {
             {\(a) all(a >= min & a <= max)}() |>
             expect_true()
         },
-        tests = 10L
+        tests = nested_tests()
       )
     },
-    tests = 10L
+    tests = nested_tests()
   )
 })

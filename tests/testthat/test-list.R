@@ -5,10 +5,10 @@ test_that("list_ wraps a single generator in a list", {
       for_all(
         b = list_(constant(a)),
         property = \(b) list(a) |> expect_equal(b),
-        tests = 10L
+        tests = nested_tests()
       )
     },
-    tests = 10L
+    tests = nested_tests()
   )
 })
 

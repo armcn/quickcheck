@@ -5,10 +5,10 @@ test_that("tibble_ wraps a single generator in a tibble", {
       for_all(
         b = tibble_(col_a = constant(a), rows = 1L),
         property = \(b) dplyr::tibble(col_a = a) |> expect_equal(b),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })
 
@@ -39,8 +39,7 @@ test_that("tibble_ can generate tibbles with 0 rows and 0 columns", {
 test_that("tibble_ generates tibbles with rows from 1 and 10 by default", {
   for_all(
     a = tibble_(a = any_vector()),
-    property = \(a) expect_true(nrow(a) >= 1L && nrow(a) <= 10L),
-    tests = 25L
+    property = \(a) expect_true(nrow(a) >= 1L && nrow(a) <= 10L)
   )
 })
 
@@ -51,10 +50,10 @@ test_that("tibble_ generates tibbles with specific number of rows", {
       for_all(
         a = tibble_(col_a = any_vector(), rows = rows),
         property = \(a) nrow(a) |> expect_equal(rows),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })
 
@@ -70,9 +69,9 @@ test_that("tibble_ generates tibbles within a range of rows", {
           rows = c(min, max)
         ),
         property = \(a) expect_true(nrow(a) >= min && nrow(a) <= max),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })

@@ -5,10 +5,10 @@ test_that("one_of with single generator doesn't change generator", {
       for_all(
         b = one_of(constant(a)),
         property = \(b) expect_equal(a, b),
-        tests = 10L
+        tests = nested_tests()
       )
     },
-    tests = 10L
+    tests = nested_tests()
   )
 })
 

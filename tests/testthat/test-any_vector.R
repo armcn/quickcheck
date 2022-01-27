@@ -1,2 +1,1 @@
 test_suite_vector_generator(any_vector, is_vector)
-

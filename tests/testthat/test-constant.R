@@ -5,10 +5,10 @@ test_that("constant generates values equal to input argument", {
       for_all(
         b = constant(a),
         property = \(b) expect_equal(a, b),
-        tests = 10L
+        tests = nested_tests()
       )
     },
-    tests = 10L
+    tests = nested_tests()
   )
 })
 

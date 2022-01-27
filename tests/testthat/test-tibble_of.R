@@ -5,10 +5,10 @@ test_that("tibble_of wraps a single generator in a tibble", {
       for_all(
         b = tibble_of(constant(a), rows = 1L, cols = 1L),
         property = \(b) dplyr::tibble(`...1` = a) |> expect_equal(b),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })
 
@@ -56,8 +56,7 @@ test_that("tibble_of generates tibbles with dimensions from 1 and 10 by default"
         nrow(a) >= 1L && nrow(a) <= 10L &&
         ncol(a) >= 1L && ncol(a) <= 10L
       )
-    },
-    tests = 25L
+    }
   )
 })
 
@@ -69,10 +68,10 @@ test_that("tibble_of generates tibbles with specific number of rows and cols", {
       for_all(
         a = tibble_of(any_vector(), rows = rows, cols = cols),
         property = \(a) expect_true(nrow(a) == rows && ncol(a) == cols),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })
 
@@ -84,10 +83,10 @@ test_that("tibble_of generates tibbles within a range of rows", {
       for_all(
         a = tibble_of(any_vector(), rows = c(min, max)),
         property = \(a) expect_true(nrow(a) >= min && nrow(a) <= max),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })
 
@@ -99,9 +98,9 @@ test_that("tibble_of generates tibbles within a range of cols", {
       for_all(
         a = tibble_of(any_vector(), cols = c(min, max)),
         property = \(a) expect_true(ncol(a) >= min && ncol(a) <= max),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })

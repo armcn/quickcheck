@@ -114,3 +114,22 @@ is_empty <- function(a) {
 is_empty_list <- function(a) {
   is_empty(a) && is.list(a)
 }
+
+is_dev_version <- function() {
+  version_length <-
+    utils::packageDescription("quickcheck") |>
+      purrr::pluck("Version") |>
+      strsplit("\\.") |>
+      purrr::pluck(1L) |>
+      length()
+
+  version_length > 3L
+}
+
+tests <- function() {
+  getOption("quickcheck.tests", 100L)
+}
+
+nested_tests <- function() {
+  tests() |> sqrt() |> round()
+}

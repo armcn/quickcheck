@@ -98,10 +98,10 @@ test_generator_vector_length <- function(generator) {
           for_all(
             a = generator(len = len),
             property = \(a) length(a) |> testthat::expect_equal(len),
-            tests = 10L
+            tests = nested_tests()
           )
         },
-        tests = 10L
+        tests = nested_tests()
       )
     }
   )
@@ -123,10 +123,10 @@ test_generator_vector_length_range <- function(generator) {
             property = \(a) {
               testthat::expect_true(length(a) >= min && length(a) <= max)
             },
-            tests = 10L
+            tests = nested_tests()
           )
         },
-        tests = 10L
+        tests = nested_tests()
       )
     }
   )
