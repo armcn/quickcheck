@@ -30,6 +30,8 @@ tibble_ <- function(..., rows = c(1L, 10L)) {
 #' @template generator
 #' @export
 tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   as_tibble <-
     \(a)
       suppressMessages(

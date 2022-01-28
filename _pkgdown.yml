@@ -98,13 +98,14 @@ reference:
 - title: Any
   desc: A set of generators to produce random values.
   contents:
-    - anything
     - any_atomic
     - any_list
     - any_flat_list
     - any_flat_homogeneous_list
     - any_vector
     - any_tibble
+    - anything
+    - anything_defined
     - any_undefined
 - title: Other
   desc: Other generators.
@@ -121,7 +122,7 @@ reference:
   desc: Functions to run property based tests.
   contents:
     - for_all
-    - repeat_check
+    - repeat_test
 - title: Show example
   desc: Show an example output value from a generator
   contents:

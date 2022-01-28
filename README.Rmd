@@ -24,11 +24,11 @@ knitr::opts_chunk$set(
 
 # Overview
 
-Property based testing in R, inspired by [QuickCheck](https://en.wikipedia.org/wiki/QuickCheck). This package builds on the property based testing framework provided by [`hedgehog`](https://github.com/hedgehogqa/r-hedgehog) and is designed to seamlessly integrate with a [`testthat`](https://testthat.r-lib.org).
+Property based testing in R, inspired by [QuickCheck](https://en.wikipedia.org/wiki/QuickCheck). This package builds on the property based testing framework provided by [`hedgehog`](https://github.com/hedgehogqa/r-hedgehog) and is designed to seamlessly integrate with [`testthat`](https://testthat.r-lib.org).
 
 ## Installation
 
-You can install the released version of quickcheck from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of `quickcheck` from [CRAN](https://CRAN.R-project.org) with:
 
 ```{r, eval=FALSE}
 install.packages("quickcheck")
@@ -43,7 +43,7 @@ remotes::install_github("armcn/quickcheck")
 
 # Usage
 
-The following example uses quickcheck to test the properties of the base R `+` function. [Here](https://fsharpforfunandprofit.com/posts/property-based-testing/) is an introduction to the concept of property based testing, and an explanation of the mathematical properties of addition can be found [here](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/properties-of-numbers/a/properties-of-addition).
+The following example uses `quickcheck` to test the properties of the base R `+` function. [Here](https://fsharpforfunandprofit.com/posts/property-based-testing/) is an introduction to the concept of property based testing, and an explanation of the mathematical properties of addition can be found [here](https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples/properties-of-numbers/a/properties-of-addition).
 
 ```{r}
 library(testthat)
@@ -78,7 +78,7 @@ Here we test the properties of the [`distinct`](https://dplyr.tidyverse.org/refe
 function from the [`dplyr`](https://dplyr.tidyverse.org/index.html) package.
 
 ```{r}
-library(dplyr) |> suppressMessages()
+library(dplyr, warn.conflicts = FALSE)
 
 test_that("distinct does nothing with a single row", {
   for_all(
@@ -112,35 +112,35 @@ test_that("distinct does nothing if rows are unique", {
 
 ## Quickcheck generators
 
-Many generators are provided with quickcheck. Here are a few examples.
+Many generators are provided with `quickcheck`. Here are a few examples.
 
 ### Atomic vectors
 
 ```{r}
 integer_(len = 10) |> show_example()
-character_alphanumeric(len = 10, frac_na = 0.5) |> show_example()
+character_alphanumeric(len = 10) |> show_example()
+posixct_(len = 10, frac_na = 0.5) |> show_example() 
 ```
 
 ### Lists
 
 ```{r}
-list_(a = constant(NULL), b = logical_(len = 1)) |> show_example()
-flat_list_of(hms_(), len = 3) |> show_example()
+list_(a = constant(NULL), b = any_undefined()) |> show_example()
+flat_list_of(logical_(), len = 3) |> show_example()
 ```
 
 ### Tibbles
 
 ```{r}
-tibble_(a = date_(), b = posixct_(), rows = 5) |> show_example()
-tibble_of(any_vector(), cols = 3, rows = 3) |> show_example()
+tibble_(a = date_(), b = hms_(), rows = 5) |> show_example()
+tibble_of(double_bounded(-10, 10), rows = 3, cols = 3) |> show_example()
+any_tibble(rows = 3, cols = 3) |> show_example()
 ```
 
 ## Hedgehog generators
 
-quickcheck is meant to work with hedgehog, not replace it. hedgehog generators
-can be used simply by wrapping them in `from_hedgehog`. Under the hood all this 
-function does is wrap the hedgehog generator in an anonymous function and add the 
-`quickcheck_generator` class to it. 
+`quickcheck` is meant to work with `hedgehog`, not replace it. `hedgehog` generators
+can be used by wrapping them in `from_hedgehog`. 
 
 ```{r}
 library(hedgehog)
@@ -151,45 +151,85 @@ is_even <-
 gen_powers_of_two <- 
   gen.element(1:10) |> gen.with(\(a) 2 ^ a)
 
-for_all(
-  a = from_hedgehog(gen_powers_of_two),
-  property = \(a) is_even(a) |> expect_true()
-)
+test_that("is_even returns TRUE for powers of two", {
+  for_all(
+    a = from_hedgehog(gen_powers_of_two),
+    property = \(a) is_even(a) |> expect_true()
+  )
+})
 ```
 
-Any hedgehog generator can be used with quickcheck but they can't be composed 
+Any `hedgehog` generator can be used with `quickcheck` but they can't be composed 
 together to build another generator. For example this will work:
 
 ```{r}
-for_all(
-  a = from_hedgehog(gen_powers_of_two),
-  b = integer_(),
-  property = \(a, b) c(a, b) |> is.numeric() |> expect_true()
-)
+test_that("powers of two and integers are both numeric values", {
+  for_all(
+    a = from_hedgehog(gen_powers_of_two),
+    b = integer_(),
+    property = \(a, b) c(a, b) |> is.numeric() |> expect_true()
+  )
+})
 ```
 
 But this will cause an error:
 
-```{r, eval=FALSE}
-for_all(
-  a = tibble_of(from_hedgehog(gen_powers_of_two)),
-  property = \(a) is_tibble(a) |> expect_true()
-)
-#> Error
+```{r}
+test_that("composing hedgehog with quickcheck generators fails", {
+  tibble_of(from_hedgehog(gen_powers_of_two)) |> expect_error()
+})
 ```
 
-## Fuzz testing
+A `quickcheck` generator can also be converted to a `hedgehog` generator which can 
+then be used with other `hedgehog` functions.
+
+```{r}
+gen_powers_of_two <- 
+  integer_bounded(1L, 10L, len = 1L) |> 
+    as_hedgehog() |> 
+    gen.with(\(a) 2 ^ a)
+
+
+test_that("is_even returns TRUE for powers of two", {
+  for_all(
+    a = from_hedgehog(gen_powers_of_two),
+    property = \(a) is_even(a) |> expect_true()
+  )
+})
+```
+
+## Fuzz tests
 
 Fuzz testing is a special case of property based testing in which the only 
 property being testing is that the code doesn't fail with a range of inputs.
-Here is an example of how to do fuzz testing with quickcheck. Let's say we want
+Here is an example of how to do fuzz testing with `quickcheck`. Let's say we want
 to test that the `purrr::map` function won't fail with any vector as input.
 
 ```{r}
-for_all(
-  a = any_vector(),
-  property = \(a) purrr::map(a, identity) |> expect_silent()
-)
+test_that("map won't fail with any vector as input", {
+  for_all(
+    a = any_vector(),
+    property = \(a) purrr::map(a, identity) |> expect_silent()
+  )
+})
 ```
 
+## Repeat tests
+
+Repeat tests can be used to repeatedly test that a property holds true for many
+calls of a function. These are different from regular property based tests
+because they don't require generators. The function `repeat_test` will call 
+a function many times to ensure the expectation passes in all cases. This kind
+of test can be useful for testing functions with randomness.
+
+```{r}
+test_that("runif generates random numbers between a min and max value", {
+  repeat_test(
+    property = \() {
+      random_number <- runif(1, min = 0, max = 10)
+      expect_true(random_number >= 0 && random_number <= 10)
+    }
+  )
+})
+```
 

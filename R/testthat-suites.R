@@ -27,6 +27,11 @@ test_generator_predicate <- function(generator, .p) {
         a = generator(),
         property = \(a) .p(a) |> testthat::expect_true()
       )
+
+      for_all(
+        a = generator(frac_na = 0.5),
+        property = \(a) .p(a) |> testthat::expect_true()
+      )
     }
   )
 }

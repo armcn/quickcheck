@@ -5,10 +5,10 @@ test_that("equal_length wraps a single generator in a list", {
       for_all(
         b = equal_length(constant(a), len = 1L),
         property = \(b) list(a) |> expect_equal(b),
-        tests = 5L
+        tests = nested_tests()
       )
     },
-    tests = 5L
+    tests = nested_tests()
   )
 })
 
@@ -35,10 +35,10 @@ test_that("equal_length generates lists of vectors with a specific length", {
       for_all(
         a = equal_length(any_vector(), len = len),
         property = \(a) length(a[[1]]) |> expect_equal(len),
-        tests = 10L
+        tests = nested_tests()
       )
     },
-    tests = 10L
+    tests = nested_tests()
   )
 })
 

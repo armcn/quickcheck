@@ -133,3 +133,20 @@ tests <- function() {
 nested_tests <- function() {
   tests() |> sqrt() |> round()
 }
+
+assert_modifiable_length <- function(generator) {
+  has_modifiable_length <-
+    formals(generator) |>
+      names() |>
+      purrr::has_element("len2")
+
+  if (has_modifiable_length)
+    TRUE
+
+  else
+    stop("Generator isn't compatible with tibble generator constructors")
+}
+
+assert_all_modifiable_length <- function(...) {
+  list(...) |> purrr::map(assert_modifiable_length)
+}

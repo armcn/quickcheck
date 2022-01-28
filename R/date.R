@@ -27,6 +27,7 @@ date_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
     seq(left, right, by = "day") |>
       hedgehog::gen.element() |>
       replace_frac_with(NA_real_, frac_na) |>
+      hedgehog::gen.with(as.Date) |>
       vectorize(len2)
   )
 }

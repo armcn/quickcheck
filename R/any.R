@@ -16,6 +16,25 @@ anything <- function() {
   )
 }
 
+#' Any R object generator with no undefined values
+#'
+#' Generate any R object which isn't an undefined value or doesn't contain
+#' undefined values. This doesn't actually generate any possible object,
+#' just the most common ones, namely atomic vectors, lists, and tibbles.
+#' None of the objects created will include undefined values like `NA`, `NULL`,
+#' `Inf`, `NaN`, or be empty vectors or tibbles.
+#'
+#' @examples
+#' anything_defined() |> show_example()
+#' @template generator
+#' @export
+anything_defined <- function() {
+  one_of(
+    any_vector(len = c(1L, 10L)),
+    any_tibble(rows = c(1L, 10L), cols = c(1L, 10L))
+  )
+}
+
 #' Atomic vector generator
 #'
 #' Generate vectors of integer, double, character, logical, date, POSIXct, hms,

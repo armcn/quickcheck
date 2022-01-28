@@ -28,8 +28,8 @@ posixct_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
 
   qc_gen(\(len2 = len)
     hedgehog::gen.unif(as.double(left), as.double(right)) |>
-      hedgehog::gen.with(as_posixct) |>
       replace_frac_with(NA_real_, frac_na) |>
+      hedgehog::gen.with(as_posixct) |>
       vectorize(len2)
   )
 }
