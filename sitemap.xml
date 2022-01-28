@@ -49,6 +49,9 @@
     <loc>/reference/anything.html</loc>
   </url>
   <url>
+    <loc>/reference/anything_defined.html</loc>
+  </url>
+  <url>
     <loc>/reference/as_hedgehog.html</loc>
   </url>
   <url>
@@ -106,7 +109,7 @@
     <loc>/reference/posixct_.html</loc>
   </url>
   <url>
-    <loc>/reference/repeat_check.html</loc>
+    <loc>/reference/repeat_test.html</loc>
   </url>
   <url>
     <loc>/reference/show_example.html</loc>
