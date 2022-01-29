@@ -123,7 +123,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span> <span class="op">+</span> <span class="fl">0</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 😸</span>
+<span class="co">#&gt; Test passed 🌈</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is commutative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -132,7 +132,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎉</span>
+<span class="co">#&gt; Test passed 😸</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is associative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -142,7 +142,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, <span class="va">c</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="op">(</span><span class="va">b</span> <span class="op">+</span> <span class="va">c</span><span class="op">)</span>, <span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span><span class="op">)</span> <span class="op">+</span> <span class="va">c</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
+<span class="co">#&gt; Test passed 😸</span></code></pre></div>
 <p>Here we test the properties of the <a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link"><code>distinct</code></a> function from the <a href="https://dplyr.tidyverse.org/index.html" class="external-link"><code>dplyr</code></a> package.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -155,7 +155,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span>
+<span class="co">#&gt; Test passed 😀</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct returns single row if rows are repeated"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -177,7 +177,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span></code></pre></div>
+<span class="co">#&gt; Test passed 😸</span></code></pre></div>
 <div class="section level2">
 <h2 id="quickcheck-generators">Quickcheck generators<a class="anchor" aria-label="anchor" href="#quickcheck-generators"></a>
 </h2>
@@ -187,16 +187,16 @@
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;  [1]  8722  6884  2096  6432  3872 -5283  5612  -637 -1923  1824</span>
+<span class="co">#&gt;  [1] -9443 -9238 -3114  6117  8084  6281 -1609 -8123  9167 -4998</span>
 <span class="fu"><a href="reference/character_.html">character_alphanumeric</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "nOOBCzCY"  "tH86rFU"   "QptKXwpy"  "4De"       "ang"       "7uXS6S"   </span>
-<span class="co">#&gt;  [7] "sPUFUE72x" "TUBgb"     "Fvs53"     "ugkNWhO5n"</span>
+<span class="co">#&gt;  [1] "H"         "d18"       "2moKXgiaA" "l"         "apJIkZ4"   "xQ"       </span>
+<span class="co">#&gt;  [7] "IxWbgGPl"  "U4VoE"     "feow"      "nyyjpbBlm"</span>
 <span class="fu"><a href="reference/posixct_.html">posixct_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span> 
-<span class="co">#&gt;  [1] NA                        "2004-08-13 16:07:23 PDT"</span>
-<span class="co">#&gt;  [3] "2003-04-30 03:13:39 PDT" NA                       </span>
-<span class="co">#&gt;  [5] NA                        "0883-05-14 00:01:26 LMT"</span>
-<span class="co">#&gt;  [7] NA                        "1824-10-27 07:03:52 LMT"</span>
-<span class="co">#&gt;  [9] "2351-11-24 16:21:14 PST" NA</span></code></pre></div>
+<span class="co">#&gt;  [1] "2174-04-30 10:34:22 PDT" "0990-04-16 13:38:43 LMT"</span>
+<span class="co">#&gt;  [3] NA                        NA                       </span>
+<span class="co">#&gt;  [5] NA                        "1635-05-06 17:06:07 LMT"</span>
+<span class="co">#&gt;  [7] NA                        "1326-01-19 03:38:54 LMT"</span>
+<span class="co">#&gt;  [9] NA                        NA</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a>
@@ -216,7 +216,7 @@
 <span class="co">#&gt; [1] TRUE</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="tibbles">Tibbles<a class="anchor" aria-label="anchor" href="#tibbles"></a>
@@ -226,25 +226,25 @@
 <span class="co">#&gt; # A tibble: 5 x 2</span>
 <span class="co">#&gt;   a          b              </span>
 <span class="co">#&gt;   &lt;date&gt;     &lt;time&gt;         </span>
-<span class="co">#&gt; 1 1233-03-31 20:39:07.672605</span>
-<span class="co">#&gt; 2 1699-04-21 09:46:37.638352</span>
-<span class="co">#&gt; 3 1018-10-18 21:46:13.348493</span>
-<span class="co">#&gt; 4 2747-05-04 17:12:19.959295</span>
-<span class="co">#&gt; 5 2562-03-07 13:13:42.824348</span>
+<span class="co">#&gt; 1 1754-10-12 00:11:21.388116</span>
+<span class="co">#&gt; 2 1043-05-24 22:48:47.926494</span>
+<span class="co">#&gt; 3 1066-05-18 18:18:56.531533</span>
+<span class="co">#&gt; 4 2195-01-13 21:31:59.337200</span>
+<span class="co">#&gt; 5 2613-10-17 16:37:56.068528</span>
 <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/double_.html">double_bounded</a></span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">3</span>, cols <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
 <span class="co">#&gt;    ...1   ...2  ...3</span>
 <span class="co">#&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 -9.27 -2.14   6.69</span>
-<span class="co">#&gt; 2  1.63 -1.02  -6.41</span>
-<span class="co">#&gt; 3  5.00 -0.108  9.52</span>
+<span class="co">#&gt; 1 -1.63 -5.73   8.37</span>
+<span class="co">#&gt; 2 -6.92 -6.70   6.69</span>
+<span class="co">#&gt; 3 -2.11  0.487  3.66</span>
 <span class="fu"><a href="reference/any_tibble.html">any_tibble</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">3</span>, cols <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
-<span class="co">#&gt;   ...1             ...2       ...3      </span>
-<span class="co">#&gt;   &lt;list&gt;           &lt;list&gt;     &lt;list&gt;    </span>
-<span class="co">#&gt; 1 &lt;named list [2]&gt; &lt;time [1]&gt; &lt;dttm [1]&gt;</span>
-<span class="co">#&gt; 2 &lt;named list [2]&gt; &lt;dbl [1]&gt;  &lt;fct [1]&gt; </span>
-<span class="co">#&gt; 3 &lt;named list [2]&gt; &lt;int [1]&gt;  &lt;chr [1]&gt;</span></code></pre></div>
+<span class="co">#&gt;   ...1            ...2      ...3     </span>
+<span class="co">#&gt;   &lt;time&gt;          &lt;list&gt;    &lt;list&gt;   </span>
+<span class="co">#&gt; 1 00:00:56.564217 &lt;dbl [1]&gt; &lt;lgl [1]&gt;</span>
+<span class="co">#&gt; 2 02:29:51.265953 &lt;dbl [1]&gt; &lt;lgl [1]&gt;</span>
+<span class="co">#&gt; 3 13:02:05.884475 &lt;dbl [1]&gt; &lt;lgl [1]&gt;</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -266,7 +266,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎊</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
 <p>Any <code>hedgehog</code> generator can be used with <code>quickcheck</code> but they can’t be composed together to build another generator. For example this will work:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"powers of two and integers are both numeric values"</span>, <span class="op">{</span>
@@ -276,13 +276,13 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎉</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
 <p>But this will cause an error:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"composing hedgehog with quickcheck generators fails"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_error</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 😀</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥳</span></code></pre></div>
 <p>A <code>quickcheck</code> generator can also be converted to a <code>hedgehog</code> generator which can then be used with other <code>hedgehog</code> functions.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span> 
@@ -297,12 +297,12 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎊</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="fuzz-tests">Fuzz tests<a class="anchor" aria-label="anchor" href="#fuzz-tests"></a>
 </h2>
-<p>Fuzz testing is a special case of property based testing in which the only property being testing is that the code doesn’t fail with a range of inputs. Here is an example of how to do fuzz testing with <code>quickcheck</code>. Let’s say we want to test that the <code><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">purrr::map</a></code> function won’t fail with any vector as input.</p>
+<p>Fuzz testing is a special case of property based testing in which the only property being tested is that the code doesn’t fail with a range of inputs. Here is an example of how to do fuzz testing with <code>quickcheck</code>. Let’s say we want to test that the <code><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">purrr::map</a></code> function won’t fail with any vector as input.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"map won't fail with any vector as input"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -310,7 +310,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">identity</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_silent.html" class="external-link">expect_silent</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎊</span></code></pre></div>
+<span class="co">#&gt; Test passed 🌈</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="repeat-tests">Repeat tests<a class="anchor" aria-label="anchor" href="#repeat-tests"></a>

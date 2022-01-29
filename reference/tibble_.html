@@ -88,21 +88,19 @@ or a range like <code>rows = c(0L, 10L)</code>.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tibble_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 1</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>   -<span style="color: #BB0000;">44</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">4</span>559</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">1</span>748</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">3</span>607</span>
 <span class="r-in"><span class="fu">tibble_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="character_.html">character_</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 5 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       a b         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> -<span style="color: #BB0000; text-decoration: underline;">7</span><span style="color: #BB0000;">714</span> <span style="color: #949494;">"</span>W^JD*C<span style="color: #949494;">"</span>  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>798 <span style="color: #949494;">"</span>4\\|Yi(F<span style="color: #949494;">"</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> -<span style="color: #BB0000; text-decoration: underline;">5</span><span style="color: #BB0000;">747</span> <span style="color: #949494;">"</span>&gt;\"<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">4</span>018 <span style="color: #949494;">"</span>|o3<span style="color: #949494;">"</span>     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> -<span style="color: #BB0000; text-decoration: underline;">9</span><span style="color: #BB0000;">721</span> <span style="color: #949494;">"</span>pF<span style="color: #949494;">"</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       a b          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> -<span style="color: #BB0000; text-decoration: underline;">9</span><span style="color: #BB0000;">013</span> <span style="color: #949494;">"</span>G3<span style="color: #949494;">"</span>       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">764</span> <span style="color: #949494;">"</span>W[v\"?Eig<span style="color: #949494;">"</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> -<span style="color: #BB0000; text-decoration: underline;">5</span><span style="color: #BB0000;">522</span> <span style="color: #949494;">"</span> J?BtW<span style="color: #949494;">"</span>   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> -<span style="color: #BB0000; text-decoration: underline;">9</span><span style="color: #BB0000;">535</span> <span style="color: #949494;">"</span>5r`<span style="color: #949494;">"</span>      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">9</span>896 <span style="color: #949494;">"</span>`k-(9<span style="color: #949494;">"</span>    </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

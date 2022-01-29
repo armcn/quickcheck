@@ -83,123 +83,52 @@ by the input generators.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_</span><span class="op">(</span><span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4861  3901     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 4208    0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE  TRUE FALSE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span class="fu">list_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[1]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] FALSE FALSE  TRUE FALSE  TRUE  TRUE  TRUE FALSE FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[1]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "501-10-28 00:36:22 UTC"  "1429-10-09 19:41:03 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2190-07-28 16:43:00 UTC" "2824-07-21 03:50:39 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "476-11-07 01:25:29 UTC"  "2541-05-20 04:16:13 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2973-07-21 09:53:07 UTC" "600-12-01 22:34:12 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [9] "2014-12-15 17:24:01 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] cr        [M^O5#O   ,[[z&lt;dZ~q +-9de;)Ny 0AA       AfWC79Wc  {=hp     </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [8] ;]0l%     ~=        e&amp;NO9v8v </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 Levels: cr [M^O5#O ,[[z&lt;dZ~q +-9de;)Ny 0AA AfWC79Wc {=hp ;]0l% ... e&amp;NO9v8v</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[2]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "GTAg`\\F" "}4C@-"    "J+7Kc&lt;h"  "8-["      "frhZ/G"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[2]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "3'"        ",I1a\""    "7H_1oFNdd"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1437-03-19" "2865-11-09"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[3]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] F(EmR6X#, x&lt;gB-sCa  wouAb'j:X `wF,SZvJC 45,       9ie7._    #k?=!@GUL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: F(EmR6X#, x&lt;gB-sCa wouAb'j:X `wF,SZvJC 45, 9ie7._ #k?=!@GUL</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[3]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 03:36:48.334885</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:10:10.670922</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 02:56:45.884574</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:54:18.050851</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:36:08.697468</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:41:13.718435</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 02:06:46.222709</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:59:16.535242</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:45:47.341976</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:45:53.628950</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1810-04-07" "2633-12-28" "1959-11-23" "2595-01-22"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[4]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] j#A -a </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: j#A -a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[4]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  TRUE  TRUE FALSE  TRUE FALSE FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Xp*oz0%SL" "%("        "#&lt;3quDRf"  "cL,&gt;)"     " '"        "&lt; &gt;)_2v"  </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[5]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1910-01-20 07:50:34 UTC" "359-11-11 17:38:07 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[5]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] x,kVpl   @        ,G&gt;1     o&gt;       b        ,/G7~K\\ Fur=q$1  IShi&amp;Dh1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] wVQ-ZU=$ F$h     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: x,kVpl @ ,G&gt;1 o&gt; b ,/G7~K\\ Fur=q$1 IShi&amp;Dh1 wVQ-ZU=$ F$h</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[6]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "iUR^yGg"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[6]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1230-03-24" "2144-12-29" "2441-05-11" "1554-11-18" "1788-02-22"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[7]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4575  7028     0  9392  6384 -2122</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[7]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] WcA:o_p$} _VI6!l't  gw7P~zP|  KkU-Dh6   GBWQA0    O&amp;;;Cz    Z5Va&lt;    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [8] +        </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: WcA:o_p$} _VI6!l't gw7P~zP| KkU-Dh6 GBWQA0 O&amp;;;Cz Z5Va&lt; +</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[8]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  785545770 -889684211  492656604 -530910820 -341038294 -340646831</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]   14497579  752098954 -452002288  650433707</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[8]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]   916  9012 -2055  7083  -824   676 -4733  6524  1337</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "847-10-10 05:36:56 UTC"  "1234-08-28 12:24:57 UTC"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -605630809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:01:55.837132</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "I!&gt;5"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 01:36:38.56798</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:56:36.386058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 03:05:42.629443</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2823-09-13"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:24:49.714189</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "U"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22:10:45.826259</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "485-05-06 12:09:07 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 09:12:44.106151</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b[[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $b[[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] Lhg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: Lhg</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05:17:30.148177</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
