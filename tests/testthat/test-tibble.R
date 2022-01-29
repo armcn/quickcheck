@@ -3,8 +3,8 @@ test_that("tibble_ wraps a single generator in a tibble", {
     a = any_vector(),
     property = \(a) {
       for_all(
-        b = tibble_(col_a = constant(a), rows = 1L),
-        property = \(b) dplyr::tibble(col_a = a) |> expect_equal(b),
+        b = tibble_(col_a = list_of(constant(a), len = 1L), rows = 1L),
+        property = \(b) dplyr::tibble(col_a = list(a)) |> expect_equal(b),
         tests = nested_tests()
       )
     },

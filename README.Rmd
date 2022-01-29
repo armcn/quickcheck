@@ -201,7 +201,7 @@ test_that("is_even returns TRUE for powers of two", {
 ## Fuzz tests
 
 Fuzz testing is a special case of property based testing in which the only 
-property being testing is that the code doesn't fail with a range of inputs.
+property being tested is that the code doesn't fail with a range of inputs.
 Here is an example of how to do fuzz testing with `quickcheck`. Let's say we want
 to test that the `purrr::map` function won't fail with any vector as input.
 
