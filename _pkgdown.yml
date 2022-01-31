@@ -90,11 +90,15 @@ reference:
     - list_
     - list_of
     - flat_list_of
-- title: Tibble
-  desc: A set of generators to produce tibbles.
+- title: Data frame
+  desc: A set of generators to produce data frames.
   contents:
     - tibble_
     - tibble_of
+    - data_frame_
+    - data_frame_of
+    - data.table_
+    - data.table_of
 - title: Any
   desc: A set of generators to produce random values.
   contents:
@@ -104,8 +108,11 @@ reference:
     - any_flat_homogeneous_list
     - any_vector
     - any_tibble
+    - any_data_frame
+    - any_data.table
+    - any_data_frame_object
     - anything
-    - anything_defined
+    - any_defined
     - any_undefined
 - title: Other
   desc: Other generators.

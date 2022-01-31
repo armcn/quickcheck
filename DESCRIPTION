@@ -24,6 +24,7 @@ Imports:
     hedgehog,
     purrr,
     dplyr,
+    data.table,
     hms,
     stats
 Suggests:

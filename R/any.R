@@ -1,8 +1,9 @@
 #' Any R object generator
 #'
 #' Generate any R object. This doesn't actually generate any possible object,
-#' just the most common ones, namely atomic vectors, lists, tibbles, and
-#' undefined values like `NA`, `NULL`, `Inf`, and `NaN`.
+#' just the most common ones, namely atomic vectors, lists, data.frames,
+#' tibbles, data.tables, and undefined values like `NA`, `NULL`, `Inf`, and
+#' `NaN`.
 #'
 #' @examples
 #' anything() |> show_example()
@@ -11,7 +12,7 @@
 anything <- function() {
   one_of(
     any_vector(len = c(0L, 10L), frac_na = 0.1),
-    any_tibble(rows = c(0L, 10L), cols = c(0L, 10L), frac_na = 0.1),
+    any_data_frame_object(rows = c(0L, 10L), cols = c(0L, 10L), frac_na = 0.1),
     any_undefined()
   )
 }
@@ -25,13 +26,13 @@ anything <- function() {
 #' `Inf`, `NaN`, or be empty vectors or tibbles.
 #'
 #' @examples
-#' anything_defined() |> show_example()
+#' any_defined() |> show_example()
 #' @template generator
 #' @export
-anything_defined <- function() {
+any_defined <- function() {
   one_of(
     any_vector(len = c(1L, 10L)),
-    any_tibble(rows = c(1L, 10L), cols = c(1L, 10L))
+    any_data_frame_object(rows = c(1L, 10L), cols = c(1L, 10L))
   )
 }
 
@@ -173,6 +174,72 @@ any_tibble <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
     any_vector(frac_na = frac_na),
     rows = rows,
     cols = cols
+  )
+}
+
+#' Random data frame generator
+#'
+#' Generate random data frames.
+#'
+#' @template rows
+#' @template cols
+#' @template frac_na
+#'
+#' @examples
+#' any_data_frame() |> show_example()
+#' any_data_frame(rows = 10L) |> show_example()
+#' any_data_frame(cols = 5L, frac_na = 0.5) |> show_example()
+#' @template generator
+#' @export
+any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+  data_frame_of(
+    any_atomic(frac_na = frac_na),
+    rows = rows,
+    cols = cols
+  )
+}
+
+#' Random data.table generator
+#'
+#' Generate random data.tables.
+#'
+#' @template rows
+#' @template cols
+#' @template frac_na
+#'
+#' @examples
+#' any_data.table() |> show_example()
+#' any_data.table(rows = 10L) |> show_example()
+#' any_data.table(cols = 5L, frac_na = 0.5) |> show_example()
+#' @template generator
+#' @export
+any_data.table <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+  data.table_of(
+    any_vector(frac_na = frac_na),
+    rows = rows,
+    cols = cols
+  )
+}
+
+#' Random data frame classed object generator
+#'
+#' Generate random data frame objects.
+#'
+#' @template rows
+#' @template cols
+#' @template frac_na
+#'
+#' @examples
+#' any_data_frame_object() |> show_example()
+#' any_data_frame_object(rows = 10L) |> show_example()
+#' any_data_frame_object(cols = 5L, frac_na = 0.5) |> show_example()
+#' @template generator
+#' @export
+any_data_frame_object <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+  one_of(
+    any_tibble(rows = rows, cols = cols, frac_na = frac_na),
+    any_data_frame(rows = rows, cols = cols, frac_na = frac_na),
+    any_data.table(rows = rows, cols = cols, frac_na = frac_na)
   )
 }
 

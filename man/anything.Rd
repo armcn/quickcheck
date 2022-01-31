@@ -11,8 +11,9 @@ A \code{quickcheck_generator} generator
 }
 \description{
 Generate any R object. This doesn't actually generate any possible object,
-just the most common ones, namely atomic vectors, lists, tibbles, and
-undefined values like \code{NA}, \code{NULL}, \code{Inf}, and \code{NaN}.
+just the most common ones, namely atomic vectors, lists, data.frames,
+tibbles, data.tables, and undefined values like \code{NA}, \code{NULL}, \code{Inf}, and
+\code{NaN}.
 }
 \examples{
 anything() |> show_example()
