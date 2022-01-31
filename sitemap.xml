@@ -28,6 +28,18 @@
     <loc>/reference/any_atomic.html</loc>
   </url>
   <url>
+    <loc>/reference/any_data.table.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_data_frame.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_data_frame_object.html</loc>
+  </url>
+  <url>
+    <loc>/reference/any_defined.html</loc>
+  </url>
+  <url>
     <loc>/reference/any_flat_homogeneous_list.html</loc>
   </url>
   <url>
@@ -49,9 +61,6 @@
     <loc>/reference/anything.html</loc>
   </url>
   <url>
-    <loc>/reference/anything_defined.html</loc>
-  </url>
-  <url>
     <loc>/reference/as_hedgehog.html</loc>
   </url>
   <url>
@@ -59,6 +68,18 @@
   </url>
   <url>
     <loc>/reference/constant.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data.table_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data.table_of.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_frame_.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_frame_of.html</loc>
   </url>
   <url>
     <loc>/reference/date_.html</loc>
