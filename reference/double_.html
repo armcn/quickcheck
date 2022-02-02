@@ -65,9 +65,9 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">double_</span><span class="op">(</span>
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
@@ -75,58 +75,58 @@
   <span class="va">left</span>,
   <span class="va">right</span>,
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
 <span class="fu">double_left_bounded</span><span class="op">(</span>
   <span class="va">left</span>,
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
 <span class="fu">double_right_bounded</span><span class="op">(</span>
   <span class="va">right</span>,
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
 <span class="fu">double_positive</span><span class="op">(</span>
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
 <span class="fu">double_negative</span><span class="op">(</span>
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
 <span class="fu">double_fractional</span><span class="op">(</span>
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
 
 <span class="fu">double_whole</span><span class="op">(</span>
   len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>,
-  frac_na <span class="op">=</span> <span class="fl">0</span>,
-  frac_nan <span class="op">=</span> <span class="fl">0</span>,
-  frac_inf <span class="op">=</span> <span class="fl">0</span>,
+  any_na <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_nan <span class="op">=</span> <span class="cn">FALSE</span>,
+  any_inf <span class="op">=</span> <span class="cn">FALSE</span>,
   big_dbl <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span></code></pre></div>
     </div>
@@ -141,21 +141,12 @@ vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
-<dt>frac_na</dt>
-<dd><p>The approximate fraction of <code>NA</code> values to
-be included in the vector. A fraction of 0, the default,
-will include no <code>NA</code> values. A fraction of 0.5 would
-include around 50% <code>NA</code> values.</p></dd>
-<dt>frac_nan</dt>
-<dd><p>The approximate fraction of <code>NaN</code> values
-to be included in the vector. A fraction of 0, the
-default, will include no <code>NaN</code> values. A fraction of 0.5
-would include around 50% <code>NaN</code> values.</p></dd>
-<dt>frac_inf</dt>
-<dd><p>The approximate fraction of <code>Inf</code> and
-<code>-Inf</code> values to be included in the vector. A fraction of
-0, the default, will include no <code>NA</code> values. A fraction
-of 0.5 would include around 50% <code>NA</code> values.</p></dd>
+<dt>any_na</dt>
+<dd><p>Whether <code>NA</code> values should be allowed.</p></dd>
+<dt>any_nan</dt>
+<dd><p>Whether <code>NaN</code> values should be allowed.</p></dd>
+<dt>any_inf</dt>
+<dd><p>Whether <code>Inf</code>/<code>-Inf</code> values should be allowed.</p></dd>
 <dt>big_dbl</dt>
 <dd><p>Should doubles near the maximum size be
 included? This may cause problems because if the result
@@ -176,18 +167,17 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">double_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -675452888  751679036  412215850   37351023 -580127283  288220389          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]         0 417486492  49168636</span>
 <span class="r-in"><span class="fu">double_</span><span class="op">(</span>big_dbl <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  8.811476e+307 -7.834668e+307 -2.946188e+307</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4.640807e+307  4.445387e+307   0.000000e+00  2.175950e+307</span>
 <span class="r-in"><span class="fu">double_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5</span>, right <span class="op">=</span> <span class="fl">5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  4.7250406 -3.9129080  0.8603191 -3.7051992  0.0000000  0.2128118</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7]  3.3438646 -3.4182132 -3.0652458  4.3382492</span>
-<span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] 842188946        NA        NA        NA 600365871        NA        NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [8]        NA        NA        NA</span>
-<span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_nan <span class="op">=</span> <span class="fl">0.2</span>, frac_inf <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  815843349  -85005185       -Inf        NaN -638331168  912813192</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] -340564386       -Inf          0 -242253572</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  0.01590672 -1.75489057  0.00000000 -4.11840300 -4.26342964</span>
+<span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]          0 -392502079 -103076901 -492645389 -791274972 -455851227</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] -245084525 -797422024  733616812 -824456903</span>
+<span class="r-in"><span class="fu">double_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_nan <span class="op">=</span> <span class="cn">TRUE</span>, any_inf <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]       -Inf       -Inf -652351029   62203515       -Inf          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] -303531394       -Inf       -Inf       -Inf</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

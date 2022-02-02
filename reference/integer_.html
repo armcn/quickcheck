@@ -63,17 +63,17 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">integer_</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">integer_</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">integer_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span>
+<span class="fu">integer_bounded</span><span class="op">(</span><span class="va">left</span>, <span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">integer_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">integer_left_bounded</span><span class="op">(</span><span class="va">left</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">integer_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">integer_right_bounded</span><span class="op">(</span><span class="va">right</span>, len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">integer_positive</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu">integer_positive</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 
-<span class="fu">integer_negative</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<span class="fu">integer_negative</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span>, big_int <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -86,11 +86,8 @@ vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
-<dt>frac_na</dt>
-<dd><p>The approximate fraction of <code>NA</code> values to
-be included in the vector. A fraction of 0, the default,
-will include no <code>NA</code> values. A fraction of 0.5 would
-include around 50% <code>NA</code> values.</p></dd>
+<dt>any_na</dt>
+<dd><p>Whether <code>NA</code> values should be allowed.</p></dd>
 <dt>big_int</dt>
 <dd><p>Should integers near the maximum size be
 included? This may cause problems because if the result
@@ -111,13 +108,14 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">integer_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -6269  3989 -1915 -2397 -4081</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] -8796  9426   904     0  3198 -8036  6471 -5397 -4928  -221</span>
 <span class="r-in"><span class="fu">integer_</span><span class="op">(</span>big_int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  -635480615           0  -390497086 -1364870259  1676651073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1955966969  -834187631  -805336105 -1396735447  1762914191   487552536</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7]   135876335 -1940866688</span>
 <span class="r-in"><span class="fu">integer_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5L</span>, right <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -1 -1</span>
-<span class="r-in"><span class="fu">integer_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   219    NA     0  2108 -9386  8155    NA -5321    NA  4236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0 4</span>
+<span class="r-in"><span class="fu">integer_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]    NA  -561  3327 -5635  -105  7132   190  3150 -1584    NA</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

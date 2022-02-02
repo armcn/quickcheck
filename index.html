@@ -123,7 +123,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span> <span class="op">+</span> <span class="fl">0</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span>
+<span class="co">#&gt; Test passed 🎊</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is commutative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -132,7 +132,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span>
   <span class="op">)</span>          
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 😸</span>
+<span class="co">#&gt; Test passed 🎉</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is associative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -155,7 +155,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 😀</span>
+<span class="co">#&gt; Test passed 🥇</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct returns single row if rows are repeated"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -165,7 +165,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span>
+<span class="co">#&gt; Test passed 🎊</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct does nothing if rows are unique"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -177,7 +177,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 😸</span></code></pre></div>
+<span class="co">#&gt; Test passed 🎊</span></code></pre></div>
 <div class="section level2">
 <h2 id="quickcheck-generators">Quickcheck generators<a class="anchor" aria-label="anchor" href="#quickcheck-generators"></a>
 </h2>
@@ -187,16 +187,16 @@
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;  [1] -9443 -9238 -3114  6117  8084  6281 -1609 -8123  9167 -4998</span>
+<span class="co">#&gt;  [1] -8207  9382 -4528  2914  4057 -8812     0 -5014 -3783  9317</span>
 <span class="fu"><a href="reference/character_.html">character_alphanumeric</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "H"         "d18"       "2moKXgiaA" "l"         "apJIkZ4"   "xQ"       </span>
-<span class="co">#&gt;  [7] "IxWbgGPl"  "U4VoE"     "feow"      "nyyjpbBlm"</span>
-<span class="fu"><a href="reference/posixct_.html">posixct_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span> 
-<span class="co">#&gt;  [1] "2174-04-30 10:34:22 PDT" "0990-04-16 13:38:43 LMT"</span>
-<span class="co">#&gt;  [3] NA                        NA                       </span>
-<span class="co">#&gt;  [5] NA                        "1635-05-06 17:06:07 LMT"</span>
-<span class="co">#&gt;  [7] NA                        "1326-01-19 03:38:54 LMT"</span>
-<span class="co">#&gt;  [9] NA                        NA</span></code></pre></div>
+<span class="co">#&gt;  [1] "DQJBy"     "N"         "1RsYEu"    "Y3QOb3Bna" "dfl36O"    "w3LtzERUI"</span>
+<span class="co">#&gt;  [7] "c7PK"      "zpNgH"     "7"         "2V6Z"</span>
+<span class="fu"><a href="reference/posixct_.html">posixct_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span> 
+<span class="co">#&gt;  [1] "0023-03-21 06:53:34 LMT" "1761-08-01 13:23:50 LMT"</span>
+<span class="co">#&gt;  [3] "1820-08-16 00:32:42 LMT" "0920-11-13 21:27:24 LMT"</span>
+<span class="co">#&gt;  [5] "0870-01-11 07:44:34 LMT" "0300-02-08 04:28:33 LMT"</span>
+<span class="co">#&gt;  [7] "0275-11-16 00:06:27 LMT" "2394-09-09 15:27:16 PDT"</span>
+<span class="co">#&gt;  [9] "1304-05-24 11:27:47 LMT" NA</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a>
@@ -213,7 +213,7 @@
 <span class="co">#&gt; [1] FALSE</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt; [1] TRUE</span>
+<span class="co">#&gt; [1] FALSE</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[3]]</span>
 <span class="co">#&gt; [1] TRUE</span></code></pre></div>
@@ -226,25 +226,25 @@
 <span class="co">#&gt; # A tibble: 5 x 2</span>
 <span class="co">#&gt;   a          b              </span>
 <span class="co">#&gt;   &lt;date&gt;     &lt;time&gt;         </span>
-<span class="co">#&gt; 1 1754-10-12 00:11:21.388116</span>
-<span class="co">#&gt; 2 1043-05-24 22:48:47.926494</span>
-<span class="co">#&gt; 3 1066-05-18 18:18:56.531533</span>
-<span class="co">#&gt; 4 2195-01-13 21:31:59.337200</span>
-<span class="co">#&gt; 5 2613-10-17 16:37:56.068528</span>
+<span class="co">#&gt; 1 NA         21:52:14.719779</span>
+<span class="co">#&gt; 2 1081-02-16 18:09:40.676045</span>
+<span class="co">#&gt; 3 1245-09-02 10:09:14.113041</span>
+<span class="co">#&gt; 4 2952-12-08 21:26:12.375184</span>
+<span class="co">#&gt; 5 1920-08-02 12:29:26.414564</span>
 <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/double_.html">double_bounded</a></span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">3</span>, cols <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
-<span class="co">#&gt;    ...1   ...2  ...3</span>
-<span class="co">#&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 -1.63 -5.73   8.37</span>
-<span class="co">#&gt; 2 -6.92 -6.70   6.69</span>
-<span class="co">#&gt; 3 -2.11  0.487  3.66</span>
+<span class="co">#&gt;    ...1  ...2  ...3</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 -5.71 -5.61  8.09</span>
+<span class="co">#&gt; 2 -7.78  2.21 -9.09</span>
+<span class="co">#&gt; 3 -5.69 -1.24 -5.57</span>
 <span class="fu"><a href="reference/any_tibble.html">any_tibble</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">3</span>, cols <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> |&gt; <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
-<span class="co">#&gt;   ...1            ...2      ...3     </span>
-<span class="co">#&gt;   &lt;time&gt;          &lt;list&gt;    &lt;list&gt;   </span>
-<span class="co">#&gt; 1 00:00:56.564217 &lt;dbl [1]&gt; &lt;lgl [1]&gt;</span>
-<span class="co">#&gt; 2 02:29:51.265953 &lt;dbl [1]&gt; &lt;lgl [1]&gt;</span>
-<span class="co">#&gt; 3 13:02:05.884475 &lt;dbl [1]&gt; &lt;lgl [1]&gt;</span></code></pre></div>
+<span class="co">#&gt;   ...1  ...2  ...3            </span>
+<span class="co">#&gt;   &lt;lgl&gt; &lt;lgl&gt; &lt;list&gt;          </span>
+<span class="co">#&gt; 1 FALSE TRUE  &lt;named list [2]&gt;</span>
+<span class="co">#&gt; 2 FALSE TRUE  &lt;named list [2]&gt;</span>
+<span class="co">#&gt; 3 TRUE  FALSE &lt;named list [2]&gt;</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -266,7 +266,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥳</span></code></pre></div>
 <p>Any <code>hedgehog</code> generator can be used with <code>quickcheck</code> but they can’t be composed together to build another generator. For example this will work:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"powers of two and integers are both numeric values"</span>, <span class="op">{</span>
@@ -276,13 +276,13 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥳</span></code></pre></div>
 <p>But this will cause an error:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"composing hedgehog with quickcheck generators fails"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_error</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥳</span></code></pre></div>
+<span class="co">#&gt; Test passed 😸</span></code></pre></div>
 <p>A <code>quickcheck</code> generator can also be converted to a <code>hedgehog</code> generator which can then be used with other <code>hedgehog</code> functions.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span> 
@@ -310,7 +310,7 @@
     property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">identity</span><span class="op">)</span> |&gt; <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_silent.html" class="external-link">expect_silent</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="repeat-tests">Repeat tests<a class="anchor" aria-label="anchor" href="#repeat-tests"></a>
@@ -325,7 +325,7 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥳</span></code></pre></div>
 </div>
 </div>
 

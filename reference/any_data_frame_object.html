@@ -63,7 +63,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">any_data_frame_object</span><span class="op">(</span>rows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">any_data_frame_object</span><span class="op">(</span>rows <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -86,11 +86,8 @@ between a minimum and maximum, inclusive. For example
 <code>cols = c(1L, 10L)</code> would produce data frames with
 columns between 1 and 10. To produce empty tibbles
 set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></dd>
-<dt>frac_na</dt>
-<dd><p>The approximate fraction of <code>NA</code> values to
-be included in the vector. A fraction of 0, the default,
-will include no <code>NA</code> values. A fraction of 0.5 would
-include around 50% <code>NA</code> values.</p></dd>
+<dt>any_na</dt>
+<dd><p>Whether <code>NA</code> values should be allowed.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -100,43 +97,36 @@ include around 50% <code>NA</code> values.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_data_frame_object</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      ...1      ...2                ...3       ...4  ...5       ...6  ...7  ...8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 fQ?-E6'      .HwJ 2462-12-07 10:36:50  886869600  3381 2598-11-30 FALSE  4486</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      8j        +D 2695-05-16 18:14:56   96362232 -2985 2772-06-02 FALSE  2275</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   3x3gn       "W/  714-01-13 01:34:57 -512144611 -2740 2058-05-19 FALSE  1623</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4     3&lt;W     &lt;Z5j@ 1875-05-27 23:58:19 -895238069  6834 2030-11-19  TRUE  8020</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5      [t &lt;c!GIcS8! 1178-01-17 00:58:48  194975910 -7582 2955-12-24  TRUE -3498</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     Ecg &lt;c!GIcS8! 1938-03-05 11:20:25 -815491690 -3399 1228-01-26  TRUE  1585</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7      S}    c%Xi'{ 2367-10-31 10:12:07  478510455     0 1525-10-11 FALSE  1410</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                  ...9</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  711-10-15 03:54:19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  844-07-09 11:00:45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2835-09-17 23:25:38</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  422-12-15 17:18:57</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2095-11-10 19:30:12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  961-05-03 11:07:32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  203-02-19 17:45:40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1    ...2      ...3      ...4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2874-01-07 pbs]F;p &lt;list[2]&gt; &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 1541-07-05 y'}qm;N &lt;list[2]&gt; &lt;list[2]&gt;</span>
 <span class="r-in"><span class="fu">any_data_frame_object</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    ...1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  709-05-30 10:46:32</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:   30-03-21 07:21:45</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 2767-08-07 23:59:03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:  554-06-24 15:25:02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 1237-07-31 09:22:49</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 1066-06-27 09:16:24</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  417-02-15 20:29:23</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2709-08-08 07:20:53</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 2093-12-25 13:09:12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 2882-05-27 03:46:34</span>
-<span class="r-in"><span class="fu">any_data_frame_object</span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">5L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                  ...1 ...2       ...3 ...4            ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                &lt;NA&gt;   NA  834216078 TRUE              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2036-10-04 10:34:48    0 -285755538   NA              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                &lt;NA&gt;   NA         NA TRUE 05:05:55.023320</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4                &lt;NA&gt;   NA -624681646 TRUE 14:52:53.857630</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                &lt;NA&gt; 7215  109758209   NA              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6                &lt;NA&gt;   NA         NA TRUE              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  452-11-17 11:08:49 3754         NA   NA 18:55:32.385195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                                          ...1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:                                           12:07:39.466050,19:21:06.763760,15:33:34.988917,17:53:54.055242,16:42:49.301121</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 808-04-25 19:57:01,1473-02-22 07:43:27,2385-11-01 16:18:05,1638-04-26 08:01:27,1568-06-13 23:11:12,582-05-22 11:46:51,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:                                                                                                                   N5,UW5n</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                                                                             FALSE,FALSE,FALSE, TRUE,FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:   2023-07-28 19:50:52,364-07-15 00:50:59,2803-05-12 09:24:40,419-12-01 05:25:04,181-05-10 10:50:00,574-07-15 16:55:08,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                                                                                               -3396,-5255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                                       60730390, 224834044, 394303314,  32173992,-253874555,-205962859,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                                         2676-03-01,2081-12-06,1053-03-31,2889-11-04,2813-06-10,1022-09-20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                                                                 Rh@Qa,QZ5^,kwmK_,kcm~8+TR, g@BHp9db,|,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                                                                                               -6088, 2254</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      ...2  ...3  ...4                ...5       ...6      ...7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  4226  TRUE  3010 2617-04-08 09:24:26  845644535 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:  6900  TRUE  1573  429-06-24 16:05:06   40313500 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:  3364 FALSE     0 1146-12-24 09:58:39  845816538 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: -1762  TRUE  7911 1707-11-27 16:56:58  972293638 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: -7589  TRUE     0 1954-09-20 11:16:41 -641855482 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:  5312 FALSE -6757 1876-03-05 01:27:07          0 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:     0 FALSE  2719 2910-07-29 18:30:04  141699790 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: -8350 FALSE     0 1146-03-26 18:59:39 -379649803 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:  8385 FALSE   164  310-07-15 01:02:53  965237143 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  7248 FALSE -3570  279-03-09 08:09:14          0 &lt;list[2]&gt;</span>
+<span class="r-in"><span class="fu">any_data_frame_object</span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">5L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>        ...1    ...2                ...3 ...4       ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1:       NA     KAl  757-09-02 13:12:31 TRUE       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 30857883 &gt;0]&lt;Y*+ 2105-12-09 02:09:34   NA 2036-02-07</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

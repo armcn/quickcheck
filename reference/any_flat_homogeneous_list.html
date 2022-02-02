@@ -63,7 +63,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">any_flat_homogeneous_list</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, frac_na <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">any_flat_homogeneous_list</span><span class="op">(</span>len <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span><span class="op">)</span>, any_na <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -76,11 +76,8 @@ vectors with lengths between a minimum and maximum,
 inclusive. For example <code>len = c(1L, 10L)</code> would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd>
-<dt>frac_na</dt>
-<dd><p>The approximate fraction of <code>NA</code> values to
-be included in the vector. A fraction of 0, the default,
-will include no <code>NA</code> values. A fraction of 0.5 would
-include around 50% <code>NA</code> values.</p></dd>
+<dt>any_na</dt>
+<dd><p>Whether <code>NA</code> values should be allowed.</p></dd>
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
@@ -91,63 +88,63 @@ include around 50% <code>NA</code> values.</p></dd>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_flat_homogeneous_list</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 17:44:11.874613</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] *b{~\\9X</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: *b{~\\9X</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 02:15:52.012888</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -+#</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: -+#</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 02:46:28.379058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] Sv</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: Sv</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 01:33:19.628191</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] l*`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: l*`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:36:23.189662</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] E/UBSo#^"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: E/UBSo#^"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 09:17:07.837918</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] F[~(;?a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: F[~(;?a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:54:32.472832</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] K[*vBReG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: K[*vBReG</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span class="fu">any_flat_homogeneous_list</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, frac_na <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in"><span class="fu">any_flat_homogeneous_list</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 623739077</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 9-uR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: 9-uR</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] &gt;g\\M</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: &gt;g\\M</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -273229433</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 8p2t"tG</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: 8p2t"tG</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -587869581</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] K</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: K</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 445131070</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1R|Zmm+</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: 1R|Zmm+</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 948961479</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] LX</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: LX</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -790827778</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -444595142</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] F</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: F</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 474833774</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
