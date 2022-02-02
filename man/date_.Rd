@@ -7,13 +7,13 @@
 \alias{date_right_bounded}
 \title{Date generators}
 \usage{
-date_(len = c(1L, 10L), frac_na = 0)
+date_(len = c(1L, 10L), any_na = FALSE)
 
-date_bounded(left, right, len = c(1L, 10L), frac_na = 0)
+date_bounded(left, right, len = c(1L, 10L), any_na = FALSE)
 
-date_left_bounded(left, len = c(1L, 10L), frac_na = 0)
+date_left_bounded(left, len = c(1L, 10L), any_na = FALSE)
 
-date_right_bounded(right, len = c(1L, 10L), frac_na = 0)
+date_right_bounded(right, len = c(1L, 10L), any_na = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -24,10 +24,7 @@ inclusive. For example \code{len = c(1L, 10L)} would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 
 \item{left}{The minimum possible value for generated
 numbers, inclusive.}
@@ -47,5 +44,5 @@ date_bounded(
   left = as.Date("2020-01-01"),
   right = as.Date("2020-01-10")
 ) |> show_example()
-date_(len = 10L, frac_na = 0.5) |> show_example()
+date_(len = 10L, any_na = TRUE) |> show_example()
 }

@@ -3,17 +3,17 @@
 #' A generator for logical vectors.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' logical_() |> show_example()
-#' logical_(len = 10L, frac_na = 0.5) |> show_example()
+#' logical_(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-logical_ <- function(len = c(1L, 10L), frac_na = 0) {
+logical_ <- function(len = c(1L, 10L), any_na = FALSE) {
   qc_gen(\(len2 = len)
     hedgehog::gen.element(c(TRUE, FALSE)) |>
-      replace_frac_with(NA, frac_na) |>
+      replace_some_with(NA, any_na) |>
       vectorize(len2)
   )
 }

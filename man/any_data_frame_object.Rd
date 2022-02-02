@@ -4,7 +4,7 @@
 \alias{any_data_frame_object}
 \title{Random data frame classed object generator}
 \usage{
-any_data_frame_object(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0)
+any_data_frame_object(rows = c(1L, 10L), cols = c(1L, 10L), any_na = FALSE)
 }
 \arguments{
 \item{rows}{Number of rows of the generated data frame.
@@ -25,10 +25,7 @@ between a minimum and maximum, inclusive. For example
 columns between 1 and 10. To produce empty tibbles
 set \code{cols = 0L} or a range like \code{cols = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
 A \code{quickcheck_generator} generator
@@ -39,5 +36,5 @@ Generate random data frame objects.
 \examples{
 any_data_frame_object() |> show_example()
 any_data_frame_object(rows = 10L) |> show_example()
-any_data_frame_object(cols = 5L, frac_na = 0.5) |> show_example()
+any_data_frame_object(cols = 5L, any_na = TRUE) |> show_example()
 }

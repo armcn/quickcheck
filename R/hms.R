@@ -3,7 +3,7 @@
 #' A set of generators for hms vectors.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #' @template left
 #' @template right
 #'
@@ -13,19 +13,19 @@
 #'   left = hms::as_hms("00:00:00"),
 #'   right = hms::as_hms("12:00:00")
 #' ) |> show_example()
-#' hms_(len = 10L, frac_na = 0.5) |> show_example()
+#' hms_(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-hms_ <- function(len = c(1L, 10L), frac_na = 0) {
-  hms_bounded(min_hms(), max_hms(), len, frac_na)
+hms_ <- function(len = c(1L, 10L), any_na = FALSE) {
+  hms_bounded(min_hms(), max_hms(), len, any_na)
 }
 
 #' @rdname hms_
 #' @export
-hms_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
+hms_bounded <- function(left, right, len = c(1L, 10L), any_na = FALSE) {
   qc_gen(\(len2 = len)
     hedgehog::gen.unif(as.double(left), as.double(right)) |>
-      replace_frac_with(NA_real_, frac_na) |>
+      replace_some_with(NA_real_, any_na) |>
       hedgehog::gen.with(hms::as_hms) |>
       vectorize(len2)
   )
@@ -33,14 +33,14 @@ hms_bounded <- function(left, right, len = c(1L, 10L), frac_na = 0) {
 
 #' @rdname hms_
 #' @export
-hms_left_bounded <- function(left, len = c(1L, 10L), frac_na = 0) {
-  hms_bounded(left, max_hms(), len, frac_na)
+hms_left_bounded <- function(left, len = c(1L, 10L), any_na = FALSE) {
+  hms_bounded(left, max_hms(), len, any_na)
 }
 
 #' @rdname hms_
 #' @export
-hms_right_bounded <- function(right, len = c(1L, 10L), frac_na = 0) {
-  hms_bounded(min_hms(), right, len, frac_na)
+hms_right_bounded <- function(right, len = c(1L, 10L), any_na = FALSE) {
+  hms_bounded(min_hms(), right, len, any_na)
 }
 
 min_hms <- function() {

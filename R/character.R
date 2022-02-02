@@ -3,51 +3,59 @@
 #' A set of generators for character vectors.
 #'
 #' @template len
-#' @template frac_na
-#' @template frac_empty
+#' @template any_na
+#' @template any_empty
 #'
 #' @examples
 #' character_() |> show_example()
-#' character_(len = 10L, frac_na = 0.5) |> show_example()
-#' character_(len = 10L, frac_empty = 0.5) |> show_example()
+#' character_(len = 10L, any_na = TRUE) |> show_example()
+#' character_(len = 10L, any_empty = TRUE) |> show_example()
 #' @template generator
 #' @export
-character_ <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
+character_ <- function(len = c(1L, 10L),
+                       any_na = FALSE,
+                       any_empty = FALSE) {
   bytes_to_character(32L:126L) |>
-    character_string(len, frac_na, frac_empty)
+    character_string(len, any_na, any_empty)
 }
 
 #' @rdname character_
 #' @export
-character_letter <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
+character_letters <- function(len = c(1L, 10L),
+                              any_na = FALSE,
+                              any_empty = FALSE) {
   c(letters, LETTERS) |>
-    character_generator(len, frac_na, frac_empty)
+    character_string(len, any_na, any_empty)
 }
 
 #' @rdname character_
 #' @export
-character_word <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
-  c(letters, LETTERS) |>
-    character_string(len, frac_na, frac_empty)
+character_numbers <- function(len = c(1L, 10L),
+                              any_na = FALSE,
+                              any_empty = FALSE) {
+  as.character(0:9) |>
+    character_string(len, any_na, any_empty)
 }
 
 #' @rdname character_
 #' @export
-character_alphanumeric <- function(len = c(1L, 10L), frac_na = 0, frac_empty = 0) {
+character_alphanumeric <- function(len = c(1L, 10L),
+                                   any_na = FALSE,
+                                   any_empty = FALSE) {
   c(letters, LETTERS, 0:9) |>
-    character_string(len, frac_na, frac_empty)
+    character_string(len, any_na, any_empty)
 }
 
-character_string <- function(characters, len, frac_na, frac_empty) {
+character_string <- function(characters, len, any_na, any_empty) {
   replicate(1000L, random_string(characters)) |>
-    character_generator(len, frac_na, frac_empty)
+    character_generator(len, any_na, any_empty)
 }
 
-character_generator <- function(characters, len, frac_na, frac_empty) {
+character_generator <- function(characters, len, any_na, any_empty) {
   qc_gen(\(len2 = len)
     hedgehog::gen.element(characters) |>
-      replace_frac_with("", frac_empty) |>
-      replace_frac_with(NA_character_, frac_na) |>
+      replace_some_with("", any_empty) |>
+      replace_some_with(NA_character_, any_na) |>
       vectorize(len2)
   )
 }

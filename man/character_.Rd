@@ -2,18 +2,18 @@
 % Please edit documentation in R/character.R
 \name{character_}
 \alias{character_}
-\alias{character_letter}
-\alias{character_word}
+\alias{character_letters}
+\alias{character_numbers}
 \alias{character_alphanumeric}
 \title{Character generators}
 \usage{
-character_(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+character_(len = c(1L, 10L), any_na = FALSE, any_empty = FALSE)
 
-character_letter(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+character_letters(len = c(1L, 10L), any_na = FALSE, any_empty = FALSE)
 
-character_word(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+character_numbers(len = c(1L, 10L), any_na = FALSE, any_empty = FALSE)
 
-character_alphanumeric(len = c(1L, 10L), frac_na = 0, frac_empty = 0)
+character_alphanumeric(len = c(1L, 10L), any_na = FALSE, any_empty = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -24,15 +24,9 @@ inclusive. For example \code{len = c(1L, 10L)} would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 
-\item{frac_empty}{The approximate fraction of empty
-character values to be included in the vector. A fraction
-of 0, the default, will include no empty values. A
-fraction of 0.5 would include around 50\% empty values.}
+\item{any_empty}{Whether empty character values should be allowed.}
 }
 \value{
 A \code{quickcheck_generator} generator
@@ -42,6 +36,6 @@ A set of generators for character vectors.
 }
 \examples{
 character_() |> show_example()
-character_(len = 10L, frac_na = 0.5) |> show_example()
-character_(len = 10L, frac_empty = 0.5) |> show_example()
+character_(len = 10L, any_na = TRUE) |> show_example()
+character_(len = 10L, any_empty = TRUE) |> show_example()
 }

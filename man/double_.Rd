@@ -13,9 +13,9 @@
 \usage{
 double_(
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 
@@ -23,58 +23,58 @@ double_bounded(
   left,
   right,
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE
 )
 
 double_left_bounded(
   left,
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 
 double_right_bounded(
   right,
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 
 double_positive(
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 
 double_negative(
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 
 double_fractional(
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 
 double_whole(
   len = c(1L, 10L),
-  frac_na = 0,
-  frac_nan = 0,
-  frac_inf = 0,
+  any_na = FALSE,
+  any_nan = FALSE,
+  any_inf = FALSE,
   big_dbl = FALSE
 )
 }
@@ -87,20 +87,11 @@ inclusive. For example \code{len = c(1L, 10L)} would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 
-\item{frac_nan}{The approximate fraction of \code{NaN} values
-to be included in the vector. A fraction of 0, the
-default, will include no \code{NaN} values. A fraction of 0.5
-would include around 50\% \code{NaN} values.}
+\item{any_nan}{Whether \code{NaN} values should be allowed.}
 
-\item{frac_inf}{The approximate fraction of \code{Inf} and
-\code{-Inf} values to be included in the vector. A fraction of
-0, the default, will include no \code{NA} values. A fraction
-of 0.5 would include around 50\% \code{NA} values.}
+\item{any_inf}{Whether \code{Inf}/\code{-Inf} values should be allowed.}
 
 \item{big_dbl}{Should doubles near the maximum size be
 included? This may cause problems because if the result
@@ -123,6 +114,6 @@ A set of generators for double vectors.
 double_() |> show_example()
 double_(big_dbl = TRUE) |> show_example()
 double_bounded(left = -5, right = 5) |> show_example()
-double_(len = 10L, frac_na = 0.5) |> show_example()
-double_(len = 10L, frac_nan = 0.2, frac_inf = 0.2) |> show_example()
+double_(len = 10L, any_na = TRUE) |> show_example()
+double_(len = 10L, any_nan = TRUE, any_inf = TRUE) |> show_example()
 }

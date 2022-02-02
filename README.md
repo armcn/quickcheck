@@ -57,7 +57,7 @@ test_that("0 is the additive identity of +", {
     property = \(a) expect_equal(a, a + 0)
   )          
 })
-#> Test passed 🌈
+#> Test passed 🎊
 
 test_that("+ is commutative", {
   for_all(
@@ -66,7 +66,7 @@ test_that("+ is commutative", {
     property = \(a, b) expect_equal(a + b, b + a)
   )          
 })
-#> Test passed 😸
+#> Test passed 🎉
 
 test_that("+ is associative", {
   for_all(
@@ -95,7 +95,7 @@ test_that("distinct does nothing with a single row", {
     }
   )
 })
-#> Test passed 😀
+#> Test passed 🥇
 
 test_that("distinct returns single row if rows are repeated", {
   for_all(
@@ -105,7 +105,7 @@ test_that("distinct returns single row if rows are repeated", {
     }
   )
 })
-#> Test passed 🌈
+#> Test passed 🎊
 
 test_that("distinct does nothing if rows are unique", {
   for_all(
@@ -117,7 +117,7 @@ test_that("distinct does nothing if rows are unique", {
     }
   )
 })
-#> Test passed 😸
+#> Test passed 🎊
 ```
 
 ## Quickcheck generators
@@ -128,16 +128,16 @@ Many generators are provided with `quickcheck`. Here are a few examples.
 
 ``` r
 integer_(len = 10) |> show_example()
-#>  [1] -9443 -9238 -3114  6117  8084  6281 -1609 -8123  9167 -4998
+#>  [1] -8207  9382 -4528  2914  4057 -8812     0 -5014 -3783  9317
 character_alphanumeric(len = 10) |> show_example()
-#>  [1] "H"         "d18"       "2moKXgiaA" "l"         "apJIkZ4"   "xQ"       
-#>  [7] "IxWbgGPl"  "U4VoE"     "feow"      "nyyjpbBlm"
-posixct_(len = 10, frac_na = 0.5) |> show_example() 
-#>  [1] "2174-04-30 10:34:22 PDT" "0990-04-16 13:38:43 LMT"
-#>  [3] NA                        NA                       
-#>  [5] NA                        "1635-05-06 17:06:07 LMT"
-#>  [7] NA                        "1326-01-19 03:38:54 LMT"
-#>  [9] NA                        NA
+#>  [1] "DQJBy"     "N"         "1RsYEu"    "Y3QOb3Bna" "dfl36O"    "w3LtzERUI"
+#>  [7] "c7PK"      "zpNgH"     "7"         "2V6Z"
+posixct_(len = 10, any_na = TRUE) |> show_example() 
+#>  [1] "0023-03-21 06:53:34 LMT" "1761-08-01 13:23:50 LMT"
+#>  [3] "1820-08-16 00:32:42 LMT" "0920-11-13 21:27:24 LMT"
+#>  [5] "0870-01-11 07:44:34 LMT" "0300-02-08 04:28:33 LMT"
+#>  [7] "0275-11-16 00:06:27 LMT" "2394-09-09 15:27:16 PDT"
+#>  [9] "1304-05-24 11:27:47 LMT" NA
 ```
 
 ### Lists
@@ -154,7 +154,7 @@ flat_list_of(logical_(), len = 3) |> show_example()
 #> [1] FALSE
 #> 
 #> [[2]]
-#> [1] TRUE
+#> [1] FALSE
 #> 
 #> [[3]]
 #> [1] TRUE
@@ -167,25 +167,25 @@ tibble_(a = date_(), b = hms_(), rows = 5) |> show_example()
 #> # A tibble: 5 x 2
 #>   a          b              
 #>   <date>     <time>         
-#> 1 1754-10-12 00:11:21.388116
-#> 2 1043-05-24 22:48:47.926494
-#> 3 1066-05-18 18:18:56.531533
-#> 4 2195-01-13 21:31:59.337200
-#> 5 2613-10-17 16:37:56.068528
+#> 1 NA         21:52:14.719779
+#> 2 1081-02-16 18:09:40.676045
+#> 3 1245-09-02 10:09:14.113041
+#> 4 2952-12-08 21:26:12.375184
+#> 5 1920-08-02 12:29:26.414564
 tibble_of(double_bounded(-10, 10), rows = 3, cols = 3) |> show_example()
 #> # A tibble: 3 x 3
-#>    ...1   ...2  ...3
-#>   <dbl>  <dbl> <dbl>
-#> 1 -1.63 -5.73   8.37
-#> 2 -6.92 -6.70   6.69
-#> 3 -2.11  0.487  3.66
+#>    ...1  ...2  ...3
+#>   <dbl> <dbl> <dbl>
+#> 1 -5.71 -5.61  8.09
+#> 2 -7.78  2.21 -9.09
+#> 3 -5.69 -1.24 -5.57
 any_tibble(rows = 3, cols = 3) |> show_example()
 #> # A tibble: 3 x 3
-#>   ...1            ...2      ...3     
-#>   <time>          <list>    <list>   
-#> 1 00:00:56.564217 <dbl [1]> <lgl [1]>
-#> 2 02:29:51.265953 <dbl [1]> <lgl [1]>
-#> 3 13:02:05.884475 <dbl [1]> <lgl [1]>
+#>   ...1  ...2  ...3            
+#>   <lgl> <lgl> <list>          
+#> 1 FALSE TRUE  <named list [2]>
+#> 2 FALSE TRUE  <named list [2]>
+#> 3 TRUE  FALSE <named list [2]>
 ```
 
 ## Hedgehog generators
@@ -208,7 +208,7 @@ test_that("is_even returns TRUE for powers of two", {
     property = \(a) is_even(a) |> expect_true()
   )
 })
-#> Test passed 🥇
+#> Test passed 🥳
 ```
 
 Any `hedgehog` generator can be used with `quickcheck` but they can’t be
@@ -223,7 +223,7 @@ test_that("powers of two and integers are both numeric values", {
     property = \(a, b) c(a, b) |> is.numeric() |> expect_true()
   )
 })
-#> Test passed 🥇
+#> Test passed 🥳
 ```
 
 But this will cause an error:
@@ -232,7 +232,7 @@ But this will cause an error:
 test_that("composing hedgehog with quickcheck generators fails", {
   tibble_of(from_hedgehog(gen_powers_of_two)) |> expect_error()
 })
-#> Test passed 🥳
+#> Test passed 😸
 ```
 
 A `quickcheck` generator can also be converted to a `hedgehog` generator
@@ -269,7 +269,7 @@ test_that("map won't fail with any vector as input", {
     property = \(a) purrr::map(a, identity) |> expect_silent()
   )
 })
-#> Test passed 🌈
+#> Test passed 🥇
 ```
 
 ## Repeat tests
@@ -290,5 +290,5 @@ test_that("runif generates random numbers between a min and max value", {
     }
   )
 })
-#> Test passed 🥇
+#> Test passed 🥳
 ```

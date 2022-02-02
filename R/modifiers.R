@@ -77,3 +77,11 @@ replace_frac_with <- function(generator, replacement, frac) {
 
   hedgehog::gen.with(generator, replace_frac)
 }
+
+replace_some_with <- function(generator, replacement, replace) {
+  if (replace)
+    replace_frac_with(generator, replacement, frac = 0.25)
+
+  else
+    generator
+}

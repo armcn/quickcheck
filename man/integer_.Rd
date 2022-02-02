@@ -9,17 +9,17 @@
 \alias{integer_negative}
 \title{Integer generators}
 \usage{
-integer_(len = c(1L, 10L), frac_na = 0, big_int = FALSE)
+integer_(len = c(1L, 10L), any_na = FALSE, big_int = FALSE)
 
-integer_bounded(left, right, len = c(1L, 10L), frac_na = 0)
+integer_bounded(left, right, len = c(1L, 10L), any_na = FALSE)
 
-integer_left_bounded(left, len = c(1L, 10L), frac_na = 0, big_int = FALSE)
+integer_left_bounded(left, len = c(1L, 10L), any_na = FALSE, big_int = FALSE)
 
-integer_right_bounded(right, len = c(1L, 10L), frac_na = 0, big_int = FALSE)
+integer_right_bounded(right, len = c(1L, 10L), any_na = FALSE, big_int = FALSE)
 
-integer_positive(len = c(1L, 10L), frac_na = 0, big_int = FALSE)
+integer_positive(len = c(1L, 10L), any_na = FALSE, big_int = FALSE)
 
-integer_negative(len = c(1L, 10L), frac_na = 0, big_int = FALSE)
+integer_negative(len = c(1L, 10L), any_na = FALSE, big_int = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -30,10 +30,7 @@ inclusive. For example \code{len = c(1L, 10L)} would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 
 \item{big_int}{Should integers near the maximum size be
 included? This may cause problems because if the result
@@ -56,5 +53,5 @@ A set of generators for integer vectors.
 integer_() |> show_example()
 integer_(big_int = TRUE) |> show_example()
 integer_bounded(left = -5L, right = 5L) |> show_example()
-integer_(len = 10L, frac_na = 0.5) |> show_example()
+integer_(len = 10L, any_na = TRUE) |> show_example()
 }

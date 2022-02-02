@@ -66,7 +66,7 @@ test_that("any_tibble generates tibbles within a range of cols", {
 
 test_that("any_tibble can generates tibbles with NAs", {
   for_all(
-    a = any_tibble(rows = 10L, cols = 10L, frac_na = 1),
-    property = \(a) unlist(a) |> is.na() |> all() |> expect_true()
+    a = any_tibble(rows = 10L, cols = 10L, any_na = TRUE),
+    property = \(a) unlist(a) |> is.na() |> any() |> expect_true()
   )
 })

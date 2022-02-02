@@ -52,8 +52,8 @@ reference:
   desc: A set of generators to produce character vectors.
   contents:
     - character_
-    - character_letter
-    - character_word
+    - character_letters
+    - character_numbers
     - character_alphanumeric
 - title: Logical
   desc: A generator to produce logical vectors.

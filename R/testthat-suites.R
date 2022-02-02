@@ -140,10 +140,11 @@ test_generator_with_na <- function(generator, .p) {
     ),
     {
       for_all(
-        a = generator(frac_na = 1),
+        a = generator(len = 100L, any_na = TRUE),
         property = \(a) {
-          unlist(a) |> is.na() |> all() |> testthat::expect_true()
-        }
+          unlist(a) |> is.na() |> any() |> testthat::expect_true()
+        },
+        tests = 10L
       )
     }
   )

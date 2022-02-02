@@ -11,8 +11,12 @@
 #' @export
 anything <- function() {
   one_of(
-    any_vector(len = c(0L, 10L), frac_na = 0.1),
-    any_data_frame_object(rows = c(0L, 10L), cols = c(0L, 10L), frac_na = 0.1),
+    any_vector(len = c(0L, 10L), any_na = TRUE),
+    any_data_frame_object(
+      rows = c(0L, 10L),
+      cols = c(0L, 10L),
+      any_na = TRUE
+    ),
     any_undefined()
   )
 }
@@ -42,24 +46,24 @@ any_defined <- function() {
 #' or factors.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_atomic() |> show_example()
-#' any_atomic(len = 10L, frac_na = 0.5) |> show_example()
+#' any_atomic(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_atomic <- function(len = c(1L, 10L), frac_na = 0) {
+any_atomic <- function(len = c(1L, 10L), any_na = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
-      integer_(len2, frac_na),
-      double_(len2, frac_na),
-      character_(len2, frac_na),
-      logical_(len2, frac_na),
-      date_(len2, frac_na),
-      posixct_(len2, frac_na),
-      hms_(len2, frac_na),
-      factor_(len2, frac_na)
+      integer_(len2, any_na),
+      double_(len2, any_na),
+      character_(len2, any_na),
+      logical_(len2, any_na),
+      date_(len2, any_na),
+      posixct_(len2, any_na),
+      hms_(len2, any_na),
+      factor_(len2, any_na)
     )()
   )
 }
@@ -69,15 +73,15 @@ any_atomic <- function(len = c(1L, 10L), frac_na = 0) {
 #' Generate lists where each element is an atomic vector with a length of 1.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_flat_list() |> show_example()
-#' any_flat_list(len = 10L, frac_na = 0.5) |> show_example()
+#' any_flat_list(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_flat_list <- function(len = c(1L, 10L), frac_na = 0) {
-  flat_list_of(any_atomic(frac_na = frac_na), len)
+any_flat_list <- function(len = c(1L, 10L), any_na = FALSE) {
+  flat_list_of(any_atomic(any_na = any_na), len)
 }
 
 #' Flat homogeneous list generator
@@ -85,24 +89,24 @@ any_flat_list <- function(len = c(1L, 10L), frac_na = 0) {
 #' Generate lists where each element is an atomic scalar of the same type.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_flat_homogeneous_list() |> show_example()
-#' any_flat_homogeneous_list(len = 10L, frac_na = 0.5) |> show_example()
+#' any_flat_homogeneous_list(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_flat_homogeneous_list <- function(len = c(1L, 10L), frac_na = 0) {
+any_flat_homogeneous_list <- function(len = c(1L, 10L), any_na = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
-      flat_list_of(integer_(frac_na = frac_na), len2),
-      flat_list_of(double_(frac_na = frac_na), len2),
-      flat_list_of(character_(frac_na = frac_na), len2),
-      flat_list_of(logical_(frac_na = frac_na), len2),
-      flat_list_of(date_(frac_na = frac_na), len2),
-      flat_list_of(posixct_(frac_na = frac_na), len2),
-      flat_list_of(hms_(frac_na = frac_na), len2),
-      flat_list_of(factor_(frac_na = frac_na), len2)
+      flat_list_of(integer_(any_na = any_na), len2),
+      flat_list_of(double_(any_na = any_na), len2),
+      flat_list_of(character_(any_na = any_na), len2),
+      flat_list_of(logical_(any_na = any_na), len2),
+      flat_list_of(date_(any_na = any_na), len2),
+      flat_list_of(posixct_(any_na = any_na), len2),
+      flat_list_of(hms_(any_na = any_na), len2),
+      flat_list_of(factor_(any_na = any_na), len2)
     )()
   )
 }
@@ -113,21 +117,21 @@ any_flat_homogeneous_list <- function(len = c(1L, 10L), frac_na = 0) {
 #' lengths.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_list() |> show_example()
-#' any_list(len = 10L, frac_na = 0.5) |> show_example()
+#' any_list(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_list <- function(len = c(1L, 10L), frac_na = 0) {
+any_list <- function(len = c(1L, 10L), any_na = FALSE) {
   atomic <-
-    any_atomic(c(1L, 10L), frac_na)
+    any_atomic(c(1L, 10L), any_na)
 
   qc_gen(\(len2 = len)
     one_of(
-      any_flat_list(len2, frac_na),
-      any_flat_homogeneous_list(len2, frac_na),
+      any_flat_list(len2, any_na),
+      any_flat_homogeneous_list(len2, any_na),
       list_of(atomic, len2),
       list_of(list_(a = atomic, b = atomic), len2)
     )()
@@ -139,18 +143,18 @@ any_list <- function(len = c(1L, 10L), frac_na = 0) {
 #' Generate random atomic vectors or lists.
 #'
 #' @template len
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_vector() |> show_example()
-#' any_vector(len = 10L, frac_na = 0.5) |> show_example()
+#' any_vector(len = 10L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_vector <- function(len = c(1L, 10L), frac_na = 0) {
+any_vector <- function(len = c(1L, 10L), any_na = FALSE) {
   qc_gen(\(len2 = len)
     one_of(
-      any_atomic(len2, frac_na),
-      any_list(len2, frac_na)
+      any_atomic(len2, any_na),
+      any_list(len2, any_na)
     )()
   )
 }
@@ -161,17 +165,19 @@ any_vector <- function(len = c(1L, 10L), frac_na = 0) {
 #'
 #' @template rows
 #' @template cols
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_tibble() |> show_example()
 #' any_tibble(rows = 10L) |> show_example()
-#' any_tibble(cols = 5L, frac_na = 0.5) |> show_example()
+#' any_tibble(cols = 5L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_tibble <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+any_tibble <- function(rows = c(1L, 10L),
+                       cols = c(1L, 10L),
+                       any_na = FALSE) {
   tibble_of(
-    any_vector(frac_na = frac_na),
+    any_vector(any_na = any_na),
     rows = rows,
     cols = cols
   )
@@ -183,17 +189,19 @@ any_tibble <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
 #'
 #' @template rows
 #' @template cols
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_data_frame() |> show_example()
 #' any_data_frame(rows = 10L) |> show_example()
-#' any_data_frame(cols = 5L, frac_na = 0.5) |> show_example()
+#' any_data_frame(cols = 5L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+any_data_frame <- function(rows = c(1L, 10L),
+                           cols = c(1L, 10L),
+                           any_na = FALSE) {
   data_frame_of(
-    any_atomic(frac_na = frac_na),
+    any_atomic(any_na = any_na),
     rows = rows,
     cols = cols
   )
@@ -205,17 +213,19 @@ any_data_frame <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
 #'
 #' @template rows
 #' @template cols
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_data.table() |> show_example()
 #' any_data.table(rows = 10L) |> show_example()
-#' any_data.table(cols = 5L, frac_na = 0.5) |> show_example()
+#' any_data.table(cols = 5L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_data.table <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+any_data.table <- function(rows = c(1L, 10L),
+                           cols = c(1L, 10L),
+                           any_na = FALSE) {
   data.table_of(
-    any_vector(frac_na = frac_na),
+    any_vector(any_na = any_na),
     rows = rows,
     cols = cols
   )
@@ -227,19 +237,21 @@ any_data.table <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
 #'
 #' @template rows
 #' @template cols
-#' @template frac_na
+#' @template any_na
 #'
 #' @examples
 #' any_data_frame_object() |> show_example()
 #' any_data_frame_object(rows = 10L) |> show_example()
-#' any_data_frame_object(cols = 5L, frac_na = 0.5) |> show_example()
+#' any_data_frame_object(cols = 5L, any_na = TRUE) |> show_example()
 #' @template generator
 #' @export
-any_data_frame_object <- function(rows = c(1L, 10L), cols = c(1L, 10L), frac_na = 0) {
+any_data_frame_object <- function(rows = c(1L, 10L),
+                                  cols = c(1L, 10L),
+                                  any_na = FALSE) {
   one_of(
-    any_tibble(rows = rows, cols = cols, frac_na = frac_na),
-    any_data_frame(rows = rows, cols = cols, frac_na = frac_na),
-    any_data.table(rows = rows, cols = cols, frac_na = frac_na)
+    any_tibble(rows = rows, cols = cols, any_na = any_na),
+    any_data_frame(rows = rows, cols = cols, any_na = any_na),
+    any_data.table(rows = rows, cols = cols, any_na = any_na)
   )
 }
 

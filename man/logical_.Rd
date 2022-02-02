@@ -4,7 +4,7 @@
 \alias{logical_}
 \title{Logical generator}
 \usage{
-logical_(len = c(1L, 10L), frac_na = 0)
+logical_(len = c(1L, 10L), any_na = FALSE)
 }
 \arguments{
 \item{len}{Length of the generated vectors. If \code{len} is a
@@ -15,10 +15,7 @@ inclusive. For example \code{len = c(1L, 10L)} would produce
 vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 
-\item{frac_na}{The approximate fraction of \code{NA} values to
-be included in the vector. A fraction of 0, the default,
-will include no \code{NA} values. A fraction of 0.5 would
-include around 50\% \code{NA} values.}
+\item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
 A \code{quickcheck_generator} generator
@@ -28,5 +25,5 @@ A generator for logical vectors.
 }
 \examples{
 logical_() |> show_example()
-logical_(len = 10L, frac_na = 0.5) |> show_example()
+logical_(len = 10L, any_na = TRUE) |> show_example()
 }
