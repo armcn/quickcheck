@@ -98,28 +98,22 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1  ...2       ...3       ...4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 FALSE  TRUE 2835-09-13 1493-09-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 FALSE  TRUE 2790-04-29 1822-03-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  TRUE FALSE 2954-10-10 2059-07-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 FALSE FALSE 1894-03-03 2791-09-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  TRUE FALSE 1642-06-24 2971-07-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  TRUE  TRUE 1007-05-23 2280-10-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  TRUE  TRUE 1737-08-17 2053-11-29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8 FALSE FALSE 2928-04-06 2102-07-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9 FALSE FALSE 2978-02-15 1233-01-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1384-04-15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 1557-03-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-12-11</span>
 <span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1       ...2  ...3                ...4  ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1       pyX7 -878824948 -5791  108-06-11 06:20:35 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    &amp;Q+FDrL  302457417   415 2741-08-16 06:53:59  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         {(  -10269924 -2586  923-06-27 19:31:26  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4       lb,p -825371704 -9918 2027-03-06 05:25:06 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   'b8AEm(Q -277439768 -7622  159-09-22 11:10:21  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6       Ef"3          0 -1598  113-01-13 02:03:13  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7       ynpy          0  5356 1004-02-07 19:59:16 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8      [B68T -529064248 -3856  681-07-10 20:59:03 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   o|mWAStb -945006428 -3868 2049-01-08 20:00:32 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 !4z\\dZ5/  716470504   450 2951-09-09 21:53:58  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>               ...1  ...2      ...3      ...4            ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  18:27:58.708517  7266    (4aU"r        =2 02:53:08.618905</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  16:35:53.527501  8398        ko     Ng=I0 14:59:31.764003</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  10:39:29.970708 -9513        O,      %=&lt;7 14:48:28.637516</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  08:29:12.130937 -4316 gPHaj@%7o     t}uoE 07:40:39.316619</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  10:46:05.479978 -2502     2LK5! A[B*@FIT# 11:29:46.275260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  13:11:15.653806     0     mw&lt;NJ     &lt;Nn"@ 12:55:31.611274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  23:57:19.634493 -9299     j?&gt;+[  k+Wv]Wq1 12:02:41.099788</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  08:19:10.631063  7353 VK9Y](M0T        H` 21:47:39.083809</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  05:59:26.346223 -1098  &amp;zz4IxaQ         ^ 01:26:55.092483</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 11:35:52.023036 -5360     %0~{8      ?#h' 21:18:08.626396</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

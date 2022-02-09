@@ -90,22 +90,26 @@ tibbles, data.tables, and undefined values like <code>NA</code>, <code>NULL</cod
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">anything</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 6 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1                ...2  ...3    ...4 ...5         ...6   ...7         ...8  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;list&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;list&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 133-11-30 <span style="color: #949494;">03:17:42</span>  <span style="color: #BB0000;">NA</span>    &lt;date&gt;  <span style="text-decoration: underline;">3</span>160 &lt;named list&gt; &lt;chr&gt;  &lt;named list&gt; &lt;int&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 210-12-04 <span style="color: #949494;">16:59:18</span>  <span style="color: #BB0000;">NA</span>    &lt;chr&gt;    263 &lt;named list&gt; &lt;chr&gt;  &lt;named list&gt; &lt;int&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 926-07-11 <span style="color: #949494;">21:19:31</span>  <span style="color: #BB0000;">NA</span>    &lt;dttm&gt;  <span style="text-decoration: underline;">5</span>289 &lt;named list&gt; &lt;chr&gt;  &lt;named list&gt; &lt;dbl&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 1362-11-13 <span style="color: #949494;">12:54:33</span> FALSE &lt;dttm&gt;    <span style="color: #BB0000;">NA</span> &lt;named list&gt; &lt;chr&gt;  &lt;named list&gt; &lt;dbl&gt; </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> <span style="color: #BB0000;">NA</span>                  <span style="color: #BB0000;">NA</span>    &lt;dbl&gt;     <span style="color: #BB0000;">NA</span> &lt;named list&gt; &lt;chr&gt;  &lt;named list&gt; &lt;dttm&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 145-04-05 <span style="color: #949494;">20:17:40</span>  <span style="color: #BB0000;">NA</span>    &lt;chr&gt;     <span style="color: #BB0000;">NA</span> &lt;named list&gt; &lt;chr&gt;  &lt;named list&gt; &lt;dttm&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># … with 1 more variable: ...9 &lt;dttm&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Null data.table (0 rows and 0 cols)</span>
 <span class="r-in"><span class="fu">anything</span><span class="op">(</span>any_empty <span class="op">=</span> <span class="cn">FALSE</span>, any_undefined <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 2 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1      ...2   ...3       ...4            </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;lgl [1]&gt;</span> )*8)B; <span style="color: #949494;">&lt;chr [5]&gt;</span>  <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;lgl [1]&gt;</span> L      <span style="color: #949494;">&lt;int [10]&gt;</span> <span style="color: #949494;">&lt;named list [2]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -998171051  826199053</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  6837 -3170 -7624  6992  -681</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$a</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]          0          0   78722693   59337906          0 -906212683          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]$b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "117-07-28 14:22:27 UTC"  "2179-10-04 06:00:58 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "310-05-06 11:33:11 UTC"  "161-03-19 21:26:08 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "714-09-09 12:36:46 UTC"  "2080-08-02 12:15:29 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
