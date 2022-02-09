@@ -42,6 +42,10 @@ is_tibble <- function(a) {
   inherits(a, "tbl_df")
 }
 
+is_data_frame <- function(a) {
+  identical(class(a), "data.frame")
+}
+
 is_zero <- function(a) {
   identical(a, 0) || identical(a, 0L)
 }

@@ -4,7 +4,12 @@
 \alias{anything}
 \title{Any R object generator}
 \usage{
-anything()
+anything(any_empty = TRUE, any_undefined = TRUE)
+}
+\arguments{
+\item{any_empty}{Whether empty vectors or data frames should be allowed.}
+
+\item{any_undefined}{Whether undefined values should be allowed.}
 }
 \value{
 A \code{quickcheck_generator} generator
@@ -17,4 +22,5 @@ tibbles, data.tables, and undefined values like \code{NA}, \code{NULL}, \code{In
 }
 \examples{
 anything() |> show_example()
+anything(any_empty = FALSE, any_undefined = FALSE) |> show_example()
 }

@@ -21,7 +21,8 @@ set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 A \code{quickcheck_generator} generator
 }
 \description{
-Generate lists where each element is an atomic scalar of the same type.
+Generate lists where each element is an atomic vector with a length of 1 and
+has the same class.
 }
 \examples{
 any_flat_homogeneous_list() |> show_example()

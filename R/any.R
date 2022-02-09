@@ -5,39 +5,68 @@
 #' tibbles, data.tables, and undefined values like `NA`, `NULL`, `Inf`, and
 #' `NaN`.
 #'
+#' @param any_empty Whether empty vectors or data frames should be allowed.
+#' @param any_undefined Whether undefined values should be allowed.
+#'
 #' @examples
 #' anything() |> show_example()
+#' anything(any_empty = FALSE, any_undefined = FALSE) |> show_example()
 #' @template generator
 #' @export
-anything <- function() {
-  one_of(
-    any_vector(len = c(0L, 10L), any_na = TRUE),
-    any_data_frame_object(
-      rows = c(0L, 10L),
-      cols = c(0L, 10L),
-      any_na = TRUE
-    ),
-    any_undefined()
-  )
-}
+anything <- function(any_empty = TRUE, any_undefined = TRUE) {
+  size <-
+    if (any_empty)
+      c(0L, 10L)
 
-#' Any R object generator with no undefined values
-#'
-#' Generate any R object which isn't an undefined value or doesn't contain
-#' undefined values. This doesn't actually generate any possible object,
-#' just the most common ones, namely atomic vectors, lists, and tibbles.
-#' None of the objects created will include undefined values like `NA`, `NULL`,
-#' `Inf`, `NaN`, or be empty vectors or tibbles.
-#'
-#' @examples
-#' any_defined() |> show_example()
-#' @template generator
-#' @export
-any_defined <- function() {
-  one_of(
-    any_vector(len = c(1L, 10L)),
-    any_data_frame_object(rows = c(1L, 10L), cols = c(1L, 10L))
-  )
+    else
+      c(1L, 10L)
+
+  vector_generator <-
+    any_vector(
+      len = size,
+      any_na = any_undefined
+    )
+
+  tibble_generator <-
+    any_tibble(
+      rows = size,
+      cols = size,
+      any_na = any_undefined
+    )
+
+  data_frame_generator <-
+    any_data_frame(
+      rows = size,
+      cols = size,
+      any_na = any_undefined
+    )
+
+  data.table_generator <-
+    any_data.table(
+      rows = size,
+      cols = size,
+      any_na = any_undefined
+    )
+
+  undefined_generator <-
+    if (any_undefined)
+      any_undefined()
+
+    else
+      NULL
+
+  generator_list <-
+    purrr::compact(
+      list(
+        vector_generator,
+        tibble_generator,
+        data_frame_generator,
+        data.table_generator,
+        undefined_generator
+      )
+    )
+
+  do.call(one_of, generator_list)
 }
 
 #' Atomic vector generator
@@ -86,7 +115,8 @@ any_flat_list <- function(len = c(1L, 10L), any_na = FALSE) {
 
 #' Flat homogeneous list generator
 #'
-#' Generate lists where each element is an atomic scalar of the same type.
+#' Generate lists where each element is an atomic vector with a length of 1 and
+#' has the same class.
 #'
 #' @template len
 #' @template any_na
@@ -228,30 +258,6 @@ any_data.table <- function(rows = c(1L, 10L),
     any_vector(any_na = any_na),
     rows = rows,
     cols = cols
-  )
-}
-
-#' Random data frame classed object generator
-#'
-#' Generate random data frame objects.
-#'
-#' @template rows
-#' @template cols
-#' @template any_na
-#'
-#' @examples
-#' any_data_frame_object() |> show_example()
-#' any_data_frame_object(rows = 10L) |> show_example()
-#' any_data_frame_object(cols = 5L, any_na = TRUE) |> show_example()
-#' @template generator
-#' @export
-any_data_frame_object <- function(rows = c(1L, 10L),
-                                  cols = c(1L, 10L),
-                                  any_na = FALSE) {
-  one_of(
-    any_tibble(rows = rows, cols = cols, any_na = any_na),
-    any_data_frame(rows = rows, cols = cols, any_na = any_na),
-    any_data.table(rows = rows, cols = cols, any_na = any_na)
   )
 }
 

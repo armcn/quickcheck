@@ -1,3 +1,5 @@
+test_suite_data_frame_of_generator(tibble_of, is_tibble)
+
 test_that("tibble_of wraps a single generator in a tibble", {
   for_all(
     a = any_vector(),

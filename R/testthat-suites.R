@@ -16,6 +16,28 @@ test_suite_list_of_generator <- function(generator, .p) {
   test_generator_vector_length_range(generator)
 }
 
+test_suite_data_frame_generator <- function(generator, .p) {
+  test_generator_data_frame_wraps_vector(generator, .p)
+  test_generator_empty_data_frame(generator, .p)
+  test_generator_default_rows(generator, .p)
+  test_generator_specific_rows(generator, .p)
+  test_generator_range_rows(generator, .p)
+}
+
+test_suite_data_frame_of_generator <- function(generator, .p) {
+  single_col_generator <-
+    purrr::partial(
+      generator,
+      generator = any_vector(),
+      cols = 1L
+    )
+
+  test_generator_data_frame_wraps_vector(single_col_generator, .p)
+  test_generator_default_rows(single_col_generator, .p)
+  test_generator_specific_rows(single_col_generator, .p)
+  test_generator_range_rows(single_col_generator, .p)
+}
+
 test_generator_predicate <- function(generator, .p) {
   testthat::test_that(
     paste0(
@@ -145,6 +167,106 @@ test_generator_with_na <- function(generator, .p) {
           unlist(a) |> is.na() |> any() |> testthat::expect_true()
         },
         tests = 10L
+      )
+    }
+  )
+}
+
+test_generator_data_frame_wraps_vector <- function(generator, .p) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " wraps a vector in a data frame subclass"
+    ),
+    {
+      for_all(
+        a = generator(
+          col_a = any_vector(len = c(0L, 10L), any_na = TRUE)
+        ),
+        property = \(a)
+          (is_vector(a$col_a) && .p(a)) |> expect_true()
+      )
+    }
+  )
+}
+
+test_generator_empty_data_frame <- function(generator, .p) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " can generate empty data frames"
+    ),
+    {
+      for_all(
+        a = generator(col_a = any_vector(), rows = 0L),
+        property = \(a)
+          (nrow(a) == 0L && .p(a)) |> expect_true()
+      )
+
+      for_all(
+        a = generator(rows = 0L),
+        property = \(a)
+          (nrow(a) == 0L && ncol(a) == 0L && .p(a)) |> expect_true()
+      )
+    }
+  )
+}
+
+test_generator_default_rows <- function(generator, .p) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " generates data frame subclasses with rows from 1 to 10 by default"
+    ),
+    {
+      for_all(
+        a = generator(a = any_vector()),
+        property = \(a)
+          (nrow(a) >= 1L && nrow(a) <= 10L) |> expect_true()
+      )
+    }
+  )
+}
+
+test_generator_specific_rows <- function(generator, .p) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " generates data frame subclasses with a specific number of rows"
+    ),
+    {
+      for_all(
+        rows = integer_bounded(left = 0L, right = 5L, len = 1L),
+        property = \(rows)
+          for_all(
+            a = generator(col_a = any_vector(), rows = rows),
+            property = \(a) nrow(a) |> expect_identical(rows),
+            tests = nested_tests()
+          ),
+        tests = nested_tests()
+      )
+    }
+  )
+}
+
+test_generator_range_rows <- function(generator, .p) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " generates data frame subclasses with a range of rows"
+    ),
+    {
+      for_all(
+        min = integer_bounded(left = 0L, right = 5L, len = 1L),
+        max = integer_bounded(left = 5L, right = 10L, len = 1L),
+        property = \(min, max)
+          for_all(
+            a = generator(col_a = any_vector(), rows = c(min, max)),
+            property = \(a)
+              (nrow(a) >= min && nrow(a) <= max) |> expect_true(),
+            tests = nested_tests()
+          ),
+        tests = nested_tests()
       )
     }
   )
