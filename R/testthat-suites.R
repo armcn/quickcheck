@@ -184,7 +184,7 @@ test_generator_data_frame_wraps_vector <- function(generator, .p) {
           col_a = any_vector(len = c(0L, 10L), any_na = TRUE)
         ),
         property = \(a)
-          (is_vector(a$col_a) && .p(a)) |> expect_true()
+          (is_vector(a$col_a) && .p(a)) |> testthat::expect_true()
       )
     }
   )
@@ -200,13 +200,13 @@ test_generator_empty_data_frame <- function(generator, .p) {
       for_all(
         a = generator(col_a = any_vector(), rows = 0L),
         property = \(a)
-          (nrow(a) == 0L && .p(a)) |> expect_true()
+          (nrow(a) == 0L && .p(a)) |> testthat::expect_true()
       )
 
       for_all(
         a = generator(rows = 0L),
         property = \(a)
-          (nrow(a) == 0L && ncol(a) == 0L && .p(a)) |> expect_true()
+          (nrow(a) == 0L && ncol(a) == 0L && .p(a)) |> testthat::expect_true()
       )
     }
   )
@@ -222,7 +222,7 @@ test_generator_default_rows <- function(generator, .p) {
       for_all(
         a = generator(a = any_vector()),
         property = \(a)
-          (nrow(a) >= 1L && nrow(a) <= 10L) |> expect_true()
+          (nrow(a) >= 1L && nrow(a) <= 10L) |> testthat::expect_true()
       )
     }
   )
@@ -240,7 +240,7 @@ test_generator_specific_rows <- function(generator, .p) {
         property = \(rows)
           for_all(
             a = generator(col_a = any_vector(), rows = rows),
-            property = \(a) nrow(a) |> expect_identical(rows),
+            property = \(a) nrow(a) |> testthat::expect_identical(rows),
             tests = nested_tests()
           ),
         tests = nested_tests()
@@ -263,7 +263,7 @@ test_generator_range_rows <- function(generator, .p) {
           for_all(
             a = generator(col_a = any_vector(), rows = c(min, max)),
             property = \(a)
-              (nrow(a) >= min && nrow(a) <= max) |> expect_true(),
+              (nrow(a) >= min && nrow(a) <= max) |> testthat::expect_true(),
             tests = nested_tests()
           ),
         tests = nested_tests()
