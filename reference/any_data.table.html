@@ -97,49 +97,41 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_data.table</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1      ...2      ...3       ...4  ...5      ...6               ...7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2560-04-25 &lt;list[2]&gt;        NY  482896030     0      Z'W9         2718-08-31</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 1500-12-25 &lt;list[2]&gt; 3C(xpsp[8 -238337170  5826       f''                 R%</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 1698-11-27 &lt;list[2]&gt;         I  892651975  4572         b 989-06-09 09:54:12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 1773-04-05 &lt;list[2]&gt;  w^^PXZ[h  453564791 -4053 yc07|(4@L              FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 1768-12-08 &lt;list[2]&gt;     0epc*  460571848 -4292  j]djK)wa              -8045</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                   ...8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:  654-12-18 17:08:16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 1710-08-04 00:12:44</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 2871-05-28 02:27:53</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:  466-05-28 18:42:20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 2235-09-06 05:55:24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1      ...2  ...3 ...4            ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2829-11-07 &lt;list[2]&gt; FALSE TRUE 08:18:33.575708</span>
 <span class="r-in"><span class="fu">any_data.table</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                ...1            ...2                ...3            ...4</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 09:35:25.361628 08:11:08.568587               FALSE 04:17:28.878473</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 04:52:04.303625 10:10:16.307397     19:11:06.074051 08:06:19.140012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 03:04:05.758066 14:12:17.285087                TRUE 02:57:58.159125</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 16:49:50.180187 14:13:59.192910                %P8R 10:06:19.782088</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 11:47:35.078798 10:50:58.026041             Qt+OC.I 12:28:48.418248</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 17:10:21.623990 16:21:09.544760             |HekO-F 23:55:31.598189</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 21:46:54.854627 19:29:47.637022 1917-02-28 02:39:17 13:57:11.737696</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 08:14:49.712585 03:49:41.384388 1574-08-02 10:58:59 13:20:19.917216</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 01:17:02.431907 04:49:23.968833               -9608 09:19:36.037170</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 21:28:57.698726 20:49:53.520549                TRUE 10:30:14.365266</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                                                    ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:                               -978780262,  41487678, 350743391,         0,-203630330,-995697550,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:                                                              TRUE,FALSE, TRUE, TRUE,FALSE,FALSE,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 07:02:36.138169,16:14:43.069535,04:25:39.055033,08:01:54.902963,17:13:47.768303,12:44:43.227364,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4:                                                                                               FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:                                                                                         0, 969,5840</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:                                                              TRUE, TRUE, TRUE,FALSE,FALSE,FALSE,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:                                                                                                   k</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:                                -77751604, -11492531,-710909377,-198912622, 871476698,-185618194,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:                                                           r&amp;pTz,n,p32o,u,Lq?%,!H4[.=k7=,f2`D0N,,...</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:                                                               YWe&lt;,495A,MB#P.W,Oa]OimF,K9MAU,t ,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2               ...3  ...4       ...5  ...6      ...7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:    Mpj.f+ 1223-04-08               3444     0 Xx.mk+\\9| -8473 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:    -ms6f] 1362-10-11               TRUE  4159      Pb|~" -7441 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: c5d m@BaL 2018-12-15               1508  -670       oSU4 -8811 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:       .&lt;; 1734-11-03           D)/d7~WK -7206    kFGk_Vi -1569 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:     V'mR&amp; 2681-06-07 337-04-13 01:35:34 -5707          _  3940 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:       'qF 2400-04-17 747-11-24 06:31:14  3021    ]MRJ5[U  -160 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:       )hS 1792-01-23    08:52:06.263885  6417          q   945 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:   HOC&lt;[0S 2832-09-02    14:01:39.045926  2968         gz -7587 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: vUJo&gt;0E$P 2482-04-07              -7491 -8219         U9     0 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:     E/N-Q 1608-07-11          ,#xMM5lo,  7078         xx -9304 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ...8  ...9 ...10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:   Ja ?}d FALSE  4328</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:       .W  TRUE  4586</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        m  TRUE  2523</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:    K)(KP FALSE  2808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        / FALSE -5019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:       w/  TRUE  -704</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  XB-\\Z&amp; FALSE     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: ~G|@d7+m FALSE -3808</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: !Pk\\$?E  TRUE     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  &amp;?p2Lo( FALSE -5405</span>
 <span class="r-in"><span class="fu">any_data.table</span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">5L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               ...1            ...2            ...3            ...4      ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:      1105-09-22      -971009246 20:23:31.799336 03:18:24.260170 &lt;list[2]&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 23:33:13.524776      1157-05-04 11:30:10.372778 18:20:01.197221 &lt;list[2]&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3:           -2276           -9578 12:21:13.577236 23:58:13.718084 &lt;list[2]&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:      -585406379       m-6;A(M^) 01:29:19.671075 10:01:06.624928 &lt;list[2]&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:      1143-09-28           FALSE 20:41:09.850693              NA &lt;list[2]&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6:              $# 18:45:58.318952              NA 09:35:05.969200 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1      ...2            ...3  ...4      ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 1297-01-30 &lt;list[2]&gt; 08:38:19.855402     0 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 1908-09-08 &lt;list[2]&gt; 21:28:51.887439    NA &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 1790-02-03 &lt;list[2]&gt; 16:56:50.399437  7726 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 2958-08-03 &lt;list[2]&gt; 12:30:51.198699    NA &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 1022-01-07 &lt;list[2]&gt; 07:38:21.604899  2245 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6: 1001-01-02 &lt;list[2]&gt; 05:42:17.160217  4180 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7:       &lt;NA&gt; &lt;list[2]&gt; 23:22:50.736630 -8116 &lt;list[2]&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8: 1458-01-04 &lt;list[2]&gt;              NA  7599 &lt;list[2]&gt;</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

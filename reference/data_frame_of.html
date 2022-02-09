@@ -98,22 +98,22 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1384-04-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 1557-03-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2025-12-11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1  ...2  ...3 ...4       ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1545-01-19  TRUE  TRUE TRUE 1567-08-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2017-09-06 FALSE  TRUE TRUE 1768-09-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1883-11-17 FALSE FALSE TRUE 2154-02-05</span>
 <span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               ...1  ...2      ...3      ...4            ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  18:27:58.708517  7266    (4aU"r        =2 02:53:08.618905</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  16:35:53.527501  8398        ko     Ng=I0 14:59:31.764003</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  10:39:29.970708 -9513        O,      %=&lt;7 14:48:28.637516</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  08:29:12.130937 -4316 gPHaj@%7o     t}uoE 07:40:39.316619</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  10:46:05.479978 -2502     2LK5! A[B*@FIT# 11:29:46.275260</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  13:11:15.653806     0     mw&lt;NJ     &lt;Nn"@ 12:55:31.611274</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  23:57:19.634493 -9299     j?&gt;+[  k+Wv]Wq1 12:02:41.099788</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  08:19:10.631063  7353 VK9Y](M0T        H` 21:47:39.083809</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  05:59:26.346223 -1098  &amp;zz4IxaQ         ^ 01:26:55.092483</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 11:35:52.023036 -5360     %0~{8      ?#h' 21:18:08.626396</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2      ...3       ...4  ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  1753-05-11  375533702        $A 2206-11-24 -9040</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2063-09-09 -437207856     6E0e* 1561-01-07 -1124</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2288-09-12  935049995 (;\\V9)qo 2013-01-21  3474</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  2548-10-27  657167660       W4h 1985-08-10 -3314</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  1997-01-14  865863556       B)B 1794-05-06     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2342-02-01 -287708065    |"M@#7 1388-12-02  2428</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  1907-03-27   87532003   #WL*%0e 2803-07-02 -4916</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  2293-05-07  438285269 za3D@V}+c 2848-09-08     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  2153-03-14  815356442     .h|"0 2793-10-06     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 1701-10-26  894521831         G 2173-01-28  1555</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
