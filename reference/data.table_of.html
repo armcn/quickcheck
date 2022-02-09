@@ -98,23 +98,38 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ...1  ...2  ...3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:  TRUE FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: FALSE FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3: FALSE FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:  TRUE  TRUE  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1  ...2  ...3       ...4       ...5       ...6       ...7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 2327-05-19  TRUE FALSE 1124-01-06 1819-10-31 1809-06-22 2222-07-23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 2254-07-07  TRUE  TRUE 1006-12-22 2545-11-01 1662-01-19 2899-03-12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 2053-09-04  TRUE  TRUE 2996-03-16 1590-07-20 1935-04-28 1904-06-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 2246-07-09 FALSE  TRUE 1794-06-09 1288-04-23 1419-09-25 2322-02-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 2077-12-10 FALSE  TRUE 2841-11-26 1394-12-05 2651-10-16 2641-07-23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6: 1800-02-13  TRUE FALSE 2259-05-01 1416-05-19 2885-03-21 2254-07-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7: 2744-02-20  TRUE FALSE 1270-06-18 2891-09-21 1356-01-23 1123-03-26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8: 2055-10-26  TRUE FALSE 2595-06-26 2156-02-18 1451-09-13 1708-10-26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9: 2074-04-25  TRUE  TRUE 1905-07-28 1318-12-19 2254-02-07 1068-04-30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...8       ...9 ...10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 1632-09-30 1336-06-04 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 2388-02-09 1298-03-09  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 1961-05-07 1634-05-20 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 1841-07-09 1243-12-28 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 2423-07-01 1254-10-09  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6: 1829-03-14 2918-10-28 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7: 2412-03-29 2157-12-10  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8: 1713-04-03 2028-03-17 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9: 2590-01-18 2413-10-18 FALSE</span>
 <span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      ...1       ...2            ...3       ...4  ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  6234          0 10:27:22.818433 2101-10-09 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: -4561  -91401745 23:17:19.357471 2893-02-28  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:     0  448170383 14:21:20.932153 1263-12-30  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: -6602          0 18:14:29.799636 2899-04-24 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: -2112 -357756090 16:17:41.374953 1272-04-08 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:  1946 -560096854 00:08:24.591624 2730-03-30  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:  8641  700311762 23:23:52.226532 2845-07-16 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:  4741  222987195 19:34:46.593417 1509-04-18 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: -3566          0 10:29:55.632030 1553-09-10  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  5965 -812109538 10:57:27.762808 1021-03-11  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2       ...3       ...4                ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1:       Q=r  -20037655          0 1644-06-30 2550-09-22 03:02:01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: Arm|mTDWZ -421961054  722144607 2423-12-08  875-11-09 02:49:15</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3:     xU4-E  409182623  865335608 1560-10-07 1760-10-19 11:50:34</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4:     /9Jud          0  750073798 1953-04-09  732-08-09 09:30:27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:        \\ -644697727 -392545585 1156-12-01  588-05-30 07:04:24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: AO\\vG{%N  617838989  228471166 2127-01-07 1406-05-12 19:44:53</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:         Y -207329682          0 2546-01-15 1299-04-27 14:47:21</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: #{_`y'4&amp;A  829511247 -472410047 2504-11-19 1452-06-22 13:58:58</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9:  ;#&amp;XEA6U -515959830  779554240 2969-05-18 2424-03-15 03:36:27</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:       ?S? -932979626 -428285163 2484-03-30 1705-02-13 20:22:44</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
