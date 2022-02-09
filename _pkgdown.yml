@@ -4,7 +4,7 @@ template:
   bslib:
     bg: "#0d0d0d"
     fg: "#d9d9d9"
-    primary: "#eb3309"
+    primary: "#298fcd"
     base_font: "Roboto"
     heading_font: "Lato"
     code_font: "Fira Code"
