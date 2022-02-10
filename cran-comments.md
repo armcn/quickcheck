@@ -1,4 +1,4 @@
-This is a the second version submitted to CRAN.
+This is the first submission of version 0.1.0.
 
 ## Test Environments
 
