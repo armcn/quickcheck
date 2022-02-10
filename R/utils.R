@@ -38,10 +38,6 @@ is_date <- function(a) {
   inherits(a, "Date")
 }
 
-is_tibble <- function(a) {
-  inherits(a, "tbl_df")
-}
-
 is_data_frame <- function(a) {
   identical(class(a), "data.frame")
 }
@@ -160,19 +156,6 @@ assert_modifiable_length <- function(generator) {
 
 assert_all_modifiable_length <- function(...) {
   list(...) |> purrr::map(assert_modifiable_length)
-}
-
-and <- function(...) {
-  funs <-
-    list(...)
-
-  \(a) {
-    for (i in seq_along(funs))
-      if (Negate(isTRUE)(funs[[i]](a)))
-        return(FALSE)
-
-    TRUE
-  }
 }
 
 or <- function(...) {
