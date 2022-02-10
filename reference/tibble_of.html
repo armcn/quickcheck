@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +20,6 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/Examples.html">Examples</a>
-  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -92,38 +86,36 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>quickcheck_generator</code> generator</p>
+    <p>A <code>quickcheck_generator</code> object.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tibble_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 1</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2539-04-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2365-02-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2855-05-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 1325-11-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 2803-09-10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 2236-05-03</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> 2033-02-10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> 2493-03-21</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> 1071-10-24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1  ...2       ...3  ...4 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> TRUE  2062-03-26 FALSE TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> FALSE 2146-01-28 TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> TRUE  2124-12-15 FALSE TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> FALSE 1736-02-08 TRUE  TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> TRUE  1822-08-26 TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> FALSE 2276-02-17 TRUE  TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> TRUE  2868-05-13 TRUE  TRUE </span>
 <span class="r-in"><span class="fu">tibble_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>           ...1 ...2       ...3            ...4            ...5 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;time&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;time&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  239<span style="text-decoration: underline;">874</span>369. 1649-09-08 13<span style="color: #949494;">:</span>48<span style="color: #949494;">:</span>28.474291 23<span style="color: #949494;">:</span>18<span style="color: #949494;">:</span>27.841802 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  630<span style="text-decoration: underline;">694</span>874. 2640-08-17 18<span style="color: #949494;">:</span>22<span style="color: #949494;">:</span>28.377017 09<span style="color: #949494;">:</span>06<span style="color: #949494;">:</span>07.013665 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  984<span style="text-decoration: underline;">971</span>650. 1500-09-07 12<span style="color: #949494;">:</span>18<span style="color: #949494;">:</span>12.752006 21<span style="color: #949494;">:</span>25<span style="color: #949494;">:</span>14.641444 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> -<span style="color: #BB0000;">384</span><span style="color: #BB0000; text-decoration: underline;">132</span><span style="color: #BB0000;">444.</span> 2129-10-21 19<span style="color: #949494;">:</span>47<span style="color: #949494;">:</span>15.686638 09<span style="color: #949494;">:</span>43<span style="color: #949494;">:</span>38.480967 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> -<span style="color: #BB0000;">843</span><span style="color: #BB0000; text-decoration: underline;">413</span><span style="color: #BB0000;">780.</span> 1385-08-16 17<span style="color: #949494;">:</span>38<span style="color: #949494;">:</span>14.360010 23<span style="color: #949494;">:</span>11<span style="color: #949494;">:</span>34.715109 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> -<span style="color: #BB0000;">365</span><span style="color: #BB0000; text-decoration: underline;">322</span><span style="color: #BB0000;">415.</span> 1803-05-11 13<span style="color: #949494;">:</span>09<span style="color: #949494;">:</span>05.590960 18<span style="color: #949494;">:</span>27<span style="color: #949494;">:</span>14.064134 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  -<span style="color: #BB0000;">64</span><span style="color: #BB0000; text-decoration: underline;">795</span><span style="color: #BB0000;">796.</span> 2501-03-23 10<span style="color: #949494;">:</span>08<span style="color: #949494;">:</span>38.717927 07<span style="color: #949494;">:</span>40<span style="color: #949494;">:</span>04.358795 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> -<span style="color: #BB0000;">156</span><span style="color: #BB0000; text-decoration: underline;">607</span><span style="color: #BB0000;">223.</span> 2874-03-08 16<span style="color: #949494;">:</span>34<span style="color: #949494;">:</span>06.774256 01<span style="color: #949494;">:</span>45<span style="color: #949494;">:</span>19.558883 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>   56<span style="text-decoration: underline;">591</span>524. 2443-04-12 22<span style="color: #949494;">:</span>46<span style="color: #949494;">:</span>56.515613 18<span style="color: #949494;">:</span>42<span style="color: #949494;">:</span>18.335808 TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>          0  2823-06-05 12<span style="color: #949494;">:</span>12<span style="color: #949494;">:</span>53.986574 18<span style="color: #949494;">:</span>12<span style="color: #949494;">:</span>37.872490 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1         ...2        ...3            ...4     ...5           </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;time&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;time&gt;</span>         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>f<span style="color: #949494;">"</span>          <span style="color: #949494;">"</span>S<span style="color: #949494;">"</span>         04<span style="color: #949494;">:</span>25<span style="color: #949494;">:</span>54.554428 -H;e     13<span style="color: #949494;">:</span>12<span style="color: #949494;">:</span>57.414418</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>tNhz<span style="color: #949494;">"</span>       <span style="color: #949494;">"</span>rvD/<span style="color: #949494;">"</span>      16<span style="color: #949494;">:</span>13<span style="color: #949494;">:</span>31.808083 9        16<span style="color: #949494;">:</span>25<span style="color: #949494;">:</span>52.469925</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>Qaa<span style="color: #949494;">"</span>        <span style="color: #949494;">"</span>RAFBsXG<span style="color: #949494;">"</span>   19<span style="color: #949494;">:</span>32<span style="color: #949494;">:</span>46.658220 0        00<span style="color: #949494;">:</span>36<span style="color: #949494;">:</span>43.356190</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>G9<span style="color: #949494;">"</span>         <span style="color: #949494;">"</span>mx<span style="color: #949494;">"</span>        10<span style="color: #949494;">:</span>37<span style="color: #949494;">:</span>50.029216 RZO]&gt;$;  07<span style="color: #949494;">:</span>20<span style="color: #949494;">:</span>09.080661</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>n?D<span style="color: #949494;">"</span>        <span style="color: #949494;">"</span>:\"`V/6R<span style="color: #949494;">"</span>  23<span style="color: #949494;">:</span>08<span style="color: #949494;">:</span>41.125523 b        14<span style="color: #949494;">:</span>55<span style="color: #949494;">:</span>31.529784</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>LM\\PIZj<span style="color: #949494;">"</span>   <span style="color: #949494;">"</span>Y<span style="color: #949494;">"</span>         02<span style="color: #949494;">:</span>44<span style="color: #949494;">:</span>26.082022 PAG      02<span style="color: #949494;">:</span>55<span style="color: #949494;">:</span>13.361987</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>er7<span style="color: #949494;">"</span>        <span style="color: #949494;">"</span>u0,;E\\[4<span style="color: #949494;">"</span> 13<span style="color: #949494;">:</span>05<span style="color: #949494;">:</span>57.105127 e9       17<span style="color: #949494;">:</span>27<span style="color: #949494;">:</span>06.707207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>%'eMOze*\"<span style="color: #949494;">"</span> <span style="color: #949494;">"</span>JY)<span style="color: #949494;">"</span>       08<span style="color: #949494;">:</span>40<span style="color: #949494;">:</span>45.394871 XyKC;Zct 09<span style="color: #949494;">:</span>26<span style="color: #949494;">:</span>08.959217</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>;w#<span style="color: #949494;">"</span>        <span style="color: #949494;">"</span>oDYj <span style="color: #949494;">"</span>     22<span style="color: #949494;">:</span>12<span style="color: #949494;">:</span>22.525521 EN`##    11<span style="color: #949494;">:</span>56<span style="color: #949494;">:</span>55.019430</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>cyZac%qyp<span style="color: #949494;">"</span>  <span style="color: #949494;">"</span>7O<span style="color: #949494;">"</span>        10<span style="color: #949494;">:</span>35<span style="color: #949494;">:</span>59.896125 |        06<span style="color: #949494;">:</span>03<span style="color: #949494;">:</span>28.583445</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +20,6 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/Examples.html">Examples</a>
-  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -77,8 +71,9 @@
     <dl><dt>...</dt>
 <dd><p>Named generators</p></dd>
 <dt>property</dt>
-<dd><p>A function which takes a value from from
-the generator and calls an expectation on it.</p></dd>
+<dd><p>A function which takes values from from
+the generator and calls an expectation on it. This function must have
+parameters matching the generator names.</p></dd>
 <dt>tests</dt>
 <dd><p>The number of tests to run.</p></dd>
 <dt>shrinks</dt>
@@ -96,8 +91,8 @@ when running the property.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">for_all</span><span class="op">(</span></span>
-<span class="r-in">  a <span class="op">=</span> <span class="fu"><a href="numeric_.html">numeric_</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span class="r-in">  b <span class="op">=</span> <span class="fu"><a href="numeric_.html">numeric_</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span class="r-in">  a <span class="op">=</span> <span class="fu"><a href="numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,</span>
+<span class="r-in">  b <span class="op">=</span> <span class="fu"><a href="numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,</span>
 <span class="r-in">  property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
 </code></pre></div>

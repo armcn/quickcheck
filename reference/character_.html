@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +20,6 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/Examples.html">Examples</a>
-  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -89,20 +83,19 @@ set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>quickcheck_generator</code> generator</p>
+    <p>A <code>quickcheck_generator</code> object.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">character_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Y ("        "`&gt;8,ktgq"   "/'P"        "\"9\"`=c"   "*bp,.Z"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "qf\\52L}r"  "nY"         "f*1L"       "KJV6&amp;Nv\"."</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "hO"    "&amp;C5$y"</span>
 <span class="r-in"><span class="fu">character_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] NA           NA           "\\['"       "Rpcy+,Y"    NA          </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "82{\"'*\"&amp;" "5W"         NA           NA           NA          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "`3"        "{r"        "~ybo!e"    "7&gt;v5"      NA          "d'[e?G"   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "h(@."      NA          NA          "mJ?OI&gt;16p"</span>
 <span class="r-in"><span class="fu">character_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_empty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "6&amp;"       "UJ#"      "ZL"       "-JYH"     "DF&lt;EFt"   "]9x{(ES@"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "&gt;k~"      " F"       "W@m3'=/^" "'XW&amp;Z,l&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "V['FH"      ",NQ"        ""           "1)X"        ""          </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [6] "\"oa0JSF-a" "9'p"        "9z"         "\"f,m9|"    "xcBWd@$*"  </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

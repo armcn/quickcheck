@@ -16,7 +16,7 @@ NaN."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathja
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,12 +26,6 @@ NaN."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathja
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="active nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/Examples.html">Examples</a>
-  </div>
 </li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -84,21 +78,33 @@ tibbles, data.tables, and undefined values like <code>NA</code>, <code>NULL</cod
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A <code>quickcheck_generator</code> generator</p>
+    <p>A <code>quickcheck_generator</code> object.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">anything</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 4</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1             ...2       ...3  ...4      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;date [1]&gt;</span> <span style="color: #BB0000;">NA</span>    <span style="color: #949494;">&lt;int [5]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;dbl [1]&gt;</span>  TRUE  <span style="color: #949494;">&lt;time [5]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>  FALSE <span style="color: #949494;">&lt;int [10]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;dbl [1]&gt;</span>  <span style="color: #BB0000;">NA</span>    <span style="color: #949494;">&lt;dbl [1]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;dttm [1]&gt;</span> FALSE <span style="color: #949494;">&lt;dttm [6]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;fct [1]&gt;</span>  FALSE <span style="color: #949494;">&lt;chr [10]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>  TRUE  <span style="color: #949494;">&lt;dbl [1]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;time [1]&gt;</span> FALSE <span style="color: #949494;">&lt;int [4]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;time [1]&gt;</span> <span style="color: #BB0000;">NA</span>    <span style="color: #949494;">&lt;int [7]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;date [1]&gt;</span> TRUE  <span style="color: #949494;">&lt;date [3]&gt;</span></span>
 <span class="r-in"><span class="fu">anything</span><span class="op">(</span>any_empty <span class="op">=</span> <span class="cn">FALSE</span>, any_undefined <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  190228169</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -108076033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -578625436</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -95824241</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -378455240</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  -12031873</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 1</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;chr [4]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;lgl [7]&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;dttm [4]&gt;</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

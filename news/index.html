@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,12 +20,6 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
-</li>
-<li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
-  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/Examples.html">Examples</a>
-  </div>
 </li>
 <li class="active nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
@@ -57,10 +51,39 @@
     </div>
 
     <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.1.0" id="quickcheck-010">quickcheck 0.1.0<a class="anchor" aria-label="anchor" href="#quickcheck-010"></a></h2>
+<div class="section level3">
+<h3 id="major-breaking-changes-0-1-0">Major breaking changes<a class="anchor" aria-label="anchor" href="#major-breaking-changes-0-1-0"></a></h3>
+<ul><li>The default length for vector generators has been changed from 1 to a range between 1 and 10.</li>
+<li>All parameters of the form <code>frac_</code> have been replaced with <code>any_</code>, which take a logical value instead of a double value.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="features-0-1-0">Features<a class="anchor" aria-label="anchor" href="#features-0-1-0"></a></h3>
+<ul><li>New <code>character_letters</code> generates character vectors with only letters.</li>
+<li>New <code>character_numbers</code> generates character vectors with only numbers.</li>
+<li>New <code>character_alphanumeric</code> generates character vectors with letters and numbers.</li>
+<li>New <code>flat_list_of</code> generates lists of atomic scalars.</li>
+<li>New <code>data_frame_</code> generate data.frames.</li>
+<li>New <code>data_frame_of</code> generate data.frames.</li>
+<li>New <code>data.table_</code> generate data.tables.</li>
+<li>New <code>data.table_of</code> generate data.tables.</li>
+<li>New <code>anything</code> generates any R object.</li>
+<li>New <code>any_flat_homogeneous_list</code> generates flat lists with homogeneous elements.</li>
+<li>New <code>any_data_frame</code> generates any data.frames.</li>
+<li>New <code>any_data.table</code> generates any data.tables.</li>
+<li>New <code>any_undefined</code> generates undefined values.</li>
+<li>New <code>equal_length</code> generates equal length vectors.</li>
+<li>New <code>from_hedgehog</code> converts a hedgehog to a quickcheck generator.</li>
+<li>New <code>as_hedgehog</code> converts a quickcheck to a hedgehog generator.</li>
+<li>New <code>repeat_test</code> tests a property repeatedly.</li>
+</ul></div>
+</div>
+    <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.1" id="quickcheck-001">quickcheck 0.0.1<a class="anchor" aria-label="anchor" href="#quickcheck-001"></a></h2><p class="text-muted">CRAN release: 2022-01-12</p>
 <p>Initial version</p>
 </div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
