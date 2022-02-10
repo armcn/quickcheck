@@ -23,7 +23,6 @@ Imports:
     testthat (>= 3.0.0),
     hedgehog,
     purrr,
-    rlang,
     tibble,
     data.table,
     hms,
