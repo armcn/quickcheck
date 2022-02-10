@@ -22,5 +22,4 @@ tibbles, data.tables, and undefined values like \code{NA}, \code{NULL}, \code{In
 }
 \examples{
 anything() |> show_example()
-anything(any_empty = FALSE, any_undefined = FALSE) |> show_example()
 }
