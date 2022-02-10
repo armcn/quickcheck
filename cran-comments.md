@@ -1,6 +1,4 @@
-This is a re-submission.
-
-I have reduced the time testing takes because it was taking >10 min.
+This is a the second version submitted to CRAN.
 
 ## Test Environments
 

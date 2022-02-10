@@ -10,7 +10,6 @@
 #'
 #' @examples
 #' anything() |> show_example()
-#' anything(any_empty = FALSE, any_undefined = FALSE) |> show_example()
 #' @template generator
 #' @export
 anything <- function(any_empty = TRUE, any_undefined = TRUE) {
