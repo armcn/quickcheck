@@ -84,40 +84,24 @@ tibbles, data.tables, and undefined values like <code>NA</code>, <code>NULL</cod
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">anything</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         NA  442138358</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: -851143035  768661870</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3: -531573412  -50779564</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4: -430287777  825426568</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5: -125124838          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6: -764836345  198973088</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7:         NA -740231162</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8: -446104386          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9:         NA         NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  ...1      ...2     ...3  ...4            ...5       ...6</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2020-11-25 00:43:58  BWC$)nid    O!v56 FALSE 12:12:39.958327       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 1196-05-03 13:56:46      ,_Vq     &lt;NA&gt; FALSE 07:56:01.833668       &lt;NA&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                &lt;NA&gt;     3 k^d  Fv".]12    NA 21:42:03.193964 2627-09-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  486-12-25 21:00:50     HgSc&gt;     &lt;NA&gt; FALSE 16:46:56.927288 1267-09-14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2191-05-12 03:46:29         [ '0@8%f$H  TRUE 19:01:28.269671 1620-09-29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 1404-09-01 18:38:33 ^DfQO.dmq      A{p  TRUE 14:00:23.838373 2246-05-07</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7                &lt;NA&gt;    s{rR^f    zZ'+6  TRUE              NA 2736-08-18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8                &lt;NA&gt;      &lt;NA&gt;     &lt;NA&gt;    NA 13:44:41.086967 1053-01-30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9 1477-12-02 10:48:13    ~MAVr'   Zgv5]m FALSE 23:47:35.344948 2002-10-26</span>
 <span class="r-in"><span class="fu">anything</span><span class="op">(</span>any_empty <span class="op">=</span> <span class="cn">FALSE</span>, any_undefined <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "qw\\4P"   ")QpAU:sy" "A\\pr"    "WI*"      "-S*^&lt;"    "vX 5'"    "#n"      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05:43:01.448701</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 13:32:19.236351</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 06:38:16.852655</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "0VbC="    "}0&gt;c7bfi" "=$Fd/PtL" "E"        "(b!&lt;"    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  8992  1965 -6127 -4053  -699</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -266725549          0 -135047602  860595061  221790319 -933828063  313667521</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  -390     0 -5441  2804  1109  -554  2573 -5479     0 -7985</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "679-11-26 03:08:37 UTC"  "1087-10-30 15:42:28 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                  ...1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1179-10-13 10:14:33</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2519-09-30 10:40:26</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1939-06-16 02:42:11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 1453-01-27 21:14:01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5    6-01-24 08:30:40</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2632-06-29 08:02:50</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
