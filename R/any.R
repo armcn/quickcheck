@@ -196,9 +196,7 @@ any_vector <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @template any_na
 #'
 #' @examples
-#' any_tibble() |> show_example()
-#' any_tibble(rows = 10L) |> show_example()
-#' any_tibble(cols = 5L, any_na = TRUE) |> show_example()
+#' any_tibble(rows = 3L, cols = 3L) |> show_example()
 #' @template generator
 #' @export
 any_tibble <- function(rows = c(1L, 10L),
@@ -220,9 +218,7 @@ any_tibble <- function(rows = c(1L, 10L),
 #' @template any_na
 #'
 #' @examples
-#' any_data_frame() |> show_example()
-#' any_data_frame(rows = 10L) |> show_example()
-#' any_data_frame(cols = 5L, any_na = TRUE) |> show_example()
+#' any_data_frame(rows = 3L, cols = 3L) |> show_example()
 #' @template generator
 #' @export
 any_data_frame <- function(rows = c(1L, 10L),
@@ -244,9 +240,7 @@ any_data_frame <- function(rows = c(1L, 10L),
 #' @template any_na
 #'
 #' @examples
-#' any_data.table() |> show_example()
-#' any_data.table(rows = 10L) |> show_example()
-#' any_data.table(cols = 5L, any_na = TRUE) |> show_example()
+#' any_data.table(rows = 3L, cols = 3L) |> show_example()
 #' @template generator
 #' @export
 any_data.table <- function(rows = c(1L, 10L),

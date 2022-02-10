@@ -34,7 +34,5 @@ A \code{quickcheck_generator} object.
 Generate data.frames.
 }
 \examples{
-any_data_frame() |> show_example()
-any_data_frame(rows = 10L) |> show_example()
-any_data_frame(cols = 5L, any_na = TRUE) |> show_example()
+any_data_frame(rows = 3L, cols = 3L) |> show_example()
 }

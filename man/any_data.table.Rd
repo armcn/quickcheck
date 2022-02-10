@@ -34,7 +34,5 @@ A \code{quickcheck_generator} object.
 Generate data.tables.
 }
 \examples{
-any_data.table() |> show_example()
-any_data.table(rows = 10L) |> show_example()
-any_data.table(cols = 5L, any_na = TRUE) |> show_example()
+any_data.table(rows = 3L, cols = 3L) |> show_example()
 }

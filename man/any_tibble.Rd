@@ -34,7 +34,5 @@ A \code{quickcheck_generator} object.
 Generate tibbles.
 }
 \examples{
-any_tibble() |> show_example()
-any_tibble(rows = 10L) |> show_example()
-any_tibble(cols = 5L, any_na = TRUE) |> show_example()
+any_tibble(rows = 3L, cols = 3L) |> show_example()
 }
