@@ -2,7 +2,7 @@
 % Please edit documentation in R/data_frame.R
 \name{data_frame_of}
 \alias{data_frame_of}
-\title{Random data frame generator}
+\title{Data frame generator with randomized columns}
 \usage{
 data_frame_of(..., rows = c(1L, 10L), cols = c(1L, 10L))
 }
@@ -29,10 +29,10 @@ columns between 1 and 10. To produce empty tibbles
 set \code{cols = 0L} or a range like \code{cols = c(0L, 10L)}.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-Random data frame generator
+Data frame generator with randomized columns
 }
 \examples{
 data_frame_of(logical_(), date_()) |> show_example()

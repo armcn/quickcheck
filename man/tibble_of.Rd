@@ -29,7 +29,7 @@ columns between 1 and 10. To produce empty tibbles
 set \code{cols = 0L} or a range like \code{cols = c(0L, 10L)}.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Random tibble generator

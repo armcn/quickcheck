@@ -16,20 +16,20 @@ test_that("character_ can generate vectors with empty characters", {
 test_that("character_letters generates letter strings", {
   for_all(
     a = character_letters(),
-    property = \(a) grepl("[A-Za-z]+", a) |> all() |> expect_true()
+    property = \(a) grepl("^[A-Za-z]+$", a) |> all() |> expect_true()
   )
 })
 
 test_that("character_numbers generates number strings", {
   for_all(
     a = character_numbers(),
-    property = \(a) grepl("[0-9]+", a) |> all() |> expect_true()
+    property = \(a) grepl("^[0-9]+$", a) |> all() |> expect_true()
   )
 })
 
 test_that("character_alphanumeric generates alphanumeric strings", {
   for_all(
     a = character_alphanumeric(),
-    property = \(a) grepl("[A-Za-z0-9]+", a) |> all() |> expect_true()
+    property = \(a) grepl("^[A-Za-z0-9]+$", a) |> all() |> expect_true()
   )
 })

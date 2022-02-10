@@ -22,16 +22,14 @@ test_suite_vector_generator(
 test_that("double_ can generate vectors with NaNs", {
   for_all(
     a = double_(len = 100L, any_nan = TRUE),
-    property = \(a) unlist(a) |> is.nan() |> any() |> expect_true(),
-    tests = 10L
+    property = \(a) unlist(a) |> is.nan() |> any() |> expect_true()
   )
 })
 
 test_that("double_ can generate vectors with Infs", {
   for_all(
     a = double_(len = 100L, any_inf = TRUE),
-    property = \(a) unlist(a) |> is.infinite() |> any() |> expect_true(),
-    tests = 10L
+    property = \(a) unlist(a) |> is.infinite() |> any() |> expect_true()
   )
 })
 

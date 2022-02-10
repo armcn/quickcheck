@@ -1,4 +1,4 @@
-test_that("passes with a single generator", {
+test_that("for_all passes with a single generator", {
   expect_silent(
     for_all(
       a = constant(0),
@@ -7,7 +7,7 @@ test_that("passes with a single generator", {
   )
 })
 
-test_that("passes with multiple generators", {
+test_that("for_all passes with multiple generators", {
   expect_silent(
     for_all(
       a = constant(-1),
@@ -17,7 +17,7 @@ test_that("passes with multiple generators", {
   )
 })
 
-test_that("fails with no expectation", {
+test_that("for_all fails with no expectation", {
   expect_error(
     for_all(
       a = constant(0),

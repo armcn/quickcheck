@@ -44,7 +44,7 @@ numbers, inclusive.}
 numbers, inclusive.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 A set of generators for integer vectors.

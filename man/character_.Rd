@@ -29,7 +29,7 @@ set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 \item{any_empty}{Whether empty character values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 A set of generators for character vectors.

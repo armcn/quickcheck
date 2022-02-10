@@ -3,7 +3,7 @@ qc_gen <- function(a) {
 }
 
 sample_vec <- function(a, n = 1L) {
-  if (dplyr::n_distinct(a) == 1L)
+  if (n_distinct(a) == 1L)
     a[[1L]]
 
   else
@@ -96,7 +96,7 @@ is_homogeneous_list <- function(a) {
   else {
     is_homogeneous <-
       purrr::map(a, class) |>
-        dplyr::n_distinct() |>
+        n_distinct() |>
         equals(1)
 
     is.list(a) && is_homogeneous
@@ -107,16 +107,20 @@ is_flat_homogeneous_list <- function(a) {
   is_flat_list(a) && is_homogeneous_list(a)
 }
 
-is_empty <- function(a) {
-  UseMethod("is_empty", a)
+is_empty_data_frame <- function(a) {
+  if (is.data.frame(a))
+    isTRUE(nrow(a) == 0L)
+
+  else
+    FALSE
 }
 
-is_empty <- function(a) {
-  isTRUE(length(a) == 0L)
+is_empty_vector <- function(a) {
+  isTRUE(!is.null(a) && length(a) == 0L)
 }
 
 is_empty_list <- function(a) {
-  is_empty(a) && is.list(a)
+  is_empty_vector(a) && is.list(a)
 }
 
 is_dev_version <- function() {
@@ -148,9 +152,42 @@ assert_modifiable_length <- function(generator) {
     TRUE
 
   else
-    stop("Generator isn't compatible with tibble generator constructors")
+    stop(
+      "Generator arguments must be quickcheck vector generators.",
+      call. = FALSE
+    )
 }
 
 assert_all_modifiable_length <- function(...) {
   list(...) |> purrr::map(assert_modifiable_length)
+}
+
+and <- function(...) {
+  funs <-
+    list(...)
+
+  \(a) {
+    for (i in seq_along(funs))
+      if (Negate(isTRUE)(funs[[i]](a)))
+        return(FALSE)
+
+    TRUE
+  }
+}
+
+or <- function(...) {
+  funs <-
+    list(...)
+
+  \(a) {
+    for (i in seq_along(funs))
+      if (isTRUE(funs[[i]](a)))
+        return(TRUE)
+
+    FALSE
+  }
+}
+
+n_distinct <- function(a) {
+  purrr::compose(length, unique)(a)
 }

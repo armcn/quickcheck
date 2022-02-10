@@ -9,19 +9,37 @@ test_suite_vector_generator <- function(generator, .p) {
 }
 
 test_suite_list_of_generator <- function(generator, .p) {
-  test_generator_predicate(generator, .p)
-  test_generator_empty_vectors(generator, .p)
-  test_generator_default_vector_length(generator)
-  test_generator_vector_length(generator)
-  test_generator_vector_length_range(generator)
+  list_of_anything <-
+    purrr::partial(generator, generator = anything())
+
+  test_generator_predicate(list_of_anything, .p)
+  test_generator_empty_vectors(list_of_anything, .p)
+  test_generator_default_vector_length(list_of_anything)
+  test_generator_vector_length(list_of_anything)
+  test_generator_vector_length_range(list_of_anything)
+}
+
+test_suite_flat_list_of_generator <- function(generator, .p) {
+  list_of_any_atomic <-
+    purrr::partial(generator, generator = any_atomic())
+
+  test_generator_predicate(list_of_any_atomic, .p)
+  test_generator_empty_vectors(list_of_any_atomic, .p)
+  test_generator_default_vector_length(list_of_any_atomic)
+  test_generator_vector_length(list_of_any_atomic)
+  test_generator_vector_length_range(list_of_any_atomic)
 }
 
 test_suite_data_frame_generator <- function(generator, .p) {
+  single_col_generator <-
+    purrr::partial(generator, col_a = any_vector())
+
   test_generator_data_frame_wraps_vector(generator, .p)
-  test_generator_empty_data_frame(generator, .p)
-  test_generator_default_rows(generator, .p)
-  test_generator_specific_rows(generator, .p)
-  test_generator_range_rows(generator, .p)
+  test_generator_empty_data_frame(single_col_generator, .p)
+  test_generator_default_rows(single_col_generator, .p)
+  test_generator_specific_rows(single_col_generator, .p)
+  test_generator_range_rows(single_col_generator, .p)
+  test_generator_non_modifiable_length(generator)
 }
 
 test_suite_data_frame_of_generator <- function(generator, .p) {
@@ -36,6 +54,14 @@ test_suite_data_frame_of_generator <- function(generator, .p) {
   test_generator_default_rows(single_col_generator, .p)
   test_generator_specific_rows(single_col_generator, .p)
   test_generator_range_rows(single_col_generator, .p)
+  test_generator_non_modifiable_length(generator)
+}
+
+test_suite_any_data_frame_generator <- function(generator, .p) {
+  test_generator_empty_data_frame(generator, .p)
+  test_generator_default_rows(generator, .p)
+  test_generator_specific_rows(generator, .p)
+  test_generator_range_rows(generator, .p)
 }
 
 test_generator_predicate <- function(generator, .p) {
@@ -198,15 +224,9 @@ test_generator_empty_data_frame <- function(generator, .p) {
     ),
     {
       for_all(
-        a = generator(col_a = any_vector(), rows = 0L),
-        property = \(a)
-          (nrow(a) == 0L && .p(a)) |> testthat::expect_true()
-      )
-
-      for_all(
         a = generator(rows = 0L),
         property = \(a)
-          (nrow(a) == 0L && ncol(a) == 0L && .p(a)) |> testthat::expect_true()
+          (nrow(a) == 0L && .p(a)) |> testthat::expect_true()
       )
     }
   )
@@ -220,7 +240,7 @@ test_generator_default_rows <- function(generator, .p) {
     ),
     {
       for_all(
-        a = generator(a = any_vector()),
+        a = generator(),
         property = \(a)
           (nrow(a) >= 1L && nrow(a) <= 10L) |> testthat::expect_true()
       )
@@ -239,7 +259,7 @@ test_generator_specific_rows <- function(generator, .p) {
         rows = integer_bounded(left = 0L, right = 5L, len = 1L),
         property = \(rows)
           for_all(
-            a = generator(col_a = any_vector(), rows = rows),
+            a = generator(rows = rows),
             property = \(a) nrow(a) |> testthat::expect_identical(rows),
             tests = nested_tests()
           ),
@@ -261,12 +281,31 @@ test_generator_range_rows <- function(generator, .p) {
         max = integer_bounded(left = 5L, right = 10L, len = 1L),
         property = \(min, max)
           for_all(
-            a = generator(col_a = any_vector(), rows = c(min, max)),
+            a = generator(rows = c(min, max)),
             property = \(a)
               (nrow(a) >= min && nrow(a) <= max) |> testthat::expect_true(),
             tests = nested_tests()
           ),
         tests = nested_tests()
+      )
+    }
+  )
+}
+
+test_generator_non_modifiable_length <- function(generator) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " fails if generator arguments don't have modifiable lengths"
+    ),
+    {
+      non_modifiable_length <-
+        any_vector() |> as_hedgehog() |> from_hedgehog()
+
+      repeat_test(
+        property = \() {
+          generator(col_a = non_modifiable_length) |> testthat::expect_error()
+        }
       )
     }
   )

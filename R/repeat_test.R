@@ -1,7 +1,6 @@
 #' Repeatedly test properties of a function
 #'
-#' @param property An anonymous function with no arguments which includes an
-#'   expectation.
+#' @param property A function with no parameters which includes an expectation.
 #' @param tests The number of tests to run.
 #'
 #' @examples

@@ -2,12 +2,12 @@
 % Please edit documentation in R/any.R
 \name{any_undefined}
 \alias{any_undefined}
-\title{Undefined value generator}
+\title{Any undefined value generator}
 \usage{
 any_undefined()
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Generate undefined values. In this case undefined values include \code{NA},

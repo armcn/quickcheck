@@ -12,7 +12,7 @@ anything(any_empty = TRUE, any_undefined = TRUE)
 \item{any_undefined}{Whether undefined values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Generate any R object. This doesn't actually generate any possible object,

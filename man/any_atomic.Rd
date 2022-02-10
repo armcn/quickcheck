@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_atomic}
 \alias{any_atomic}
-\title{Atomic vector generator}
+\title{Any atomic vector generator}
 \usage{
 any_atomic(len = c(1L, 10L), any_na = FALSE)
 }
@@ -18,7 +18,7 @@ set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 \item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Generate vectors of integer, double, character, logical, date, POSIXct, hms,

@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_tibble}
 \alias{any_tibble}
-\title{Random tibble generator}
+\title{Any tibble generator}
 \usage{
 any_tibble(rows = c(1L, 10L), cols = c(1L, 10L), any_na = FALSE)
 }
@@ -28,10 +28,10 @@ set \code{cols = 0L} or a range like \code{cols = c(0L, 10L)}.}
 \item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-Generate random tibbles.
+Generate tibbles.
 }
 \examples{
 any_tibble() |> show_example()

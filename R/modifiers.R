@@ -2,7 +2,7 @@
 #'
 #' Generates equal length vectors contained in a list.
 #'
-#' @param ... A set of vector generators.
+#' @param ... A set of named or unnamed vector generators.
 #' @template len
 #'
 #' @examples
@@ -11,6 +11,8 @@
 #' @template generator
 #' @export
 equal_length <- function(..., len = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   len_generator <-
     as_length_generator(len)
 
@@ -18,8 +20,10 @@ equal_length <- function(..., len = c(1L, 10L)) {
     \(a) purrr::map(list(...), \(f) f(len2 = a))
 
   qc_gen(\()
-    len_generator() |>
-      hedgehog::gen.and_then(generate_list)
+    hedgehog::gen.and_then(
+      len_generator(),
+      generate_list
+    )
   )
 }
 

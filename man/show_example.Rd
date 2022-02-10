@@ -7,7 +7,7 @@
 show_example(generator)
 }
 \arguments{
-\item{generator}{A generator}
+\item{generator}{A \code{quickcheck_generator} object.}
 }
 \value{
 An example output produced by the generator.

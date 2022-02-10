@@ -11,13 +11,15 @@
 #' @template generator
 #' @export
 data.table_ <- function(..., rows = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   tibble_(..., rows = rows) |>
     as_hedgehog() |>
     hedgehog::gen.with(data.table::as.data.table) |>
     from_hedgehog()
 }
 
-#' Random data.table generator
+#' data.table generator with randomized columns
 #'
 #' @param ... A set of unnamed generators. The generated data.tables will be
 #' built with random combinations of these generators.
@@ -30,6 +32,8 @@ data.table_ <- function(..., rows = c(1L, 10L)) {
 #' @template generator
 #' @export
 data.table_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   tibble_of(..., rows = rows, cols = cols) |>
     as_hedgehog() |>
     hedgehog::gen.with(data.table::as.data.table) |>

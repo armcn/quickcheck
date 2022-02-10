@@ -7,7 +7,7 @@
 flat_list_of(generator, len = c(1L, 10L))
 }
 \arguments{
-\item{generator}{Quickcheck generator}
+\item{generator}{A \code{quickcheck_generator} object.}
 
 \item{len}{Length of the generated vectors. If \code{len} is a
 single number all vectors will have this length. If
@@ -18,11 +18,11 @@ vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-This will generate flat lists with all values coming from a single input
-generator. In a flat list all items will be scalars.
+Generate flat lists with all values coming from a single generator. In a flat
+list all items will be scalars.
 }
 \examples{
 flat_list_of(integer_(), len = 10L) |> show_example()

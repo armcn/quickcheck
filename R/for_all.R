@@ -1,8 +1,9 @@
 #' Test properties of a function
 #'
 #' @param ... Named generators
-#' @param property A function which takes a value from from
-#'   the generator and calls an expectation on it.
+#' @param property A function which takes values from from
+#'   the generator and calls an expectation on it. This function must have
+#'   parameters matching the generator names.
 #' @param tests The number of tests to run.
 #' @param shrinks The maximum number of shrinks to run when
 #'   shrinking a value to find the smallest counterexample.
@@ -11,8 +12,8 @@
 #'
 #' @examples
 #' for_all(
-#'   a = numeric_(),
-#'   b = numeric_(),
+#'   a = numeric_(len = 1L),
+#'   b = numeric_(len = 1L),
 #'   property = \(a, b) testthat::expect_equal(a + b, b + a)
 #' )
 #' @return A `testthat` expectation object.

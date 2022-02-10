@@ -1,6 +1,6 @@
 #' Convert a hedgehog generator to a quickcheck generator
 #'
-#' @param generator A `hedgehog.internal.gen` generator
+#' @param generator A `hedgehog.internal.gen` object.
 #'
 #' @examples
 #' is_even <-
@@ -21,7 +21,7 @@ from_hedgehog <- function(generator) {
 
 #' Convert a quickcheck generator to a hedgehog generator
 #'
-#' @param generator A `quickcheck_generator` generator
+#' @template param_generator
 #'
 #' @examples
 #' is_even <-
@@ -44,7 +44,7 @@ as_hedgehog <- function(generator) {
 
 #' Show an example output of a generator
 #'
-#' @param generator A generator
+#' @template param_generator
 #'
 #' @examples
 #' logical_() |> show_example()
@@ -63,6 +63,6 @@ print.quickcheck_generator <- function (x, ...) {
   cat("Example:\n")
   print(example$root)
   cat("Initial shrinks:\n")
-  lapply(example$children(), \(a) print(a$root))
+  purrr::walk(example$children(), \(a) print(a$root))
 }
 

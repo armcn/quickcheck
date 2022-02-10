@@ -164,8 +164,9 @@ double_whole <- function(len = c(1L, 10L),
                          any_inf = FALSE,
                          big_dbl = FALSE) {
   qc_gen(\(len2 = len)
-    double_(len2, any_na, any_nan, any_inf, big_dbl)() |>
-    hedgehog::gen.with(round)
+    double_(len2, any_na, any_nan, any_inf, big_dbl) |>
+      as_hedgehog() |>
+      hedgehog::gen.with(round)
   )
 }
 

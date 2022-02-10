@@ -7,10 +7,10 @@
 as_hedgehog(generator)
 }
 \arguments{
-\item{generator}{A \code{quickcheck_generator} generator}
+\item{generator}{A \code{quickcheck_generator} object.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Convert a quickcheck generator to a hedgehog generator

@@ -1,6 +1,6 @@
 #' Data frame generators
 #'
-#' Construct data frame generators in a similar way to `data_frame`.
+#' Construct data frame generators in a similar way to `base::data.frame`.
 #'
 #' @param ... A set of name-value pairs with the values being vector generators.
 #' @template rows
@@ -11,13 +11,15 @@
 #' @template generator
 #' @export
 data_frame_ <- function(..., rows = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   tibble_(..., rows = rows) |>
     as_hedgehog() |>
     hedgehog::gen.with(as.data.frame) |>
     from_hedgehog()
 }
 
-#' Random data frame generator
+#' Data frame generator with randomized columns
 #'
 #' @param ... A set of unnamed generators. The generated data frames will be
 #' built with random combinations of these generators.
@@ -30,6 +32,8 @@ data_frame_ <- function(..., rows = c(1L, 10L)) {
 #' @template generator
 #' @export
 data_frame_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   tibble_of(..., rows = rows, cols = cols) |>
     as_hedgehog() |>
     hedgehog::gen.with(as.data.frame) |>

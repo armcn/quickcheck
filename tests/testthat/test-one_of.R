@@ -1,6 +1,6 @@
-test_that("one_of with single generator doesn't change generator", {
+test_that("one_of doesn't modify a single generator", {
   for_all(
-    a = any_vector(),
+    a = anything(),
     property = \(a) {
       for_all(
         b = one_of(constant(a)),

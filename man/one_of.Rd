@@ -7,13 +7,13 @@
 one_of(..., prob = NULL)
 }
 \arguments{
-\item{...}{Generators to choose from}
+\item{...}{A set of unnamed generators.}
 
 \item{prob}{A vector of probability weights for obtaining the elements of the
 vector being sampled.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Randomly choose between generators

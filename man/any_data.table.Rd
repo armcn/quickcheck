@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_data.table}
 \alias{any_data.table}
-\title{Random data.table generator}
+\title{Any data.table generator}
 \usage{
 any_data.table(rows = c(1L, 10L), cols = c(1L, 10L), any_na = FALSE)
 }
@@ -28,10 +28,10 @@ set \code{cols = 0L} or a range like \code{cols = c(0L, 10L)}.}
 \item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-Generate random data.tables.
+Generate data.tables.
 }
 \examples{
 any_data.table() |> show_example()

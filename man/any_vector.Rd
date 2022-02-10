@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_vector}
 \alias{any_vector}
-\title{Random vector generator}
+\title{Any vector generator}
 \usage{
 any_vector(len = c(1L, 10L), any_na = FALSE)
 }
@@ -18,10 +18,10 @@ set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 \item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-Generate random atomic vectors or lists.
+Generate atomic vectors or lists.
 }
 \examples{
 any_vector() |> show_example()

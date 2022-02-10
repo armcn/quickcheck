@@ -7,8 +7,7 @@
 repeat_test(property, tests = getOption("quickcheck.tests", 100L))
 }
 \arguments{
-\item{property}{An anonymous function with no arguments which includes an
-expectation.}
+\item{property}{A function with no parameters which includes an expectation.}
 
 \item{tests}{The number of tests to run.}
 }

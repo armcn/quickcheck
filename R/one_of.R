@@ -1,6 +1,6 @@
 #' Randomly choose between generators
 #'
-#' @param ... Generators to choose from
+#' @param ... A set of unnamed generators.
 #' @param prob A vector of probability weights for obtaining the elements of the
 #'   vector being sampled.
 #'
@@ -11,7 +11,9 @@
 #' @export
 one_of <- function(..., prob = NULL) {
   qc_gen(\()
-    purrr::partial(hedgehog::gen.choice, prob = prob) |>
-      purrr::exec(!!!eval_functions(...))
+    do.call(
+      purrr::partial(hedgehog::gen.choice, prob = prob),
+      eval_functions(...)
+    )
   )
 }

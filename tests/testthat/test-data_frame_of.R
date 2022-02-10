@@ -1,0 +1,1 @@
+test_suite_data_frame_of_generator(data_frame_of, is_data_frame)

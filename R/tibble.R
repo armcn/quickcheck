@@ -1,6 +1,6 @@
 #' Tibble generators
 #'
-#' Construct tibble generators in a similar way to `dplyr::tibble`.
+#' Construct tibble generators in a similar way to `tibble::tibble`.
 #'
 #' @param ... A set of name-value pairs with the values being vector generators.
 #' @template rows
@@ -11,9 +11,11 @@
 #' @template generator
 #' @export
 tibble_ <- function(..., rows = c(1L, 10L)) {
+  assert_all_modifiable_length(...)
+
   qc_gen(\()
     equal_length(..., len = rows)() |>
-      hedgehog::gen.with(dplyr::as_tibble)
+      hedgehog::gen.with(tibble::as_tibble)
   )
 }
 
@@ -35,7 +37,7 @@ tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   as_tibble <-
     \(a)
       suppressMessages(
-        dplyr::as_tibble(a, .name_repair = "unique")
+        tibble::as_tibble(a, .name_repair = "unique")
       )
 
   expand_rows_and_cols <-

@@ -2,7 +2,7 @@
 % Please edit documentation in R/any.R
 \name{any_flat_homogeneous_list}
 \alias{any_flat_homogeneous_list}
-\title{Flat homogeneous list generator}
+\title{Any flat homogeneous list generator}
 \usage{
 any_flat_homogeneous_list(len = c(1L, 10L), any_na = FALSE)
 }
@@ -18,11 +18,10 @@ set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 \item{any_na}{Whether \code{NA} values should be allowed.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
-Generate lists where each element is an atomic vector with a length of 1 and
-has the same class.
+Generate lists in which each element is an atomic scalar of the same class.
 }
 \examples{
 any_flat_homogeneous_list() |> show_example()

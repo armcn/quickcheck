@@ -10,7 +10,7 @@ constant(a)
 \item{a}{Any R object}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Generate the same value every time

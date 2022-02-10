@@ -7,7 +7,5 @@
 #' @template generator
 #' @export
 constant <- function(a) {
-  qc_gen(\(...)
-    hedgehog::gen.choice(a)
-  )
+  qc_gen(\() hedgehog::gen.choice(a))
 }

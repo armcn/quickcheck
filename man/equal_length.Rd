@@ -7,7 +7,7 @@
 equal_length(..., len = c(1L, 10L))
 }
 \arguments{
-\item{...}{A set of vector generators.}
+\item{...}{A set of named or unnamed vector generators.}
 
 \item{len}{Length of the generated vectors. If \code{len} is a
 single number all vectors will have this length. If
@@ -18,7 +18,7 @@ vectors with lengths between 1 and 10. To produce empty vectors
 set \code{len = 0L} or a range like \code{len = c(0L, 10L)}.}
 }
 \value{
-A \code{quickcheck_generator} generator
+A \code{quickcheck_generator} object.
 }
 \description{
 Generates equal length vectors contained in a list.

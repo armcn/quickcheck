@@ -1,1 +1,1 @@
-test_suite_data_frame_generator(tibble_, is_tibble)
+test_suite_data_frame_generator(tibble_, tibble::is_tibble)

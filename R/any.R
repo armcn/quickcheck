@@ -69,7 +69,7 @@ anything <- function(any_empty = TRUE, any_undefined = TRUE) {
   do.call(one_of, generator_list)
 }
 
-#' Atomic vector generator
+#' Any atomic vector generator
 #'
 #' Generate vectors of integer, double, character, logical, date, POSIXct, hms,
 #' or factors.
@@ -97,9 +97,9 @@ any_atomic <- function(len = c(1L, 10L), any_na = FALSE) {
   )
 }
 
-#' Flat list generator
+#' Any flat list generator
 #'
-#' Generate lists where each element is an atomic vector with a length of 1.
+#' Generate lists in which each element is an atomic scalar.
 #'
 #' @template len
 #' @template any_na
@@ -113,10 +113,9 @@ any_flat_list <- function(len = c(1L, 10L), any_na = FALSE) {
   flat_list_of(any_atomic(any_na = any_na), len)
 }
 
-#' Flat homogeneous list generator
+#' Any flat homogeneous list generator
 #'
-#' Generate lists where each element is an atomic vector with a length of 1 and
-#' has the same class.
+#' Generate lists in which each element is an atomic scalar of the same class.
 #'
 #' @template len
 #' @template any_na
@@ -141,10 +140,9 @@ any_flat_homogeneous_list <- function(len = c(1L, 10L), any_na = FALSE) {
   )
 }
 
-#' Random list generator
+#' Any list generator
 #'
-#' Generate random lists containing other lists or atomic vectors of variable
-#' lengths.
+#' Generate lists containing lists or atomic vectors.
 #'
 #' @template len
 #' @template any_na
@@ -168,9 +166,9 @@ any_list <- function(len = c(1L, 10L), any_na = FALSE) {
   )
 }
 
-#' Random vector generator
+#' Any vector generator
 #'
-#' Generate random atomic vectors or lists.
+#' Generate atomic vectors or lists.
 #'
 #' @template len
 #' @template any_na
@@ -189,9 +187,9 @@ any_vector <- function(len = c(1L, 10L), any_na = FALSE) {
   )
 }
 
-#' Random tibble generator
+#' Any tibble generator
 #'
-#' Generate random tibbles.
+#' Generate tibbles.
 #'
 #' @template rows
 #' @template cols
@@ -213,9 +211,9 @@ any_tibble <- function(rows = c(1L, 10L),
   )
 }
 
-#' Random data frame generator
+#' Any data frame generator
 #'
-#' Generate random data frames.
+#' Generate data.frames.
 #'
 #' @template rows
 #' @template cols
@@ -237,9 +235,9 @@ any_data_frame <- function(rows = c(1L, 10L),
   )
 }
 
-#' Random data.table generator
+#' Any data.table generator
 #'
-#' Generate random data.tables.
+#' Generate data.tables.
 #'
 #' @template rows
 #' @template cols
@@ -261,7 +259,7 @@ any_data.table <- function(rows = c(1L, 10L),
   )
 }
 
-#' Undefined value generator
+#' Any undefined value generator
 #'
 #' Generate undefined values. In this case undefined values include `NA`,
 #' `NA_integer_`, `NA_real_`, `NA_character_`, `NA_complex_`, `NULL`, `-Inf`,

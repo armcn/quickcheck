@@ -1,1 +1,1 @@
-#' @return A `quickcheck_generator` generator
+#' @return A `quickcheck_generator` object.
