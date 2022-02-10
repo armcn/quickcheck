@@ -33,4 +33,3 @@ Suggests:
     covr,
     dplyr
 Config/testthat/edition: 3
-VignetteBuilder: knitr
