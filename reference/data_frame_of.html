@@ -92,21 +92,28 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1  ...2       ...3       ...4       ...5       ...6 ...7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  TRUE FALSE 1102-03-02 2842-06-12 1800-09-22 2524-04-05 TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 FALSE  TRUE 1927-03-15 1361-12-05 2844-11-20 1242-04-01 TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9 FALSE</span>
 <span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1                ...2      ...3  ...4       ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   731212313 1892-07-31 10:24:25   |eMPL9q  7075          0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   709684805   26-10-16 03:14:23         h  3532 -965216411</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   317778698 1382-04-10 10:23:58  gBNK$x[U  5447   12802818</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   621515669  909-01-16 03:15:18        $I  2757 -237369677</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   974053553  781-09-06 03:55:53  &gt;}~'b+7%   942  858300520</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   568239714 1773-06-17 07:12:47 k5^lr"7.k     0 -134130568</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   942581385  476-03-12 18:11:27 Sp`5%~O@F  -767 -951583316</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           0 1197-06-09 22:06:53    ].?KA3 -1742 -110029173</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9   979863669 2526-07-29 16:57:44    KIJfet  3122  511062434</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 -631723626 1301-03-19 13:32:39     tV@jh -1996  295929324</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1      ...2       ...3    ...4      ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  -736716654         n 1101-12-28  F2z^k  X/8^$6 WY</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  -413397759        }s 1140-05-30  *!`$a&gt;   V]^'*oN</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   315894002       vBy 1763-01-14     c9_        Q=</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -799855240       HVd 1013-12-04  l:~m[U         %</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  -868354796 H!]r/{59m 1971-08-04 }{Vt7#h      P'Bw</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   800081592    bs~Omm 1046-12-28  5L#9*2   E_~H gO</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   354210921      1(UY 1255-10-09 Glj$,wq         t</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  -849167864       Sw* 1651-08-09     &lt;."    Qg&lt;o*y</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   482417823         @ 1299-07-19  bs~Omm      +"0Q</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  160947305  "(~W[=bc 1361-11-11   N&lt;ilP   "ye$?bR</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
