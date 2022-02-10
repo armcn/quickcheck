@@ -12,7 +12,7 @@ integer or double vectors."><!-- mathjax --><script src="https://cdnjs.cloudflar
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,14 +106,13 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">numeric_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  657465243 -282742027 -999565149 -787136185  857511423   56269260  338490765</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [8]  916880017          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 835769188</span>
 <span class="r-in"><span class="fu">numeric_</span><span class="op">(</span>big_num <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]          0 1664874362</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -5.423573e+307  8.951064e+307</span>
 <span class="r-in"><span class="fu">numeric_bounded</span><span class="op">(</span>left <span class="op">=</span> <span class="op">-</span><span class="fl">5L</span>, right <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  4 -5  4 -3  0  2  3 -5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -4  1 -2  5  1</span>
 <span class="r-in"><span class="fu">numeric_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  5371  1695  -980    NA -7944    NA -5964  6985     0     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]     0  4004 -8403 -8862 -3553    NA    NA    NA  1365    NA</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

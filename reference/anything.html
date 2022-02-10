@@ -16,7 +16,7 @@ NaN."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathja
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,27 +84,40 @@ tibbles, data.tables, and undefined values like <code>NA</code>, <code>NULL</cod
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">anything</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 4</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1             ...2       ...3  ...4      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;date [1]&gt;</span> <span style="color: #BB0000;">NA</span>    <span style="color: #949494;">&lt;int [5]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;dbl [1]&gt;</span>  TRUE  <span style="color: #949494;">&lt;time [5]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>  FALSE <span style="color: #949494;">&lt;int [10]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;dbl [1]&gt;</span>  <span style="color: #BB0000;">NA</span>    <span style="color: #949494;">&lt;dbl [1]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;dttm [1]&gt;</span> FALSE <span style="color: #949494;">&lt;dttm [6]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;fct [1]&gt;</span>  FALSE <span style="color: #949494;">&lt;chr [10]&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;chr [1]&gt;</span>  TRUE  <span style="color: #949494;">&lt;dbl [1]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;time [1]&gt;</span> FALSE <span style="color: #949494;">&lt;int [4]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;time [1]&gt;</span> <span style="color: #BB0000;">NA</span>    <span style="color: #949494;">&lt;int [7]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">&lt;named list [2]&gt;</span> <span style="color: #949494;">&lt;date [1]&gt;</span> TRUE  <span style="color: #949494;">&lt;date [3]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1:         NA  442138358</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: -851143035  768661870</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: -531573412  -50779564</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4: -430287777  825426568</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5: -125124838          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6: -764836345  198973088</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7:         NA -740231162</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8: -446104386          0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9:         NA         NA</span>
 <span class="r-in"><span class="fu">anything</span><span class="op">(</span>any_empty <span class="op">=</span> <span class="cn">FALSE</span>, any_undefined <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 4 × 1</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;list&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> <span style="color: #949494;">&lt;int [1]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> <span style="color: #949494;">&lt;chr [4]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> <span style="color: #949494;">&lt;lgl [7]&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> <span style="color: #949494;">&lt;dttm [4]&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "qw\\4P"   ")QpAU:sy" "A\\pr"    "WI*"      "-S*^&lt;"    "vX 5'"    "#n"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 05:43:01.448701</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:32:19.236351</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 06:38:16.852655</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "0VbC="    "}0&gt;c7bfi" "=$Fd/PtL" "E"        "(b!&lt;"    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  8992  1965 -6127 -4053  -699</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -266725549          0 -135047602  860595061  221790319 -933828063  313667521</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  -390     0 -5441  2804  1109  -554  2573 -5479     0 -7985</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "679-11-26 03:08:37 UTC"  "1087-10-30 15:42:28 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -90,37 +90,11 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1  ...2      ...3    ...4      ...5  ...6                ...7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 !z\\ FALSE 702051592 ]@2~%*P .U$n;;- &lt; FALSE 2258-04-23 02:55:18</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    ^ FALSE -18914399  6o*2X(      %QDw FALSE 1888-11-14 09:40:14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    } FALSE         0    7ux[     NgtF&lt;  TRUE 1540-03-24 03:34:33</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>              ...8     ...9    ...10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 18:22:35.360181        5      D0k</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 08:42:43.267521  zC%8JZ[ lo~b o ;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 06:14:52.495235        / iSBUd$bM</span>
-<span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">10L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1  ...2  ...3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   159474846 FALSE -4220</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   550488148  TRUE  9033</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   -86534242  TRUE     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   779842298 FALSE -1012</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   884814916  TRUE -4572</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   177343578  TRUE  6192</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   -55076904  TRUE -6137</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  -164357371 FALSE -6468</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  -436940702 FALSE -7849</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10  102363877 FALSE -8011</span>
-<span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span>cols <span class="op">=</span> <span class="fl">5L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1    ...2       ...3 ...4 ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  448823796    Bsjm -975109119   NA   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2         NA ePk{v:K  178685572    1 TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3         NA  ?UqaX$  153062338   NA TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 -891206247    &lt;NA&gt; -994794827    1   NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -755417289    &lt;NA&gt;         NA    1 TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  967290500    &lt;NA&gt; -129503794   NA TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7 -300919800 7mg+\\a -614184054    1 TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  352751359 y/K7,!z -651591839    1   NA</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_data_frame</span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">3L</span>, cols <span class="op">=</span> <span class="fl">3L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1 ...2 ...3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    ? -125 8246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 98&gt;l 5345 9168</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   N?   98    0</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

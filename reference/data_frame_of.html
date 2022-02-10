@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,20 +92,23 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1 ...2       ...3       ...4 ...5       ...6 ...7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2210-11-27 TRUE 2983-12-30 2586-02-28 TRUE 2977-05-10 TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1  ...2  ...3       ...4  ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1125-02-01  TRUE  TRUE 1582-02-06 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 1785-12-01 FALSE  TRUE 1575-08-05 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1842-10-23  TRUE FALSE 1681-03-14 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 1403-09-30 FALSE FALSE 2979-01-08 FALSE</span>
 <span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1            ...2            ...3  ...4      ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  -654705882 08:53:10.329302 16:10:59.270744  TRUE        Vm</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2   276407863 16:47:47.246650 06:37:42.811813  TRUE         b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3           0 19:37:39.624755 07:09:41.972512 FALSE ?%{3OWP !</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   152864798 19:13:26.383877 15:44:08.230276 FALSE   V9!m(&gt;P</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   -71490380 23:32:43.478294 21:40:14.612346  TRUE   3L{qYP#</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6   405336089 23:48:43.555396 09:51:10.135631 FALSE         E</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7   526965532 09:49:34.645602 15:59:29.031019 FALSE  ;T_d3 f"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8    56195512 17:21:17.895293 07:04:47.113976  TRUE      {.+*</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  -813053416 10:13:17.048964 02:00:35.738039 FALSE     cyKyg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10   92504704 16:54:02.108715 03:37:02.354281 FALSE U(QPts"H]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     ...1  ...2  ...3       ...4            ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  -3268  TRUE FALSE       fE1V 09:03:24.336668</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  -3321 FALSE FALSE    p!R4:|= 05:26:28.768512</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  -4605 FALSE FALSE        ~;  23:03:59.374368</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -3495  TRUE FALSE    G+f`d-H 09:43:32.385033</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  -3929  TRUE  TRUE      )" Ph 15:35:24.026030</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  -3389 FALSE  TRUE  K8,/(gT!m 20:09:11.978627</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  -7709  TRUE FALSE   82^V5FAt 20:34:57.621052</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   5056  TRUE  TRUE         w3 16:44:40.221746</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  -8497  TRUE FALSE \\,_N 9]{u 21:29:49.438060</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 -9289 FALSE FALSE   38%,?#ys 03:44:47.047971</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
