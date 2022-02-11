@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,23 +92,25 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1       ...2       ...3       ...4  ...5 ...6       ...7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1174-02-12 2362-06-25 2531-09-18 1914-01-18  TRUE TRUE 1114-01-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 1520-08-25 1213-05-22 2054-05-15 1600-08-11 FALSE TRUE 1122-04-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2209-12-10 1616-08-29 2260-03-22 2858-10-29  TRUE TRUE 1674-07-19</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2438-02-27 1623-01-20 1609-05-19 2545-03-01  TRUE TRUE 1193-02-07</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1  ...2  ...3  ...4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2093-05-05  TRUE  TRUE  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2822-06-20  TRUE  TRUE FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 1336-05-06 FALSE  TRUE  TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2406-11-23 FALSE  TRUE FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 1845-03-06 FALSE FALSE FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6 2782-05-15 FALSE  TRUE FALSE</span>
 <span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>               ...1            ...2       ...3       ...4  ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  02:45:35.953254 15:33:16.385733 2452-07-05 -360404518  9371</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  06:12:44.377699 21:50:35.394491 1302-07-21  991563782  5508</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  01:35:11.134343 08:15:56.243278 1359-03-16  626462541     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  20:17:47.204289 01:11:39.807498 1879-07-15  972444281  8032</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  11:39:20.566926 18:01:42.638747 2594-06-20  236108775  9810</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6  08:21:57.418048 15:56:16.825314 1709-06-27  916743393  9187</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  20:13:42.556808 01:34:15.569626 2512-05-13 -758842612  2673</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  16:44:48.575376 19:11:32.639603 1021-12-08 -893886195  6614</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  22:10:48.227828 06:41:55.639783 1938-12-04  981545941  8965</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 04:04:02.031637 13:15:53.926747 1863-08-13  256163658 -3060</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2  ...3            ...4       ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  2715-05-30 2150-01-10  TRUE 04:05:24.989028 1139-09-02</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  2400-11-23 2721-04-20  TRUE 14:54:48.985828 1912-08-23</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  2829-05-04 1228-01-05 FALSE 02:30:02.995264 1753-11-25</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  1691-08-28 2732-04-26  TRUE 23:35:56.459463 1905-03-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  1534-03-16 1140-12-09 FALSE 19:17:12.500512 2198-02-12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2839-12-04 1453-02-10  TRUE 01:10:47.810695 2830-02-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  2574-04-12 2632-04-12  TRUE 17:22:10.360163 1107-12-01</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8  1831-10-12 1591-07-01 FALSE 10:58:07.406592 2703-12-06</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  1433-04-09 1299-12-31 FALSE 17:59:15.395042 2475-09-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 2121-12-27 2069-01-12 FALSE 16:51:21.919304 2676-04-05</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
