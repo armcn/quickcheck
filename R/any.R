@@ -61,7 +61,14 @@ anything <- function(any_empty = TRUE, any_undefined = TRUE) {
         tibble_generator,
         data_frame_generator,
         data.table_generator,
-        undefined_generator
+        undefined_generator,
+        prob = c(
+          0.6,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        )
       )
     )
 
