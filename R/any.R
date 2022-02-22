@@ -54,6 +54,13 @@ anything <- function(any_empty = TRUE, any_undefined = TRUE) {
     else
       NULL
 
+  undefined_prob <-
+    if (any_undefined)
+      0.1
+
+    else
+      NULL
+
   generator_list <-
     purrr::compact(
       list(
@@ -67,7 +74,7 @@ anything <- function(any_empty = TRUE, any_undefined = TRUE) {
           0.1,
           0.1,
           0.1,
-          0.1
+          undefined_prob
         )
       )
     )
