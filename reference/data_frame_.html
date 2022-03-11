@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,24 +81,24 @@ or a range like <code>rows = c(0L, 10L)</code>.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>       a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -7072</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  5352</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  1643</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  1942</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -4496</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6     0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7 -3231</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  1755</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  6214</span>
-<span class="r-in"><span class="fu">data_frame_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="character_.html">character_</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       a         b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  5415    #`Kp^#</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  7932  %&gt;6"U~8e</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     0        o+</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 -7520     }FZtU</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -3838 Z~!$+0xO/</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1  6746</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 -2244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 -6779</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  7352</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 -1371</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6  2419</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7  4054</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8     0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9  8527</span>
+<span class="r-in"><span class="fu">data_frame_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="character_.html">character_</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>       a      b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 -4584     1j</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2  -256  $j{)m</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  6573    *1e</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -582 WAHRD%</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5  -458       </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

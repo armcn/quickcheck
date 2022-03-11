@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,51 +80,75 @@ set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_vector</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">any_vector</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 06:10:00.342507</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1254-07-24 22:57:48 UTC" "2523-12-15 06:16:36 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2290-05-09 18:32:47 UTC" "2304-07-02 18:44:51 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2863-04-28 12:52:30 UTC" "1712-06-30 16:28:50 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2331-02-21 20:02:17 UTC" "975-10-26 00:10:57 UTC" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 09:00:40.727279</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -962295218  803164588          0          0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1549-06-24 22:42:44 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in"><span class="fu">any_vector</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] xa/P</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: xa/P</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] w&lt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: w&lt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2418-01-06 12:18:10 UTC" "2127-11-13 11:32:19 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "970-09-25 21:41:20 UTC" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 2m[.&gt;j9!</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: 2m[.&gt;j9!</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1358-06-07" "1091-10-17" "2373-05-16" "2781-01-03"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "480-06-18 11:42:37 UTC"  "2825-08-17 13:23:55 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2127-03-13 07:55:55 UTC" "2600-12-12 15:01:32 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "486-11-07 01:11:04 UTC"  "2341-05-26 14:12:24 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "594-02-07 13:25:33 UTC"  "338-04-06 01:19:38 UTC" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -143218945  -25213511          0  633976516 -470402820  864673356</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "920-09-27 20:31:36 UTC"  "2965-03-08 07:01:07 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2083-07-18 08:14:59 UTC" "1487-05-21 10:38:58 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "1828-03-06 03:46:59 UTC" "2591-05-26 09:39:07 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2186-02-17 03:22:51 UTC" "2347-03-19 16:35:41 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] a5?5+}   is7F.50; %f4~e    k^`bA9   b        Td       M`;A\\{* ?-g`j{  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [9] 0_9lu'  </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: a5?5+} is7F.50; %f4~e k^`bA9 b Td M`;A\\{* ?-g`j{ 0_9lu'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-in"><span class="fu">any_vector</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] A030~W</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: A030~W</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2028-08-10 10:09:20 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 3WK </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: 3WK </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Ru;^)ki"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] q</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: q</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 03:37:37.991273</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] ]=t9@Vy,</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: ]=t9@Vy,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2421-12-22"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>

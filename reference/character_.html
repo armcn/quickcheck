@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,14 +88,14 @@ set <code>len = 0L</code> or a range like <code>len = c(0L, 10L)</code>.</p></dd
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">character_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "kS0QI''"  "\\'/,_ ?" "$&amp;dq$|"   "? jI"    </span>
-<span class="r-in"><span class="fu">character_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "OZUOIhi&amp;"  "6TWHks0QF" NA          "Q!Lz:"     "&amp;;A[_Rtk"  NA         </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "/I8]"      NA          "X3Bm"      NA         </span>
-<span class="r-in"><span class="fu">character_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_empty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "c"         "+Yg04c$_ " ",~?"       "`o"        "F&amp;+6GC&lt;"   "/N"       </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "f\\.`w"    "Wm ~|=[%"  "atuogyg"   "`3&amp;[`"    </span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">character_</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "qsUSmg8G" "%'M"      "Z=Ka 2"  </span>
+<span class="r-in"><span class="fu">character_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "|XhHI"     "6z@P6w|"   "B=G)|08z"  "4\"~EI%P"  NA          NA         </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] NA          "]Xx"       NA          "WvQzY/1Fd"</span>
+<span class="r-in"><span class="fu">character_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_empty <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "*e#m=ml"  "3"        "q!k$DEP5" "F9G("     ""         "v&lt;cqK4be"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "\"G"      ""         "s"        "]'x-8/\\"</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

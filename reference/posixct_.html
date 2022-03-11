@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,25 +92,24 @@ numbers, inclusive.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">posixct_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2434-04-22 03:48:28 UTC" "430-07-11 19:09:07 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "1457-10-26 04:11:39 UTC" "1209-08-23 15:45:44 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "1850-03-24 20:53:33 UTC"</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">posixct_</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "381-02-27 08:54:52 UTC"  "2839-11-22 03:03:28 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2135-04-01 16:34:58 UTC"</span>
 <span class="r-in"><span class="fu">posixct_bounded</span><span class="op">(</span></span>
 <span class="r-in">  left <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2020-01-01 00:00:00"</span><span class="op">)</span>,</span>
 <span class="r-in">  right <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2021-01-01 00:00:00"</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-04-19 19:22:05 UTC" "2020-03-18 11:33:22 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2020-01-15 14:35:03 UTC" "2020-06-08 19:50:36 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2020-12-09 10:31:04 UTC" "2020-03-18 03:10:58 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "2020-04-05 11:33:41 UTC" "2020-05-01 11:05:44 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [9] "2020-06-20 11:24:44 UTC"</span>
-<span class="r-in"><span class="fu">posixct_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "128-04-12 21:31:21 UTC"  "880-08-20 17:35:54 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "854-10-30 14:56:43 UTC"  "12-03-30 18:57:48 UTC"  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2734-12-31 17:39:57 UTC" "2592-01-07 07:15:30 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "70-06-04 05:07:44 UTC"   "1495-12-30 16:57:48 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2720-12-29 04:09:48 UTC" "292-05-01 18:50:05 UTC" </span>
+<span class="r-in"><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "2020-03-07 15:49:30 UTC" "2020-11-08 16:27:31 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2020-06-25 14:28:59 UTC" "2020-08-14 00:00:29 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "2020-03-26 05:31:32 UTC" "2020-05-10 02:49:56 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "2020-05-12 22:03:38 UTC" "2020-03-28 09:43:58 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2020-07-19 16:32:20 UTC" "2020-12-29 20:03:18 UTC"</span>
+<span class="r-in"><span class="fu">posixct_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "857-07-17 21:09:37 UTC"  "628-02-11 15:23:36 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2349-06-16 01:55:14 UTC" "1895-07-27 05:37:57 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "1168-12-30 22:50:18 UTC" "614-08-17 15:25:51 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] NA                        "763-07-19 01:43:21 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2195-04-25 07:28:56 UTC" NA                       </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

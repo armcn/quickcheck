@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,7 +93,7 @@ when running the property.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">for_all</span><span class="op">(</span></span>
 <span class="r-in">  a <span class="op">=</span> <span class="fu"><a href="numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,</span>
 <span class="r-in">  b <span class="op">=</span> <span class="fu"><a href="numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,</span>
-<span class="r-in">  property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span></span>
+<span class="r-in">  property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
 </code></pre></div>
     </div>

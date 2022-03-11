@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,14 +73,14 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">is_even</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="va">a</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html" class="external-link">%%</a></span> <span class="fl">2L</span> <span class="op">==</span> <span class="fl">0L</span></span>
+<span class="r-in">  <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="va">a</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html" class="external-link">%%</a></span> <span class="fl">2L</span> <span class="op">==</span> <span class="fl">0L</span></span>
 <span class="r-in"><span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span></span>
-<span class="r-in">  <span class="fu"><a href="integer_.html">integer_bounded</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span>, len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span> |&gt;</span>
-<span class="r-in">    <span class="fu">as_hedgehog</span><span class="op">(</span><span class="op">)</span> |&gt;</span>
-<span class="r-in">    <span class="fu">hedgehog</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span>\<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">a</span><span class="op">)</span></span>
+<span class="r-in">  <span class="fu"><a href="integer_.html">integer_bounded</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span>, len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span>
+<span class="r-in">    <span class="fu">as_hedgehog</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span></span>
+<span class="r-in">    <span class="fu">hedgehog</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">a</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu"><a href="for_all.html">for_all</a></span><span class="op">(</span></span>
 <span class="r-in">  a <span class="op">=</span> <span class="fu"><a href="from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,</span>
-<span class="r-in">  property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> |&gt; <span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-in">  property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span></span>
 </code></pre></div>
     </div>

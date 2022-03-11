@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,30 +92,28 @@ numbers, inclusive.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">hms_</span><span class="op">(</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:44:48.002829</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 08:58:12.571982</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">hms_</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:22:24.120574</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:39:24.313177</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15:12:51.999002</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:10:16.650474</span>
 <span class="r-in"><span class="fu">hms_bounded</span><span class="op">(</span></span>
 <span class="r-in">  left <span class="op">=</span> <span class="fu">hms</span><span class="fu">::</span><span class="fu"><a href="https://hms.tidyverse.org/reference/hms.html" class="external-link">as_hms</a></span><span class="op">(</span><span class="st">"00:00:00"</span><span class="op">)</span>,</span>
 <span class="r-in">  right <span class="op">=</span> <span class="fu">hms</span><span class="fu">::</span><span class="fu"><a href="https://hms.tidyverse.org/reference/hms.html" class="external-link">as_hms</a></span><span class="op">(</span><span class="st">"12:00:00"</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 03:05:11.609153</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 02:02:42.456485</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:51:49.664740</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 08:45:52.059276</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 09:18:52.993915</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 11:15:21.829705</span>
-<span class="r-in"><span class="fu">hms_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 03:54:39.714601</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:43:50.405962</span>
+<span class="r-in"><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 00:43:28.409630</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 03:50:52.951546</span>
+<span class="r-in"><span class="fu">hms_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12:55:52.772149</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 02:44:30.886748</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:44:26.536329</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 08:20:24.447611</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:28:31.282277</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:46:09.691058</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 07:24:18.818862</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17:22:04.396494</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 06:07:51.185619</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:20:52.554168</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>              NA</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 22:14:51.104025</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:41:39.478694</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21:04:14.344761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20:27:10.578981</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,22 +91,24 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1  ...2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: TRUE  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2: TRUE FALSE</span>
-<span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> |&gt; <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>         ...1  ...2  ...3       ...4  ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1:  -w7:GS:  -902 FALSE 1604-08-08  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2:    zl_Oe  -829  TRUE 1209-08-15 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3:        ,  9713  TRUE 2524-09-27  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: W^YYdwc| -3309 FALSE 2447-12-08  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5:      =Cf -5327  TRUE 1243-07-27 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6:     5Bu;  9490  TRUE 1145-05-27 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7:        R  2238 FALSE 2048-11-13 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8:       X0     0  TRUE 2000-04-12  TRUE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9:   5QV:GZ   637 FALSE 2777-10-01 FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10: =OZz!P8-  7681 FALSE 2737-09-09 FALSE</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1  ...2  ...3       ...4</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 1009-08-17 FALSE FALSE 2219-07-14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 1823-08-15  TRUE FALSE 1704-05-30</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 2540-03-05  TRUE FALSE 1005-07-31</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 2248-12-09  TRUE FALSE 1646-07-31</span>
+<span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           ...1            ...2  ...3      ...4            ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 2946-09-23 20:17:14.970518 -9968        C&lt; 08:44:40.832390</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2548-04-06 02:57:39.549926     0   / (r6Rd 23:02:35.294144</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 1874-06-03 15:34:40.071235 -5591       n)Q 06:19:58.465894</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 1328-02-23 11:03:33.455566 -7111        lL 01:32:53.193094</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 1889-02-07 10:43:14.099165 -5591 =,Jzj|M5' 14:08:00.261273</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 1202-12-06 11:00:22.067610  3965      iHe0 13:07:14.325460</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 2766-01-04 18:34:39.512869 -6749     bmdRj 12:10:36.043575</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 1402-08-14 15:56:20.042439 -6916    j|:dXp 02:27:49.972963</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 1727-09-12 14:44:17.795773     0         0 14:33:57.211713</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10: 1832-10-10 15:24:59.108489     0  z'z-&gt;u[e 23:14:45.661471</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
