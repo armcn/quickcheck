@@ -5,12 +5,12 @@
 #'   vector being sampled.
 #'
 #' @examples
-#' one_of(integer_(), character_()) |> show_example()
-#' one_of(constant(NULL), logical_(), prob = c(0.1, 0.9)) |> show_example()
+#' one_of(integer_(), character_()) %>% show_example()
+#' one_of(constant(NULL), logical_(), prob = c(0.1, 0.9)) %>% show_example()
 #' @template generator
 #' @export
 one_of <- function(..., prob = NULL) {
-  qc_gen(\()
+  qc_gen(function()
     do.call(
       purrr::partial(hedgehog::gen.choice, prob = prob),
       eval_functions(...)

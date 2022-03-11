@@ -25,6 +25,6 @@ A \code{quickcheck_generator} object.
 Construct data frame generators in a similar way to \code{base::data.frame}.
 }
 \examples{
-data_frame_(a = integer_()) |> show_example()
-data_frame_(a = integer_(), b = character_(), rows = 5L) |> show_example()
+data_frame_(a = integer_()) \%>\% show_example()
+data_frame_(a = integer_(), b = character_(), rows = 5L) \%>\% show_example()
 }

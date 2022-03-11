@@ -31,7 +31,7 @@ test_that("posixct_bounded generates bounded POSIXct vectors", {
 
   for_all(
     a = posixct_bounded(left = left, right = right),
-    property = \(a) all(a >= left & a <= right) |> expect_true()
+    property = function(a) all(a >= left & a <= right) %>% expect_true()
   )
 })
 
@@ -40,7 +40,7 @@ test_that("posixct_left_bounded generates left bounded POSIXct vectors", {
 
   for_all(
     a = posixct_left_bounded(left = left),
-    property = \(a) all(a >= left) |> expect_true()
+    property = function(a) all(a >= left) %>% expect_true()
   )
 })
 
@@ -49,6 +49,6 @@ test_that("posixct_right_bounded generates right bounded POSIXct vectors", {
 
   for_all(
     a = posixct_right_bounded(right = right),
-    property = \(a) all(a <= right) |> expect_true()
+    property = function(a) all(a <= right) %>% expect_true()
   )
 })

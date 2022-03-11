@@ -24,6 +24,6 @@ A \code{quickcheck_generator} object.
 A generator for factor vectors.
 }
 \examples{
-factor_() |> show_example()
-factor_(len = 10L, any_na = TRUE) |> show_example()
+factor_() \%>\% show_example()
+factor_(len = 10L, any_na = TRUE) \%>\% show_example()
 }

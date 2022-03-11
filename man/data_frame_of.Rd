@@ -35,6 +35,6 @@ A \code{quickcheck_generator} object.
 Data frame generator with randomized columns
 }
 \examples{
-data_frame_of(logical_(), date_()) |> show_example()
-data_frame_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
+data_frame_of(logical_(), date_()) \%>\% show_example()
+data_frame_of(any_atomic(), rows = 10L, cols = 5L) \%>\% show_example()
 }

@@ -8,12 +8,12 @@
 #' @template right
 #'
 #' @examples
-#' hms_() |> show_example()
+#' hms_() %>% show_example()
 #' hms_bounded(
 #'   left = hms::as_hms("00:00:00"),
 #'   right = hms::as_hms("12:00:00")
-#' ) |> show_example()
-#' hms_(len = 10L, any_na = TRUE) |> show_example()
+#' ) %>% show_example()
+#' hms_(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 hms_ <- function(len = c(1L, 10L), any_na = FALSE) {
@@ -23,10 +23,10 @@ hms_ <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @rdname hms_
 #' @export
 hms_bounded <- function(left, right, len = c(1L, 10L), any_na = FALSE) {
-  qc_gen(\(len2 = len)
-    hedgehog::gen.unif(as.double(left), as.double(right)) |>
-      replace_some_with(NA_real_, any_na) |>
-      hedgehog::gen.with(hms::as_hms) |>
+  qc_gen(function(len2 = len)
+    hedgehog::gen.unif(as.double(left), as.double(right)) %>%
+      replace_some_with(NA_real_, any_na) %>%
+      hedgehog::gen.with(hms::as_hms) %>%
       vectorize(len2)
   )
 }

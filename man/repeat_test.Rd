@@ -19,7 +19,7 @@ Repeatedly test properties of a function
 }
 \examples{
 repeat_test(
-  property = \() {
+  property = function() {
     num <- stats::runif(1, min = 0, max = 10)
     testthat::expect_true(num >= 0 && num <= 10)
   }

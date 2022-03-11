@@ -6,16 +6,16 @@
 #' @template rows
 #'
 #' @examples
-#' data.table_(a = integer_()) |> show_example()
-#' data.table_(a = integer_(), b = character_(), rows = 5L) |> show_example()
+#' data.table_(a = integer_()) %>% show_example()
+#' data.table_(a = integer_(), b = character_(), rows = 5L) %>% show_example()
 #' @template generator
 #' @export
 data.table_ <- function(..., rows = c(1L, 10L)) {
   assert_all_modifiable_length(...)
 
-  tibble_(..., rows = rows) |>
-    as_hedgehog() |>
-    hedgehog::gen.with(data.table::as.data.table) |>
+  tibble_(..., rows = rows) %>%
+    as_hedgehog() %>%
+    hedgehog::gen.with(data.table::as.data.table) %>%
     from_hedgehog()
 }
 
@@ -27,15 +27,15 @@ data.table_ <- function(..., rows = c(1L, 10L)) {
 #' @template cols
 #'
 #' @examples
-#' data.table_of(logical_(), date_()) |> show_example()
-#' data.table_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
+#' data.table_of(logical_(), date_()) %>% show_example()
+#' data.table_of(any_atomic(), rows = 10L, cols = 5L) %>% show_example()
 #' @template generator
 #' @export
 data.table_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   assert_all_modifiable_length(...)
 
-  tibble_of(..., rows = rows, cols = cols) |>
-    as_hedgehog() |>
-    hedgehog::gen.with(data.table::as.data.table) |>
+  tibble_of(..., rows = rows, cols = cols) %>%
+    as_hedgehog() %>%
+    hedgehog::gen.with(data.table::as.data.table) %>%
     from_hedgehog()
 }

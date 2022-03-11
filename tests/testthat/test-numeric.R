@@ -22,14 +22,14 @@ test_suite_vector_generator(
 test_that("numeric_ doesn't generate NaNs", {
   for_all(
     a = numeric_(),
-    property = \(a) a |> is.nan() |> any() |> expect_false()
+    property = function(a) a %>% is.nan() %>% any() %>% expect_false()
   )
 })
 
 test_that("numeric_ doesn't generate Infs", {
   for_all(
     a = numeric_(),
-    property = \(a) a |> is.infinite() |> any() |> expect_false()
+    property = function(a) a %>% is.infinite() %>% any() %>% expect_false()
   )
 })
 
@@ -39,7 +39,7 @@ test_that("numeric_bounded generates bounded numerics", {
 
   for_all(
     a = numeric_bounded(left = left, right = right),
-    property = \(a) all(a >= left & a <= right) |> expect_true()
+    property = function(a) all(a >= left & a <= right) %>% expect_true()
   )
 })
 
@@ -48,7 +48,7 @@ test_that("numeric_left_bounded generates left bounded numerics", {
 
   for_all(
     a = numeric_left_bounded(left = left),
-    property = \(a) all(a >= left) |> expect_true()
+    property = function(a) all(a >= left) %>% expect_true()
   )
 })
 
@@ -57,20 +57,20 @@ test_that("numeric_right_bounded generates right bounded numerics", {
 
   for_all(
     a = numeric_right_bounded(right = right),
-    property = \(a) all(a <= right) |> expect_true()
+    property = function(a) all(a <= right) %>% expect_true()
   )
 })
 
 test_that("numeric_positive generates positive numerics", {
   for_all(
     a = numeric_positive(),
-    property = \(a) all(a > 0L) |> expect_true()
+    property = function(a) all(a > 0L) %>% expect_true()
   )
 })
 
 test_that("numeric_negative generates negative numerics", {
   for_all(
     a = numeric_negative(),
-    property = \(a) all(a < 0L) |> expect_true()
+    property = function(a) all(a < 0L) %>% expect_true()
   )
 })

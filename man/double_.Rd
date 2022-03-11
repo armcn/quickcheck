@@ -111,9 +111,9 @@ A \code{quickcheck_generator} object.
 A set of generators for double vectors.
 }
 \examples{
-double_() |> show_example()
-double_(big_dbl = TRUE) |> show_example()
-double_bounded(left = -5, right = 5) |> show_example()
-double_(len = 10L, any_na = TRUE) |> show_example()
-double_(len = 10L, any_nan = TRUE, any_inf = TRUE) |> show_example()
+double_() \%>\% show_example()
+double_(big_dbl = TRUE) \%>\% show_example()
+double_bounded(left = -5, right = 5) \%>\% show_example()
+double_(len = 10L, any_na = TRUE) \%>\% show_example()
+double_(len = 10L, any_nan = TRUE, any_inf = TRUE) \%>\% show_example()
 }

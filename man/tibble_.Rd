@@ -25,6 +25,6 @@ A \code{quickcheck_generator} object.
 Construct tibble generators in a similar way to \code{tibble::tibble}.
 }
 \examples{
-tibble_(a = integer_()) |> show_example()
-tibble_(a = integer_(), b = character_(), rows = 5L) |> show_example()
+tibble_(a = integer_()) \%>\% show_example()
+tibble_(a = integer_(), b = character_(), rows = 5L) \%>\% show_example()
 }

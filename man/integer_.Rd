@@ -50,8 +50,8 @@ A \code{quickcheck_generator} object.
 A set of generators for integer vectors.
 }
 \examples{
-integer_() |> show_example()
-integer_(big_int = TRUE) |> show_example()
-integer_bounded(left = -5L, right = 5L) |> show_example()
-integer_(len = 10L, any_na = TRUE) |> show_example()
+integer_() \%>\% show_example()
+integer_(big_int = TRUE) \%>\% show_example()
+integer_bounded(left = -5L, right = 5L) \%>\% show_example()
+integer_(len = 10L, any_na = TRUE) \%>\% show_example()
 }

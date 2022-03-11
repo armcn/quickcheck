@@ -5,7 +5,7 @@
 #'
 #' @examples
 #' repeat_test(
-#'   property = \() {
+#'   property = function() {
 #'     num <- stats::runif(1, min = 0, max = 10)
 #'     testthat::expect_true(num >= 0 && num <= 10)
 #'   }
@@ -16,7 +16,7 @@ repeat_test <- function(property,
                         tests = getOption("quickcheck.tests", 100L)) {
   for_all(
     a = constant(NULL),
-    property = \(a) property(),
+    property = function(a) property(),
     tests = tests
   )
 }

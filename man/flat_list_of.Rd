@@ -25,5 +25,5 @@ Generate flat lists with all values coming from a single generator. In a flat
 list all items will be scalars.
 }
 \examples{
-flat_list_of(integer_(), len = 10L) |> show_example()
+flat_list_of(integer_(), len = 10L) \%>\% show_example()
 }

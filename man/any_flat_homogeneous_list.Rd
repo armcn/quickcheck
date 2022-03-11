@@ -24,6 +24,6 @@ A \code{quickcheck_generator} object.
 Generate lists in which each element is an atomic scalar of the same class.
 }
 \examples{
-any_flat_homogeneous_list() |> show_example()
-any_flat_homogeneous_list(len = 10L, any_na = TRUE) |> show_example()
+any_flat_homogeneous_list() \%>\% show_example()
+any_flat_homogeneous_list(len = 10L, any_na = TRUE) \%>\% show_example()
 }

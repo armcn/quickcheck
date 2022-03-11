@@ -31,7 +31,7 @@ test_that("date_bounded generates bounded dates", {
 
   for_all(
     a = date_bounded(left = left, right = right),
-    property = \(a) all(a >= left & a <= right) |> expect_true()
+    property = function(a) all(a >= left & a <= right) %>% expect_true()
   )
 })
 
@@ -40,7 +40,7 @@ test_that("date_left_bounded generates left bounded dates", {
 
   for_all(
     a = date_left_bounded(left = left),
-    property = \(a) all(a >= left) |> expect_true()
+    property = function(a) all(a >= left) %>% expect_true()
   )
 })
 
@@ -49,6 +49,6 @@ test_that("date_right_bounded generates right bounded dates", {
 
   for_all(
     a = date_right_bounded(right = right),
-    property = \(a) all(a <= right) |> expect_true()
+    property = function(a) all(a <= right) %>% expect_true()
   )
 })

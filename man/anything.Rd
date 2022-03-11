@@ -21,5 +21,5 @@ tibbles, data.tables, and undefined values like \code{NA}, \code{NULL}, \code{In
 \code{NaN}.
 }
 \examples{
-anything() |> show_example()
+anything() \%>\% show_example()
 }

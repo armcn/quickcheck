@@ -25,6 +25,6 @@ Generate vectors of integer, double, character, logical, date, POSIXct, hms,
 or factors.
 }
 \examples{
-any_atomic() |> show_example()
-any_atomic(len = 10L, any_na = TRUE) |> show_example()
+any_atomic() \%>\% show_example()
+any_atomic(len = 10L, any_na = TRUE) \%>\% show_example()
 }

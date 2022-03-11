@@ -17,13 +17,13 @@ Convert a hedgehog generator to a quickcheck generator
 }
 \examples{
 is_even <-
-  \(a) a \%\% 2L == 0L
+  function(a) a \%\% 2L == 0L
 
 gen_powers_of_two <-
-  hedgehog::gen.element(1:10) |> hedgehog::gen.with(\(a) 2 ^ a)
+  hedgehog::gen.element(1:10) \%>\% hedgehog::gen.with(function(a) 2 ^ a)
 
 for_all(
   a = from_hedgehog(gen_powers_of_two),
-  property = \(a) is_even(a) |> testthat::expect_true()
+  property = function(a) is_even(a) \%>\% testthat::expect_true()
 )
 }

@@ -19,7 +19,7 @@ as_length_generator <- function(a) {
 }
 
 eval_functions <- function(...) {
-  purrr::map(list(...), \(f) f())
+  purrr::map(list(...), function(f) f())
 }
 
 equals <- function(a, b) {
@@ -91,8 +91,8 @@ is_homogeneous_list <- function(a) {
 
   else {
     is_homogeneous <-
-      purrr::map(a, class) |>
-        n_distinct() |>
+      purrr::map(a, class) %>%
+        n_distinct() %>%
         equals(1)
 
     is.list(a) && is_homogeneous
@@ -121,10 +121,10 @@ is_empty_list <- function(a) {
 
 is_dev_version <- function() {
   version_length <-
-    utils::packageDescription("quickcheck") |>
-      purrr::pluck("Version") |>
-      strsplit("\\.") |>
-      purrr::pluck(1L) |>
+    utils::packageDescription("quickcheck") %>%
+      purrr::pluck("Version") %>%
+      strsplit("\\.") %>%
+      purrr::pluck(1L) %>%
       length()
 
   version_length > 3L
@@ -135,13 +135,13 @@ tests <- function() {
 }
 
 nested_tests <- function() {
-  tests() |> sqrt() |> round()
+  tests() %>% sqrt() %>% round()
 }
 
 assert_modifiable_length <- function(generator) {
   has_modifiable_length <-
-    formals(generator) |>
-      names() |>
+    formals(generator) %>%
+      names() %>%
       purrr::has_element("len2")
 
   if (has_modifiable_length)
@@ -155,14 +155,14 @@ assert_modifiable_length <- function(generator) {
 }
 
 assert_all_modifiable_length <- function(...) {
-  list(...) |> purrr::map(assert_modifiable_length)
+  list(...) %>% purrr::map(assert_modifiable_length)
 }
 
 or <- function(...) {
   funs <-
     list(...)
 
-  \(a) {
+  function(a) {
     for (i in seq_along(funs))
       if (isTRUE(funs[[i]](a)))
         return(TRUE)

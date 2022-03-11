@@ -39,10 +39,10 @@ A \code{quickcheck_generator} object.
 A set of generators for hms vectors.
 }
 \examples{
-hms_() |> show_example()
+hms_() \%>\% show_example()
 hms_bounded(
   left = hms::as_hms("00:00:00"),
   right = hms::as_hms("12:00:00")
-) |> show_example()
-hms_(len = 10L, any_na = TRUE) |> show_example()
+) \%>\% show_example()
+hms_(len = 10L, any_na = TRUE) \%>\% show_example()
 }

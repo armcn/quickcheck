@@ -24,6 +24,6 @@ A \code{quickcheck_generator} object.
 A generator for logical vectors.
 }
 \examples{
-logical_() |> show_example()
-logical_(len = 10L, any_na = TRUE) |> show_example()
+logical_() \%>\% show_example()
+logical_(len = 10L, any_na = TRUE) \%>\% show_example()
 }

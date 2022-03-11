@@ -16,5 +16,5 @@ An example output produced by the generator.
 Show an example output of a generator
 }
 \examples{
-logical_() |> show_example()
+logical_() \%>\% show_example()
 }

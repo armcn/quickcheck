@@ -52,8 +52,8 @@ A set of generators for numeric vectors. Numeric vectors can be either
 integer or double vectors.
 }
 \examples{
-numeric_() |> show_example()
-numeric_(big_num = TRUE) |> show_example()
-numeric_bounded(left = -5L, right = 5L) |> show_example()
-numeric_(len = 10L, any_na = TRUE) |> show_example()
+numeric_() \%>\% show_example()
+numeric_(big_num = TRUE) \%>\% show_example()
+numeric_bounded(left = -5L, right = 5L) \%>\% show_example()
+numeric_(len = 10L, any_na = TRUE) \%>\% show_example()
 }

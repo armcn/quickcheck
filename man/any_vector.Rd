@@ -24,6 +24,6 @@ A \code{quickcheck_generator} object.
 Generate atomic vectors or lists.
 }
 \examples{
-any_vector() |> show_example()
-any_vector(len = 10L, any_na = TRUE) |> show_example()
+any_vector() \%>\% show_example()
+any_vector(len = 10L, any_na = TRUE) \%>\% show_example()
 }

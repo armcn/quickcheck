@@ -6,15 +6,15 @@
 #' @template rows
 #'
 #' @examples
-#' tibble_(a = integer_()) |> show_example()
-#' tibble_(a = integer_(), b = character_(), rows = 5L) |> show_example()
+#' tibble_(a = integer_()) %>% show_example()
+#' tibble_(a = integer_(), b = character_(), rows = 5L) %>% show_example()
 #' @template generator
 #' @export
 tibble_ <- function(..., rows = c(1L, 10L)) {
   assert_all_modifiable_length(...)
 
-  qc_gen(\()
-    equal_length(..., len = rows)() |>
+  qc_gen(function()
+    equal_length(..., len = rows)() %>%
       hedgehog::gen.with(tibble::as_tibble)
   )
 }
@@ -27,28 +27,28 @@ tibble_ <- function(..., rows = c(1L, 10L)) {
 #' @template cols
 #'
 #' @examples
-#' tibble_of(logical_(), date_()) |> show_example()
-#' tibble_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
+#' tibble_of(logical_(), date_()) %>% show_example()
+#' tibble_of(any_atomic(), rows = 10L, cols = 5L) %>% show_example()
 #' @template generator
 #' @export
 tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   assert_all_modifiable_length(...)
 
   as_tibble <-
-    \(a)
+    function(a)
       suppressMessages(
         tibble::as_tibble(a, .name_repair = "unique")
       )
 
   expand_rows_and_cols <-
-    \(dims)
-      list(...) |>
-        expand_rows(dims$rows) |>
+    function(dims)
+      list(...) %>%
+        expand_rows(dims$rows) %>%
         expand_cols(dims$cols)
 
   generate_tibble <-
-    \(dims)
-      expand_rows_and_cols(dims) |>
+    function(dims)
+      expand_rows_and_cols(dims) %>%
         hedgehog::gen.with(as_tibble)
 
   row_generator <-
@@ -57,8 +57,8 @@ tibble_of <- function(..., rows = c(1L, 10L), cols = c(1L, 10L)) {
   col_generator <-
     as_length_generator(cols)
 
-  qc_gen(\()
-    list_(rows = row_generator, cols = col_generator)() |>
+  qc_gen(function()
+    list_(rows = row_generator, cols = col_generator)() %>%
       hedgehog::gen.and_then(generate_tibble)
   )
 }
@@ -69,10 +69,10 @@ expand_cols <- function(generators, cols) {
       cols
 
     else
-      seq(cols[1L], cols[2L]) |> sample_vec()
+      seq(cols[1L], cols[2L]) %>% sample_vec()
 
   sample_cols <-
-    \(a) generators[sample(1:length(generators), a, TRUE)]
+    function(a) generators[sample(1:length(generators), a, TRUE)]
 
   sample_cols(repeats)
 }
@@ -83,10 +83,10 @@ expand_rows <- function(generators, rows) {
       rows
 
     else
-      seq(rows[1L], rows[2L]) |> sample_vec()
+      seq(rows[1L], rows[2L]) %>% sample_vec()
 
   expand_vectors <-
-    \(a) purrr::map(generators, \(f) f(len2 = a))
+    function(a) purrr::map(generators, function(f) f(len2 = a))
 
   expand_vectors(repeats)
 }

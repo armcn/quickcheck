@@ -25,6 +25,6 @@ A \code{quickcheck_generator} object.
 Construct data.table generators in a similar way to \code{data.table::data.table}.
 }
 \examples{
-data.table_(a = integer_()) |> show_example()
-data.table_(a = integer_(), b = character_(), rows = 5L) |> show_example()
+data.table_(a = integer_()) \%>\% show_example()
+data.table_(a = integer_(), b = character_(), rows = 5L) \%>\% show_example()
 }

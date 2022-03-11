@@ -1,3 +1,9 @@
+# quickcheck 0.1.1
+
+## Internal changes
+
+- Now doesn't require R >= 4.1
+
 # quickcheck 0.1.0
 
 ## Major breaking changes

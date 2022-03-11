@@ -9,7 +9,7 @@
 #' @param any_undefined Whether undefined values should be allowed.
 #'
 #' @examples
-#' anything() |> show_example()
+#' anything() %>% show_example()
 #' @template generator
 #' @export
 anything <- function(any_empty = TRUE, any_undefined = TRUE) {
@@ -91,12 +91,12 @@ anything <- function(any_empty = TRUE, any_undefined = TRUE) {
 #' @template any_na
 #'
 #' @examples
-#' any_atomic() |> show_example()
-#' any_atomic(len = 10L, any_na = TRUE) |> show_example()
+#' any_atomic() %>% show_example()
+#' any_atomic(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 any_atomic <- function(len = c(1L, 10L), any_na = FALSE) {
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     one_of(
       integer_(len2, any_na),
       double_(len2, any_na),
@@ -118,8 +118,8 @@ any_atomic <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @template any_na
 #'
 #' @examples
-#' any_flat_list() |> show_example()
-#' any_flat_list(len = 10L, any_na = TRUE) |> show_example()
+#' any_flat_list() %>% show_example()
+#' any_flat_list(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 any_flat_list <- function(len = c(1L, 10L), any_na = FALSE) {
@@ -134,12 +134,12 @@ any_flat_list <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @template any_na
 #'
 #' @examples
-#' any_flat_homogeneous_list() |> show_example()
-#' any_flat_homogeneous_list(len = 10L, any_na = TRUE) |> show_example()
+#' any_flat_homogeneous_list() %>% show_example()
+#' any_flat_homogeneous_list(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 any_flat_homogeneous_list <- function(len = c(1L, 10L), any_na = FALSE) {
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     one_of(
       flat_list_of(integer_(any_na = any_na), len2),
       flat_list_of(double_(any_na = any_na), len2),
@@ -161,15 +161,15 @@ any_flat_homogeneous_list <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @template any_na
 #'
 #' @examples
-#' any_list() |> show_example()
-#' any_list(len = 10L, any_na = TRUE) |> show_example()
+#' any_list() %>% show_example()
+#' any_list(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 any_list <- function(len = c(1L, 10L), any_na = FALSE) {
   atomic <-
     any_atomic(c(1L, 10L), any_na)
 
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     one_of(
       any_flat_list(len2, any_na),
       any_flat_homogeneous_list(len2, any_na),
@@ -187,12 +187,12 @@ any_list <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @template any_na
 #'
 #' @examples
-#' any_vector() |> show_example()
-#' any_vector(len = 10L, any_na = TRUE) |> show_example()
+#' any_vector() %>% show_example()
+#' any_vector(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 any_vector <- function(len = c(1L, 10L), any_na = FALSE) {
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     one_of(
       any_atomic(len2, any_na),
       any_list(len2, any_na)
@@ -209,7 +209,7 @@ any_vector <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @template any_na
 #'
 #' @examples
-#' any_tibble(rows = 3L, cols = 3L) |> show_example()
+#' any_tibble(rows = 3L, cols = 3L) %>% show_example()
 #' @template generator
 #' @export
 any_tibble <- function(rows = c(1L, 10L),
@@ -231,7 +231,7 @@ any_tibble <- function(rows = c(1L, 10L),
 #' @template any_na
 #'
 #' @examples
-#' any_data_frame(rows = 3L, cols = 3L) |> show_example()
+#' any_data_frame(rows = 3L, cols = 3L) %>% show_example()
 #' @template generator
 #' @export
 any_data_frame <- function(rows = c(1L, 10L),
@@ -253,7 +253,7 @@ any_data_frame <- function(rows = c(1L, 10L),
 #' @template any_na
 #'
 #' @examples
-#' any_data.table(rows = 3L, cols = 3L) |> show_example()
+#' any_data.table(rows = 3L, cols = 3L) %>% show_example()
 #' @template generator
 #' @export
 any_data.table <- function(rows = c(1L, 10L),
@@ -273,7 +273,7 @@ any_data.table <- function(rows = c(1L, 10L),
 #' `Inf`, and `NaN`. Values generated are always scalars.
 #'
 #' @examples
-#' any_undefined() |> show_example()
+#' any_undefined() %>% show_example()
 #' @template generator
 #' @export
 any_undefined <- function() {

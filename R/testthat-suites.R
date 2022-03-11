@@ -73,7 +73,7 @@ test_generator_predicate <- function(generator, .p) {
     {
       for_all(
         a = generator(),
-        property = \(a) .p(a) |> testthat::expect_true()
+        property = function(a) .p(a) %>% testthat::expect_true()
       )
     }
   )
@@ -88,8 +88,8 @@ test_generator_default_not_any_na <- function(generator) {
     {
       for_all(
         a = generator(),
-        property = \(a) {
-          unlist(a) |> is.na() |> any() |> testthat::expect_false()
+        property = function(a) {
+          unlist(a) %>% is.na() %>% any() %>% testthat::expect_false()
         }
       )
     }
@@ -105,12 +105,12 @@ test_generator_empty_vectors <- function(generator, .p) {
     {
       for_all(
         a = generator(len = 0L),
-        property = \(a) .p(a) |> testthat::expect_true()
+        property = function(a) .p(a) %>% testthat::expect_true()
       )
 
       for_all(
         a = generator(len = 0L),
-        property = \(a) length(a) |> testthat::expect_equal(0L)
+        property = function(a) length(a) %>% testthat::expect_equal(0L)
       )
     }
   )
@@ -125,7 +125,7 @@ test_generator_default_vector_length <- function(generator) {
     {
       for_all(
         a = generator(),
-        property = \(a) {
+        property = function(a) {
           testthat::expect_true(length(a) >= 1L && length(a) <= 10L)
         }
       )
@@ -142,10 +142,10 @@ test_generator_vector_length <- function(generator) {
     {
       for_all(
         len = integer_bounded(0L, 10L, len = 1L),
-        property = \(len) {
+        property = function(len) {
           for_all(
             a = generator(len = len),
-            property = \(a) length(a) |> testthat::expect_equal(len),
+            property = function(a) length(a) %>% testthat::expect_equal(len),
             tests = nested_tests()
           )
         },
@@ -165,10 +165,10 @@ test_generator_vector_length_range <- function(generator) {
       for_all(
         min = integer_bounded(0L, 5L, len = 1L),
         max = integer_bounded(5L, 10L, len = 1L),
-        property = \(min, max) {
+        property = function(min, max) {
           for_all(
             a = generator(len = c(min, max)),
-            property = \(a) {
+            property = function(a) {
               testthat::expect_true(length(a) >= min && length(a) <= max)
             },
             tests = nested_tests()
@@ -189,8 +189,8 @@ test_generator_with_na <- function(generator, .p) {
     {
       for_all(
         a = generator(len = 100L, any_na = TRUE),
-        property = \(a) {
-          unlist(a) |> is.na() |> any() |> testthat::expect_true()
+        property = function(a) {
+          unlist(a) %>% is.na() %>% any() %>% testthat::expect_true()
         },
         tests = 10L
       )
@@ -209,8 +209,8 @@ test_generator_data_frame_wraps_vector <- function(generator, .p) {
         a = generator(
           col_a = any_vector(len = c(0L, 10L), any_na = TRUE)
         ),
-        property = \(a)
-          (is_vector(a$col_a) && .p(a)) |> testthat::expect_true()
+        property = function(a)
+          (is_vector(a$col_a) && .p(a)) %>% testthat::expect_true()
       )
     }
   )
@@ -225,8 +225,8 @@ test_generator_empty_data_frame <- function(generator, .p) {
     {
       for_all(
         a = generator(rows = 0L),
-        property = \(a)
-          (nrow(a) == 0L && .p(a)) |> testthat::expect_true()
+        property = function(a)
+          (nrow(a) == 0L && .p(a)) %>% testthat::expect_true()
       )
     }
   )
@@ -241,8 +241,8 @@ test_generator_default_rows <- function(generator, .p) {
     {
       for_all(
         a = generator(),
-        property = \(a)
-          (nrow(a) >= 1L && nrow(a) <= 10L) |> testthat::expect_true()
+        property = function(a)
+          (nrow(a) >= 1L && nrow(a) <= 10L) %>% testthat::expect_true()
       )
     }
   )
@@ -257,10 +257,10 @@ test_generator_specific_rows <- function(generator, .p) {
     {
       for_all(
         rows = integer_bounded(left = 0L, right = 5L, len = 1L),
-        property = \(rows)
+        property = function(rows)
           for_all(
             a = generator(rows = rows),
-            property = \(a) nrow(a) |> testthat::expect_identical(rows),
+            property = function(a) nrow(a) %>% testthat::expect_identical(rows),
             tests = nested_tests()
           ),
         tests = nested_tests()
@@ -279,11 +279,11 @@ test_generator_range_rows <- function(generator, .p) {
       for_all(
         min = integer_bounded(left = 0L, right = 5L, len = 1L),
         max = integer_bounded(left = 5L, right = 10L, len = 1L),
-        property = \(min, max)
+        property = function(min, max)
           for_all(
             a = generator(rows = c(min, max)),
-            property = \(a)
-              (nrow(a) >= min && nrow(a) <= max) |> testthat::expect_true(),
+            property = function(a)
+              (nrow(a) >= min && nrow(a) <= max) %>% testthat::expect_true(),
             tests = nested_tests()
           ),
         tests = nested_tests()
@@ -300,11 +300,11 @@ test_generator_non_modifiable_length <- function(generator) {
     ),
     {
       non_modifiable_length <-
-        any_vector() |> as_hedgehog() |> from_hedgehog()
+        any_vector() %>% as_hedgehog() %>% from_hedgehog()
 
       repeat_test(
-        property = \() {
-          generator(col_a = non_modifiable_length) |> testthat::expect_error()
+        property = function() {
+          generator(col_a = non_modifiable_length) %>% testthat::expect_error()
         }
       )
     }

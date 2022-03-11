@@ -11,11 +11,11 @@
 #' @template right
 #'
 #' @examples
-#' double_() |> show_example()
-#' double_(big_dbl = TRUE) |> show_example()
-#' double_bounded(left = -5, right = 5) |> show_example()
-#' double_(len = 10L, any_na = TRUE) |> show_example()
-#' double_(len = 10L, any_nan = TRUE, any_inf = TRUE) |> show_example()
+#' double_() %>% show_example()
+#' double_(big_dbl = TRUE) %>% show_example()
+#' double_bounded(left = -5, right = 5) %>% show_example()
+#' double_(len = 10L, any_na = TRUE) %>% show_example()
+#' double_(len = 10L, any_nan = TRUE, any_inf = TRUE) %>% show_example()
 #' @template generator
 #' @export
 double_ <- function(len = c(1L, 10L),
@@ -42,20 +42,20 @@ double_bounded <- function(left,
                            any_nan = FALSE,
                            any_inf = FALSE) {
   ensure_some_zeros <-
-    \(a)
+    function(a)
       if (overlaps_zero(left, right))
         hedgehog::gen.choice(a, 0, prob = c(0.9, 0.1))
 
       else
         a
 
-  qc_gen(\(len2 = len)
-    hedgehog::gen.unif(left, right) |>
-      ensure_some_zeros() |>
-      replace_some_with(NA_real_, any_na) |>
-      replace_some_with(NaN, any_nan) |>
-      replace_some_with(Inf, any_inf) |>
-      replace_some_with(-Inf, any_inf) |>
+  qc_gen(function(len2 = len)
+    hedgehog::gen.unif(left, right) %>%
+      ensure_some_zeros() %>%
+      replace_some_with(NA_real_, any_na) %>%
+      replace_some_with(NaN, any_nan) %>%
+      replace_some_with(Inf, any_inf) %>%
+      replace_some_with(-Inf, any_inf) %>%
       vectorize(len2)
   )
 }
@@ -138,20 +138,20 @@ double_fractional <- function(len = c(1L, 10L),
                               any_inf = FALSE,
                               big_dbl = FALSE) {
   keep_fractional <-
-    \(a) a[a %% 1L > 0.0001]
+    function(a) a[a %% 1L > 0.0001]
 
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     stats::runif(
       1e6,
       max_negative_double(big_dbl),
       max_positive_double(big_dbl)
-    ) |>
-      keep_fractional() |>
-      hedgehog::gen.element() |>
-      replace_some_with(NA_real_, any_na) |>
-      replace_some_with(NaN, any_nan) |>
-      replace_some_with(Inf, any_inf) |>
-      replace_some_with(-Inf, any_inf) |>
+    ) %>%
+      keep_fractional() %>%
+      hedgehog::gen.element() %>%
+      replace_some_with(NA_real_, any_na) %>%
+      replace_some_with(NaN, any_nan) %>%
+      replace_some_with(Inf, any_inf) %>%
+      replace_some_with(-Inf, any_inf) %>%
       vectorize(len2)
   )
 }
@@ -163,9 +163,9 @@ double_whole <- function(len = c(1L, 10L),
                          any_nan = FALSE,
                          any_inf = FALSE,
                          big_dbl = FALSE) {
-  qc_gen(\(len2 = len)
-    double_(len2, any_na, any_nan, any_inf, big_dbl) |>
-      as_hedgehog() |>
+  qc_gen(function(len2 = len)
+    double_(len2, any_na, any_nan, any_inf, big_dbl) %>%
+      as_hedgehog() %>%
       hedgehog::gen.with(round)
   )
 }

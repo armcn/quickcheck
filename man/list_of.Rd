@@ -24,5 +24,5 @@ A \code{quickcheck_generator} object.
 Generate lists with all values coming from a single generator.
 }
 \examples{
-list_of(integer_(), len = 10L) |> show_example()
+list_of(integer_(), len = 10L) \%>\% show_example()
 }

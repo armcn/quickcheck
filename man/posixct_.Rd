@@ -39,10 +39,10 @@ A \code{quickcheck_generator} object.
 A set of generators for POSIXct vectors.
 }
 \examples{
-posixct_() |> show_example()
+posixct_() \%>\% show_example()
 posixct_bounded(
   left = as.POSIXct("2020-01-01 00:00:00"),
   right = as.POSIXct("2021-01-01 00:00:00")
-) |> show_example()
-posixct_(len = 10L, any_na = TRUE) |> show_example()
+) \%>\% show_example()
+posixct_(len = 10L, any_na = TRUE) \%>\% show_example()
 }

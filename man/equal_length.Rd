@@ -24,6 +24,6 @@ A \code{quickcheck_generator} object.
 Generates equal length vectors contained in a list.
 }
 \examples{
-equal_length(integer_(), double_()) |> show_example()
-equal_length(a = logical_(), b = character_(), len = 5L) |> show_example()
+equal_length(integer_(), double_()) \%>\% show_example()
+equal_length(a = logical_(), b = character_(), len = 5L) \%>\% show_example()
 }

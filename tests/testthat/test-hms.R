@@ -31,7 +31,7 @@ test_that("hms_bounded generates bounded hms vectors", {
 
   for_all(
     a = hms_bounded(left = left, right = right),
-    property = \(a) all(a >= left & a <= right) |> expect_true()
+    property = function(a) all(a >= left & a <= right) %>% expect_true()
   )
 })
 
@@ -40,7 +40,7 @@ test_that("hms_left_bounded generates left bounded hms vectors", {
 
   for_all(
     a = hms_left_bounded(left = left),
-    property = \(a) all(a >= left) |> expect_true()
+    property = function(a) all(a >= left) %>% expect_true()
   )
 })
 
@@ -49,6 +49,6 @@ test_that("hms_right_bounded generates right bounded hms vectors", {
 
   for_all(
     a = hms_right_bounded(right = right),
-    property = \(a) all(a <= right) |> expect_true()
+    property = function(a) all(a <= right) %>% expect_true()
   )
 })

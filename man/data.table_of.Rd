@@ -35,6 +35,6 @@ A \code{quickcheck_generator} object.
 data.table generator with randomized columns
 }
 \examples{
-data.table_of(logical_(), date_()) |> show_example()
-data.table_of(any_atomic(), rows = 10L, cols = 5L) |> show_example()
+data.table_of(logical_(), date_()) \%>\% show_example()
+data.table_of(any_atomic(), rows = 10L, cols = 5L) \%>\% show_example()
 }

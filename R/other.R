@@ -4,19 +4,19 @@
 #'
 #' @examples
 #' is_even <-
-#'   \(a) a %% 2L == 0L
+#'   function(a) a %% 2L == 0L
 #'
 #' gen_powers_of_two <-
-#'   hedgehog::gen.element(1:10) |> hedgehog::gen.with(\(a) 2 ^ a)
+#'   hedgehog::gen.element(1:10) %>% hedgehog::gen.with(function(a) 2 ^ a)
 #'
 #' for_all(
 #'   a = from_hedgehog(gen_powers_of_two),
-#'   property = \(a) is_even(a) |> testthat::expect_true()
+#'   property = function(a) is_even(a) %>% testthat::expect_true()
 #' )
 #' @template generator
 #' @export
 from_hedgehog <- function(generator) {
-  qc_gen(\() generator)
+  qc_gen(function() generator)
 }
 
 #' Convert a quickcheck generator to a hedgehog generator
@@ -25,16 +25,16 @@ from_hedgehog <- function(generator) {
 #'
 #' @examples
 #' is_even <-
-#'   \(a) a %% 2L == 0L
+#'   function(a) a %% 2L == 0L
 
 #' gen_powers_of_two <-
-#'   integer_bounded(1L, 10L, len = 1L) |>
-#'     as_hedgehog() |>
-#'     hedgehog::gen.with(\(a) 2 ^ a)
+#'   integer_bounded(1L, 10L, len = 1L) %>%
+#'     as_hedgehog() %>%
+#'     hedgehog::gen.with(function(a) 2 ^ a)
 
 #' for_all(
 #'   a = from_hedgehog(gen_powers_of_two),
-#'   property = \(a) is_even(a) |> testthat::expect_true()
+#'   property = function(a) is_even(a) %>% testthat::expect_true()
 #' )
 #' @template generator
 #' @export
@@ -47,7 +47,7 @@ as_hedgehog <- function(generator) {
 #' @template param_generator
 #'
 #' @examples
-#' logical_() |> show_example()
+#' logical_() %>% show_example()
 #' @return An example output produced by the generator.
 #' @export
 show_example <- function(generator) {
@@ -63,6 +63,6 @@ print.quickcheck_generator <- function (x, ...) {
   cat("Example:\n")
   print(example$root)
   cat("Initial shrinks:\n")
-  purrr::walk(example$children(), \(a) print(a$root))
+  purrr::walk(example$children(), function(a) print(a$root))
 }
 

@@ -35,7 +35,7 @@ A \code{quickcheck_generator} object.
 A set of generators for character vectors.
 }
 \examples{
-character_() |> show_example()
-character_(len = 10L, any_na = TRUE) |> show_example()
-character_(len = 10L, any_empty = TRUE) |> show_example()
+character_() \%>\% show_example()
+character_(len = 10L, any_na = TRUE) \%>\% show_example()
+character_(len = 10L, any_empty = TRUE) \%>\% show_example()
 }

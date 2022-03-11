@@ -16,5 +16,5 @@ A \code{quickcheck_generator} object.
 Generate the same value every time
 }
 \examples{
-constant(NULL) |> show_example()
+constant(NULL) \%>\% show_example()
 }

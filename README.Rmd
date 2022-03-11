@@ -52,7 +52,7 @@ library(quickcheck)
 test_that("0 is the additive identity of +", {
   for_all(
     a = numeric_(len = 1),
-    property = \(a) expect_equal(a, a + 0)
+    property = function(a) expect_equal(a, a + 0)
   )          
 })
 
@@ -60,7 +60,7 @@ test_that("+ is commutative", {
   for_all(
     a = numeric_(len = 1),
     b = numeric_(len = 1),
-    property = \(a, b) expect_equal(a + b, b + a)
+    property = function(a, b) expect_equal(a + b, b + a)
   )          
 })
 
@@ -69,7 +69,7 @@ test_that("+ is associative", {
     a = numeric_(len = 1),
     b = numeric_(len = 1),
     c = numeric_(len = 1),
-    property = \(a, b, c) expect_equal(a + (b + c), (a + b) + c)
+    property = function(a, b, c) expect_equal(a + (b + c), (a + b) + c)
   )          
 })
 ```
@@ -83,8 +83,8 @@ library(dplyr, warn.conflicts = FALSE)
 test_that("distinct does nothing with a single row", {
   for_all(
     a = any_tibble(rows = 1L),
-    property = \(a) {
-      distinct(a) |> expect_equal(a)
+    property = function(a) {
+      distinct(a) %>% expect_equal(a)
     }
   )
 })
@@ -92,8 +92,8 @@ test_that("distinct does nothing with a single row", {
 test_that("distinct returns single row if rows are repeated", {
   for_all(
     a = any_tibble(rows = 1L),
-    property = \(a) {
-      bind_rows(a, a) |> distinct() |> expect_equal(a)
+    property = function(a) {
+      bind_rows(a, a) %>% distinct() %>% expect_equal(a)
     }
   )
 })
@@ -102,9 +102,9 @@ test_that("distinct does nothing if rows are unique", {
   for_all(
     a = tibble_of(integer_positive(), rows = 1L, cols = 1L),
     b = tibble_of(integer_negative(), rows = 1L, cols = 1L),
-    property = \(a, b) {
+    property = function(a, b) {
       unique_rows <- bind_rows(a, b)
-      distinct(unique_rows) |> expect_equal(unique_rows)
+      distinct(unique_rows) %>% expect_equal(unique_rows)
     }
   )
 })
@@ -117,24 +117,24 @@ Many generators are provided with `quickcheck`. Here are a few examples.
 ### Atomic vectors
 
 ```{r}
-integer_(len = 10) |> show_example()
-character_alphanumeric(len = 10) |> show_example()
-posixct_(len = 10, any_na = TRUE) |> show_example() 
+integer_(len = 10) %>% show_example()
+character_alphanumeric(len = 10) %>% show_example()
+posixct_(len = 10, any_na = TRUE) %>% show_example() 
 ```
 
 ### Lists
 
 ```{r}
-list_(a = constant(NULL), b = any_undefined()) |> show_example()
-flat_list_of(logical_(), len = 3) |> show_example()
+list_(a = constant(NULL), b = any_undefined()) %>% show_example()
+flat_list_of(logical_(), len = 3) %>% show_example()
 ```
 
 ### Tibbles
 
 ```{r}
-tibble_(a = date_(), b = hms_(), rows = 5) |> show_example()
-tibble_of(double_bounded(-10, 10), rows = 3, cols = 3) |> show_example()
-any_tibble(rows = 3, cols = 3) |> show_example()
+tibble_(a = date_(), b = hms_(), rows = 5) %>% show_example()
+tibble_of(double_bounded(-10, 10), rows = 3, cols = 3) %>% show_example()
+any_tibble(rows = 3, cols = 3) %>% show_example()
 ```
 
 ## Hedgehog generators
@@ -146,15 +146,15 @@ can be used by wrapping them in `from_hedgehog`.
 library(hedgehog)
 
 is_even <- 
-  \(a) a %% 2 == 0
+  function(a) a %% 2 == 0
 
 gen_powers_of_two <- 
-  gen.element(1:10) |> gen.with(\(a) 2 ^ a)
+  gen.element(1:10) %>% gen.with(function(a) 2 ^ a)
 
 test_that("is_even returns TRUE for powers of two", {
   for_all(
     a = from_hedgehog(gen_powers_of_two),
-    property = \(a) is_even(a) |> expect_true()
+    property = function(a) is_even(a) %>% expect_true()
   )
 })
 ```
@@ -167,7 +167,7 @@ test_that("powers of two and integers are both numeric values", {
   for_all(
     a = from_hedgehog(gen_powers_of_two),
     b = integer_(),
-    property = \(a, b) c(a, b) |> is.numeric() |> expect_true()
+    property = function(a, b) c(a, b) %>% is.numeric() %>% expect_true()
   )
 })
 ```
@@ -176,7 +176,7 @@ But this will cause an error:
 
 ```{r}
 test_that("composing hedgehog with quickcheck generators fails", {
-  tibble_of(from_hedgehog(gen_powers_of_two)) |> expect_error()
+  tibble_of(from_hedgehog(gen_powers_of_two)) %>% expect_error()
 })
 ```
 
@@ -185,15 +185,15 @@ then be used with other `hedgehog` functions.
 
 ```{r}
 gen_powers_of_two <- 
-  integer_bounded(1L, 10L, len = 1L) |> 
-    as_hedgehog() |> 
-    gen.with(\(a) 2 ^ a)
+  integer_bounded(1L, 10L, len = 1L) %>% 
+    as_hedgehog() %>% 
+    gen.with(function(a) 2 ^ a)
 
 
 test_that("is_even returns TRUE for powers of two", {
   for_all(
     a = from_hedgehog(gen_powers_of_two),
-    property = \(a) is_even(a) |> expect_true()
+    property = \(a) is_even(a) %>% expect_true()
   )
 })
 ```
@@ -209,7 +209,7 @@ to test that the `purrr::map` function won't fail with any vector as input.
 test_that("map won't fail with any vector as input", {
   for_all(
     a = any_vector(),
-    property = \(a) purrr::map(a, identity) |> expect_silent()
+    property = \(a) purrr::map(a, identity) %>% expect_silent()
   )
 })
 ```

@@ -15,5 +15,5 @@ Generate undefined values. In this case undefined values include \code{NA},
 \code{Inf}, and \code{NaN}. Values generated are always scalars.
 }
 \examples{
-any_undefined() |> show_example()
+any_undefined() \%>\% show_example()
 }

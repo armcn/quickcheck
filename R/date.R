@@ -8,12 +8,12 @@
 #' @template right
 #'
 #' @examples
-#' date_() |> show_example()
+#' date_() %>% show_example()
 #' date_bounded(
 #'   left = as.Date("2020-01-01"),
 #'   right = as.Date("2020-01-10")
-#' ) |> show_example()
-#' date_(len = 10L, any_na = TRUE) |> show_example()
+#' ) %>% show_example()
+#' date_(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 date_ <- function(len = c(1L, 10L), any_na = FALSE) {
@@ -23,11 +23,11 @@ date_ <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @rdname date_
 #' @export
 date_bounded <- function(left, right, len = c(1L, 10L), any_na = FALSE) {
-  qc_gen(\(len2 = len)
-    seq(left, right, by = "day") |>
-      hedgehog::gen.element() |>
-      replace_some_with(NA_real_, any_na) |>
-      hedgehog::gen.with(as.Date) |>
+  qc_gen(function(len2 = len)
+    seq(left, right, by = "day") %>%
+      hedgehog::gen.element() %>%
+      replace_some_with(NA_real_, any_na) %>%
+      hedgehog::gen.with(as.Date) %>%
       vectorize(len2)
   )
 }

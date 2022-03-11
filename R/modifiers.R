@@ -6,8 +6,8 @@
 #' @template len
 #'
 #' @examples
-#' equal_length(integer_(), double_()) |> show_example()
-#' equal_length(a = logical_(), b = character_(), len = 5L) |> show_example()
+#' equal_length(integer_(), double_()) %>% show_example()
+#' equal_length(a = logical_(), b = character_(), len = 5L) %>% show_example()
 #' @template generator
 #' @export
 equal_length <- function(..., len = c(1L, 10L)) {
@@ -17,9 +17,9 @@ equal_length <- function(..., len = c(1L, 10L)) {
     as_length_generator(len)
 
   generate_list <-
-    \(a) purrr::map(list(...), \(f) f(len2 = a))
+    function(a) purrr::map(list(...), function(f) f(len2 = a))
 
-  qc_gen(\()
+  qc_gen(function()
     hedgehog::gen.and_then(
       len_generator(),
       generate_list
@@ -42,7 +42,7 @@ vectorize <- function(generator, len = 1L) {
 }
 
 empty_vectors <- function(generator) {
-  hedgehog::gen.with(generator, \(a) a[0L])
+  hedgehog::gen.with(generator, function(a) a[0L])
 }
 
 fixed_length_vectors <- function(generator, len) {
@@ -54,13 +54,13 @@ variable_length_vectors <- function(generator, len) {
 }
 
 empty_or_variable_length_vectors <- function(generator, len) {
-  hedgehog::gen.c(generator, len[1L] + 1L, len[2L]) |>
+  hedgehog::gen.c(generator, len[1L] + 1L, len[2L]) %>%
     replace_frac_empty(frac = 0.25)
 }
 
 replace_frac_empty <- function(generator, frac) {
   replace_frac <-
-    \(a)
+    function(a)
       if (stats::runif(1L) <= frac)
         a[0L]
 
@@ -72,7 +72,7 @@ replace_frac_empty <- function(generator, frac) {
 
 replace_frac_with <- function(generator, replacement, frac) {
   replace_frac <-
-    \(a)
+    function(a)
       if (stats::runif(1L) <= frac)
         replacement
 

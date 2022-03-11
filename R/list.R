@@ -6,12 +6,12 @@
 #' @param ... A set of named or unnamed generators.
 #'
 #' @examples
-#' list_(integer_(), logical_()) |> show_example()
-#' list_(a = any_vector(), b = any_vector()) |> show_example()
+#' list_(integer_(), logical_()) %>% show_example()
+#' list_(a = any_vector(), b = any_vector()) %>% show_example()
 #' @template generator
 #' @export
 list_ <- function(...) {
-  qc_gen(\()
+  qc_gen(function()
     hedgehog::gen.with(
       eval_functions(...),
       as.list
@@ -27,11 +27,11 @@ list_ <- function(...) {
 #' @template len
 #'
 #' @examples
-#' list_of(integer_(), len = 10L) |> show_example()
+#' list_of(integer_(), len = 10L) %>% show_example()
 #' @template generator
 #' @export
 list_of <- function(generator, len = c(1L, 10L)) {
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     vectorize(list(generator()), len2)
   )
 }
@@ -45,11 +45,11 @@ list_of <- function(generator, len = c(1L, 10L)) {
 #' @template len
 #'
 #' @examples
-#' flat_list_of(integer_(), len = 10L) |> show_example()
+#' flat_list_of(integer_(), len = 10L) %>% show_example()
 #' @template generator
 #' @export
 flat_list_of <- function(generator, len = c(1L, 10L)) {
-  qc_gen(\(len2 = len)
+  qc_gen(function(len2 = len)
     vectorize(list(generator(len = 1L)), len2)
   )
 }

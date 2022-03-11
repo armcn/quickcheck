@@ -9,10 +9,10 @@
 #' @template right
 #'
 #' @examples
-#' integer_() |> show_example()
-#' integer_(big_int = TRUE) |> show_example()
-#' integer_bounded(left = -5L, right = 5L) |> show_example()
-#' integer_(len = 10L, any_na = TRUE) |> show_example()
+#' integer_() %>% show_example()
+#' integer_(big_int = TRUE) %>% show_example()
+#' integer_bounded(left = -5L, right = 5L) %>% show_example()
+#' integer_(len = 10L, any_na = TRUE) %>% show_example()
 #' @template generator
 #' @export
 integer_ <- function(len = c(1L, 10L),
@@ -33,17 +33,17 @@ integer_bounded <- function(left,
                             len = c(1L, 10L),
                             any_na = FALSE) {
   ensure_some_zeros <-
-    \(a)
+    function(a)
       if (overlaps_zero(left, right))
         hedgehog::gen.choice(a, 0L, prob = c(0.9, 0.1))
 
       else
         a
 
-  qc_gen(\(len2 = len)
-    hedgehog::gen.element(left:right) |>
-      ensure_some_zeros() |>
-      replace_some_with(NA_integer_, any_na) |>
+  qc_gen(function(len2 = len)
+    hedgehog::gen.element(left:right) %>%
+      ensure_some_zeros() %>%
+      replace_some_with(NA_integer_, any_na) %>%
       vectorize(len2)
   )
 }

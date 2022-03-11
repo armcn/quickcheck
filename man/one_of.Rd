@@ -19,6 +19,6 @@ A \code{quickcheck_generator} object.
 Randomly choose between generators
 }
 \examples{
-one_of(integer_(), character_()) |> show_example()
-one_of(constant(NULL), logical_(), prob = c(0.1, 0.9)) |> show_example()
+one_of(integer_(), character_()) \%>\% show_example()
+one_of(constant(NULL), logical_(), prob = c(0.1, 0.9)) \%>\% show_example()
 }
