@@ -41,7 +41,10 @@ integer_bounded <- function(left,
         a
 
   qc_gen(function(len2 = len)
-    hedgehog::gen.element(left:right) %>%
+    stats::runif(1e6, left, right) %>%
+      round() %>%
+      as.integer() %>%
+      hedgehog::gen.element() %>%
       ensure_some_zeros() %>%
       replace_some_with(NA_integer_, any_na) %>%
       vectorize(len2)
