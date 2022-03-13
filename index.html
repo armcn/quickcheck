@@ -115,18 +115,18 @@
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
     a <span class="op">=</span> <span class="fu"><a href="reference/numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
     property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span> <span class="op">+</span> <span class="fl">0</span><span class="op">)</span>
-  <span class="op">)</span>          
+  <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥇</span>
+<span class="co">#&gt; Test passed 🎉</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is commutative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
     a <span class="op">=</span> <span class="fu"><a href="reference/numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
     b <span class="op">=</span> <span class="fu"><a href="reference/numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
     property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span>, <span class="va">b</span> <span class="op">+</span> <span class="va">a</span><span class="op">)</span>
-  <span class="op">)</span>          
+  <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎉</span>
+<span class="co">#&gt; Test passed 😸</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"+ is associative"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -134,9 +134,9 @@
     b <span class="op">=</span> <span class="fu"><a href="reference/numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
     c <span class="op">=</span> <span class="fu"><a href="reference/numeric_.html">numeric_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">1</span><span class="op">)</span>,
     property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span>, <span class="va">c</span><span class="op">)</span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="op">(</span><span class="va">b</span> <span class="op">+</span> <span class="va">c</span><span class="op">)</span>, <span class="op">(</span><span class="va">a</span> <span class="op">+</span> <span class="va">b</span><span class="op">)</span> <span class="op">+</span> <span class="va">c</span><span class="op">)</span>
-  <span class="op">)</span>          
+  <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎉</span></code></pre></div>
+<span class="co">#&gt; Test passed 😀</span></code></pre></div>
 <p>Here we test the properties of the <a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link"><code>distinct</code></a> function from the <a href="https://dplyr.tidyverse.org/index.html" class="external-link"><code>dplyr</code></a> package.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -149,17 +149,19 @@
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥳</span>
+<span class="co">#&gt; Test passed 🎊</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct returns single row if rows are repeated"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
     a <span class="op">=</span> <span class="fu"><a href="reference/any_tibble.html">any_tibble</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span>,
     property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="op">{</span>
-      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>
+      <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">a</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+        <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+        <span class="fu"><a href="https://testthat.r-lib.org/reference/equality-expectations.html" class="external-link">expect_equal</a></span><span class="op">(</span><span class="va">a</span><span class="op">)</span>
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span>
+<span class="co">#&gt; Test passed 🎊</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"distinct does nothing if rows are unique"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -181,16 +183,16 @@
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;  [1]  3317 -3213  1951  3534 -2221  8636  -778  2284  1769     0</span>
+<span class="co">#&gt;  [1]  -833  5111 -8831 -3495 -1899  1051  9964  2473  9557 -2465</span>
 <span class="fu"><a href="reference/character_.html">character_alphanumeric</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt;  [1] "PSeVIH"   "rUQED2FL" "r6MnO"    "INonAjm"  "Cvprr8"   "4"       </span>
-<span class="co">#&gt;  [7] "m"        "JnXbuTLd" "Mm1aOQh"  "lOg5RaAn"</span>
-<span class="fu"><a href="reference/posixct_.html">posixct_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span> 
-<span class="co">#&gt;  [1] "1993-06-20 23:59:40 PDT" "1181-08-16 14:11:22 LMT"</span>
-<span class="co">#&gt;  [3] NA                        "1025-07-18 10:03:01 LMT"</span>
-<span class="co">#&gt;  [5] "0712-01-24 14:57:34 LMT" "2817-06-25 00:06:35 PDT"</span>
-<span class="co">#&gt;  [7] NA                        NA                       </span>
-<span class="co">#&gt;  [9] "0920-12-14 18:28:10 LMT" NA</span></code></pre></div>
+<span class="co">#&gt;  [1] "y5Ph"      "8"         "B8"        "3vOcYf"    "qr"        "o"        </span>
+<span class="co">#&gt;  [7] "5rW2nHdrA" "88"        "umU"       "vJpqr"</span>
+<span class="fu"><a href="reference/posixct_.html">posixct_</a></span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
+<span class="co">#&gt;  [1] "1652-02-25 11:34:40 LMT" "1683-08-15 05:26:47 LMT"</span>
+<span class="co">#&gt;  [3] "2339-08-19 19:19:07 PDT" "0244-05-09 12:26:30 LMT"</span>
+<span class="co">#&gt;  [5] "0756-11-24 03:23:10 LMT" "0660-04-16 21:21:08 LMT"</span>
+<span class="co">#&gt;  [7] "2993-05-14 04:45:47 PDT" NA                       </span>
+<span class="co">#&gt;  [9] "1301-04-09 00:40:00 LMT" NA</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="lists">Lists<a class="anchor" aria-label="anchor" href="#lists"></a>
@@ -204,13 +206,13 @@
 <span class="co">#&gt; [1] -Inf</span>
 <span class="fu"><a href="reference/flat_list_of.html">flat_list_of</a></span><span class="op">(</span><span class="fu"><a href="reference/logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, len <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; [[1]]</span>
-<span class="co">#&gt; [1] FALSE</span>
+<span class="co">#&gt; [1] TRUE</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[2]]</span>
-<span class="co">#&gt; [1] FALSE</span>
+<span class="co">#&gt; [1] TRUE</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; [[3]]</span>
-<span class="co">#&gt; [1] FALSE</span></code></pre></div>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="tibbles">Tibbles<a class="anchor" aria-label="anchor" href="#tibbles"></a>
@@ -220,25 +222,25 @@
 <span class="co">#&gt; # A tibble: 5 x 2</span>
 <span class="co">#&gt;   a          b              </span>
 <span class="co">#&gt;   &lt;date&gt;     &lt;time&gt;         </span>
-<span class="co">#&gt; 1 1543-04-19 09:24:42.580621</span>
-<span class="co">#&gt; 2 1241-03-04 09:32:46.837266</span>
-<span class="co">#&gt; 3 2816-05-10 12:10:20.618591</span>
-<span class="co">#&gt; 4 2720-10-09 23:02:45.891871</span>
-<span class="co">#&gt; 5 1793-02-01 19:17:16.096649</span>
+<span class="co">#&gt; 1 1271-08-16 22:32:16.108893</span>
+<span class="co">#&gt; 2 2788-05-31 20:37:31.119791</span>
+<span class="co">#&gt; 3 1246-05-10 09:14:29.411623</span>
+<span class="co">#&gt; 4 2434-06-08 16:01:39.498445</span>
+<span class="co">#&gt; 5 1074-10-19 04:07:18.552658</span>
 <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/double_.html">double_bounded</a></span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>, <span class="fl">10</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">3</span>, cols <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
-<span class="co">#&gt;    ...1  ...2   ...3</span>
-<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 -2.77 -2.86 -0.595</span>
-<span class="co">#&gt; 2  7.63  0     3.00 </span>
-<span class="co">#&gt; 3 -4.46  1.42 -0.434</span>
+<span class="co">#&gt;    ...1  ...2  ...3</span>
+<span class="co">#&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1  0     2.55  5.81</span>
+<span class="co">#&gt; 2  4.42  8.87 -5.43</span>
+<span class="co">#&gt; 3  9.45  7.02 -3.97</span>
 <span class="fu"><a href="reference/any_tibble.html">any_tibble</a></span><span class="op">(</span>rows <span class="op">=</span> <span class="fl">3</span>, cols <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="reference/show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 3 x 3</span>
-<span class="co">#&gt;   ...1       ...2      ...3     </span>
-<span class="co">#&gt;   &lt;list&gt;     &lt;fct&gt;     &lt;list&gt;   </span>
-<span class="co">#&gt; 1 &lt;dttm [5]&gt; xqf       &lt;chr [1]&gt;</span>
-<span class="co">#&gt; 2 &lt;lgl [6]&gt;  lq        &lt;fct [1]&gt;</span>
-<span class="co">#&gt; 3 &lt;lgl [6]&gt;  _`I#VLs|&gt; &lt;lgl [1]&gt;</span></code></pre></div>
+<span class="co">#&gt;   ...1             ...2       ...3      </span>
+<span class="co">#&gt;   &lt;list&gt;           &lt;list&gt;     &lt;date&gt;    </span>
+<span class="co">#&gt; 1 &lt;named list [2]&gt; &lt;time [2]&gt; 1628-11-24</span>
+<span class="co">#&gt; 2 &lt;named list [2]&gt; &lt;time [7]&gt; 2989-06-25</span>
+<span class="co">#&gt; 3 &lt;named list [2]&gt; &lt;fct [4]&gt;  2175-02-14</span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -248,11 +250,11 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://hedgehog.qa" class="external-link">hedgehog</a></span><span class="op">)</span>
 
-<span class="va">is_even</span> <span class="op">&lt;-</span> 
+<span class="va">is_even</span> <span class="op">&lt;-</span>
   <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="va">a</span> <span class="op"><a href="https://rdrr.io/r/base/Arithmetic.html" class="external-link">%%</a></span> <span class="fl">2</span> <span class="op">==</span> <span class="fl">0</span>
 
-<span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-element.html" class="external-link">gen.element</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">a</span><span class="op">)</span>
+<span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span>
+  <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-element.html" class="external-link">gen.element</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span><span class="op">^</span><span class="va">a</span><span class="op">)</span>
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"is_even returns TRUE for powers of two"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
@@ -267,31 +269,35 @@
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
     a <span class="op">=</span> <span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
     b <span class="op">=</span> <span class="fu"><a href="reference/integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>,
-    property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
+    property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="op">{</span>
+      <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+        <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">is.numeric</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+        <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
+    <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🥳</span></code></pre></div>
+<span class="co">#&gt; Test passed 🎉</span></code></pre></div>
 <p>But this will cause an error:</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"composing hedgehog with quickcheck generators fails"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/tibble_of.html">tibble_of</a></span><span class="op">(</span><span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_error.html" class="external-link">expect_error</a></span><span class="op">(</span><span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🌈</span></code></pre></div>
+<span class="co">#&gt; Test passed 🥇</span></code></pre></div>
 <p>A <code>quickcheck</code> generator can also be converted to a <code>hedgehog</code> generator which can then be used with other <code>hedgehog</code> functions.</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span> 
-  <span class="fu"><a href="reference/integer_.html">integer_bounded</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span>, len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> 
-    <span class="fu"><a href="reference/as_hedgehog.html">as_hedgehog</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> 
-    <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span> <span class="op">^</span> <span class="va">a</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">gen_powers_of_two</span> <span class="op">&lt;-</span>
+  <span class="fu"><a href="reference/integer_.html">integer_bounded</a></span><span class="op">(</span><span class="fl">1L</span>, <span class="fl">10L</span>, len <span class="op">=</span> <span class="fl">1L</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="reference/as_hedgehog.html">as_hedgehog</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span>
+  <span class="fu"><a href="https://rdrr.io/pkg/hedgehog/man/gen-monad.html" class="external-link">gen.with</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fl">2</span><span class="op">^</span><span class="va">a</span><span class="op">)</span>
 
 
 <span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"is_even returns TRUE for powers of two"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
     a <span class="op">=</span> <span class="fu"><a href="reference/from_hedgehog.html">from_hedgehog</a></span><span class="op">(</span><span class="va">gen_powers_of_two</span><span class="op">)</span>,
-    property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
+    property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">is_even</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 🎊</span></code></pre></div>
+<span class="co">#&gt; Test passed 😀</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="fuzz-tests">Fuzz tests<a class="anchor" aria-label="anchor" href="#fuzz-tests"></a>
@@ -301,7 +307,7 @@
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"map won't fail with any vector as input"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/for_all.html">for_all</a></span><span class="op">(</span>
     a <span class="op">=</span> <span class="fu"><a href="reference/any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>,
-    property <span class="op">=</span> \<span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">identity</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_silent.html" class="external-link">expect_silent</a></span><span class="op">(</span><span class="op">)</span>
+    property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span><span class="op">)</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="va">a</span>, <span class="va">identity</span><span class="op">)</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> <span class="fu"><a href="https://testthat.r-lib.org/reference/expect_silent.html" class="external-link">expect_silent</a></span><span class="op">(</span><span class="op">)</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
 <span class="co">#&gt; Test passed 🎉</span></code></pre></div>
@@ -313,13 +319,13 @@
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://testthat.r-lib.org/reference/test_that.html" class="external-link">test_that</a></span><span class="op">(</span><span class="st">"runif generates random numbers between a min and max value"</span>, <span class="op">{</span>
   <span class="fu"><a href="reference/repeat_test.html">repeat_test</a></span><span class="op">(</span>
-    property <span class="op">=</span> \<span class="op">(</span><span class="op">)</span> <span class="op">{</span>
+    property <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span>
       <span class="va">random_number</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">1</span>, min <span class="op">=</span> <span class="fl">0</span>, max <span class="op">=</span> <span class="fl">10</span><span class="op">)</span>
       <span class="fu"><a href="https://testthat.r-lib.org/reference/logical-expectations.html" class="external-link">expect_true</a></span><span class="op">(</span><span class="va">random_number</span> <span class="op">&gt;=</span> <span class="fl">0</span> <span class="op">&amp;&amp;</span> <span class="va">random_number</span> <span class="op">&lt;=</span> <span class="fl">10</span><span class="op">)</span>
     <span class="op">}</span>
   <span class="op">)</span>
 <span class="op">}</span><span class="op">)</span>
-<span class="co">#&gt; Test passed 😸</span></code></pre></div>
+<span class="co">#&gt; Test passed 🎉</span></code></pre></div>
 </div>
 </div>
 
