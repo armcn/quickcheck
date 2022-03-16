@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,32 +92,30 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">tibble_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 9 × 7</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1       ...2       ...3       ...4  ...5       ...6  ...7 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2839-09-27 2413-09-14 1200-11-18 TRUE  2719-10-16 TRUE  FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 1046-10-07 2810-03-26 2556-01-27 TRUE  1689-11-04 TRUE  TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 1551-07-10 2335-06-25 1812-09-28 FALSE 1258-11-15 FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 2720-06-19 2063-06-01 1884-07-07 FALSE 2246-02-20 FALSE FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 1773-06-11 1806-02-25 2586-05-02 TRUE  1587-10-23 TRUE  FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 1262-06-21 1820-06-05 2230-01-03 TRUE  1235-01-07 TRUE  FALSE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> 1763-10-30 2387-01-15 2252-10-30 TRUE  1517-08-29 FALSE TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">8</span> 1000-10-20 1508-05-15 1092-10-07 FALSE 1043-07-08 FALSE TRUE </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">9</span> 2834-03-23 2565-01-17 2212-11-07 TRUE  1868-04-30 TRUE  FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 7 × 2</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1       ...2 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> 2180-05-13 TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span> 2939-05-26 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span> 2010-10-24 TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">4</span> 1764-11-08 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">5</span> 2867-08-11 TRUE </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">6</span> 2130-02-12 FALSE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">7</span> 1367-03-29 TRUE </span>
 <span class="r-in"><span class="fu">tibble_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 10 × 5</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1            ...2         ...3  ...4 ...5      </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;time&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>    </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> 10<span style="color: #949494;">:</span>57<span style="color: #949494;">:</span>59.114920 TRUE   931<span style="text-decoration: underline;">207</span>399.  <span style="text-decoration: underline;">7</span>928 1564-01-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> 19<span style="color: #949494;">:</span>50<span style="color: #949494;">:</span>57.523825 TRUE  -<span style="color: #BB0000;">154</span><span style="color: #BB0000; text-decoration: underline;">801</span><span style="color: #BB0000;">267.</span>  <span style="text-decoration: underline;">3</span>807 2119-11-27</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> 08<span style="color: #949494;">:</span>42<span style="color: #949494;">:</span>49.479204 TRUE   276<span style="text-decoration: underline;">299</span>677. -<span style="color: #BB0000; text-decoration: underline;">2</span><span style="color: #BB0000;">194</span> 2879-05-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> 21<span style="color: #949494;">:</span>45<span style="color: #949494;">:</span>30.447733 FALSE  479<span style="text-decoration: underline;">886</span>596.   658 1265-04-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> 23<span style="color: #949494;">:</span>02<span style="color: #949494;">:</span>58.607829 TRUE   520<span style="text-decoration: underline;">723</span>031. -<span style="color: #BB0000; text-decoration: underline;">8</span><span style="color: #BB0000;">251</span> 1287-08-30</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> 06<span style="color: #949494;">:</span>39<span style="color: #949494;">:</span>21.169224 TRUE  -<span style="color: #BB0000;">804</span><span style="color: #BB0000; text-decoration: underline;">049</span><span style="color: #BB0000;">009.</span>  <span style="text-decoration: underline;">1</span>692 1745-02-12</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> 16<span style="color: #949494;">:</span>11<span style="color: #949494;">:</span>26.962589 FALSE  203<span style="text-decoration: underline;">941</span>629. -<span style="color: #BB0000; text-decoration: underline;">2</span><span style="color: #BB0000;">399</span> 2477-09-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> 14<span style="color: #949494;">:</span>44<span style="color: #949494;">:</span>36.140362 FALSE  614<span style="text-decoration: underline;">050</span>136.  <span style="text-decoration: underline;">3</span>025 2284-10-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> 11<span style="color: #949494;">:</span>05<span style="color: #949494;">:</span>45.671745 TRUE   -<span style="color: #BB0000;">31</span><span style="color: #BB0000; text-decoration: underline;">758</span><span style="color: #BB0000;">024.</span> -<span style="color: #BB0000; text-decoration: underline;">1</span><span style="color: #BB0000;">375</span> 2511-03-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> 10<span style="color: #949494;">:</span>20<span style="color: #949494;">:</span>30.016156 FALSE -<span style="color: #BB0000;">190</span><span style="color: #BB0000; text-decoration: underline;">322</span><span style="color: #BB0000;">214.</span>   500 1074-01-22</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1  ...2      ...3        ...4       ...5      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;fct&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>    </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> FALSE 9*GMZ979S <span style="color: #949494;">"</span>tLI,80UC<span style="color: #949494;">"</span>  1668-08-11 1231-01-29</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> TRUE  U         <span style="color: #949494;">"</span>!pFo5<span style="color: #949494;">"</span>     2877-03-03 2761-02-11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> TRUE  cdJ85!    <span style="color: #949494;">"</span>8_C'7e&amp;X<span style="color: #949494;">"</span>  1824-02-05 1177-02-07</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> FALSE G!Csl#?.  <span style="color: #949494;">"</span>t3?.<span style="color: #949494;">"</span>      1713-02-01 1187-03-24</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> FALSE R,        <span style="color: #949494;">"</span>&lt;*<span style="color: #949494;">"</span>        1417-03-06 1243-07-19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> FALSE N6$@,     <span style="color: #949494;">"</span>Vm+EN}\\<span style="color: #949494;">"</span>  1105-09-27 2391-04-03</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> TRUE  h~QFvH!T  <span style="color: #949494;">"</span>=<span style="color: #949494;">"</span>         2398-11-09 1904-06-20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> FALSE #Rs=Sl    <span style="color: #949494;">"</span>\\&amp;cs_F&gt;]<span style="color: #949494;">"</span> 1835-06-24 1821-05-20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> TRUE  LWP-      <span style="color: #949494;">"</span>Td{?'P<span style="color: #949494;">"</span>    2458-04-14 1103-11-11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> TRUE  k%G=8jU   <span style="color: #949494;">"</span>!*o]Q<span style="color: #949494;">"</span>     1268-09-30 2161-11-30</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

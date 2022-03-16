@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,27 +92,21 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    ...1  ...2       ...3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1  TRUE  TRUE 2789-12-02</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 FALSE  TRUE 2211-03-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3  TRUE  TRUE 2919-03-29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  TRUE FALSE 2869-12-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5  TRUE  TRUE 1801-05-01</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 FALSE  TRUE 1047-12-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  TRUE FALSE 2450-01-06</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8  TRUE FALSE 2263-06-20</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ...1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 TRUE</span>
 <span class="r-in"><span class="fu">data_frame_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2  ...3      ...4       ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   652995644 1324-08-26 FALSE 'aKD3DMQP 2603-05-20</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2  -500454441 1873-05-12 FALSE    |3fBso 1713-01-04</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3   -97389247 1342-08-01 FALSE   osF.eTE 2788-05-15</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -920301089 1360-02-05 FALSE       42D 2999-07-13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   743936292 2067-04-20 FALSE    E@eZv' 2152-02-05</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6    72257050 1568-05-05 FALSE P:wvZUqpR 2764-12-09</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 7  -255893198 1537-08-01 FALSE  )~kfDu]( 1008-01-16</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 8           0 2084-06-30 FALSE   bJK!YlG 1648-11-07</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 9  -335131000 1946-04-27  TRUE   Z_38.!? 2035-11-25</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10 -479216726 2416-07-02 FALSE        8k 1260-03-10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1  ...2      ...3                ...4            ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   891946155  2781       B!P  460-09-08 01:04:21 15:34:20.855187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   297477548  5051      ^^3W  505-06-13 18:36:30 16:23:02.282534</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    30077937  9637 T^S[z2e&gt;q 1133-01-15 06:47:37 16:32:30.343005</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  -113909787     0  k.kX-m&gt;W 1889-08-17 12:01:22 16:45:53.057946</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   865563010 -7757    &amp;ro6'y   78-06-13 13:10:56 00:08:04.943135</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   794088516  3372    x\\|,l 1050-12-23 09:54:35 18:35:24.639702</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7           0     0      D8CZ 2424-08-02 14:55:12 02:30:58.820829</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8           0 -9731      1i1;  669-06-25 19:23:14 06:30:33.354177</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   682177116 -5933   KQH8ism  521-11-17 22:04:01 19:54:17.140006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 -430039204 -9614      mp:~  871-10-14 01:00:36 10:19:13.396558</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
