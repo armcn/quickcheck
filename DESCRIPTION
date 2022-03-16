@@ -1,6 +1,6 @@
 Package: quickcheck
 Title: Property Based Testing
-Version: 0.1.1.9000
+Version: 0.1.2
 Authors@R: 
     person(given = "Andrew",
            family = "McNeil",

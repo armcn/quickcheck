@@ -1,3 +1,9 @@
+# quickcheck 0.1.2
+
+## Bug fixes
+
+- Fixed bug with date generator when any_na = TRUE 
+
 # quickcheck 0.1.1
 
 ## Internal changes
