@@ -130,10 +130,6 @@ is_dev_version <- function() {
   version_length > 3L
 }
 
-as_date <- function(a) {
-  as.Date(a, origin = "1970-01-01")
-}
-
 tests <- function() {
   getOption("quickcheck.tests", 100L)
 }

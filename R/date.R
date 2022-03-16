@@ -23,6 +23,9 @@ date_ <- function(len = c(1L, 10L), any_na = FALSE) {
 #' @rdname date_
 #' @export
 date_bounded <- function(left, right, len = c(1L, 10L), any_na = FALSE) {
+  as_date <-
+    purrr::partial(as.Date, origin = "1970-01-01")
+
   qc_gen(function(len2 = len)
     seq(left, right, by = "day") %>%
       hedgehog::gen.element() %>%
