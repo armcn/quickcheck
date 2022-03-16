@@ -27,7 +27,7 @@ date_bounded <- function(left, right, len = c(1L, 10L), any_na = FALSE) {
     seq(left, right, by = "day") %>%
       hedgehog::gen.element() %>%
       replace_some_with(NA_real_, any_na) %>%
-      hedgehog::gen.with(as.Date) %>%
+      hedgehog::gen.with(as_date) %>%
       vectorize(len2)
   )
 }
