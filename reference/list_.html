@@ -77,61 +77,28 @@ input generators.</p>
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">list_</span><span class="op">(</span><span class="fu"><a href="integer_.html">integer_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]  4097     0 -8540  6237  7637 -7900 -6510  2087  1995 -3512</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1]  3960 -1237 -8166 -1111  5790 -8910</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] FALSE  TRUE  TRUE</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span class="fu">list_</span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="any_vector.html">any_vector</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[1]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2897-07-11" "2283-05-26" "2454-11-02" "1284-10-31"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[1]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1530-09-11" "1325-09-23" "2826-09-19" "1334-09-17" "1527-10-22"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [6] "1343-05-01" "1056-09-04"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -485889622</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[2]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 08:47:07.480410</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 15:22:47.029905</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 19:24:49.939528</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[2]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "4Su#O"    "E1Nk"     "#ms"      "v-{){fPf" "=zt$"     "rn{j\"U7" "S(P"     </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -473205299</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a[[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[3]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "1823-07-30 18:48:21 UTC" "865-01-18 05:38:39 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[3]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:22:38.548341</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:36:30.947438</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 09:59:22.702273</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 20:02:00.473107</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 05:32:04.887140</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 23:20:14.250515</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 02:37:51.011006</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 21:03:18.430262</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[4]]$a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] Xz$d4?r cW[xo  </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Levels: Xz$d4?r cW[xo</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> $a[[4]]$b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1]   607 -7108 -9383 -6229  9073  4509  7653     0  -553 -7377</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 221923064</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 16:42:02.471461</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 18:18:43.017219</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 14:38:11.376051</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13:47:16.994597</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14:05:13.826846</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23:13:17.728164</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 04:19:00.411478</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
