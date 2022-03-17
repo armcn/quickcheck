@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,19 +93,23 @@ numbers, inclusive.</p></dd>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">posixct_</span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2725-04-29 17:47:47 UTC" "1316-08-19 22:21:27 UTC"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "917-03-03 23:15:51 UTC"  "1576-08-08 06:31:47 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2554-08-17 09:31:38 UTC" "889-06-08 11:17:14 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "1030-09-04 21:34:14 UTC" "841-10-05 08:11:34 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "1072-11-10 06:18:49 UTC" "2461-01-06 12:23:00 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [7] "1400-05-19 08:32:58 UTC" "2993-07-22 13:04:10 UTC"</span>
 <span class="r-in"><span class="fu">posixct_bounded</span><span class="op">(</span></span>
 <span class="r-in">  left <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2020-01-01 00:00:00"</span><span class="op">)</span>,</span>
 <span class="r-in">  right <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span><span class="st">"2021-01-01 00:00:00"</span><span class="op">)</span></span>
 <span class="r-in"><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-08-02 12:26:55 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2020-06-23 05:27:20 UTC" "2020-01-27 07:40:56 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "2020-08-09 17:43:06 UTC" "2020-12-23 02:04:58 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "2020-11-12 20:58:05 UTC" "2020-11-14 07:22:28 UTC"</span>
 <span class="r-in"><span class="fu">posixct_</span><span class="op">(</span>len <span class="op">=</span> <span class="fl">10L</span>, any_na <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "1899-11-17 12:35:06 UTC" "976-03-10 02:03:12 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] "2817-04-24 19:37:33 UTC" "118-01-18 00:50:22 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "870-10-07 06:42:10 UTC"  "662-10-07 11:42:04 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] NA                        "837-06-06 01:36:47 UTC" </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] "2498-04-13 17:54:53 UTC" "1552-05-11 22:37:14 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [1] "937-08-25 00:01:52 UTC"  "2474-04-12 08:55:35 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [3] NA                        "1810-11-11 15:10:27 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [5] "1328-07-05 06:18:37 UTC" "978-04-22 03:22:13 UTC" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [7] "915-10-22 05:33:20 UTC"  "2445-09-03 15:09:01 UTC"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [9] NA                        "79-06-17 18:23:44 UTC"  </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

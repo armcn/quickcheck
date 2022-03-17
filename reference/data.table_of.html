@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">quickcheck</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2.9000</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,24 +92,24 @@ set <code>cols = 0L</code> or a range like <code>cols = c(0L, 10L)</code>.</p></
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="logical_.html">logical_</a></span><span class="op">(</span><span class="op">)</span>, <span class="fu"><a href="date_.html">date_</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     ...1  ...2       ...3</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1: FALSE  TRUE 2154-07-11</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2:  TRUE  TRUE 2148-03-26</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3: FALSE FALSE 2907-02-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4:  TRUE  TRUE 1826-03-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5:  TRUE  TRUE 2011-04-04</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>          ...1       ...2  ...3  ...4  ...5       ...6       ...7       ...8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1: 1321-09-15 1348-03-29  TRUE  TRUE  TRUE 2435-04-07 2075-06-27 1763-05-17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2: 1577-05-10 1808-01-13  TRUE FALSE FALSE 1479-04-12 1787-08-03 1374-08-10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3: 1076-08-17 2244-03-13  TRUE FALSE FALSE 2800-12-30 2930-04-24 1092-06-12</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4: 2809-12-31 1463-09-22  TRUE  TRUE  TRUE 1056-08-21 2449-03-25 2435-05-09</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5: 2101-11-14 2474-07-16 FALSE  TRUE FALSE 1926-10-29 2030-12-11 2972-11-16</span>
 <span class="r-in"><span class="fu">data.table_of</span><span class="op">(</span><span class="fu"><a href="any_atomic.html">any_atomic</a></span><span class="op">(</span><span class="op">)</span>, rows <span class="op">=</span> <span class="fl">10L</span>, cols <span class="op">=</span> <span class="fl">5L</span><span class="op">)</span> <span class="op"><a href="pipe.html">%&gt;%</a></span> <span class="fu"><a href="show_example.html">show_example</a></span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                    ...1       ...2  ...3       ...4      ...5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  1: 2243-08-20 15:32:43 88}1G\\0Dy FALSE  -71866653        r&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  2: 2841-03-24 13:21:14         |T  TRUE -139983712        j#</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  3: 1946-06-28 18:28:02  nqtG_'eRW FALSE -695351780       LhH</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  4: 1096-09-25 06:36:43   0G/-2);x FALSE -100435110     nJ*e:</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  5: 2019-07-13 13:31:47     qm&gt;LF^ FALSE  -62402882  1 |n0l=A</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  6: 2991-07-07 02:53:58        2N$ FALSE -883727746 u4qM]'t;t</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  7: 2213-07-29 08:14:19        *8Q FALSE  215261880         k</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  8: 2335-12-26 00:54:04          q FALSE  774636849    qp\\!.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  9: 1835-05-31 16:08:37   8[)tdwyF FALSE -549741237 Ni&lt;'oX^{C</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 10:   63-04-30 09:48:32        Yue  TRUE -703500341    .%y&lt;6[</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      ...1                ...2       ...3            ...4      ...5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  1: -3481  891-03-26 03:32:41  439787389 23:31:19.010951       XTc</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  2:  7164 2581-10-24 14:45:01 -663899137 04:46:46.455316 'RNI,vzhg</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  3: -8010 2920-02-18 00:29:09          0 21:29:19.684432     )`3[,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  4: -8632 2994-04-18 17:34:02 -679672316 10:41:34.812118    sYRzVE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  5:     0 2624-01-23 16:39:38  265832045 22:08:37.910751   cvfQwbB</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  6:     0  324-05-19 15:06:02  960727292 11:21:30.219761         Q</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  7:     0  352-04-02 10:36:11 -637565127 04:31:06.530517 ]m|W,N9\\</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  8:  3932 2134-11-03 07:16:13 -880358712 16:30:23.159711   R5ou&lt;~,</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  9: -5970   68-10-26 09:52:00 -808915892 19:57:57.436241   `BVM|OJ</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10:  2931  650-11-20 22:47:37  890672815 01:49:24.828240 R%=;P8`]q</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
