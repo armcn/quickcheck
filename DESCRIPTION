@@ -1,6 +1,6 @@
 Package: quickcheck
 Title: Property Based Testing
-Version: 0.1.2.9000
+Version: 0.1.3
 Authors@R: 
     person(given = "Andrew",
            family = "McNeil",
@@ -17,7 +17,7 @@ BugReports: https://github.com/armcn/quickcheck/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.2
 Imports: 
     testthat (>= 3.0.0),
     hedgehog,

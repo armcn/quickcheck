@@ -37,6 +37,7 @@ Test properties of a function
 for_all(
   a = numeric_(len = 1L),
   b = numeric_(len = 1L),
-  property = function(a, b) testthat::expect_equal(a + b, b + a)
+  property = function(a, b) testthat::expect_equal(a + b, b + a),
+  tests = 10L
 )
 }

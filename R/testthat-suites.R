@@ -46,11 +46,11 @@ test_suite_data_frame_of_generator <- function(generator, .p) {
   single_col_generator <-
     purrr::partial(
       generator,
-      generator = any_vector(),
+      any_vector(),
       cols = 1L
     )
 
-  test_generator_data_frame_wraps_vector(single_col_generator, .p)
+  test_generator_data_frame_of_wraps_vector(single_col_generator, .p)
   test_generator_default_rows(single_col_generator, .p)
   test_generator_specific_rows(single_col_generator, .p)
   test_generator_range_rows(single_col_generator, .p)
@@ -211,6 +211,22 @@ test_generator_data_frame_wraps_vector <- function(generator, .p) {
         ),
         property = function(a)
           (is_vector(a$col_a) && .p(a)) %>% testthat::expect_true()
+      )
+    }
+  )
+}
+
+test_generator_data_frame_of_wraps_vector <- function(generator, .p) {
+  testthat::test_that(
+    paste0(
+      deparse(substitute(generator)),
+      " wraps a vector in a data frame subclass"
+    ),
+    {
+      for_all(
+        a = generator(),
+        property = function(a)
+          (is_vector(a[[1L]]) && .p(a)) %>% testthat::expect_true()
       )
     }
   )

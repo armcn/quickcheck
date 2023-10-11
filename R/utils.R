@@ -63,7 +63,7 @@ is_undefined <- function(a) {
 }
 
 is_vector <- function(a) {
-  is.atomic(a) || is.list(a)
+  Negate(is.null)(a) && (is.atomic(a) || is.list(a))
 }
 
 is_empty_character <- function(a) {

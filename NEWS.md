@@ -1,3 +1,9 @@
+# quickcheck 0.1.3
+
+## Internal changes
+
+- Prevented future failing test with R 4.4.0 because of `is.atomic` change.
+
 # quickcheck 0.1.2
 
 ## Bug fixes
