@@ -135,7 +135,7 @@ tests <- function() {
 }
 
 nested_tests <- function() {
-  tests() %>% sqrt() %>% round()
+  tests() %>% sqrt(x = .) %>% round()
 }
 
 assert_modifiable_length <- function(generator) {
