@@ -1,135 +1,47 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_atomic.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_data.table.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_data_frame.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_flat_homogeneous_list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_flat_list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_list.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_tibble.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_undefined.html</loc>
-  </url>
-  <url>
-    <loc>/reference/any_vector.html</loc>
-  </url>
-  <url>
-    <loc>/reference/anything.html</loc>
-  </url>
-  <url>
-    <loc>/reference/as_hedgehog.html</loc>
-  </url>
-  <url>
-    <loc>/reference/character_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/constant.html</loc>
-  </url>
-  <url>
-    <loc>/reference/data.table_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/data.table_of.html</loc>
-  </url>
-  <url>
-    <loc>/reference/data_frame_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/data_frame_of.html</loc>
-  </url>
-  <url>
-    <loc>/reference/date_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/double_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/equal_length.html</loc>
-  </url>
-  <url>
-    <loc>/reference/factor_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/flat_list_of.html</loc>
-  </url>
-  <url>
-    <loc>/reference/for_all.html</loc>
-  </url>
-  <url>
-    <loc>/reference/from_hedgehog.html</loc>
-  </url>
-  <url>
-    <loc>/reference/hms_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/integer_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/list_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/list_of.html</loc>
-  </url>
-  <url>
-    <loc>/reference/logical_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/numeric_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/one_of.html</loc>
-  </url>
-  <url>
-    <loc>/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>/reference/posixct_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/repeat_test.html</loc>
-  </url>
-  <url>
-    <loc>/reference/show_example.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tibble_.html</loc>
-  </url>
-  <url>
-    <loc>/reference/tibble_of.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/news/index.html</loc></url>
+<url><loc>/reference/any_atomic.html</loc></url>
+<url><loc>/reference/any_data.table.html</loc></url>
+<url><loc>/reference/any_data_frame.html</loc></url>
+<url><loc>/reference/any_flat_homogeneous_list.html</loc></url>
+<url><loc>/reference/any_flat_list.html</loc></url>
+<url><loc>/reference/any_list.html</loc></url>
+<url><loc>/reference/any_tibble.html</loc></url>
+<url><loc>/reference/any_undefined.html</loc></url>
+<url><loc>/reference/any_vector.html</loc></url>
+<url><loc>/reference/anything.html</loc></url>
+<url><loc>/reference/as_hedgehog.html</loc></url>
+<url><loc>/reference/character_.html</loc></url>
+<url><loc>/reference/constant.html</loc></url>
+<url><loc>/reference/data.table_.html</loc></url>
+<url><loc>/reference/data.table_of.html</loc></url>
+<url><loc>/reference/data_frame_.html</loc></url>
+<url><loc>/reference/data_frame_of.html</loc></url>
+<url><loc>/reference/date_.html</loc></url>
+<url><loc>/reference/double_.html</loc></url>
+<url><loc>/reference/equal_length.html</loc></url>
+<url><loc>/reference/factor_.html</loc></url>
+<url><loc>/reference/flat_list_of.html</loc></url>
+<url><loc>/reference/for_all.html</loc></url>
+<url><loc>/reference/from_hedgehog.html</loc></url>
+<url><loc>/reference/hms_.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/integer_.html</loc></url>
+<url><loc>/reference/list_.html</loc></url>
+<url><loc>/reference/list_of.html</loc></url>
+<url><loc>/reference/logical_.html</loc></url>
+<url><loc>/reference/numeric_.html</loc></url>
+<url><loc>/reference/one_of.html</loc></url>
+<url><loc>/reference/pipe.html</loc></url>
+<url><loc>/reference/posixct_.html</loc></url>
+<url><loc>/reference/repeat_test.html</loc></url>
+<url><loc>/reference/show_example.html</loc></url>
+<url><loc>/reference/tibble_.html</loc></url>
+<url><loc>/reference/tibble_of.html</loc></url>
 </urlset>
+
