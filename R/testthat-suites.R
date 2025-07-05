@@ -190,7 +190,8 @@ test_generator_with_na <- function(generator, .p) {
       for_all(
         a = generator(len = 100L, any_na = TRUE),
         property = function(a) {
-          unlist(a) %>% is.na() %>% any() %>% testthat::expect_true()
+          # TODO: check all other tests if they should have the predicate first
+          .p(a) && (unlist(a) %>% is.na() %>% any()) %>% testthat::expect_true()
         },
         tests = 10L
       )
