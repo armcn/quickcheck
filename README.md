@@ -7,7 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/quickcheck)](https://CRAN.R-project.org/package=quickcheck)
-[![R-CMD-check](https://github.com/armcn/quickcheck/workflows/R-CMD-check/badge.svg)](https://github.com/armcn/quickcheck/actions)
+[![R-CMD-check](https://github.com/armcn/quickcheck/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/armcn/quickcheck/actions/workflows/R-CMD-check.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/armcn/quickcheck/branch/main/graph/badge.svg)](https://app.codecov.io/gh/armcn/quickcheck?branch=main)
 [![metacran
@@ -57,7 +57,7 @@ test_that("0 is the additive identity of +", {
     property = function(a) expect_equal(a, a + 0)
   )
 })
-#> Test passed 🎉
+#> Test passed 😀
 
 test_that("+ is commutative", {
   for_all(
@@ -66,7 +66,7 @@ test_that("+ is commutative", {
     property = function(a, b) expect_equal(a + b, b + a)
   )
 })
-#> Test passed 😸
+#> Test passed 😀
 
 test_that("+ is associative", {
   for_all(
@@ -76,7 +76,7 @@ test_that("+ is associative", {
     property = function(a, b, c) expect_equal(a + (b + c), (a + b) + c)
   )
 })
-#> Test passed 😀
+#> Test passed 🎉
 ```
 
 Here we test the properties of the
@@ -95,7 +95,7 @@ test_that("distinct does nothing with a single row", {
     }
   )
 })
-#> Test passed 🎊
+#> Test passed 🥳
 
 test_that("distinct returns single row if rows are repeated", {
   for_all(
@@ -107,7 +107,7 @@ test_that("distinct returns single row if rows are repeated", {
     }
   )
 })
-#> Test passed 🎊
+#> Test passed 😀
 
 test_that("distinct does nothing if rows are unique", {
   for_all(
@@ -130,16 +130,13 @@ Many generators are provided with `quickcheck`. Here are a few examples.
 
 ``` r
 integer_(len = 10) %>% show_example()
-#>  [1]  -833  5111 -8831 -3495 -1899  1051  9964  2473  9557 -2465
+#>  [1]  1645 -8572 -9846  5213 -4605 -3086   296 -7463  4333  3471
 character_alphanumeric(len = 10) %>% show_example()
-#>  [1] "y5Ph"      "8"         "B8"        "3vOcYf"    "qr"        "o"        
-#>  [7] "5rW2nHdrA" "88"        "umU"       "vJpqr"
+#>  [1] "V6"        "P"         "G"         "pu"        "aEIIEU6d3" "jDiV4"     "6"         "hqHX"      "Pe2Eejmkk" "xU3dKuw"
 posixct_(len = 10, any_na = TRUE) %>% show_example()
-#>  [1] "1652-02-25 11:34:40 LMT" "1683-08-15 05:26:47 LMT"
-#>  [3] "2339-08-19 19:19:07 PDT" "0244-05-09 12:26:30 LMT"
-#>  [5] "0756-11-24 03:23:10 LMT" "0660-04-16 21:21:08 LMT"
-#>  [7] "2993-05-14 04:45:47 PDT" NA                       
-#>  [9] "1301-04-09 00:40:00 LMT" NA
+#>  [1] "1518-05-23 19:00:11 LMT" "2037-05-06 23:31:16 EDT" NA                        NA                       
+#>  [5] NA                        "1406-01-03 06:03:02 LMT" "2002-12-12 22:52:53 EST" "1196-12-09 06:22:30 LMT"
+#>  [9] "0631-11-28 09:04:35 LMT" "2682-01-16 11:51:32 EST"
 ```
 
 ### Lists
@@ -150,44 +147,44 @@ list_(a = constant(NULL), b = any_undefined()) %>% show_example()
 #> NULL
 #> 
 #> $b
-#> [1] -Inf
+#> [1] NA
 flat_list_of(logical_(), len = 3) %>% show_example()
 #> [[1]]
-#> [1] TRUE
+#> [1] FALSE
 #> 
 #> [[2]]
 #> [1] TRUE
 #> 
 #> [[3]]
-#> [1] TRUE
+#> [1] FALSE
 ```
 
 ### Tibbles
 
 ``` r
 tibble_(a = date_(), b = hms_(), rows = 5) %>% show_example()
-#> # A tibble: 5 x 2
+#> # A tibble: 5 × 2
 #>   a          b              
 #>   <date>     <time>         
-#> 1 1271-08-16 22:32:16.108893
-#> 2 2788-05-31 20:37:31.119791
-#> 3 1246-05-10 09:14:29.411623
-#> 4 2434-06-08 16:01:39.498445
-#> 5 1074-10-19 04:07:18.552658
+#> 1 2971-02-26 15:59:18.485111
+#> 2 1259-02-26 09:17:34.134997
+#> 3 1719-12-02 02:35:26.647900
+#> 4 2186-06-14 18:59:36.013421
+#> 5 2005-05-16 22:58:25.777202
 tibble_of(double_bounded(-10, 10), rows = 3, cols = 3) %>% show_example()
-#> # A tibble: 3 x 3
-#>    ...1  ...2  ...3
-#>   <dbl> <dbl> <dbl>
-#> 1  0     2.55  5.81
-#> 2  4.42  8.87 -5.43
-#> 3  9.45  7.02 -3.97
+#> # A tibble: 3 × 3
+#>    ...1  ...2   ...3
+#>   <dbl> <dbl>  <dbl>
+#> 1 -8.75 -1.33  3.63 
+#> 2  5.49 -5.71  0.755
+#> 3  0     3.42 -3.07
 any_tibble(rows = 3, cols = 3) %>% show_example()
-#> # A tibble: 3 x 3
-#>   ...1             ...2       ...3      
-#>   <list>           <list>     <date>    
-#> 1 <named list [2]> <time [2]> 1628-11-24
-#> 2 <named list [2]> <time [7]> 2989-06-25
-#> 3 <named list [2]> <fct [4]>  2175-02-14
+#> # A tibble: 3 × 3
+#>          ...1 ...2            ...3     
+#>         <dbl> <time>          <list>   
+#> 1 -885519673. 14:05:05.882342 <chr [1]>
+#> 2 -293069776. 04:11:51.356973 <chr [1]>
+#> 3  -90043652. 21:32:00.080639 <chr [1]>
 ```
 
 ## Hedgehog generators
@@ -210,7 +207,7 @@ test_that("is_even returns TRUE for powers of two", {
     property = function(a) is_even(a) %>% expect_true()
   )
 })
-#> Test passed 😀
+#> Test passed 😸
 ```
 
 Any `hedgehog` generator can be used with `quickcheck` but they can’t be
@@ -238,7 +235,7 @@ But this will cause an error:
 test_that("composing hedgehog with quickcheck generators fails", {
   tibble_of(from_hedgehog(gen_powers_of_two)) %>% expect_error()
 })
-#> Test passed 🥇
+#> Test passed 😀
 ```
 
 A `quickcheck` generator can also be converted to a `hedgehog` generator
@@ -257,7 +254,7 @@ test_that("is_even returns TRUE for powers of two", {
     property = function(a) is_even(a) %>% expect_true()
   )
 })
-#> Test passed 😀
+#> Test passed 🎉
 ```
 
 ## Fuzz tests
@@ -275,7 +272,7 @@ test_that("map won't fail with any vector as input", {
     property = function(a) purrr::map(a, identity) %>% expect_silent()
   )
 })
-#> Test passed 🎉
+#> Test passed 😸
 ```
 
 ## Repeat tests
@@ -296,5 +293,5 @@ test_that("runif generates random numbers between a min and max value", {
     }
   )
 })
-#> Test passed 🎉
+#> Test passed 😀
 ```
